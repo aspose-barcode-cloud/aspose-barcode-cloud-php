@@ -1,0 +1,16 @@
+{
+    "name": "aspose-cloud/aspose-barcode-cloud-php",
+    "description": "Aspose.BarCode for Cloud PHP Sdk",
+    "authors": [
+        {
+            "name": "evgen",
+            "email": "evgen.noskov@aspose.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": { "Aspose": "src/"  }
+    }
+}
