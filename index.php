@@ -35,8 +35,8 @@ use Aspose\BarCode\Requests\BarCodeGetBarCodeGenerateRequest;
 
 
 $config = new Configuration();
-$config->setAppKey("1b7a4f02616207f64e9f8d63cc55ab04");
-$config->setAppSid("37db414e-fa24-415f-a8d3-6ce409e968f2");
+$config->setAppKey("your_key");
+$config->setAppSid("your_sid");
 
 $request = new BarCodeGetBarCodeGenerateRequest();
 $request->type = "QR";
