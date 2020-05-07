@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,7 +30,7 @@ namespace Aspose\BarCode;
 /*
  * Represents a set of configuration settings
  */
-class Configuration
+class Configuration implements \JsonSerializable
 {
     private static $_defaultConfiguration;
 
@@ -40,13 +40,13 @@ class Configuration
      * @var string[]
      */
     protected $apiKeys = [];
-    
+
     /*
      * AppKey for API
      *
      */
     protected $appKey = '';
-    
+
     /*
      * AppSid for API
      * @var string
@@ -66,7 +66,7 @@ class Configuration
      * @var string
      */
     protected $accessToken = '';
-    
+
     /*
      * Refresh token for OAuth
      *
@@ -94,7 +94,7 @@ class Configuration
      * @var string
      */
     protected $host = 'https://api.aspose.com';
-	
+
     /*
      * Version of API to use, possible values are v1, v1.1, v2, v3
      * default value is v1
@@ -129,7 +129,7 @@ class Configuration
      * @var string
      */
     protected $tempFolderPath;
-    
+
     /*
      * Version of Aspose.BarCode Cloud API
      *
@@ -143,7 +143,7 @@ class Configuration
     {
         $this->tempFolderPath = sys_get_temp_dir();
     }
-    
+
     /*
      * Gets client version
      *
@@ -166,7 +166,7 @@ class Configuration
         $this->apiKeys[$apiKeyIdentifier] = $key;
         return $this;
     }
-    
+
     /*
      * Sets AppSid
      *
@@ -179,7 +179,7 @@ class Configuration
         $this->appSid = $appSid;
         return $this;
     }
-    
+
     /*
      * Gets AppSid
      * @return $appSid
@@ -188,7 +188,7 @@ class Configuration
     {
         return $this->appSid;
     }
-    
+
     /*
      * Sets AppKey
      *
@@ -201,7 +201,7 @@ class Configuration
         $this->appKey = $appKey;
         return $this;
     }
-    
+
     /*
      * Gets AppKey
      * @return $appKey
@@ -271,7 +271,7 @@ class Configuration
     {
         return $this->accessToken;
     }
-    
+
     /*
      * Sets the refresh token for OAuth
      *
@@ -363,8 +363,8 @@ class Configuration
     {
         return $this->host;
     }
-	
-	/*
+
+    /*
      * Sets the base_path
      *
      * @param string $base_path api version
@@ -549,5 +549,29 @@ class Configuration
         }
 
         return $keyWithPrefix;
+    }
+
+    /*
+     * implements JsonSerializable
+     */
+    public function jsonSerialize()
+    {
+        return [
+            "AppKey" => $this->appKey,
+            "AppSid" => $this->appSid,
+            "Host" => $this->host,
+        ];
+    }
+
+    public static function fromJson(string $jsonString) : Configuration
+    {
+        $values = \json_decode($jsonString, TRUE);
+
+        $config = new Configuration();
+        if (isset($values['AppKey'])) $config->setAppKey($values['AppKey']);
+        if (isset($values['AppSid'])) $config->setAppSid($values['AppSid']);
+        if (isset($values['Host'])) $config->setHost($values['Host']);
+
+        return $config;
     }
 }
