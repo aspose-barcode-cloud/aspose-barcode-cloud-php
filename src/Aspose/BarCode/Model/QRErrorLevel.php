@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="QRErrorLevel.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,32 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * QRErrorLevel
  *
  * @description 
  */
-class EnableChecksum
+class QRErrorLevel
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value LevelL
   /// </summary>
-  const Default_ =  "Default";
+  const LevelL_ =  "LevelL";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value LevelM
   /// </summary>
-  const Yes_ =  "Yes";
+  const LevelM_ =  "LevelM";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value LevelQ
   /// </summary>
-  const No_ =  "No";
+  const LevelQ_ =  "LevelQ";
+  
+  /// <summary>
+  /// Enum value LevelH
+  /// </summary>
+  const LevelH_ =  "LevelH";
   
 }
 

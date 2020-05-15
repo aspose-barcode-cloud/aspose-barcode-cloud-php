@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="Pdf417CompactionMode.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,32 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * Pdf417CompactionMode
  *
  * @description 
  */
-class EnableChecksum
+class Pdf417CompactionMode
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Auto
   /// </summary>
-  const Default_ =  "Default";
+  const Auto_ =  "Auto";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Text
   /// </summary>
-  const Yes_ =  "Yes";
+  const Text_ =  "Text";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Numeric
   /// </summary>
-  const No_ =  "No";
+  const Numeric_ =  "Numeric";
+  
+  /// <summary>
+  /// Enum value Binary
+  /// </summary>
+  const Binary_ =  "Binary";
   
 }
 

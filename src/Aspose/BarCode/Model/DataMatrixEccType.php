@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="DataMatrixEccType.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,47 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * DataMatrixEccType
  *
  * @description 
  */
-class EnableChecksum
+class DataMatrixEccType
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value EccAuto
   /// </summary>
-  const Default_ =  "Default";
+  const EccAuto_ =  "EccAuto";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Ecc000
   /// </summary>
-  const Yes_ =  "Yes";
+  const Ecc000_ =  "Ecc000";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Ecc050
   /// </summary>
-  const No_ =  "No";
+  const Ecc050_ =  "Ecc050";
+  
+  /// <summary>
+  /// Enum value Ecc080
+  /// </summary>
+  const Ecc080_ =  "Ecc080";
+  
+  /// <summary>
+  /// Enum value Ecc100
+  /// </summary>
+  const Ecc100_ =  "Ecc100";
+  
+  /// <summary>
+  /// Enum value Ecc140
+  /// </summary>
+  const Ecc140_ =  "Ecc140";
+  
+  /// <summary>
+  /// Enum value Ecc200
+  /// </summary>
+  const Ecc200_ =  "Ecc200";
   
 }
 

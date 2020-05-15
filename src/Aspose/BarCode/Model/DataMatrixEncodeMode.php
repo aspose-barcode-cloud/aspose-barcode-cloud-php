@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="DataMatrixEncodeMode.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,42 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * DataMatrixEncodeMode
  *
  * @description 
  */
-class EnableChecksum
+class DataMatrixEncodeMode
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Auto
   /// </summary>
-  const Default_ =  "Default";
+  const Auto_ =  "Auto";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value ASCII
   /// </summary>
-  const Yes_ =  "Yes";
+  const ASCII_ =  "ASCII";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Full
   /// </summary>
-  const No_ =  "No";
+  const Full_ =  "Full";
+  
+  /// <summary>
+  /// Enum value Custom
+  /// </summary>
+  const Custom_ =  "Custom";
+  
+  /// <summary>
+  /// Enum value C40
+  /// </summary>
+  const C40_ =  "C40";
+  
+  /// <summary>
+  /// Enum value Text
+  /// </summary>
+  const Text_ =  "Text";
   
 }
 

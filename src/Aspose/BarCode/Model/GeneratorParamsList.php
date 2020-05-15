@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="GeneratorParamsList.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * GeneratorParamsList
  *
- * @description Represents information about barcode.
+ * @description Represents list of barcode generators
  */
-class BarcodeResponse implements ArrayAccess
+class GeneratorParamsList implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "GeneratorParamsList";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'barcode_builders' => '\Aspose\BarCode\Model\GeneratorParams[]',
+        'x_step' => 'int',
+        'y_step' => 'int'
     ];
 
     /*
@@ -71,10 +70,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'barcode_builders' => null,
+        'x_step' => 'int32',
+        'y_step' => 'int32'
     ];
 
     /*
@@ -104,10 +102,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'barcode_builders' => 'BarcodeBuilders',
+        'x_step' => 'XStep',
+        'y_step' => 'YStep'
     ];
 
     /*
@@ -116,10 +113,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'barcode_builders' => 'setBarcodeBuilders',
+        'x_step' => 'setXStep',
+        'y_step' => 'setYStep'
     ];
 
     /*
@@ -128,10 +124,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'barcode_builders' => 'getBarcodeBuilders',
+        'x_step' => 'getXStep',
+        'y_step' => 'getYStep'
     ];
 
     /*
@@ -194,10 +189,9 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['barcode_builders'] = isset($data['barcode_builders']) ? $data['barcode_builders'] : null;
+        $this->container['x_step'] = isset($data['x_step']) ? $data['x_step'] : null;
+        $this->container['y_step'] = isset($data['y_step']) ? $data['y_step'] : null;
     }
 
     /*
@@ -209,6 +203,12 @@ class BarcodeResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['x_step'] === null) {
+            $invalidProperties[] = "'x_step' can't be null";
+        }
+        if ($this->container['y_step'] === null) {
+            $invalidProperties[] = "'y_step' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -221,102 +221,84 @@ class BarcodeResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['x_step'] === null) {
+            return false;
+        }
+        if ($this->container['y_step'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets barcode_value
+     * Gets barcode_builders
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\GeneratorParams[]
      */
-    public function getBarcodeValue()
+    public function getBarcodeBuilders()
     {
-        return $this->container['barcode_value'];
+        return $this->container['barcode_builders'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets barcode_builders
      *
-     * @param string $barcode_value Barcode data.
+     * @param \Aspose\BarCode\Model\GeneratorParams[] $barcode_builders List of barcode generators
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setBarcodeBuilders($barcode_builders)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['barcode_builders'] = $barcode_builders;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets x_step
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getXStep()
     {
-        return $this->container['type'];
+        return $this->container['x_step'];
     }
 
     /*
-     * Sets type
+     * Sets x_step
      *
-     * @param string $type Type of the barcode.
+     * @param int $x_step Shift step according to X axis
      *
      * @return $this
      */
-    public function setType($type)
+    public function setXStep($x_step)
     {
-        $this->container['type'] = $type;
+        $this->container['x_step'] = $x_step;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets y_step
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return int
      */
-    public function getRegion()
+    public function getYStep()
     {
-        return $this->container['region'];
+        return $this->container['y_step'];
     }
 
     /*
-     * Sets region
+     * Sets y_step
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param int $y_step Shift step according to Y axis
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setYStep($y_step)
     {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['y_step'] = $y_step;
 
         return $this;
     }

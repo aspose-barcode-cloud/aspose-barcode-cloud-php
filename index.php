@@ -48,6 +48,6 @@ $response = $api->BarCodeGetBarCodeGenerate($request);
 
 $type = 'image/png';
 $size = $response->getSize();
-header('Content-Type:'.$type);
+header('Content-Type: ' . $type);
 header('Content-Length: ' . $size);
 echo $response->fread($size);

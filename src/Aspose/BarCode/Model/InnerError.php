@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="InnerError.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,10 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * InnerError
  *
- * @description Represents information about barcode.
  */
-class BarcodeResponse implements ArrayAccess
+class InnerError implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "InnerError";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +58,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'request_id' => 'string',
+        'date' => '\DateTime'
     ];
 
     /*
@@ -71,10 +68,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'request_id' => null,
+        'date' => 'date-time'
     ];
 
     /*
@@ -104,10 +99,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'request_id' => 'RequestId',
+        'date' => 'Date'
     ];
 
     /*
@@ -116,10 +109,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'request_id' => 'setRequestId',
+        'date' => 'setDate'
     ];
 
     /*
@@ -128,10 +119,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'request_id' => 'getRequestId',
+        'date' => 'getDate'
     ];
 
     /*
@@ -194,10 +183,8 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
     }
 
     /*
@@ -209,6 +196,9 @@ class BarcodeResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -221,102 +211,57 @@ class BarcodeResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['date'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets barcode_value
+     * Gets request_id
      *
      * @return string
      */
-    public function getBarcodeValue()
+    public function getRequestId()
     {
-        return $this->container['barcode_value'];
+        return $this->container['request_id'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets request_id
      *
-     * @param string $barcode_value Barcode data.
+     * @param string $request_id request_id
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setRequestId($request_id)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['request_id'] = $request_id;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets date
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getType()
+    public function getDate()
     {
-        return $this->container['type'];
+        return $this->container['date'];
     }
 
     /*
-     * Sets type
+     * Sets date
      *
-     * @param string $type Type of the barcode.
+     * @param \DateTime $date date
      *
      * @return $this
      */
-    public function setType($type)
+    public function setDate($date)
     {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /*
-     * Gets region
-     *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /*
-     * Sets region
-     *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['date'] = $date;
 
         return $this;
     }

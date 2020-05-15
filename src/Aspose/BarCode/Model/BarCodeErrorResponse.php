@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="BarCodeErrorResponse.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,10 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * BarCodeErrorResponse
  *
- * @description Represents information about barcode.
  */
-class BarcodeResponse implements ArrayAccess
+class BarCodeErrorResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "BarCodeErrorResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +58,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'error' => '\Aspose\BarCode\Model\Error'
     ];
 
     /*
@@ -71,10 +67,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'error' => null
     ];
 
     /*
@@ -104,10 +97,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'error' => 'Error'
     ];
 
     /*
@@ -116,10 +106,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'error' => 'setError'
     ];
 
     /*
@@ -128,10 +115,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'error' => 'getError'
     ];
 
     /*
@@ -194,10 +178,7 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
     /*
@@ -226,97 +207,25 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets error
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\Error
      */
-    public function getBarcodeValue()
+    public function getError()
     {
-        return $this->container['barcode_value'];
+        return $this->container['error'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets error
      *
-     * @param string $barcode_value Barcode data.
+     * @param \Aspose\BarCode\Model\Error $error error
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setError($error)
     {
-        $this->container['barcode_value'] = $barcode_value;
-
-        return $this;
-    }
-
-    /*
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /*
-     * Sets type
-     *
-     * @param string $type Type of the barcode.
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /*
-     * Gets region
-     *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /*
-     * Sets region
-     *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['error'] = $error;
 
         return $this;
     }

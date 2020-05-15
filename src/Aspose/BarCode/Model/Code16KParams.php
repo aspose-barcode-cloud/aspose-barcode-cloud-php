@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="Code16KParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * Code16KParams
  *
- * @description Represents information about barcode.
+ * @description Code16K parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class Code16KParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "Code16KParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'aspect_ratio' => 'double',
+        'quiet_zone_left_coef' => 'int',
+        'quiet_zone_right_coef' => 'int'
     ];
 
     /*
@@ -71,10 +70,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'aspect_ratio' => 'double',
+        'quiet_zone_left_coef' => 'int32',
+        'quiet_zone_right_coef' => 'int32'
     ];
 
     /*
@@ -104,10 +102,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'aspect_ratio' => 'AspectRatio',
+        'quiet_zone_left_coef' => 'QuietZoneLeftCoef',
+        'quiet_zone_right_coef' => 'QuietZoneRightCoef'
     ];
 
     /*
@@ -116,10 +113,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'aspect_ratio' => 'setAspectRatio',
+        'quiet_zone_left_coef' => 'setQuietZoneLeftCoef',
+        'quiet_zone_right_coef' => 'setQuietZoneRightCoef'
     ];
 
     /*
@@ -128,10 +124,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'aspect_ratio' => 'getAspectRatio',
+        'quiet_zone_left_coef' => 'getQuietZoneLeftCoef',
+        'quiet_zone_right_coef' => 'getQuietZoneRightCoef'
     ];
 
     /*
@@ -194,10 +189,9 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
+        $this->container['quiet_zone_left_coef'] = isset($data['quiet_zone_left_coef']) ? $data['quiet_zone_left_coef'] : null;
+        $this->container['quiet_zone_right_coef'] = isset($data['quiet_zone_right_coef']) ? $data['quiet_zone_right_coef'] : null;
     }
 
     /*
@@ -226,97 +220,73 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets aspect_ratio
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getAspectRatio()
     {
-        return $this->container['barcode_value'];
+        return $this->container['aspect_ratio'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets aspect_ratio
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setAspectRatio($aspect_ratio)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets quiet_zone_left_coef
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getQuietZoneLeftCoef()
     {
-        return $this->container['type'];
+        return $this->container['quiet_zone_left_coef'];
     }
 
     /*
-     * Sets type
+     * Sets quiet_zone_left_coef
      *
-     * @param string $type Type of the barcode.
+     * @param int $quiet_zone_left_coef Size of the left quiet zone in xDimension. Default value: 10, meaning if xDimension = 2px than left quiet zone will be 20px.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setQuietZoneLeftCoef($quiet_zone_left_coef)
     {
-        $this->container['type'] = $type;
+        $this->container['quiet_zone_left_coef'] = $quiet_zone_left_coef;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets quiet_zone_right_coef
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return int
      */
-    public function getRegion()
+    public function getQuietZoneRightCoef()
     {
-        return $this->container['region'];
+        return $this->container['quiet_zone_right_coef'];
     }
 
     /*
-     * Sets region
+     * Sets quiet_zone_right_coef
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param int $quiet_zone_right_coef Size of the right quiet zone in xDimension. Default value: 1, meaning if xDimension = 2px than right quiet zone will be 2px.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setQuietZoneRightCoef($quiet_zone_right_coef)
     {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['quiet_zone_right_coef'] = $quiet_zone_right_coef;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="FontMode.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,22 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * FontMode
  *
  * @description 
  */
-class EnableChecksum
+class FontMode
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Auto
   /// </summary>
-  const Default_ =  "Default";
+  const Auto_ =  "Auto";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Manual
   /// </summary>
-  const Yes_ =  "Yes";
-  
-  /// <summary>
-  /// Enum value No
-  /// </summary>
-  const No_ =  "No";
+  const Manual_ =  "Manual";
   
 }
 

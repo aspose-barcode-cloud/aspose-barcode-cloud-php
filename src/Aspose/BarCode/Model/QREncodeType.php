@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="QREncodeType.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,27 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * QREncodeType
  *
  * @description 
  */
-class EnableChecksum
+class QREncodeType
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Auto
   /// </summary>
-  const Default_ =  "Default";
+  const Auto_ =  "Auto";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value ForceQR
   /// </summary>
-  const Yes_ =  "Yes";
+  const ForceQR_ =  "ForceQR";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value ForceMicroQR
   /// </summary>
-  const No_ =  "No";
+  const ForceMicroQR_ =  "ForceMicroQR";
   
 }
 

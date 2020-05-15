@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="DataBarParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * DataBarParams
  *
- * @description Represents information about barcode.
+ * @description Databar parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class DataBarParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "DataBarParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'aspect_ratio' => 'double',
+        'columns' => 'int',
+        'rows' => 'int'
     ];
 
     /*
@@ -71,10 +70,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'aspect_ratio' => 'double',
+        'columns' => 'int32',
+        'rows' => 'int32'
     ];
 
     /*
@@ -104,10 +102,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'aspect_ratio' => 'AspectRatio',
+        'columns' => 'Columns',
+        'rows' => 'Rows'
     ];
 
     /*
@@ -116,10 +113,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'aspect_ratio' => 'setAspectRatio',
+        'columns' => 'setColumns',
+        'rows' => 'setRows'
     ];
 
     /*
@@ -128,10 +124,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'aspect_ratio' => 'getAspectRatio',
+        'columns' => 'getColumns',
+        'rows' => 'getRows'
     ];
 
     /*
@@ -194,10 +189,9 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
+        $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
+        $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
     }
 
     /*
@@ -226,97 +220,73 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets aspect_ratio
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getAspectRatio()
     {
-        return $this->container['barcode_value'];
+        return $this->container['aspect_ratio'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets aspect_ratio
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module. Used for DataBar stacked.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setAspectRatio($aspect_ratio)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets columns
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getColumns()
     {
-        return $this->container['type'];
+        return $this->container['columns'];
     }
 
     /*
-     * Sets type
+     * Sets columns
      *
-     * @param string $type Type of the barcode.
+     * @param int $columns Columns count.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setColumns($columns)
     {
-        $this->container['type'] = $type;
+        $this->container['columns'] = $columns;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets rows
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return int
      */
-    public function getRegion()
+    public function getRows()
     {
-        return $this->container['region'];
+        return $this->container['rows'];
     }
 
     /*
-     * Sets region
+     * Sets rows
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param int $rows Rows count.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setRows($rows)
     {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['rows'] = $rows;
 
         return $this;
     }

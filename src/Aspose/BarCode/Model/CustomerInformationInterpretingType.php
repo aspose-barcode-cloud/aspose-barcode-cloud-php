@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="CustomerInformationInterpretingType.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,27 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * CustomerInformationInterpretingType
  *
  * @description 
  */
-class EnableChecksum
+class CustomerInformationInterpretingType
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value CTable
   /// </summary>
-  const Default_ =  "Default";
+  const CTable_ =  "CTable";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value NTable
   /// </summary>
-  const Yes_ =  "Yes";
+  const NTable_ =  "NTable";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Other
   /// </summary>
-  const No_ =  "No";
+  const Other_ =  "Other";
   
 }
 

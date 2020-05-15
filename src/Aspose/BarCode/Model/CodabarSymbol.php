@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="CodabarSymbol.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,32 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * CodabarSymbol
  *
  * @description 
  */
-class EnableChecksum
+class CodabarSymbol
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value A
   /// </summary>
-  const Default_ =  "Default";
+  const A_ =  "A";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value B
   /// </summary>
-  const Yes_ =  "Yes";
+  const B_ =  "B";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value C
   /// </summary>
-  const No_ =  "No";
+  const C_ =  "C";
+  
+  /// <summary>
+  /// Enum value D
+  /// </summary>
+  const D_ =  "D";
   
 }
 

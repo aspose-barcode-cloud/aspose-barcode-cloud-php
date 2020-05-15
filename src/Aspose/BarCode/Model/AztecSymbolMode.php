@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="AztecSymbolMode.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,32 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * AztecSymbolMode
  *
  * @description 
  */
-class EnableChecksum
+class AztecSymbolMode
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Auto
   /// </summary>
-  const Default_ =  "Default";
+  const Auto_ =  "Auto";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Compact
   /// </summary>
-  const Yes_ =  "Yes";
+  const Compact_ =  "Compact";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value FullRange
   /// </summary>
-  const No_ =  "No";
+  const FullRange_ =  "FullRange";
+  
+  /// <summary>
+  /// Enum value Rune
+  /// </summary>
+  const Rune_ =  "Rune";
   
 }
 

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="QrParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * QrParams
  *
- * @description Represents information about barcode.
+ * @description QR parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class QrParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "QrParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,13 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'aspect_ratio' => 'double',
+        'text_encoding' => 'string',
+        'encode_type' => '\Aspose\BarCode\Model\QREncodeType',
+        'eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
+        'encode_mode' => '\Aspose\BarCode\Model\QREncodeMode',
+        'error_level' => '\Aspose\BarCode\Model\QRErrorLevel',
+        'version' => '\Aspose\BarCode\Model\QRVersion'
     ];
 
     /*
@@ -71,10 +74,13 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'aspect_ratio' => 'double',
+        'text_encoding' => null,
+        'encode_type' => null,
+        'eci_encoding' => null,
+        'encode_mode' => null,
+        'error_level' => null,
+        'version' => null
     ];
 
     /*
@@ -104,10 +110,13 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'aspect_ratio' => 'AspectRatio',
+        'text_encoding' => 'TextEncoding',
+        'encode_type' => 'EncodeType',
+        'eci_encoding' => 'ECIEncoding',
+        'encode_mode' => 'EncodeMode',
+        'error_level' => 'ErrorLevel',
+        'version' => 'Version'
     ];
 
     /*
@@ -116,10 +125,13 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'aspect_ratio' => 'setAspectRatio',
+        'text_encoding' => 'setTextEncoding',
+        'encode_type' => 'setEncodeType',
+        'eci_encoding' => 'setEciEncoding',
+        'encode_mode' => 'setEncodeMode',
+        'error_level' => 'setErrorLevel',
+        'version' => 'setVersion'
     ];
 
     /*
@@ -128,10 +140,13 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'aspect_ratio' => 'getAspectRatio',
+        'text_encoding' => 'getTextEncoding',
+        'encode_type' => 'getEncodeType',
+        'eci_encoding' => 'getEciEncoding',
+        'encode_mode' => 'getEncodeMode',
+        'error_level' => 'getErrorLevel',
+        'version' => 'getVersion'
     ];
 
     /*
@@ -194,10 +209,13 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
+        $this->container['text_encoding'] = isset($data['text_encoding']) ? $data['text_encoding'] : null;
+        $this->container['encode_type'] = isset($data['encode_type']) ? $data['encode_type'] : null;
+        $this->container['eci_encoding'] = isset($data['eci_encoding']) ? $data['eci_encoding'] : null;
+        $this->container['encode_mode'] = isset($data['encode_mode']) ? $data['encode_mode'] : null;
+        $this->container['error_level'] = isset($data['error_level']) ? $data['error_level'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
     }
 
     /*
@@ -226,97 +244,169 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets aspect_ratio
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getAspectRatio()
     {
-        return $this->container['barcode_value'];
+        return $this->container['aspect_ratio'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets aspect_ratio
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setAspectRatio($aspect_ratio)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets text_encoding
      *
      * @return string
      */
-    public function getType()
+    public function getTextEncoding()
     {
-        return $this->container['type'];
+        return $this->container['text_encoding'];
     }
 
     /*
-     * Sets type
+     * Sets text_encoding
      *
-     * @param string $type Type of the barcode.
+     * @param string $text_encoding Encoding of codetext.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setTextEncoding($text_encoding)
     {
-        $this->container['type'] = $type;
+        $this->container['text_encoding'] = $text_encoding;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets encode_type
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return \Aspose\BarCode\Model\QREncodeType
      */
-    public function getRegion()
+    public function getEncodeType()
     {
-        return $this->container['region'];
+        return $this->container['encode_type'];
     }
 
     /*
-     * Sets region
+     * Sets encode_type
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param \Aspose\BarCode\Model\QREncodeType $encode_type QR / MicroQR selector mode. Select ForceQR for standard QR symbols, Auto for MicroQR.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setEncodeType($encode_type)
     {
-        $this->container['region'] = $region;
+        $this->container['encode_type'] = $encode_type;
 
         return $this;
     }
 
     /*
-     * Gets checksum
+     * Gets eci_encoding
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\ECIEncodings
      */
-    public function getChecksum()
+    public function getEciEncoding()
     {
-        return $this->container['checksum'];
+        return $this->container['eci_encoding'];
     }
 
     /*
-     * Sets checksum
+     * Sets eci_encoding
      *
-     * @param string $checksum Checksum of barcode.
+     * @param \Aspose\BarCode\Model\ECIEncodings $eci_encoding Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings.
      *
      * @return $this
      */
-    public function setChecksum($checksum)
+    public function setEciEncoding($eci_encoding)
     {
-        $this->container['checksum'] = $checksum;
+        $this->container['eci_encoding'] = $eci_encoding;
+
+        return $this;
+    }
+
+    /*
+     * Gets encode_mode
+     *
+     * @return \Aspose\BarCode\Model\QREncodeMode
+     */
+    public function getEncodeMode()
+    {
+        return $this->container['encode_mode'];
+    }
+
+    /*
+     * Sets encode_mode
+     *
+     * @param \Aspose\BarCode\Model\QREncodeMode $encode_mode QR symbology type of BarCode's encoding mode. Default value: QREncodeMode.Auto.
+     *
+     * @return $this
+     */
+    public function setEncodeMode($encode_mode)
+    {
+        $this->container['encode_mode'] = $encode_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets error_level
+     *
+     * @return \Aspose\BarCode\Model\QRErrorLevel
+     */
+    public function getErrorLevel()
+    {
+        return $this->container['error_level'];
+    }
+
+    /*
+     * Sets error_level
+     *
+     * @param \Aspose\BarCode\Model\QRErrorLevel $error_level Level of Reed-Solomon error correction for QR barcode. From low to high: LevelL, LevelM, LevelQ, LevelH. see QRErrorLevel.
+     *
+     * @return $this
+     */
+    public function setErrorLevel($error_level)
+    {
+        $this->container['error_level'] = $error_level;
+
+        return $this;
+    }
+
+    /*
+     * Gets version
+     *
+     * @return \Aspose\BarCode\Model\QRVersion
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /*
+     * Sets version
+     *
+     * @param \Aspose\BarCode\Model\QRVersion $version Version of QR Code. From Version1 to Version40 for QR code and from M1 to M4 for MicroQr. Default value is QRVersion.Auto.
+     *
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }

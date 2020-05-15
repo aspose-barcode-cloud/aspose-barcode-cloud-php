@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="BorderDashStyle.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,37 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * BorderDashStyle
  *
  * @description 
  */
-class EnableChecksum
+class BorderDashStyle
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Solid
   /// </summary>
-  const Default_ =  "Default";
+  const Solid_ =  "Solid";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Dash
   /// </summary>
-  const Yes_ =  "Yes";
+  const Dash_ =  "Dash";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Dot
   /// </summary>
-  const No_ =  "No";
+  const Dot_ =  "Dot";
+  
+  /// <summary>
+  /// Enum value DashDot
+  /// </summary>
+  const DashDot_ =  "DashDot";
+  
+  /// <summary>
+  /// Enum value DashDotDot
+  /// </summary>
+  const DashDotDot_ =  "DashDotDot";
   
 }
 

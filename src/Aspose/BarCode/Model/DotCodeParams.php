@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="DotCodeParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * DotCodeParams
  *
- * @description Represents information about barcode.
+ * @description DotCode parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class DotCodeParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "DotCodeParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'aspect_ratio' => 'double',
+        'dot_code_mask' => 'int'
     ];
 
     /*
@@ -71,10 +69,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'aspect_ratio' => 'double',
+        'dot_code_mask' => 'int32'
     ];
 
     /*
@@ -104,10 +100,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'aspect_ratio' => 'AspectRatio',
+        'dot_code_mask' => 'DotCodeMask'
     ];
 
     /*
@@ -116,10 +110,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'aspect_ratio' => 'setAspectRatio',
+        'dot_code_mask' => 'setDotCodeMask'
     ];
 
     /*
@@ -128,10 +120,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'aspect_ratio' => 'getAspectRatio',
+        'dot_code_mask' => 'getDotCodeMask'
     ];
 
     /*
@@ -194,10 +184,8 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
+        $this->container['dot_code_mask'] = isset($data['dot_code_mask']) ? $data['dot_code_mask'] : null;
     }
 
     /*
@@ -226,97 +214,49 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets aspect_ratio
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getAspectRatio()
     {
-        return $this->container['barcode_value'];
+        return $this->container['aspect_ratio'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets aspect_ratio
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setAspectRatio($aspect_ratio)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets dot_code_mask
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getDotCodeMask()
     {
-        return $this->container['type'];
+        return $this->container['dot_code_mask'];
     }
 
     /*
-     * Sets type
+     * Sets dot_code_mask
      *
-     * @param string $type Type of the barcode.
+     * @param int $dot_code_mask Mask of Dotcode barcode. Default value: -1.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setDotCodeMask($dot_code_mask)
     {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /*
-     * Gets region
-     *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /*
-     * Sets region
-     *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['dot_code_mask'] = $dot_code_mask;
 
         return $this;
     }

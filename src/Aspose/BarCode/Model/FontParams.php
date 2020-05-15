@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="FontParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * FontParams
  *
- * @description Represents information about barcode.
+ * @description Font.
  */
-class BarcodeResponse implements ArrayAccess
+class FontParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "FontParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'family' => 'string',
+        'size' => 'double',
+        'style' => '\Aspose\BarCode\Model\FontStyle'
     ];
 
     /*
@@ -71,10 +70,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'family' => null,
+        'size' => 'double',
+        'style' => null
     ];
 
     /*
@@ -104,10 +102,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'family' => 'Family',
+        'size' => 'Size',
+        'style' => 'Style'
     ];
 
     /*
@@ -116,10 +113,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'family' => 'setFamily',
+        'size' => 'setSize',
+        'style' => 'setStyle'
     ];
 
     /*
@@ -128,10 +124,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'family' => 'getFamily',
+        'size' => 'getSize',
+        'style' => 'getStyle'
     ];
 
     /*
@@ -194,10 +189,9 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['family'] = isset($data['family']) ? $data['family'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
     }
 
     /*
@@ -226,97 +220,73 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets family
      *
      * @return string
      */
-    public function getBarcodeValue()
+    public function getFamily()
     {
-        return $this->container['barcode_value'];
+        return $this->container['family'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets family
      *
-     * @param string $barcode_value Barcode data.
+     * @param string $family Font family.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setFamily($family)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['family'] = $family;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets size
      *
-     * @return string
+     * @return double
      */
-    public function getType()
+    public function getSize()
     {
-        return $this->container['type'];
+        return $this->container['size'];
     }
 
     /*
-     * Sets type
+     * Sets size
      *
-     * @param string $type Type of the barcode.
+     * @param double $size Font size in units.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setSize($size)
     {
-        $this->container['type'] = $type;
+        $this->container['size'] = $size;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets style
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return \Aspose\BarCode\Model\FontStyle
      */
-    public function getRegion()
+    public function getStyle()
     {
-        return $this->container['region'];
+        return $this->container['style'];
     }
 
     /*
-     * Sets region
+     * Sets style
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param \Aspose\BarCode\Model\FontStyle $style Font style.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setStyle($style)
     {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['style'] = $style;
 
         return $this;
     }

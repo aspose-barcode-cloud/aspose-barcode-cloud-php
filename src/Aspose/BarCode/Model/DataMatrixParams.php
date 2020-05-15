@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="DataMatrixParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * DataMatrixParams
  *
- * @description Represents information about barcode.
+ * @description DataMatrix parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class DataMatrixParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "DataMatrixParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'aspect_ratio' => 'double',
+        'text_encoding' => 'string',
+        'columns' => 'int',
+        'data_matrix_ecc' => '\Aspose\BarCode\Model\DataMatrixEccType',
+        'data_matrix_encode_mode' => '\Aspose\BarCode\Model\DataMatrixEncodeMode',
+        'rows' => 'int'
     ];
 
     /*
@@ -71,10 +73,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'aspect_ratio' => 'double',
+        'text_encoding' => null,
+        'columns' => 'int32',
+        'data_matrix_ecc' => null,
+        'data_matrix_encode_mode' => null,
+        'rows' => 'int32'
     ];
 
     /*
@@ -104,10 +108,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'aspect_ratio' => 'AspectRatio',
+        'text_encoding' => 'TextEncoding',
+        'columns' => 'Columns',
+        'data_matrix_ecc' => 'DataMatrixEcc',
+        'data_matrix_encode_mode' => 'DataMatrixEncodeMode',
+        'rows' => 'Rows'
     ];
 
     /*
@@ -116,10 +122,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'aspect_ratio' => 'setAspectRatio',
+        'text_encoding' => 'setTextEncoding',
+        'columns' => 'setColumns',
+        'data_matrix_ecc' => 'setDataMatrixEcc',
+        'data_matrix_encode_mode' => 'setDataMatrixEncodeMode',
+        'rows' => 'setRows'
     ];
 
     /*
@@ -128,10 +136,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'aspect_ratio' => 'getAspectRatio',
+        'text_encoding' => 'getTextEncoding',
+        'columns' => 'getColumns',
+        'data_matrix_ecc' => 'getDataMatrixEcc',
+        'data_matrix_encode_mode' => 'getDataMatrixEncodeMode',
+        'rows' => 'getRows'
     ];
 
     /*
@@ -194,10 +204,12 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
+        $this->container['text_encoding'] = isset($data['text_encoding']) ? $data['text_encoding'] : null;
+        $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
+        $this->container['data_matrix_ecc'] = isset($data['data_matrix_ecc']) ? $data['data_matrix_ecc'] : null;
+        $this->container['data_matrix_encode_mode'] = isset($data['data_matrix_encode_mode']) ? $data['data_matrix_encode_mode'] : null;
+        $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
     }
 
     /*
@@ -226,97 +238,145 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets aspect_ratio
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getAspectRatio()
     {
-        return $this->container['barcode_value'];
+        return $this->container['aspect_ratio'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets aspect_ratio
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setAspectRatio($aspect_ratio)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets text_encoding
      *
      * @return string
      */
-    public function getType()
+    public function getTextEncoding()
     {
-        return $this->container['type'];
+        return $this->container['text_encoding'];
     }
 
     /*
-     * Sets type
+     * Sets text_encoding
      *
-     * @param string $type Type of the barcode.
+     * @param string $text_encoding Encoding of codetext.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setTextEncoding($text_encoding)
     {
-        $this->container['type'] = $type;
+        $this->container['text_encoding'] = $text_encoding;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets columns
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return int
      */
-    public function getRegion()
+    public function getColumns()
     {
-        return $this->container['region'];
+        return $this->container['columns'];
     }
 
     /*
-     * Sets region
+     * Sets columns
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param int $columns Columns count.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setColumns($columns)
     {
-        $this->container['region'] = $region;
+        $this->container['columns'] = $columns;
 
         return $this;
     }
 
     /*
-     * Gets checksum
+     * Gets data_matrix_ecc
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\DataMatrixEccType
      */
-    public function getChecksum()
+    public function getDataMatrixEcc()
     {
-        return $this->container['checksum'];
+        return $this->container['data_matrix_ecc'];
     }
 
     /*
-     * Sets checksum
+     * Sets data_matrix_ecc
      *
-     * @param string $checksum Checksum of barcode.
+     * @param \Aspose\BarCode\Model\DataMatrixEccType $data_matrix_ecc Datamatrix ECC type. Default value: DataMatrixEccType.Ecc200.
      *
      * @return $this
      */
-    public function setChecksum($checksum)
+    public function setDataMatrixEcc($data_matrix_ecc)
     {
-        $this->container['checksum'] = $checksum;
+        $this->container['data_matrix_ecc'] = $data_matrix_ecc;
+
+        return $this;
+    }
+
+    /*
+     * Gets data_matrix_encode_mode
+     *
+     * @return \Aspose\BarCode\Model\DataMatrixEncodeMode
+     */
+    public function getDataMatrixEncodeMode()
+    {
+        return $this->container['data_matrix_encode_mode'];
+    }
+
+    /*
+     * Sets data_matrix_encode_mode
+     *
+     * @param \Aspose\BarCode\Model\DataMatrixEncodeMode $data_matrix_encode_mode Encode mode of Datamatrix barcode. Default value: DataMatrixEncodeMode.Auto.
+     *
+     * @return $this
+     */
+    public function setDataMatrixEncodeMode($data_matrix_encode_mode)
+    {
+        $this->container['data_matrix_encode_mode'] = $data_matrix_encode_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets rows
+     *
+     * @return int
+     */
+    public function getRows()
+    {
+        return $this->container['rows'];
+    }
+
+    /*
+     * Sets rows
+     *
+     * @param int $rows Rows count.
+     *
+     * @return $this
+     */
+    public function setRows($rows)
+    {
+        $this->container['rows'] = $rows;
 
         return $this;
     }

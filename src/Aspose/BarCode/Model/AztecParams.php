@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="AztecParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * AztecParams
  *
- * @description Represents information about barcode.
+ * @description Aztec parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class AztecParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "AztecParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'aspect_ratio' => 'double',
+        'error_level' => 'int',
+        'symbol_mode' => '\Aspose\BarCode\Model\AztecSymbolMode',
+        'text_encoding' => 'string'
     ];
 
     /*
@@ -71,10 +71,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'aspect_ratio' => 'double',
+        'error_level' => 'int32',
+        'symbol_mode' => null,
+        'text_encoding' => null
     ];
 
     /*
@@ -104,10 +104,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'aspect_ratio' => 'AspectRatio',
+        'error_level' => 'ErrorLevel',
+        'symbol_mode' => 'SymbolMode',
+        'text_encoding' => 'TextEncoding'
     ];
 
     /*
@@ -116,10 +116,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'aspect_ratio' => 'setAspectRatio',
+        'error_level' => 'setErrorLevel',
+        'symbol_mode' => 'setSymbolMode',
+        'text_encoding' => 'setTextEncoding'
     ];
 
     /*
@@ -128,10 +128,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'aspect_ratio' => 'getAspectRatio',
+        'error_level' => 'getErrorLevel',
+        'symbol_mode' => 'getSymbolMode',
+        'text_encoding' => 'getTextEncoding'
     ];
 
     /*
@@ -194,10 +194,10 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
+        $this->container['error_level'] = isset($data['error_level']) ? $data['error_level'] : null;
+        $this->container['symbol_mode'] = isset($data['symbol_mode']) ? $data['symbol_mode'] : null;
+        $this->container['text_encoding'] = isset($data['text_encoding']) ? $data['text_encoding'] : null;
     }
 
     /*
@@ -226,97 +226,97 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets aspect_ratio
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getAspectRatio()
     {
-        return $this->container['barcode_value'];
+        return $this->container['aspect_ratio'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets aspect_ratio
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setAspectRatio($aspect_ratio)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets error_level
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getErrorLevel()
     {
-        return $this->container['type'];
+        return $this->container['error_level'];
     }
 
     /*
-     * Sets type
+     * Sets error_level
      *
-     * @param string $type Type of the barcode.
+     * @param int $error_level Level of error correction of Aztec types of barcode. Value should between 10 to 95.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setErrorLevel($error_level)
     {
-        $this->container['type'] = $type;
+        $this->container['error_level'] = $error_level;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets symbol_mode
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return \Aspose\BarCode\Model\AztecSymbolMode
      */
-    public function getRegion()
+    public function getSymbolMode()
     {
-        return $this->container['region'];
+        return $this->container['symbol_mode'];
     }
 
     /*
-     * Sets region
+     * Sets symbol_mode
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param \Aspose\BarCode\Model\AztecSymbolMode $symbol_mode Aztec Symbol mode. Default value: AztecSymbolMode.Auto.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setSymbolMode($symbol_mode)
     {
-        $this->container['region'] = $region;
+        $this->container['symbol_mode'] = $symbol_mode;
 
         return $this;
     }
 
     /*
-     * Gets checksum
+     * Gets text_encoding
      *
      * @return string
      */
-    public function getChecksum()
+    public function getTextEncoding()
     {
-        return $this->container['checksum'];
+        return $this->container['text_encoding'];
     }
 
     /*
-     * Sets checksum
+     * Sets text_encoding
      *
-     * @param string $checksum Checksum of barcode.
+     * @param string $text_encoding Sets the encoding of codetext.
      *
      * @return $this
      */
-    public function setChecksum($checksum)
+    public function setTextEncoding($text_encoding)
     {
-        $this->container['checksum'] = $checksum;
+        $this->container['text_encoding'] = $text_encoding;
 
         return $this;
     }

@@ -13,14 +13,12 @@ final class ConfigurationTest extends TestCase
         $config->setAppKey("api key");
         $config->setAppSid("app sid");
         $config->setHost('https://api-qa.aspose.cloud');
+        $config->setAccessToken('access token');
 
         $json = json_encode($config, JSON_PRETTY_PRINT);
 
-        $this->assertEquals('{
-    "AppKey": "api key",
-    "AppSid": "app sid",
-    "Host": "https:\/\/api-qa.aspose.cloud"
-}',
+        $this->assertEquals(
+            "{\n    \"AppKey\": \"api key\",\n    \"AppSid\": \"app sid\",\n    \"ApiBaseUrl\": \"https:\/\/api-qa.aspose.cloud\",\n    \"AccessToken\": \"access token\",\n    \"Debug\": false\n}",
             $json
         );
     }
@@ -31,6 +29,7 @@ final class ConfigurationTest extends TestCase
         $config->setAppKey("api key");
         $config->setAppSid("app sid");
         $config->setHost('https://api-qa.aspose.cloud');
+        $config->setAccessToken('access token');
         $json = json_encode($config, JSON_PRETTY_PRINT);
 
         $deserialized = Configuration::fromJson($json);
@@ -46,6 +45,6 @@ final class ConfigurationTest extends TestCase
 
         $this->assertEquals("Test.AppKey", $config->getAppKey());
         $this->assertEquals("Test.AppSid", $config->getAppSid());
-        $this->assertEquals("https://api.aspose.com", $config->getHost());
+        $this->assertEquals("https://api.aspose.cloud", $config->getHost());
     }
 }

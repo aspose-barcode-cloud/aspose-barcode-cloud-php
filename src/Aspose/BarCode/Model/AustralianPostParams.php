@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="AustralianPostParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * AustralianPostParams
  *
- * @description Represents information about barcode.
+ * @description AustralianPost barcode parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class AustralianPostParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "AustralianPostParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'encoding_table' => '\Aspose\BarCode\Model\CustomerInformationInterpretingType',
+        'short_bar_height' => 'double'
     ];
 
     /*
@@ -71,10 +69,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'encoding_table' => null,
+        'short_bar_height' => 'double'
     ];
 
     /*
@@ -104,10 +100,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'encoding_table' => 'EncodingTable',
+        'short_bar_height' => 'ShortBarHeight'
     ];
 
     /*
@@ -116,10 +110,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'encoding_table' => 'setEncodingTable',
+        'short_bar_height' => 'setShortBarHeight'
     ];
 
     /*
@@ -128,10 +120,8 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'encoding_table' => 'getEncodingTable',
+        'short_bar_height' => 'getShortBarHeight'
     ];
 
     /*
@@ -194,10 +184,8 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['encoding_table'] = isset($data['encoding_table']) ? $data['encoding_table'] : null;
+        $this->container['short_bar_height'] = isset($data['short_bar_height']) ? $data['short_bar_height'] : null;
     }
 
     /*
@@ -226,97 +214,49 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets encoding_table
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\CustomerInformationInterpretingType
      */
-    public function getBarcodeValue()
+    public function getEncodingTable()
     {
-        return $this->container['barcode_value'];
+        return $this->container['encoding_table'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets encoding_table
      *
-     * @param string $barcode_value Barcode data.
+     * @param \Aspose\BarCode\Model\CustomerInformationInterpretingType $encoding_table Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\"
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setEncodingTable($encoding_table)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['encoding_table'] = $encoding_table;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets short_bar_height
      *
-     * @return string
+     * @return double
      */
-    public function getType()
+    public function getShortBarHeight()
     {
-        return $this->container['type'];
+        return $this->container['short_bar_height'];
     }
 
     /*
-     * Sets type
+     * Sets short_bar_height
      *
-     * @param string $type Type of the barcode.
+     * @param double $short_bar_height Short bar's height of AustralianPost barcode.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setShortBarHeight($short_bar_height)
     {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /*
-     * Gets region
-     *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /*
-     * Sets region
-     *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['short_bar_height'] = $short_bar_height;
 
         return $this;
     }

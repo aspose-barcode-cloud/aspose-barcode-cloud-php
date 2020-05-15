@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="CodabarChecksumMode.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,22 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * CodabarChecksumMode
  *
  * @description 
  */
-class EnableChecksum
+class CodabarChecksumMode
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Mod10
   /// </summary>
-  const Default_ =  "Default";
+  const Mod10_ =  "Mod10";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Mod16
   /// </summary>
-  const Yes_ =  "Yes";
-  
-  /// <summary>
-  /// Enum value No
-  /// </summary>
-  const No_ =  "No";
+  const Mod16_ =  "Mod16";
   
 }
 

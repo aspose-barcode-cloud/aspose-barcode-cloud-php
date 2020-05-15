@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="ITF14BorderType.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,37 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * ITF14BorderType
  *
  * @description 
  */
-class EnableChecksum
+class ITF14BorderType
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value None
   /// </summary>
-  const Default_ =  "Default";
+  const None_ =  "None";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Frame
   /// </summary>
-  const Yes_ =  "Yes";
+  const Frame_ =  "Frame";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Bar
   /// </summary>
-  const No_ =  "No";
+  const Bar_ =  "Bar";
+  
+  /// <summary>
+  /// Enum value FrameOut
+  /// </summary>
+  const FrameOut_ =  "FrameOut";
+  
+  /// <summary>
+  /// Enum value BarOut
+  /// </summary>
+  const BarOut_ =  "BarOut";
   
 }
 

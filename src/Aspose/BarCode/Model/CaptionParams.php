@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="CaptionParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * CaptionParams
  *
- * @description Represents information about barcode.
+ * @description Caption
  */
-class BarcodeResponse implements ArrayAccess
+class CaptionParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "CaptionParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'text' => 'string',
+        'alignment' => '\Aspose\BarCode\Model\TextAlignment',
+        'color' => 'string',
+        'visible' => 'bool',
+        'font' => '\Aspose\BarCode\Model\FontParams',
+        'padding' => '\Aspose\BarCode\Model\Padding'
     ];
 
     /*
@@ -71,10 +73,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'text' => null,
+        'alignment' => null,
+        'color' => null,
+        'visible' => null,
+        'font' => null,
+        'padding' => null
     ];
 
     /*
@@ -104,10 +108,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'text' => 'Text',
+        'alignment' => 'Alignment',
+        'color' => 'Color',
+        'visible' => 'Visible',
+        'font' => 'Font',
+        'padding' => 'Padding'
     ];
 
     /*
@@ -116,10 +122,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'text' => 'setText',
+        'alignment' => 'setAlignment',
+        'color' => 'setColor',
+        'visible' => 'setVisible',
+        'font' => 'setFont',
+        'padding' => 'setPadding'
     ];
 
     /*
@@ -128,10 +136,12 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'text' => 'getText',
+        'alignment' => 'getAlignment',
+        'color' => 'getColor',
+        'visible' => 'getVisible',
+        'font' => 'getFont',
+        'padding' => 'getPadding'
     ];
 
     /*
@@ -194,10 +204,12 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['alignment'] = isset($data['alignment']) ? $data['alignment'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['visible'] = isset($data['visible']) ? $data['visible'] : null;
+        $this->container['font'] = isset($data['font']) ? $data['font'] : null;
+        $this->container['padding'] = isset($data['padding']) ? $data['padding'] : null;
     }
 
     /*
@@ -226,97 +238,145 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets text
      *
      * @return string
      */
-    public function getBarcodeValue()
+    public function getText()
     {
-        return $this->container['barcode_value'];
+        return $this->container['text'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets text
      *
-     * @param string $barcode_value Barcode data.
+     * @param string $text Caption text.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setText($text)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['text'] = $text;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets alignment
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\TextAlignment
      */
-    public function getType()
+    public function getAlignment()
     {
-        return $this->container['type'];
+        return $this->container['alignment'];
     }
 
     /*
-     * Sets type
+     * Sets alignment
      *
-     * @param string $type Type of the barcode.
+     * @param \Aspose\BarCode\Model\TextAlignment $alignment Text alignment.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setAlignment($alignment)
     {
-        $this->container['type'] = $type;
+        $this->container['alignment'] = $alignment;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets color
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return string
      */
-    public function getRegion()
+    public function getColor()
     {
-        return $this->container['region'];
+        return $this->container['color'];
     }
 
     /*
-     * Sets region
+     * Sets color
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param string $color Text color.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setColor($color)
     {
-        $this->container['region'] = $region;
+        $this->container['color'] = $color;
 
         return $this;
     }
 
     /*
-     * Gets checksum
+     * Gets visible
      *
-     * @return string
+     * @return bool
      */
-    public function getChecksum()
+    public function getVisible()
     {
-        return $this->container['checksum'];
+        return $this->container['visible'];
     }
 
     /*
-     * Sets checksum
+     * Sets visible
      *
-     * @param string $checksum Checksum of barcode.
+     * @param bool $visible Is caption visible.
      *
      * @return $this
      */
-    public function setChecksum($checksum)
+    public function setVisible($visible)
     {
-        $this->container['checksum'] = $checksum;
+        $this->container['visible'] = $visible;
+
+        return $this;
+    }
+
+    /*
+     * Gets font
+     *
+     * @return \Aspose\BarCode\Model\FontParams
+     */
+    public function getFont()
+    {
+        return $this->container['font'];
+    }
+
+    /*
+     * Sets font
+     *
+     * @param \Aspose\BarCode\Model\FontParams $font Font.
+     *
+     * @return $this
+     */
+    public function setFont($font)
+    {
+        $this->container['font'] = $font;
+
+        return $this;
+    }
+
+    /*
+     * Gets padding
+     *
+     * @return \Aspose\BarCode\Model\Padding
+     */
+    public function getPadding()
+    {
+        return $this->container['padding'];
+    }
+
+    /*
+     * Sets padding
+     *
+     * @param \Aspose\BarCode\Model\Padding $padding Padding.
+     *
+     * @return $this
+     */
+    public function setPadding($padding)
+    {
+        $this->container['padding'] = $padding;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="CouponParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * CouponParams
  *
- * @description Represents information about barcode.
+ * @description Coupon parameters. Used for UpcaGs1DatabarCoupon, UpcaGs1Code128Coupon.
  */
-class BarcodeResponse implements ArrayAccess
+class CouponParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "CouponParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'supplement_space' => 'double'
     ];
 
     /*
@@ -71,10 +68,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'supplement_space' => 'double'
     ];
 
     /*
@@ -104,10 +98,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'supplement_space' => 'SupplementSpace'
     ];
 
     /*
@@ -116,10 +107,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'supplement_space' => 'setSupplementSpace'
     ];
 
     /*
@@ -128,10 +116,7 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'supplement_space' => 'getSupplementSpace'
     ];
 
     /*
@@ -194,10 +179,7 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['supplement_space'] = isset($data['supplement_space']) ? $data['supplement_space'] : null;
     }
 
     /*
@@ -226,97 +208,25 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets supplement_space
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getSupplementSpace()
     {
-        return $this->container['barcode_value'];
+        return $this->container['supplement_space'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets supplement_space
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $supplement_space Space between main the BarCode and supplement BarCode in Unit value.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setSupplementSpace($supplement_space)
     {
-        $this->container['barcode_value'] = $barcode_value;
-
-        return $this;
-    }
-
-    /*
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /*
-     * Sets type
-     *
-     * @param string $type Type of the barcode.
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /*
-     * Gets region
-     *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /*
-     * Sets region
-     *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['supplement_space'] = $supplement_space;
 
         return $this;
     }

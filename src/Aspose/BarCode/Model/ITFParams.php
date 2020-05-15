@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="ITFParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * ITFParams
  *
- * @description Represents information about barcode.
+ * @description ITF parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class ITFParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "ITFParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'border_thickness' => 'double',
+        'border_type' => '\Aspose\BarCode\Model\ITF14BorderType',
+        'quiet_zone_coef' => 'int'
     ];
 
     /*
@@ -71,10 +70,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'border_thickness' => 'double',
+        'border_type' => null,
+        'quiet_zone_coef' => 'int32'
     ];
 
     /*
@@ -104,10 +102,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'border_thickness' => 'BorderThickness',
+        'border_type' => 'BorderType',
+        'quiet_zone_coef' => 'QuietZoneCoef'
     ];
 
     /*
@@ -116,10 +113,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'border_thickness' => 'setBorderThickness',
+        'border_type' => 'setBorderType',
+        'quiet_zone_coef' => 'setQuietZoneCoef'
     ];
 
     /*
@@ -128,10 +124,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'border_thickness' => 'getBorderThickness',
+        'border_type' => 'getBorderType',
+        'quiet_zone_coef' => 'getQuietZoneCoef'
     ];
 
     /*
@@ -194,10 +189,9 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['border_thickness'] = isset($data['border_thickness']) ? $data['border_thickness'] : null;
+        $this->container['border_type'] = isset($data['border_type']) ? $data['border_type'] : null;
+        $this->container['quiet_zone_coef'] = isset($data['quiet_zone_coef']) ? $data['quiet_zone_coef'] : null;
     }
 
     /*
@@ -226,97 +220,73 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets border_thickness
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getBorderThickness()
     {
-        return $this->container['barcode_value'];
+        return $this->container['border_thickness'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets border_thickness
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $border_thickness ITF border (bearer bar) thickness in Unit value. Default value: 12pt.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setBorderThickness($border_thickness)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['border_thickness'] = $border_thickness;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets border_type
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\ITF14BorderType
      */
-    public function getType()
+    public function getBorderType()
     {
-        return $this->container['type'];
+        return $this->container['border_type'];
     }
 
     /*
-     * Sets type
+     * Sets border_type
      *
-     * @param string $type Type of the barcode.
+     * @param \Aspose\BarCode\Model\ITF14BorderType $border_type Border type of ITF barcode. Default value: ITF14BorderType.Bar.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setBorderType($border_type)
     {
-        $this->container['type'] = $type;
+        $this->container['border_type'] = $border_type;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets quiet_zone_coef
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return int
      */
-    public function getRegion()
+    public function getQuietZoneCoef()
     {
-        return $this->container['region'];
+        return $this->container['quiet_zone_coef'];
     }
 
     /*
-     * Sets region
+     * Sets quiet_zone_coef
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param int $quiet_zone_coef Size of the quiet zones in xDimension. Default value: 10, meaning if xDimension = 2px than quiet zones will be 20px.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setQuietZoneCoef($quiet_zone_coef)
     {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['quiet_zone_coef'] = $quiet_zone_coef;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="PresetType.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,42 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * PresetType
  *
- * @description 
+ * @description See QualitySettings allows to configure recognition quality and speed manually.
  */
-class EnableChecksum
+class PresetType
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value HighPerformance
   /// </summary>
-  const Default_ =  "Default";
+  const HighPerformance_ =  "HighPerformance";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value NormalQuality
   /// </summary>
-  const Yes_ =  "Yes";
+  const NormalQuality_ =  "NormalQuality";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value HighQualityDetection
   /// </summary>
-  const No_ =  "No";
+  const HighQualityDetection_ =  "HighQualityDetection";
+  
+  /// <summary>
+  /// Enum value MaxQualityDetection
+  /// </summary>
+  const MaxQualityDetection_ =  "MaxQualityDetection";
+  
+  /// <summary>
+  /// Enum value HighQuality
+  /// </summary>
+  const HighQuality_ =  "HighQuality";
+  
+  /// <summary>
+  /// Enum value MaxBarCodes
+  /// </summary>
+  const MaxBarCodes_ =  "MaxBarCodes";
   
 }
 

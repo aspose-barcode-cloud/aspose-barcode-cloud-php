@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="Padding.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * Padding
  *
- * @description Represents information about barcode.
+ * @description Padding around barcode.
  */
-class BarcodeResponse implements ArrayAccess
+class Padding implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "Padding";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'left' => 'double',
+        'right' => 'double',
+        'top' => 'double',
+        'bottom' => 'double'
     ];
 
     /*
@@ -71,10 +71,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'left' => 'double',
+        'right' => 'double',
+        'top' => 'double',
+        'bottom' => 'double'
     ];
 
     /*
@@ -104,10 +104,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'left' => 'Left',
+        'right' => 'Right',
+        'top' => 'Top',
+        'bottom' => 'Bottom'
     ];
 
     /*
@@ -116,10 +116,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'left' => 'setLeft',
+        'right' => 'setRight',
+        'top' => 'setTop',
+        'bottom' => 'setBottom'
     ];
 
     /*
@@ -128,10 +128,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'left' => 'getLeft',
+        'right' => 'getRight',
+        'top' => 'getTop',
+        'bottom' => 'getBottom'
     ];
 
     /*
@@ -194,10 +194,10 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
+        $this->container['right'] = isset($data['right']) ? $data['right'] : null;
+        $this->container['top'] = isset($data['top']) ? $data['top'] : null;
+        $this->container['bottom'] = isset($data['bottom']) ? $data['bottom'] : null;
     }
 
     /*
@@ -226,97 +226,97 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets left
      *
-     * @return string
+     * @return double
      */
-    public function getBarcodeValue()
+    public function getLeft()
     {
-        return $this->container['barcode_value'];
+        return $this->container['left'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets left
      *
-     * @param string $barcode_value Barcode data.
+     * @param double $left Left padding.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setLeft($left)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['left'] = $left;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets right
      *
-     * @return string
+     * @return double
      */
-    public function getType()
+    public function getRight()
     {
-        return $this->container['type'];
+        return $this->container['right'];
     }
 
     /*
-     * Sets type
+     * Sets right
      *
-     * @param string $type Type of the barcode.
+     * @param double $right Right padding.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setRight($right)
     {
-        $this->container['type'] = $type;
+        $this->container['right'] = $right;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets top
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return double
      */
-    public function getRegion()
+    public function getTop()
     {
-        return $this->container['region'];
+        return $this->container['top'];
     }
 
     /*
-     * Sets region
+     * Sets top
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param double $top Top padding.
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setTop($top)
     {
-        $this->container['region'] = $region;
+        $this->container['top'] = $top;
 
         return $this;
     }
 
     /*
-     * Gets checksum
+     * Gets bottom
      *
-     * @return string
+     * @return double
      */
-    public function getChecksum()
+    public function getBottom()
     {
-        return $this->container['checksum'];
+        return $this->container['bottom'];
     }
 
     /*
-     * Sets checksum
+     * Sets bottom
      *
-     * @param string $checksum Checksum of barcode.
+     * @param double $bottom Bottom padding.
      *
      * @return $this
      */
-    public function setChecksum($checksum)
+    public function setBottom($bottom)
     {
-        $this->container['checksum'] = $checksum;
+        $this->container['bottom'] = $bottom;
 
         return $this;
     }

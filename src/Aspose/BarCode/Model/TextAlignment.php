@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="TextAlignment.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,27 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * TextAlignment
  *
  * @description 
  */
-class EnableChecksum
+class TextAlignment
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Left
   /// </summary>
-  const Default_ =  "Default";
+  const Left_ =  "Left";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Center
   /// </summary>
-  const Yes_ =  "Yes";
+  const Center_ =  "Center";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Right
   /// </summary>
-  const No_ =  "No";
+  const Right_ =  "Right";
   
 }
 

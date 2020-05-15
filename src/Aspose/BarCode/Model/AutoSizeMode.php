@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="AutoSizeMode.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,27 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * AutoSizeMode
  *
  * @description 
  */
-class EnableChecksum
+class AutoSizeMode
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value None
   /// </summary>
-  const Default_ =  "Default";
+  const None_ =  "None";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Nearest
   /// </summary>
-  const Yes_ =  "Yes";
+  const Nearest_ =  "Nearest";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Interpolation
   /// </summary>
-  const No_ =  "No";
+  const Interpolation_ =  "Interpolation";
   
 }
 

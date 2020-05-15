@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="Pdf417ErrorLevel.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,57 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * Pdf417ErrorLevel
  *
  * @description 
  */
-class EnableChecksum
+class Pdf417ErrorLevel
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Level0
   /// </summary>
-  const Default_ =  "Default";
+  const Level0_ =  "Level0";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Level1
   /// </summary>
-  const Yes_ =  "Yes";
+  const Level1_ =  "Level1";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Level2
   /// </summary>
-  const No_ =  "No";
+  const Level2_ =  "Level2";
+  
+  /// <summary>
+  /// Enum value Level3
+  /// </summary>
+  const Level3_ =  "Level3";
+  
+  /// <summary>
+  /// Enum value Level4
+  /// </summary>
+  const Level4_ =  "Level4";
+  
+  /// <summary>
+  /// Enum value Level5
+  /// </summary>
+  const Level5_ =  "Level5";
+  
+  /// <summary>
+  /// Enum value Level6
+  /// </summary>
+  const Level6_ =  "Level6";
+  
+  /// <summary>
+  /// Enum value Level7
+  /// </summary>
+  const Level7_ =  "Level7";
+  
+  /// <summary>
+  /// Enum value Level8
+  /// </summary>
+  const Level8_ =  "Level8";
   
 }
 

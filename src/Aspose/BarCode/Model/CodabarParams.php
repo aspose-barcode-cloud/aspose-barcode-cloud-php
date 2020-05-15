@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.php">
+ * <copyright company="Aspose" file="CodabarParams.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarcodeResponse
+ * CodabarParams
  *
- * @description Represents information about barcode.
+ * @description Codabar parameters.
  */
-class BarcodeResponse implements ArrayAccess
+class CodabarParams implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class BarcodeResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarcodeResponse";
+    protected static $swaggerModelName = "CodabarParams";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'type' => 'string',
-        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
-        'checksum' => 'string'
+        'checksum_mode' => '\Aspose\BarCode\Model\CodabarChecksumMode',
+        'start_symbol' => '\Aspose\BarCode\Model\CodabarSymbol',
+        'stop_symbol' => '\Aspose\BarCode\Model\CodabarSymbol'
     ];
 
     /*
@@ -71,10 +70,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'barcode_value' => null,
-        'type' => null,
-        'region' => null,
-        'checksum' => null
+        'checksum_mode' => null,
+        'start_symbol' => null,
+        'stop_symbol' => null
     ];
 
     /*
@@ -104,10 +102,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'checksum_mode' => 'ChecksumMode',
+        'start_symbol' => 'StartSymbol',
+        'stop_symbol' => 'StopSymbol'
     ];
 
     /*
@@ -116,10 +113,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue',
-        'type' => 'setType',
-        'region' => 'setRegion',
-        'checksum' => 'setChecksum'
+        'checksum_mode' => 'setChecksumMode',
+        'start_symbol' => 'setStartSymbol',
+        'stop_symbol' => 'setStopSymbol'
     ];
 
     /*
@@ -128,10 +124,9 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue',
-        'type' => 'getType',
-        'region' => 'getRegion',
-        'checksum' => 'getChecksum'
+        'checksum_mode' => 'getChecksumMode',
+        'start_symbol' => 'getStartSymbol',
+        'stop_symbol' => 'getStopSymbol'
     ];
 
     /*
@@ -194,10 +189,9 @@ class BarcodeResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['checksum_mode'] = isset($data['checksum_mode']) ? $data['checksum_mode'] : null;
+        $this->container['start_symbol'] = isset($data['start_symbol']) ? $data['start_symbol'] : null;
+        $this->container['stop_symbol'] = isset($data['stop_symbol']) ? $data['stop_symbol'] : null;
     }
 
     /*
@@ -226,97 +220,73 @@ class BarcodeResponse implements ArrayAccess
 
 
     /*
-     * Gets barcode_value
+     * Gets checksum_mode
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\CodabarChecksumMode
      */
-    public function getBarcodeValue()
+    public function getChecksumMode()
     {
-        return $this->container['barcode_value'];
+        return $this->container['checksum_mode'];
     }
 
     /*
-     * Sets barcode_value
+     * Sets checksum_mode
      *
-     * @param string $barcode_value Barcode data.
+     * @param \Aspose\BarCode\Model\CodabarChecksumMode $checksum_mode Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum.
      *
      * @return $this
      */
-    public function setBarcodeValue($barcode_value)
+    public function setChecksumMode($checksum_mode)
     {
-        $this->container['barcode_value'] = $barcode_value;
+        $this->container['checksum_mode'] = $checksum_mode;
 
         return $this;
     }
 
     /*
-     * Gets type
+     * Gets start_symbol
      *
-     * @return string
+     * @return \Aspose\BarCode\Model\CodabarSymbol
      */
-    public function getType()
+    public function getStartSymbol()
     {
-        return $this->container['type'];
+        return $this->container['start_symbol'];
     }
 
     /*
-     * Sets type
+     * Sets start_symbol
      *
-     * @param string $type Type of the barcode.
+     * @param \Aspose\BarCode\Model\CodabarSymbol $start_symbol Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
      *
      * @return $this
      */
-    public function setType($type)
+    public function setStartSymbol($start_symbol)
     {
-        $this->container['type'] = $type;
+        $this->container['start_symbol'] = $start_symbol;
 
         return $this;
     }
 
     /*
-     * Gets region
+     * Gets stop_symbol
      *
-     * @return \Aspose\BarCode\Model\RegionPoint[]
+     * @return \Aspose\BarCode\Model\CodabarSymbol
      */
-    public function getRegion()
+    public function getStopSymbol()
     {
-        return $this->container['region'];
+        return $this->container['stop_symbol'];
     }
 
     /*
-     * Sets region
+     * Sets stop_symbol
      *
-     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
+     * @param \Aspose\BarCode\Model\CodabarSymbol $stop_symbol Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setStopSymbol($stop_symbol)
     {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /*
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /*
-     * Sets checksum
-     *
-     * @param string $checksum Checksum of barcode.
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['stop_symbol'] = $stop_symbol;
 
         return $this;
     }

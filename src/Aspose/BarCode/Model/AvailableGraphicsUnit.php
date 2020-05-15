@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EnableChecksum.php">
+ * <copyright company="Aspose" file="AvailableGraphicsUnit.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -36,27 +36,32 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * EnableChecksum
+ * AvailableGraphicsUnit
  *
- * @description 
+ * @description Subset of GraphicsUnit.
  */
-class EnableChecksum
+class AvailableGraphicsUnit
 {
 
   /// <summary>
-  /// Enum value Default
+  /// Enum value Pixel
   /// </summary>
-  const Default_ =  "Default";
+  const Pixel_ =  "Pixel";
   
   /// <summary>
-  /// Enum value Yes
+  /// Enum value Point
   /// </summary>
-  const Yes_ =  "Yes";
+  const Point_ =  "Point";
   
   /// <summary>
-  /// Enum value No
+  /// Enum value Inch
   /// </summary>
-  const No_ =  "No";
+  const Inch_ =  "Inch";
+  
+  /// <summary>
+  /// Enum value Millimeter
+  /// </summary>
+  const Millimeter_ =  "Millimeter";
   
 }
 
