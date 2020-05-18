@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,22 +46,22 @@ class AztecSymbolMode
   /// <summary>
   /// Enum value Auto
   /// </summary>
-  const Auto_ =  "Auto";
+  const Auto =  "Auto";
   
   /// <summary>
   /// Enum value Compact
   /// </summary>
-  const Compact_ =  "Compact";
+  const Compact =  "Compact";
   
   /// <summary>
   /// Enum value FullRange
   /// </summary>
-  const FullRange_ =  "FullRange";
+  const FullRange =  "FullRange";
   
   /// <summary>
   /// Enum value Rune
   /// </summary>
-  const Rune_ =  "Rune";
+  const Rune =  "Rune";
   
 }
 

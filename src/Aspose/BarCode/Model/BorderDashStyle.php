@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,27 +46,27 @@ class BorderDashStyle
   /// <summary>
   /// Enum value Solid
   /// </summary>
-  const Solid_ =  "Solid";
+  const Solid =  "Solid";
   
   /// <summary>
   /// Enum value Dash
   /// </summary>
-  const Dash_ =  "Dash";
+  const Dash =  "Dash";
   
   /// <summary>
   /// Enum value Dot
   /// </summary>
-  const Dot_ =  "Dot";
+  const Dot =  "Dot";
   
   /// <summary>
   /// Enum value DashDot
   /// </summary>
-  const DashDot_ =  "DashDot";
+  const DashDot =  "DashDot";
   
   /// <summary>
   /// Enum value DashDotDot
   /// </summary>
-  const DashDotDot_ =  "DashDotDot";
+  const DashDotDot =  "DashDotDot";
   
 }
 

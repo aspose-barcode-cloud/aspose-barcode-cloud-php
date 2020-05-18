@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,337 +46,337 @@ class DecodeBarcodeType
   /// <summary>
   /// Enum value all
   /// </summary>
-  const all_ =  "all";
+  const all =  "all";
   
   /// <summary>
   /// Enum value AustraliaPost
   /// </summary>
-  const AustraliaPost_ =  "AustraliaPost";
+  const AustraliaPost =  "AustraliaPost";
   
   /// <summary>
   /// Enum value Aztec
   /// </summary>
-  const Aztec_ =  "Aztec";
+  const Aztec =  "Aztec";
   
   /// <summary>
   /// Enum value ISBN
   /// </summary>
-  const ISBN_ =  "ISBN";
+  const ISBN =  "ISBN";
   
   /// <summary>
   /// Enum value Codabar
   /// </summary>
-  const Codabar_ =  "Codabar";
+  const Codabar =  "Codabar";
   
   /// <summary>
   /// Enum value Code11
   /// </summary>
-  const Code11_ =  "Code11";
+  const Code11 =  "Code11";
   
   /// <summary>
   /// Enum value Code128
   /// </summary>
-  const Code128_ =  "Code128";
+  const Code128 =  "Code128";
   
   /// <summary>
   /// Enum value GS1Code128
   /// </summary>
-  const GS1Code128_ =  "GS1Code128";
+  const GS1Code128 =  "GS1Code128";
   
   /// <summary>
   /// Enum value Code39Extended
   /// </summary>
-  const Code39Extended_ =  "Code39Extended";
+  const Code39Extended =  "Code39Extended";
   
   /// <summary>
   /// Enum value Code39Standard
   /// </summary>
-  const Code39Standard_ =  "Code39Standard";
+  const Code39Standard =  "Code39Standard";
   
   /// <summary>
   /// Enum value Code93Extended
   /// </summary>
-  const Code93Extended_ =  "Code93Extended";
+  const Code93Extended =  "Code93Extended";
   
   /// <summary>
   /// Enum value Code93Standard
   /// </summary>
-  const Code93Standard_ =  "Code93Standard";
+  const Code93Standard =  "Code93Standard";
   
   /// <summary>
   /// Enum value DataMatrix
   /// </summary>
-  const DataMatrix_ =  "DataMatrix";
+  const DataMatrix =  "DataMatrix";
   
   /// <summary>
   /// Enum value DeutschePostIdentcode
   /// </summary>
-  const DeutschePostIdentcode_ =  "DeutschePostIdentcode";
+  const DeutschePostIdentcode =  "DeutschePostIdentcode";
   
   /// <summary>
   /// Enum value DeutschePostLeitcode
   /// </summary>
-  const DeutschePostLeitcode_ =  "DeutschePostLeitcode";
+  const DeutschePostLeitcode =  "DeutschePostLeitcode";
   
   /// <summary>
   /// Enum value EAN13
   /// </summary>
-  const EAN13_ =  "EAN13";
+  const EAN13 =  "EAN13";
   
   /// <summary>
   /// Enum value EAN14
   /// </summary>
-  const EAN14_ =  "EAN14";
+  const EAN14 =  "EAN14";
   
   /// <summary>
   /// Enum value EAN8
   /// </summary>
-  const EAN8_ =  "EAN8";
+  const EAN8 =  "EAN8";
   
   /// <summary>
   /// Enum value IATA2of5
   /// </summary>
-  const IATA2of5_ =  "IATA2of5";
+  const IATA2of5 =  "IATA2of5";
   
   /// <summary>
   /// Enum value Interleaved2of5
   /// </summary>
-  const Interleaved2of5_ =  "Interleaved2of5";
+  const Interleaved2of5 =  "Interleaved2of5";
   
   /// <summary>
   /// Enum value ISSN
   /// </summary>
-  const ISSN_ =  "ISSN";
+  const ISSN =  "ISSN";
   
   /// <summary>
   /// Enum value ISMN
   /// </summary>
-  const ISMN_ =  "ISMN";
+  const ISMN =  "ISMN";
   
   /// <summary>
   /// Enum value ItalianPost25
   /// </summary>
-  const ItalianPost25_ =  "ItalianPost25";
+  const ItalianPost25 =  "ItalianPost25";
   
   /// <summary>
   /// Enum value ITF14
   /// </summary>
-  const ITF14_ =  "ITF14";
+  const ITF14 =  "ITF14";
   
   /// <summary>
   /// Enum value ITF6
   /// </summary>
-  const ITF6_ =  "ITF6";
+  const ITF6 =  "ITF6";
   
   /// <summary>
   /// Enum value MacroPdf417
   /// </summary>
-  const MacroPdf417_ =  "MacroPdf417";
+  const MacroPdf417 =  "MacroPdf417";
   
   /// <summary>
   /// Enum value Matrix2of5
   /// </summary>
-  const Matrix2of5_ =  "Matrix2of5";
+  const Matrix2of5 =  "Matrix2of5";
   
   /// <summary>
   /// Enum value MSI
   /// </summary>
-  const MSI_ =  "MSI";
+  const MSI =  "MSI";
   
   /// <summary>
   /// Enum value OneCode
   /// </summary>
-  const OneCode_ =  "OneCode";
+  const OneCode =  "OneCode";
   
   /// <summary>
   /// Enum value OPC
   /// </summary>
-  const OPC_ =  "OPC";
+  const OPC =  "OPC";
   
   /// <summary>
   /// Enum value PatchCode
   /// </summary>
-  const PatchCode_ =  "PatchCode";
+  const PatchCode =  "PatchCode";
   
   /// <summary>
   /// Enum value Pdf417
   /// </summary>
-  const Pdf417_ =  "Pdf417";
+  const Pdf417 =  "Pdf417";
   
   /// <summary>
   /// Enum value MicroPdf417
   /// </summary>
-  const MicroPdf417_ =  "MicroPdf417";
+  const MicroPdf417 =  "MicroPdf417";
   
   /// <summary>
   /// Enum value Planet
   /// </summary>
-  const Planet_ =  "Planet";
+  const Planet =  "Planet";
   
   /// <summary>
   /// Enum value Postnet
   /// </summary>
-  const Postnet_ =  "Postnet";
+  const Postnet =  "Postnet";
   
   /// <summary>
   /// Enum value PZN
   /// </summary>
-  const PZN_ =  "PZN";
+  const PZN =  "PZN";
   
   /// <summary>
   /// Enum value QR
   /// </summary>
-  const QR_ =  "QR";
+  const QR =  "QR";
   
   /// <summary>
   /// Enum value MicroQR
   /// </summary>
-  const MicroQR_ =  "MicroQR";
+  const MicroQR =  "MicroQR";
   
   /// <summary>
   /// Enum value RM4SCC
   /// </summary>
-  const RM4SCC_ =  "RM4SCC";
+  const RM4SCC =  "RM4SCC";
   
   /// <summary>
   /// Enum value SCC14
   /// </summary>
-  const SCC14_ =  "SCC14";
+  const SCC14 =  "SCC14";
   
   /// <summary>
   /// Enum value SSCC18
   /// </summary>
-  const SSCC18_ =  "SSCC18";
+  const SSCC18 =  "SSCC18";
   
   /// <summary>
   /// Enum value Standard2of5
   /// </summary>
-  const Standard2of5_ =  "Standard2of5";
+  const Standard2of5 =  "Standard2of5";
   
   /// <summary>
   /// Enum value Supplement
   /// </summary>
-  const Supplement_ =  "Supplement";
+  const Supplement =  "Supplement";
   
   /// <summary>
   /// Enum value UPCA
   /// </summary>
-  const UPCA_ =  "UPCA";
+  const UPCA =  "UPCA";
   
   /// <summary>
   /// Enum value UPCE
   /// </summary>
-  const UPCE_ =  "UPCE";
+  const UPCE =  "UPCE";
   
   /// <summary>
   /// Enum value VIN
   /// </summary>
-  const VIN_ =  "VIN";
+  const VIN =  "VIN";
   
   /// <summary>
   /// Enum value Pharmacode
   /// </summary>
-  const Pharmacode_ =  "Pharmacode";
+  const Pharmacode =  "Pharmacode";
   
   /// <summary>
   /// Enum value GS1DataMatrix
   /// </summary>
-  const GS1DataMatrix_ =  "GS1DataMatrix";
+  const GS1DataMatrix =  "GS1DataMatrix";
   
   /// <summary>
   /// Enum value DatabarOmniDirectional
   /// </summary>
-  const DatabarOmniDirectional_ =  "DatabarOmniDirectional";
+  const DatabarOmniDirectional =  "DatabarOmniDirectional";
   
   /// <summary>
   /// Enum value DatabarTruncated
   /// </summary>
-  const DatabarTruncated_ =  "DatabarTruncated";
+  const DatabarTruncated =  "DatabarTruncated";
   
   /// <summary>
   /// Enum value DatabarLimited
   /// </summary>
-  const DatabarLimited_ =  "DatabarLimited";
+  const DatabarLimited =  "DatabarLimited";
   
   /// <summary>
   /// Enum value DatabarExpanded
   /// </summary>
-  const DatabarExpanded_ =  "DatabarExpanded";
+  const DatabarExpanded =  "DatabarExpanded";
   
   /// <summary>
   /// Enum value SwissPostParcel
   /// </summary>
-  const SwissPostParcel_ =  "SwissPostParcel";
+  const SwissPostParcel =  "SwissPostParcel";
   
   /// <summary>
   /// Enum value AustralianPosteParcel
   /// </summary>
-  const AustralianPosteParcel_ =  "AustralianPosteParcel";
+  const AustralianPosteParcel =  "AustralianPosteParcel";
   
   /// <summary>
   /// Enum value Code16K
   /// </summary>
-  const Code16K_ =  "Code16K";
+  const Code16K =  "Code16K";
   
   /// <summary>
   /// Enum value DatabarStackedOmniDirectional
   /// </summary>
-  const DatabarStackedOmniDirectional_ =  "DatabarStackedOmniDirectional";
+  const DatabarStackedOmniDirectional =  "DatabarStackedOmniDirectional";
   
   /// <summary>
   /// Enum value DatabarStacked
   /// </summary>
-  const DatabarStacked_ =  "DatabarStacked";
+  const DatabarStacked =  "DatabarStacked";
   
   /// <summary>
   /// Enum value DatabarExpandedStacked
   /// </summary>
-  const DatabarExpandedStacked_ =  "DatabarExpandedStacked";
+  const DatabarExpandedStacked =  "DatabarExpandedStacked";
   
   /// <summary>
   /// Enum value CompactPdf417
   /// </summary>
-  const CompactPdf417_ =  "CompactPdf417";
+  const CompactPdf417 =  "CompactPdf417";
   
   /// <summary>
   /// Enum value GS1QR
   /// </summary>
-  const GS1QR_ =  "GS1QR";
+  const GS1QR =  "GS1QR";
   
   /// <summary>
   /// Enum value MaxiCode
   /// </summary>
-  const MaxiCode_ =  "MaxiCode";
+  const MaxiCode =  "MaxiCode";
   
   /// <summary>
   /// Enum value MicrE13B
   /// </summary>
-  const MicrE13B_ =  "MicrE13B";
+  const MicrE13B =  "MicrE13B";
   
   /// <summary>
   /// Enum value Code32
   /// </summary>
-  const Code32_ =  "Code32";
+  const Code32 =  "Code32";
   
   /// <summary>
   /// Enum value DataLogic2of5
   /// </summary>
-  const DataLogic2of5_ =  "DataLogic2of5";
+  const DataLogic2of5 =  "DataLogic2of5";
   
   /// <summary>
   /// Enum value DotCode
   /// </summary>
-  const DotCode_ =  "DotCode";
+  const DotCode =  "DotCode";
   
   /// <summary>
   /// Enum value DutchKIX
   /// </summary>
-  const DutchKIX_ =  "DutchKIX";
+  const DutchKIX =  "DutchKIX";
   
   /// <summary>
   /// Enum value CodablockF
   /// </summary>
-  const CodablockF_ =  "CodablockF";
+  const CodablockF =  "CodablockF";
   
 }
 

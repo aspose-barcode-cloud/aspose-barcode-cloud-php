@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="CodabarParams.php">
+ * <copyright company="Aspose" file="ObjectExist.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * CodabarParams
+ * ObjectExist
  *
- * @description Codabar parameters.
+ * @description Object exists
  */
-class CodabarParams implements ArrayAccess
+class ObjectExist implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CodabarParams implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "CodabarParams";
+    protected static $swaggerModelName = "ObjectExist";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'checksum_mode' => '\Aspose\BarCode\Model\CodabarChecksumMode',
-        'start_symbol' => '\Aspose\BarCode\Model\CodabarSymbol',
-        'stop_symbol' => '\Aspose\BarCode\Model\CodabarSymbol'
+        'exists' => 'bool',
+        'is_folder' => 'bool'
     ];
 
     /*
@@ -70,9 +69,8 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'checksum_mode' => null,
-        'start_symbol' => null,
-        'stop_symbol' => null
+        'exists' => null,
+        'is_folder' => null
     ];
 
     /*
@@ -102,9 +100,8 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'checksum_mode' => 'ChecksumMode',
-        'start_symbol' => 'StartSymbol',
-        'stop_symbol' => 'StopSymbol'
+        'exists' => 'Exists',
+        'is_folder' => 'IsFolder'
     ];
 
     /*
@@ -113,9 +110,8 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'checksum_mode' => 'setChecksumMode',
-        'start_symbol' => 'setStartSymbol',
-        'stop_symbol' => 'setStopSymbol'
+        'exists' => 'setExists',
+        'is_folder' => 'setIsFolder'
     ];
 
     /*
@@ -124,9 +120,8 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'checksum_mode' => 'getChecksumMode',
-        'start_symbol' => 'getStartSymbol',
-        'stop_symbol' => 'getStopSymbol'
+        'exists' => 'getExists',
+        'is_folder' => 'getIsFolder'
     ];
 
     /*
@@ -189,9 +184,8 @@ class CodabarParams implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['checksum_mode'] = isset($data['checksum_mode']) ? $data['checksum_mode'] : null;
-        $this->container['start_symbol'] = isset($data['start_symbol']) ? $data['start_symbol'] : null;
-        $this->container['stop_symbol'] = isset($data['stop_symbol']) ? $data['stop_symbol'] : null;
+        $this->container['exists'] = isset($data['exists']) ? $data['exists'] : null;
+        $this->container['is_folder'] = isset($data['is_folder']) ? $data['is_folder'] : null;
     }
 
     /*
@@ -203,6 +197,12 @@ class CodabarParams implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['exists'] === null) {
+            $invalidProperties[] = "'exists' can't be null";
+        }
+        if ($this->container['is_folder'] === null) {
+            $invalidProperties[] = "'is_folder' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -215,78 +215,60 @@ class CodabarParams implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['exists'] === null) {
+            return false;
+        }
+        if ($this->container['is_folder'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets checksum_mode
+     * Gets exists
      *
-     * @return \Aspose\BarCode\Model\CodabarChecksumMode
+     * @return bool
      */
-    public function getChecksumMode()
+    public function getExists()
     {
-        return $this->container['checksum_mode'];
+        return $this->container['exists'];
     }
 
     /*
-     * Sets checksum_mode
+     * Sets exists
      *
-     * @param \Aspose\BarCode\Model\CodabarChecksumMode $checksum_mode Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum.
+     * @param bool $exists Indicates that the file or folder exists.
      *
      * @return $this
      */
-    public function setChecksumMode($checksum_mode)
+    public function setExists($exists)
     {
-        $this->container['checksum_mode'] = $checksum_mode;
+        $this->container['exists'] = $exists;
 
         return $this;
     }
 
     /*
-     * Gets start_symbol
+     * Gets is_folder
      *
-     * @return \Aspose\BarCode\Model\CodabarSymbol
+     * @return bool
      */
-    public function getStartSymbol()
+    public function getIsFolder()
     {
-        return $this->container['start_symbol'];
+        return $this->container['is_folder'];
     }
 
     /*
-     * Sets start_symbol
+     * Sets is_folder
      *
-     * @param \Aspose\BarCode\Model\CodabarSymbol $start_symbol Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
+     * @param bool $is_folder True if it is a folder, false if it is a file.
      *
      * @return $this
      */
-    public function setStartSymbol($start_symbol)
+    public function setIsFolder($is_folder)
     {
-        $this->container['start_symbol'] = $start_symbol;
-
-        return $this;
-    }
-
-    /*
-     * Gets stop_symbol
-     *
-     * @return \Aspose\BarCode\Model\CodabarSymbol
-     */
-    public function getStopSymbol()
-    {
-        return $this->container['stop_symbol'];
-    }
-
-    /*
-     * Sets stop_symbol
-     *
-     * @param \Aspose\BarCode\Model\CodabarSymbol $stop_symbol Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
-     *
-     * @return $this
-     */
-    public function setStopSymbol($stop_symbol)
-    {
-        $this->container['stop_symbol'] = $stop_symbol;
+        $this->container['is_folder'] = $is_folder;
 
         return $this;
     }

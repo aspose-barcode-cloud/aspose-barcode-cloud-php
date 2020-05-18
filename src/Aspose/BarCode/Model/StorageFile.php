@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="CodabarParams.php">
+ * <copyright company="Aspose" file="StorageFile.php">
  *   Copyright (c) 2018 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * CodabarParams
+ * StorageFile
  *
- * @description Codabar parameters.
+ * @description File or folder information
  */
-class CodabarParams implements ArrayAccess
+class StorageFile implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CodabarParams implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "CodabarParams";
+    protected static $swaggerModelName = "StorageFile";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,11 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'checksum_mode' => '\Aspose\BarCode\Model\CodabarChecksumMode',
-        'start_symbol' => '\Aspose\BarCode\Model\CodabarSymbol',
-        'stop_symbol' => '\Aspose\BarCode\Model\CodabarSymbol'
+        'name' => 'string',
+        'is_folder' => 'bool',
+        'modified_date' => '\DateTime',
+        'size' => 'int',
+        'path' => 'string'
     ];
 
     /*
@@ -70,9 +72,11 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'checksum_mode' => null,
-        'start_symbol' => null,
-        'stop_symbol' => null
+        'name' => null,
+        'is_folder' => null,
+        'modified_date' => 'date-time',
+        'size' => 'int64',
+        'path' => null
     ];
 
     /*
@@ -102,9 +106,11 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'checksum_mode' => 'ChecksumMode',
-        'start_symbol' => 'StartSymbol',
-        'stop_symbol' => 'StopSymbol'
+        'name' => 'Name',
+        'is_folder' => 'IsFolder',
+        'modified_date' => 'ModifiedDate',
+        'size' => 'Size',
+        'path' => 'Path'
     ];
 
     /*
@@ -113,9 +119,11 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'checksum_mode' => 'setChecksumMode',
-        'start_symbol' => 'setStartSymbol',
-        'stop_symbol' => 'setStopSymbol'
+        'name' => 'setName',
+        'is_folder' => 'setIsFolder',
+        'modified_date' => 'setModifiedDate',
+        'size' => 'setSize',
+        'path' => 'setPath'
     ];
 
     /*
@@ -124,9 +132,11 @@ class CodabarParams implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'checksum_mode' => 'getChecksumMode',
-        'start_symbol' => 'getStartSymbol',
-        'stop_symbol' => 'getStopSymbol'
+        'name' => 'getName',
+        'is_folder' => 'getIsFolder',
+        'modified_date' => 'getModifiedDate',
+        'size' => 'getSize',
+        'path' => 'getPath'
     ];
 
     /*
@@ -189,9 +199,11 @@ class CodabarParams implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['checksum_mode'] = isset($data['checksum_mode']) ? $data['checksum_mode'] : null;
-        $this->container['start_symbol'] = isset($data['start_symbol']) ? $data['start_symbol'] : null;
-        $this->container['stop_symbol'] = isset($data['stop_symbol']) ? $data['stop_symbol'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['is_folder'] = isset($data['is_folder']) ? $data['is_folder'] : null;
+        $this->container['modified_date'] = isset($data['modified_date']) ? $data['modified_date'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
     }
 
     /*
@@ -203,6 +215,12 @@ class CodabarParams implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['is_folder'] === null) {
+            $invalidProperties[] = "'is_folder' can't be null";
+        }
+        if ($this->container['size'] === null) {
+            $invalidProperties[] = "'size' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -215,78 +233,132 @@ class CodabarParams implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['is_folder'] === null) {
+            return false;
+        }
+        if ($this->container['size'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets checksum_mode
+     * Gets name
      *
-     * @return \Aspose\BarCode\Model\CodabarChecksumMode
+     * @return string
      */
-    public function getChecksumMode()
+    public function getName()
     {
-        return $this->container['checksum_mode'];
+        return $this->container['name'];
     }
 
     /*
-     * Sets checksum_mode
+     * Sets name
      *
-     * @param \Aspose\BarCode\Model\CodabarChecksumMode $checksum_mode Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum.
+     * @param string $name File or folder name.
      *
      * @return $this
      */
-    public function setChecksumMode($checksum_mode)
+    public function setName($name)
     {
-        $this->container['checksum_mode'] = $checksum_mode;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /*
-     * Gets start_symbol
+     * Gets is_folder
      *
-     * @return \Aspose\BarCode\Model\CodabarSymbol
+     * @return bool
      */
-    public function getStartSymbol()
+    public function getIsFolder()
     {
-        return $this->container['start_symbol'];
+        return $this->container['is_folder'];
     }
 
     /*
-     * Sets start_symbol
+     * Sets is_folder
      *
-     * @param \Aspose\BarCode\Model\CodabarSymbol $start_symbol Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
+     * @param bool $is_folder True if it is a folder.
      *
      * @return $this
      */
-    public function setStartSymbol($start_symbol)
+    public function setIsFolder($is_folder)
     {
-        $this->container['start_symbol'] = $start_symbol;
+        $this->container['is_folder'] = $is_folder;
 
         return $this;
     }
 
     /*
-     * Gets stop_symbol
+     * Gets modified_date
      *
-     * @return \Aspose\BarCode\Model\CodabarSymbol
+     * @return \DateTime
      */
-    public function getStopSymbol()
+    public function getModifiedDate()
     {
-        return $this->container['stop_symbol'];
+        return $this->container['modified_date'];
     }
 
     /*
-     * Sets stop_symbol
+     * Sets modified_date
      *
-     * @param \Aspose\BarCode\Model\CodabarSymbol $stop_symbol Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
+     * @param \DateTime $modified_date File or folder last modified DateTime.
      *
      * @return $this
      */
-    public function setStopSymbol($stop_symbol)
+    public function setModifiedDate($modified_date)
     {
-        $this->container['stop_symbol'] = $stop_symbol;
+        $this->container['modified_date'] = $modified_date;
+
+        return $this;
+    }
+
+    /*
+     * Gets size
+     *
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /*
+     * Sets size
+     *
+     * @param int $size File or folder size.
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
+
+        return $this;
+    }
+
+    /*
+     * Gets path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->container['path'];
+    }
+
+    /*
+     * Sets path
+     *
+     * @param string $path File or folder path.
+     *
+     * @return $this
+     */
+    public function setPath($path)
+    {
+        $this->container['path'] = $path;
 
         return $this;
     }

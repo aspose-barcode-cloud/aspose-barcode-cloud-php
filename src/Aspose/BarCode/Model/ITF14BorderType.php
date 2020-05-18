@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,27 +46,27 @@ class ITF14BorderType
   /// <summary>
   /// Enum value None
   /// </summary>
-  const None_ =  "None";
+  const None =  "None";
   
   /// <summary>
   /// Enum value Frame
   /// </summary>
-  const Frame_ =  "Frame";
+  const Frame =  "Frame";
   
   /// <summary>
   /// Enum value Bar
   /// </summary>
-  const Bar_ =  "Bar";
+  const Bar =  "Bar";
   
   /// <summary>
   /// Enum value FrameOut
   /// </summary>
-  const FrameOut_ =  "FrameOut";
+  const FrameOut =  "FrameOut";
   
   /// <summary>
   /// Enum value BarOut
   /// </summary>
-  const BarOut_ =  "BarOut";
+  const BarOut =  "BarOut";
   
 }
 

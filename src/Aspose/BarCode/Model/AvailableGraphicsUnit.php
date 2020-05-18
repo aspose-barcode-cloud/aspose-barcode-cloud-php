@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,22 +46,22 @@ class AvailableGraphicsUnit
   /// <summary>
   /// Enum value Pixel
   /// </summary>
-  const Pixel_ =  "Pixel";
+  const Pixel =  "Pixel";
   
   /// <summary>
   /// Enum value Point
   /// </summary>
-  const Point_ =  "Point";
+  const Point =  "Point";
   
   /// <summary>
   /// Enum value Inch
   /// </summary>
-  const Inch_ =  "Inch";
+  const Inch =  "Inch";
   
   /// <summary>
   /// Enum value Millimeter
   /// </summary>
-  const Millimeter_ =  "Millimeter";
+  const Millimeter =  "Millimeter";
   
 }
 

@@ -28,26 +28,20 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\BarCodeApi;
-use Aspose\BarCode\Requests\BarCodeGetBarCodeGenerateRequest;
+use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 
+$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
 
-$config = new Configuration();
-$config->setAppKey("your_key");
-$config->setAppSid("your_sid");
-
-$request = new BarCodeGetBarCodeGenerateRequest();
-$request->type = "QR";
-$request->text = "PHP SDK Test";
+$request = new GetBarcodeGenerateRequest('QR', 'PHP SDK Test');
 $request->format = "png";
 
 $api = new BarCodeApi(null, $config);
-$response = $api->BarCodeGetBarCodeGenerate($request);
+$response = $api->GetBarCodeGenerate($request);
 
 $type = 'image/png';
 $size = $response->getSize();
-header('Content-Type: ' . $type);
-header('Content-Length: ' . $size);
+header("Content-Type: $type");
+header("Content-Length: $size");
 echo $response->fread($size);

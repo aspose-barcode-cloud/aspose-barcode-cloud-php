@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,32 +46,32 @@ class PresetType
   /// <summary>
   /// Enum value HighPerformance
   /// </summary>
-  const HighPerformance_ =  "HighPerformance";
+  const HighPerformance =  "HighPerformance";
   
   /// <summary>
   /// Enum value NormalQuality
   /// </summary>
-  const NormalQuality_ =  "NormalQuality";
+  const NormalQuality =  "NormalQuality";
   
   /// <summary>
   /// Enum value HighQualityDetection
   /// </summary>
-  const HighQualityDetection_ =  "HighQualityDetection";
+  const HighQualityDetection =  "HighQualityDetection";
   
   /// <summary>
   /// Enum value MaxQualityDetection
   /// </summary>
-  const MaxQualityDetection_ =  "MaxQualityDetection";
+  const MaxQualityDetection =  "MaxQualityDetection";
   
   /// <summary>
   /// Enum value HighQuality
   /// </summary>
-  const HighQuality_ =  "HighQuality";
+  const HighQuality =  "HighQuality";
   
   /// <summary>
   /// Enum value MaxBarCodes
   /// </summary>
-  const MaxBarCodes_ =  "MaxBarCodes";
+  const MaxBarCodes =  "MaxBarCodes";
   
 }
 

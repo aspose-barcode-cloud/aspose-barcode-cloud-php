@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,32 +46,32 @@ class QREncodeMode
   /// <summary>
   /// Enum value Auto
   /// </summary>
-  const Auto_ =  "Auto";
+  const Auto =  "Auto";
   
   /// <summary>
   /// Enum value Bytes
   /// </summary>
-  const Bytes_ =  "Bytes";
+  const Bytes =  "Bytes";
   
   /// <summary>
   /// Enum value Utf8BOM
   /// </summary>
-  const Utf8BOM_ =  "Utf8BOM";
+  const Utf8BOM =  "Utf8BOM";
   
   /// <summary>
   /// Enum value Utf16BEBOM
   /// </summary>
-  const Utf16BEBOM_ =  "Utf16BEBOM";
+  const Utf16BEBOM =  "Utf16BEBOM";
   
   /// <summary>
   /// Enum value ECIEncoding
   /// </summary>
-  const ECIEncoding_ =  "ECIEncoding";
+  const ECIEncoding =  "ECIEncoding";
   
   /// <summary>
   /// Enum value ExtendedCodetext
   /// </summary>
-  const ExtendedCodetext_ =  "ExtendedCodetext";
+  const ExtendedCodetext =  "ExtendedCodetext";
   
 }
 

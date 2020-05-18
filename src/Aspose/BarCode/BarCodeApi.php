@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -134,7 +134,7 @@ class BarcodeApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
@@ -240,7 +240,7 @@ class BarcodeApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        //$this->_refreshToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
@@ -262,11 +262,11 @@ class BarcodeApi
     protected function GetBarcodeGenerateRequest(Requests\GetBarcodeGenerateRequest $request)
     {
         // verify the required parameter 'type' is set
-        if ($request->type === null) {
+        if (!isset($request->type)) {
             throw new \InvalidArgumentException('Missing the required parameter $type when calling getBarcodeGenerate');
         }
         // verify the required parameter 'text' is set
-        if ($request->text === null) {
+        if (!isset($request->text)) {
             throw new \InvalidArgumentException('Missing the required parameter $text when calling getBarcodeGenerate');
         }
 
@@ -279,7 +279,7 @@ class BarcodeApi
 
 
         // query params
-        if ($request->type !== null) {
+        if (isset($request->type)) {
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -289,7 +289,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text !== null) {
+        if (isset($request->text)) {
             $localName = lcfirst('Text');
             $localValue = is_bool($request->text) ? ($request->text ? 'true' : 'false') : $request->text;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -299,7 +299,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->two_d_display_text !== null) {
+        if (isset($request->two_d_display_text)) {
             $localName = lcfirst('TwoDDisplayText');
             $localValue = is_bool($request->two_d_display_text) ? ($request->two_d_display_text ? 'true' : 'false') : $request->two_d_display_text;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -309,7 +309,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_location !== null) {
+        if (isset($request->text_location)) {
             $localName = lcfirst('TextLocation');
             $localValue = is_bool($request->text_location) ? ($request->text_location ? 'true' : 'false') : $request->text_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -319,7 +319,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_alignment !== null) {
+        if (isset($request->text_alignment)) {
             $localName = lcfirst('TextAlignment');
             $localValue = is_bool($request->text_alignment) ? ($request->text_alignment ? 'true' : 'false') : $request->text_alignment;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -329,7 +329,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_color !== null) {
+        if (isset($request->text_color)) {
             $localName = lcfirst('TextColor');
             $localValue = is_bool($request->text_color) ? ($request->text_color ? 'true' : 'false') : $request->text_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -339,7 +339,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->font_size_mode !== null) {
+        if (isset($request->font_size_mode)) {
             $localName = lcfirst('FontSizeMode');
             $localValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -349,7 +349,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->resolution !== null) {
+        if (isset($request->resolution)) {
             $localName = lcfirst('Resolution');
             $localValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -359,7 +359,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->resolution_x !== null) {
+        if (isset($request->resolution_x)) {
             $localName = lcfirst('ResolutionX');
             $localValue = is_bool($request->resolution_x) ? ($request->resolution_x ? 'true' : 'false') : $request->resolution_x;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -369,7 +369,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->resolution_y !== null) {
+        if (isset($request->resolution_y)) {
             $localName = lcfirst('ResolutionY');
             $localValue = is_bool($request->resolution_y) ? ($request->resolution_y ? 'true' : 'false') : $request->resolution_y;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -379,7 +379,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->dimension_x !== null) {
+        if (isset($request->dimension_x)) {
             $localName = lcfirst('DimensionX');
             $localValue = is_bool($request->dimension_x) ? ($request->dimension_x ? 'true' : 'false') : $request->dimension_x;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -389,7 +389,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_space !== null) {
+        if (isset($request->text_space)) {
             $localName = lcfirst('TextSpace');
             $localValue = is_bool($request->text_space) ? ($request->text_space ? 'true' : 'false') : $request->text_space;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -399,7 +399,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->units !== null) {
+        if (isset($request->units)) {
             $localName = lcfirst('Units');
             $localValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -409,7 +409,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->size_mode !== null) {
+        if (isset($request->size_mode)) {
             $localName = lcfirst('SizeMode');
             $localValue = is_bool($request->size_mode) ? ($request->size_mode ? 'true' : 'false') : $request->size_mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -419,7 +419,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->bar_height !== null) {
+        if (isset($request->bar_height)) {
             $localName = lcfirst('BarHeight');
             $localValue = is_bool($request->bar_height) ? ($request->bar_height ? 'true' : 'false') : $request->bar_height;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -429,7 +429,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->image_height !== null) {
+        if (isset($request->image_height)) {
             $localName = lcfirst('ImageHeight');
             $localValue = is_bool($request->image_height) ? ($request->image_height ? 'true' : 'false') : $request->image_height;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -439,7 +439,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->image_width !== null) {
+        if (isset($request->image_width)) {
             $localName = lcfirst('ImageWidth');
             $localValue = is_bool($request->image_width) ? ($request->image_width ? 'true' : 'false') : $request->image_width;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -449,7 +449,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rotation_angle !== null) {
+        if (isset($request->rotation_angle)) {
             $localName = lcfirst('RotationAngle');
             $localValue = is_bool($request->rotation_angle) ? ($request->rotation_angle ? 'true' : 'false') : $request->rotation_angle;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -459,7 +459,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->back_color !== null) {
+        if (isset($request->back_color)) {
             $localName = lcfirst('BackColor');
             $localValue = is_bool($request->back_color) ? ($request->back_color ? 'true' : 'false') : $request->back_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -469,7 +469,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->bar_color !== null) {
+        if (isset($request->bar_color)) {
             $localName = lcfirst('BarColor');
             $localValue = is_bool($request->bar_color) ? ($request->bar_color ? 'true' : 'false') : $request->bar_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -479,7 +479,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_color !== null) {
+        if (isset($request->border_color)) {
             $localName = lcfirst('BorderColor');
             $localValue = is_bool($request->border_color) ? ($request->border_color ? 'true' : 'false') : $request->border_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -489,7 +489,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_width !== null) {
+        if (isset($request->border_width)) {
             $localName = lcfirst('BorderWidth');
             $localValue = is_bool($request->border_width) ? ($request->border_width ? 'true' : 'false') : $request->border_width;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -499,7 +499,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_dash_style !== null) {
+        if (isset($request->border_dash_style)) {
             $localName = lcfirst('BorderDashStyle');
             $localValue = is_bool($request->border_dash_style) ? ($request->border_dash_style ? 'true' : 'false') : $request->border_dash_style;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -509,7 +509,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_visible !== null) {
+        if (isset($request->border_visible)) {
             $localName = lcfirst('BorderVisible');
             $localValue = is_bool($request->border_visible) ? ($request->border_visible ? 'true' : 'false') : $request->border_visible;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -519,7 +519,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->enable_checksum !== null) {
+        if (isset($request->enable_checksum)) {
             $localName = lcfirst('EnableChecksum');
             $localValue = is_bool($request->enable_checksum) ? ($request->enable_checksum ? 'true' : 'false') : $request->enable_checksum;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -529,7 +529,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->enable_escape !== null) {
+        if (isset($request->enable_escape)) {
             $localName = lcfirst('EnableEscape');
             $localValue = is_bool($request->enable_escape) ? ($request->enable_escape ? 'true' : 'false') : $request->enable_escape;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -539,7 +539,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->filled_bars !== null) {
+        if (isset($request->filled_bars)) {
             $localName = lcfirst('FilledBars');
             $localValue = is_bool($request->filled_bars) ? ($request->filled_bars ? 'true' : 'false') : $request->filled_bars;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -549,7 +549,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->always_show_checksum !== null) {
+        if (isset($request->always_show_checksum)) {
             $localName = lcfirst('AlwaysShowChecksum');
             $localValue = is_bool($request->always_show_checksum) ? ($request->always_show_checksum ? 'true' : 'false') : $request->always_show_checksum;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -559,7 +559,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->wide_narrow_ratio !== null) {
+        if (isset($request->wide_narrow_ratio)) {
             $localName = lcfirst('WideNarrowRatio');
             $localValue = is_bool($request->wide_narrow_ratio) ? ($request->wide_narrow_ratio ? 'true' : 'false') : $request->wide_narrow_ratio;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -569,7 +569,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->validate_text !== null) {
+        if (isset($request->validate_text)) {
             $localName = lcfirst('ValidateText');
             $localValue = is_bool($request->validate_text) ? ($request->validate_text ? 'true' : 'false') : $request->validate_text;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -579,7 +579,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->supplement_data !== null) {
+        if (isset($request->supplement_data)) {
             $localName = lcfirst('SupplementData');
             $localValue = is_bool($request->supplement_data) ? ($request->supplement_data ? 'true' : 'false') : $request->supplement_data;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -589,7 +589,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->supplement_space !== null) {
+        if (isset($request->supplement_space)) {
             $localName = lcfirst('SupplementSpace');
             $localValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -599,7 +599,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->format !== null) {
+        if (isset($request->format)) {
             $localName = lcfirst('format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -654,7 +654,7 @@ class BarcodeApi
             }
         }
 
-        if ($this->config->getAccessToken() === null) {
+        if (!$this->config->getAccessToken()) {
             $this->_requestToken();
         }
         $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -735,7 +735,7 @@ class BarcodeApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
@@ -837,7 +837,7 @@ class BarcodeApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        //$this->_refreshToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
@@ -859,7 +859,7 @@ class BarcodeApi
     protected function GetBarcodeRecognizeRequest(Requests\GetBarcodeRecognizeRequest $request)
     {
         // verify the required parameter 'name' is set
-        if ($request->name === null) {
+        if (!isset($request->name)) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling getBarcodeRecognize');
         }
 
@@ -871,13 +871,13 @@ class BarcodeApi
         $multipart = false;
 
         // path params
-        if ($request->name !== null) {
+        if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
         // query params
-        if ($request->type !== null) {
+        if (isset($request->type)) {
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -887,7 +887,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->checksum_validation !== null) {
+        if (isset($request->checksum_validation)) {
             $localName = lcfirst('ChecksumValidation');
             $localValue = is_bool($request->checksum_validation) ? ($request->checksum_validation ? 'true' : 'false') : $request->checksum_validation;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -897,7 +897,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->detect_encoding !== null) {
+        if (isset($request->detect_encoding)) {
             $localName = lcfirst('DetectEncoding');
             $localValue = is_bool($request->detect_encoding) ? ($request->detect_encoding ? 'true' : 'false') : $request->detect_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -907,7 +907,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->preset !== null) {
+        if (isset($request->preset)) {
             $localName = lcfirst('Preset');
             $localValue = is_bool($request->preset) ? ($request->preset ? 'true' : 'false') : $request->preset;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -917,7 +917,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_x !== null) {
+        if (isset($request->rect_x)) {
             $localName = lcfirst('RectX');
             $localValue = is_bool($request->rect_x) ? ($request->rect_x ? 'true' : 'false') : $request->rect_x;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -927,7 +927,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_y !== null) {
+        if (isset($request->rect_y)) {
             $localName = lcfirst('RectY');
             $localValue = is_bool($request->rect_y) ? ($request->rect_y ? 'true' : 'false') : $request->rect_y;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -937,7 +937,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_width !== null) {
+        if (isset($request->rect_width)) {
             $localName = lcfirst('RectWidth');
             $localValue = is_bool($request->rect_width) ? ($request->rect_width ? 'true' : 'false') : $request->rect_width;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -947,7 +947,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_height !== null) {
+        if (isset($request->rect_height)) {
             $localName = lcfirst('RectHeight');
             $localValue = is_bool($request->rect_height) ? ($request->rect_height ? 'true' : 'false') : $request->rect_height;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -957,7 +957,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->strip_fnc !== null) {
+        if (isset($request->strip_fnc)) {
             $localName = lcfirst('StripFNC');
             $localValue = is_bool($request->strip_fnc) ? ($request->strip_fnc ? 'true' : 'false') : $request->strip_fnc;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -967,7 +967,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->timeout !== null) {
+        if (isset($request->timeout)) {
             $localName = lcfirst('Timeout');
             $localValue = is_bool($request->timeout) ? ($request->timeout ? 'true' : 'false') : $request->timeout;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -977,7 +977,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->median_smoothing_window_size !== null) {
+        if (isset($request->median_smoothing_window_size)) {
             $localName = lcfirst('MedianSmoothingWindowSize');
             $localValue = is_bool($request->median_smoothing_window_size) ? ($request->median_smoothing_window_size ? 'true' : 'false') : $request->median_smoothing_window_size;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -987,7 +987,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_median_smoothing !== null) {
+        if (isset($request->allow_median_smoothing)) {
             $localName = lcfirst('AllowMedianSmoothing');
             $localValue = is_bool($request->allow_median_smoothing) ? ($request->allow_median_smoothing ? 'true' : 'false') : $request->allow_median_smoothing;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -997,7 +997,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_complex_background !== null) {
+        if (isset($request->allow_complex_background)) {
             $localName = lcfirst('AllowComplexBackground');
             $localValue = is_bool($request->allow_complex_background) ? ($request->allow_complex_background ? 'true' : 'false') : $request->allow_complex_background;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1007,7 +1007,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_datamatrix_industrial_barcodes !== null) {
+        if (isset($request->allow_datamatrix_industrial_barcodes)) {
             $localName = lcfirst('AllowDatamatrixIndustrialBarcodes');
             $localValue = is_bool($request->allow_datamatrix_industrial_barcodes) ? ($request->allow_datamatrix_industrial_barcodes ? 'true' : 'false') : $request->allow_datamatrix_industrial_barcodes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1017,7 +1017,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_decreased_image !== null) {
+        if (isset($request->allow_decreased_image)) {
             $localName = lcfirst('AllowDecreasedImage');
             $localValue = is_bool($request->allow_decreased_image) ? ($request->allow_decreased_image ? 'true' : 'false') : $request->allow_decreased_image;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1027,7 +1027,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_detect_scan_gap !== null) {
+        if (isset($request->allow_detect_scan_gap)) {
             $localName = lcfirst('AllowDetectScanGap');
             $localValue = is_bool($request->allow_detect_scan_gap) ? ($request->allow_detect_scan_gap ? 'true' : 'false') : $request->allow_detect_scan_gap;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1037,7 +1037,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_incorrect_barcodes !== null) {
+        if (isset($request->allow_incorrect_barcodes)) {
             $localName = lcfirst('AllowIncorrectBarcodes');
             $localValue = is_bool($request->allow_incorrect_barcodes) ? ($request->allow_incorrect_barcodes ? 'true' : 'false') : $request->allow_incorrect_barcodes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1047,7 +1047,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_invert_image !== null) {
+        if (isset($request->allow_invert_image)) {
             $localName = lcfirst('AllowInvertImage');
             $localValue = is_bool($request->allow_invert_image) ? ($request->allow_invert_image ? 'true' : 'false') : $request->allow_invert_image;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1057,7 +1057,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_micro_white_spots_removing !== null) {
+        if (isset($request->allow_micro_white_spots_removing)) {
             $localName = lcfirst('AllowMicroWhiteSpotsRemoving');
             $localValue = is_bool($request->allow_micro_white_spots_removing) ? ($request->allow_micro_white_spots_removing ? 'true' : 'false') : $request->allow_micro_white_spots_removing;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1067,7 +1067,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_one_d_fast_barcodes_detector !== null) {
+        if (isset($request->allow_one_d_fast_barcodes_detector)) {
             $localName = lcfirst('AllowOneDFastBarcodesDetector');
             $localValue = is_bool($request->allow_one_d_fast_barcodes_detector) ? ($request->allow_one_d_fast_barcodes_detector ? 'true' : 'false') : $request->allow_one_d_fast_barcodes_detector;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1077,7 +1077,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_one_d_wiped_bars_restoration !== null) {
+        if (isset($request->allow_one_d_wiped_bars_restoration)) {
             $localName = lcfirst('AllowOneDWipedBarsRestoration');
             $localValue = is_bool($request->allow_one_d_wiped_bars_restoration) ? ($request->allow_one_d_wiped_bars_restoration ? 'true' : 'false') : $request->allow_one_d_wiped_bars_restoration;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1087,7 +1087,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_qr_micro_qr_restoration !== null) {
+        if (isset($request->allow_qr_micro_qr_restoration)) {
             $localName = lcfirst('AllowQRMicroQrRestoration');
             $localValue = is_bool($request->allow_qr_micro_qr_restoration) ? ($request->allow_qr_micro_qr_restoration ? 'true' : 'false') : $request->allow_qr_micro_qr_restoration;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1097,7 +1097,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_regular_image !== null) {
+        if (isset($request->allow_regular_image)) {
             $localName = lcfirst('AllowRegularImage');
             $localValue = is_bool($request->allow_regular_image) ? ($request->allow_regular_image ? 'true' : 'false') : $request->allow_regular_image;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1107,7 +1107,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_salt_and_pepper_filtering !== null) {
+        if (isset($request->allow_salt_and_pepper_filtering)) {
             $localName = lcfirst('AllowSaltAndPepperFiltering');
             $localValue = is_bool($request->allow_salt_and_pepper_filtering) ? ($request->allow_salt_and_pepper_filtering ? 'true' : 'false') : $request->allow_salt_and_pepper_filtering;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1117,7 +1117,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_white_spots_removing !== null) {
+        if (isset($request->allow_white_spots_removing)) {
             $localName = lcfirst('AllowWhiteSpotsRemoving');
             $localValue = is_bool($request->allow_white_spots_removing) ? ($request->allow_white_spots_removing ? 'true' : 'false') : $request->allow_white_spots_removing;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1127,7 +1127,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->region_likelihood_threshold_percent !== null) {
+        if (isset($request->region_likelihood_threshold_percent)) {
             $localName = lcfirst('RegionLikelihoodThresholdPercent');
             $localValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1140,7 +1140,7 @@ class BarcodeApi
         if (is_array($request->scan_window_sizes)) {
             $request->scan_window_sizes = ObjectSerializer::serializeCollection($request->scan_window_sizes, 'multi', true);
         }
-        if ($request->scan_window_sizes !== null) {
+        if (isset($request->scan_window_sizes)) {
             $localName = lcfirst('ScanWindowSizes');
             $localValue = is_bool($request->scan_window_sizes) ? ($request->scan_window_sizes ? 'true' : 'false') : $request->scan_window_sizes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1150,7 +1150,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->similarity !== null) {
+        if (isset($request->similarity)) {
             $localName = lcfirst('Similarity');
             $localValue = is_bool($request->similarity) ? ($request->similarity ? 'true' : 'false') : $request->similarity;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1160,7 +1160,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->skip_diagonal_search !== null) {
+        if (isset($request->skip_diagonal_search)) {
             $localName = lcfirst('SkipDiagonalSearch');
             $localValue = is_bool($request->skip_diagonal_search) ? ($request->skip_diagonal_search ? 'true' : 'false') : $request->skip_diagonal_search;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1170,7 +1170,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->australian_post_encoding_table !== null) {
+        if (isset($request->australian_post_encoding_table)) {
             $localName = lcfirst('AustralianPostEncodingTable');
             $localValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1180,7 +1180,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rectangle_region !== null) {
+        if (isset($request->rectangle_region)) {
             $localName = lcfirst('RectangleRegion');
             $localValue = is_bool($request->rectangle_region) ? ($request->rectangle_region ? 'true' : 'false') : $request->rectangle_region;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1190,7 +1190,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->storage !== null) {
+        if (isset($request->storage)) {
             $localName = lcfirst('storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1200,7 +1200,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->folder !== null) {
+        if (isset($request->folder)) {
             $localName = lcfirst('folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1255,7 +1255,7 @@ class BarcodeApi
             }
         }
 
-        if ($this->config->getAccessToken() === null) {
+        if (!$this->config->getAccessToken()) {
             $this->_requestToken();
         }
         $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -1336,7 +1336,7 @@ class BarcodeApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
@@ -1438,7 +1438,7 @@ class BarcodeApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        //$this->_refreshToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
@@ -1469,7 +1469,7 @@ class BarcodeApi
 
 
         // query params
-        if ($request->type !== null) {
+        if (isset($request->type)) {
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1479,7 +1479,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->checksum_validation !== null) {
+        if (isset($request->checksum_validation)) {
             $localName = lcfirst('ChecksumValidation');
             $localValue = is_bool($request->checksum_validation) ? ($request->checksum_validation ? 'true' : 'false') : $request->checksum_validation;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1489,7 +1489,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->detect_encoding !== null) {
+        if (isset($request->detect_encoding)) {
             $localName = lcfirst('DetectEncoding');
             $localValue = is_bool($request->detect_encoding) ? ($request->detect_encoding ? 'true' : 'false') : $request->detect_encoding;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1499,7 +1499,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->preset !== null) {
+        if (isset($request->preset)) {
             $localName = lcfirst('Preset');
             $localValue = is_bool($request->preset) ? ($request->preset ? 'true' : 'false') : $request->preset;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1509,7 +1509,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_x !== null) {
+        if (isset($request->rect_x)) {
             $localName = lcfirst('RectX');
             $localValue = is_bool($request->rect_x) ? ($request->rect_x ? 'true' : 'false') : $request->rect_x;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1519,7 +1519,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_y !== null) {
+        if (isset($request->rect_y)) {
             $localName = lcfirst('RectY');
             $localValue = is_bool($request->rect_y) ? ($request->rect_y ? 'true' : 'false') : $request->rect_y;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1529,7 +1529,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_width !== null) {
+        if (isset($request->rect_width)) {
             $localName = lcfirst('RectWidth');
             $localValue = is_bool($request->rect_width) ? ($request->rect_width ? 'true' : 'false') : $request->rect_width;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1539,7 +1539,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rect_height !== null) {
+        if (isset($request->rect_height)) {
             $localName = lcfirst('RectHeight');
             $localValue = is_bool($request->rect_height) ? ($request->rect_height ? 'true' : 'false') : $request->rect_height;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1549,7 +1549,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->strip_fnc !== null) {
+        if (isset($request->strip_fnc)) {
             $localName = lcfirst('StripFNC');
             $localValue = is_bool($request->strip_fnc) ? ($request->strip_fnc ? 'true' : 'false') : $request->strip_fnc;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1559,7 +1559,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->timeout !== null) {
+        if (isset($request->timeout)) {
             $localName = lcfirst('Timeout');
             $localValue = is_bool($request->timeout) ? ($request->timeout ? 'true' : 'false') : $request->timeout;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1569,7 +1569,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->median_smoothing_window_size !== null) {
+        if (isset($request->median_smoothing_window_size)) {
             $localName = lcfirst('MedianSmoothingWindowSize');
             $localValue = is_bool($request->median_smoothing_window_size) ? ($request->median_smoothing_window_size ? 'true' : 'false') : $request->median_smoothing_window_size;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1579,7 +1579,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_median_smoothing !== null) {
+        if (isset($request->allow_median_smoothing)) {
             $localName = lcfirst('AllowMedianSmoothing');
             $localValue = is_bool($request->allow_median_smoothing) ? ($request->allow_median_smoothing ? 'true' : 'false') : $request->allow_median_smoothing;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1589,7 +1589,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_complex_background !== null) {
+        if (isset($request->allow_complex_background)) {
             $localName = lcfirst('AllowComplexBackground');
             $localValue = is_bool($request->allow_complex_background) ? ($request->allow_complex_background ? 'true' : 'false') : $request->allow_complex_background;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1599,7 +1599,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_datamatrix_industrial_barcodes !== null) {
+        if (isset($request->allow_datamatrix_industrial_barcodes)) {
             $localName = lcfirst('AllowDatamatrixIndustrialBarcodes');
             $localValue = is_bool($request->allow_datamatrix_industrial_barcodes) ? ($request->allow_datamatrix_industrial_barcodes ? 'true' : 'false') : $request->allow_datamatrix_industrial_barcodes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1609,7 +1609,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_decreased_image !== null) {
+        if (isset($request->allow_decreased_image)) {
             $localName = lcfirst('AllowDecreasedImage');
             $localValue = is_bool($request->allow_decreased_image) ? ($request->allow_decreased_image ? 'true' : 'false') : $request->allow_decreased_image;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1619,7 +1619,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_detect_scan_gap !== null) {
+        if (isset($request->allow_detect_scan_gap)) {
             $localName = lcfirst('AllowDetectScanGap');
             $localValue = is_bool($request->allow_detect_scan_gap) ? ($request->allow_detect_scan_gap ? 'true' : 'false') : $request->allow_detect_scan_gap;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1629,7 +1629,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_incorrect_barcodes !== null) {
+        if (isset($request->allow_incorrect_barcodes)) {
             $localName = lcfirst('AllowIncorrectBarcodes');
             $localValue = is_bool($request->allow_incorrect_barcodes) ? ($request->allow_incorrect_barcodes ? 'true' : 'false') : $request->allow_incorrect_barcodes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1639,7 +1639,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_invert_image !== null) {
+        if (isset($request->allow_invert_image)) {
             $localName = lcfirst('AllowInvertImage');
             $localValue = is_bool($request->allow_invert_image) ? ($request->allow_invert_image ? 'true' : 'false') : $request->allow_invert_image;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1649,7 +1649,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_micro_white_spots_removing !== null) {
+        if (isset($request->allow_micro_white_spots_removing)) {
             $localName = lcfirst('AllowMicroWhiteSpotsRemoving');
             $localValue = is_bool($request->allow_micro_white_spots_removing) ? ($request->allow_micro_white_spots_removing ? 'true' : 'false') : $request->allow_micro_white_spots_removing;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1659,7 +1659,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_one_d_fast_barcodes_detector !== null) {
+        if (isset($request->allow_one_d_fast_barcodes_detector)) {
             $localName = lcfirst('AllowOneDFastBarcodesDetector');
             $localValue = is_bool($request->allow_one_d_fast_barcodes_detector) ? ($request->allow_one_d_fast_barcodes_detector ? 'true' : 'false') : $request->allow_one_d_fast_barcodes_detector;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1669,7 +1669,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_one_d_wiped_bars_restoration !== null) {
+        if (isset($request->allow_one_d_wiped_bars_restoration)) {
             $localName = lcfirst('AllowOneDWipedBarsRestoration');
             $localValue = is_bool($request->allow_one_d_wiped_bars_restoration) ? ($request->allow_one_d_wiped_bars_restoration ? 'true' : 'false') : $request->allow_one_d_wiped_bars_restoration;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1679,7 +1679,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_qr_micro_qr_restoration !== null) {
+        if (isset($request->allow_qr_micro_qr_restoration)) {
             $localName = lcfirst('AllowQRMicroQrRestoration');
             $localValue = is_bool($request->allow_qr_micro_qr_restoration) ? ($request->allow_qr_micro_qr_restoration ? 'true' : 'false') : $request->allow_qr_micro_qr_restoration;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1689,7 +1689,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_regular_image !== null) {
+        if (isset($request->allow_regular_image)) {
             $localName = lcfirst('AllowRegularImage');
             $localValue = is_bool($request->allow_regular_image) ? ($request->allow_regular_image ? 'true' : 'false') : $request->allow_regular_image;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1699,7 +1699,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_salt_and_pepper_filtering !== null) {
+        if (isset($request->allow_salt_and_pepper_filtering)) {
             $localName = lcfirst('AllowSaltAndPepperFiltering');
             $localValue = is_bool($request->allow_salt_and_pepper_filtering) ? ($request->allow_salt_and_pepper_filtering ? 'true' : 'false') : $request->allow_salt_and_pepper_filtering;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1709,7 +1709,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->allow_white_spots_removing !== null) {
+        if (isset($request->allow_white_spots_removing)) {
             $localName = lcfirst('AllowWhiteSpotsRemoving');
             $localValue = is_bool($request->allow_white_spots_removing) ? ($request->allow_white_spots_removing ? 'true' : 'false') : $request->allow_white_spots_removing;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1719,7 +1719,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->region_likelihood_threshold_percent !== null) {
+        if (isset($request->region_likelihood_threshold_percent)) {
             $localName = lcfirst('RegionLikelihoodThresholdPercent');
             $localValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1732,7 +1732,7 @@ class BarcodeApi
         if (is_array($request->scan_window_sizes)) {
             $request->scan_window_sizes = ObjectSerializer::serializeCollection($request->scan_window_sizes, 'multi', true);
         }
-        if ($request->scan_window_sizes !== null) {
+        if (isset($request->scan_window_sizes)) {
             $localName = lcfirst('ScanWindowSizes');
             $localValue = is_bool($request->scan_window_sizes) ? ($request->scan_window_sizes ? 'true' : 'false') : $request->scan_window_sizes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1742,7 +1742,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->similarity !== null) {
+        if (isset($request->similarity)) {
             $localName = lcfirst('Similarity');
             $localValue = is_bool($request->similarity) ? ($request->similarity ? 'true' : 'false') : $request->similarity;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1752,7 +1752,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->skip_diagonal_search !== null) {
+        if (isset($request->skip_diagonal_search)) {
             $localName = lcfirst('SkipDiagonalSearch');
             $localValue = is_bool($request->skip_diagonal_search) ? ($request->skip_diagonal_search ? 'true' : 'false') : $request->skip_diagonal_search;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1762,7 +1762,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->australian_post_encoding_table !== null) {
+        if (isset($request->australian_post_encoding_table)) {
             $localName = lcfirst('AustralianPostEncodingTable');
             $localValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1772,7 +1772,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rectangle_region !== null) {
+        if (isset($request->rectangle_region)) {
             $localName = lcfirst('RectangleRegion');
             $localValue = is_bool($request->rectangle_region) ? ($request->rectangle_region ? 'true' : 'false') : $request->rectangle_region;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1782,7 +1782,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->url !== null) {
+        if (isset($request->url)) {
             $localName = lcfirst('url');
             $localValue = is_bool($request->url) ? ($request->url ? 'true' : 'false') : $request->url;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -1796,7 +1796,7 @@ class BarcodeApi
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // form params
-        if ($request->image !== null) {
+        if (isset($request->image)) {
             //$multipart = true;
             $filename = ObjectSerializer::toFormValue($request->image);
             $handle = fopen($filename, "rb");
@@ -1847,7 +1847,7 @@ class BarcodeApi
             }
         }
 
-        if ($this->config->getAccessToken() === null) {
+        if (!$this->config->getAccessToken()) {
             $this->_requestToken();
         }
         $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -1928,7 +1928,7 @@ class BarcodeApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
@@ -2030,7 +2030,7 @@ class BarcodeApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        //$this->_refreshToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
@@ -2052,7 +2052,7 @@ class BarcodeApi
     protected function PostGenerateMultipleRequest(Requests\PostGenerateMultipleRequest $request)
     {
         // verify the required parameter 'generator_params_list' is set
-        if ($request->generator_params_list === null) {
+        if (!isset($request->generator_params_list)) {
             throw new \InvalidArgumentException('Missing the required parameter $generator_params_list when calling postGenerateMultiple');
         }
 
@@ -2065,7 +2065,7 @@ class BarcodeApi
 
 
         // query params
-        if ($request->format !== null) {
+        if (isset($request->format)) {
             $localName = lcfirst('format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2127,7 +2127,7 @@ class BarcodeApi
             }
         }
 
-        if ($this->config->getAccessToken() === null) {
+        if (!$this->config->getAccessToken()) {
             $this->_requestToken();
         }
         $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -2208,7 +2208,7 @@ class BarcodeApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
@@ -2314,7 +2314,7 @@ class BarcodeApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        //$this->_refreshToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
@@ -2336,15 +2336,15 @@ class BarcodeApi
     protected function PutBarcodeGenerateFileRequest(Requests\PutBarcodeGenerateFileRequest $request)
     {
         // verify the required parameter 'name' is set
-        if ($request->name === null) {
+        if (!isset($request->name)) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putBarcodeGenerateFile');
         }
         // verify the required parameter 'type' is set
-        if ($request->type === null) {
+        if (!isset($request->type)) {
             throw new \InvalidArgumentException('Missing the required parameter $type when calling putBarcodeGenerateFile');
         }
         // verify the required parameter 'text' is set
-        if ($request->text === null) {
+        if (!isset($request->text)) {
             throw new \InvalidArgumentException('Missing the required parameter $text when calling putBarcodeGenerateFile');
         }
 
@@ -2356,13 +2356,13 @@ class BarcodeApi
         $multipart = false;
 
         // path params
-        if ($request->name !== null) {
+        if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
         // query params
-        if ($request->type !== null) {
+        if (isset($request->type)) {
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2372,7 +2372,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text !== null) {
+        if (isset($request->text)) {
             $localName = lcfirst('Text');
             $localValue = is_bool($request->text) ? ($request->text ? 'true' : 'false') : $request->text;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2382,7 +2382,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->two_d_display_text !== null) {
+        if (isset($request->two_d_display_text)) {
             $localName = lcfirst('TwoDDisplayText');
             $localValue = is_bool($request->two_d_display_text) ? ($request->two_d_display_text ? 'true' : 'false') : $request->two_d_display_text;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2392,7 +2392,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_location !== null) {
+        if (isset($request->text_location)) {
             $localName = lcfirst('TextLocation');
             $localValue = is_bool($request->text_location) ? ($request->text_location ? 'true' : 'false') : $request->text_location;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2402,7 +2402,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_alignment !== null) {
+        if (isset($request->text_alignment)) {
             $localName = lcfirst('TextAlignment');
             $localValue = is_bool($request->text_alignment) ? ($request->text_alignment ? 'true' : 'false') : $request->text_alignment;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2412,7 +2412,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_color !== null) {
+        if (isset($request->text_color)) {
             $localName = lcfirst('TextColor');
             $localValue = is_bool($request->text_color) ? ($request->text_color ? 'true' : 'false') : $request->text_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2422,7 +2422,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->font_size_mode !== null) {
+        if (isset($request->font_size_mode)) {
             $localName = lcfirst('FontSizeMode');
             $localValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2432,7 +2432,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->resolution !== null) {
+        if (isset($request->resolution)) {
             $localName = lcfirst('Resolution');
             $localValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2442,7 +2442,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->resolution_x !== null) {
+        if (isset($request->resolution_x)) {
             $localName = lcfirst('ResolutionX');
             $localValue = is_bool($request->resolution_x) ? ($request->resolution_x ? 'true' : 'false') : $request->resolution_x;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2452,7 +2452,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->resolution_y !== null) {
+        if (isset($request->resolution_y)) {
             $localName = lcfirst('ResolutionY');
             $localValue = is_bool($request->resolution_y) ? ($request->resolution_y ? 'true' : 'false') : $request->resolution_y;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2462,7 +2462,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->dimension_x !== null) {
+        if (isset($request->dimension_x)) {
             $localName = lcfirst('DimensionX');
             $localValue = is_bool($request->dimension_x) ? ($request->dimension_x ? 'true' : 'false') : $request->dimension_x;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2472,7 +2472,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->text_space !== null) {
+        if (isset($request->text_space)) {
             $localName = lcfirst('TextSpace');
             $localValue = is_bool($request->text_space) ? ($request->text_space ? 'true' : 'false') : $request->text_space;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2482,7 +2482,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->units !== null) {
+        if (isset($request->units)) {
             $localName = lcfirst('Units');
             $localValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2492,7 +2492,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->size_mode !== null) {
+        if (isset($request->size_mode)) {
             $localName = lcfirst('SizeMode');
             $localValue = is_bool($request->size_mode) ? ($request->size_mode ? 'true' : 'false') : $request->size_mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2502,7 +2502,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->bar_height !== null) {
+        if (isset($request->bar_height)) {
             $localName = lcfirst('BarHeight');
             $localValue = is_bool($request->bar_height) ? ($request->bar_height ? 'true' : 'false') : $request->bar_height;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2512,7 +2512,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->image_height !== null) {
+        if (isset($request->image_height)) {
             $localName = lcfirst('ImageHeight');
             $localValue = is_bool($request->image_height) ? ($request->image_height ? 'true' : 'false') : $request->image_height;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2522,7 +2522,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->image_width !== null) {
+        if (isset($request->image_width)) {
             $localName = lcfirst('ImageWidth');
             $localValue = is_bool($request->image_width) ? ($request->image_width ? 'true' : 'false') : $request->image_width;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2532,7 +2532,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->rotation_angle !== null) {
+        if (isset($request->rotation_angle)) {
             $localName = lcfirst('RotationAngle');
             $localValue = is_bool($request->rotation_angle) ? ($request->rotation_angle ? 'true' : 'false') : $request->rotation_angle;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2542,7 +2542,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->back_color !== null) {
+        if (isset($request->back_color)) {
             $localName = lcfirst('BackColor');
             $localValue = is_bool($request->back_color) ? ($request->back_color ? 'true' : 'false') : $request->back_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2552,7 +2552,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->bar_color !== null) {
+        if (isset($request->bar_color)) {
             $localName = lcfirst('BarColor');
             $localValue = is_bool($request->bar_color) ? ($request->bar_color ? 'true' : 'false') : $request->bar_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2562,7 +2562,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_color !== null) {
+        if (isset($request->border_color)) {
             $localName = lcfirst('BorderColor');
             $localValue = is_bool($request->border_color) ? ($request->border_color ? 'true' : 'false') : $request->border_color;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2572,7 +2572,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_width !== null) {
+        if (isset($request->border_width)) {
             $localName = lcfirst('BorderWidth');
             $localValue = is_bool($request->border_width) ? ($request->border_width ? 'true' : 'false') : $request->border_width;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2582,7 +2582,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_dash_style !== null) {
+        if (isset($request->border_dash_style)) {
             $localName = lcfirst('BorderDashStyle');
             $localValue = is_bool($request->border_dash_style) ? ($request->border_dash_style ? 'true' : 'false') : $request->border_dash_style;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2592,7 +2592,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->border_visible !== null) {
+        if (isset($request->border_visible)) {
             $localName = lcfirst('BorderVisible');
             $localValue = is_bool($request->border_visible) ? ($request->border_visible ? 'true' : 'false') : $request->border_visible;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2602,7 +2602,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->enable_checksum !== null) {
+        if (isset($request->enable_checksum)) {
             $localName = lcfirst('EnableChecksum');
             $localValue = is_bool($request->enable_checksum) ? ($request->enable_checksum ? 'true' : 'false') : $request->enable_checksum;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2612,7 +2612,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->enable_escape !== null) {
+        if (isset($request->enable_escape)) {
             $localName = lcfirst('EnableEscape');
             $localValue = is_bool($request->enable_escape) ? ($request->enable_escape ? 'true' : 'false') : $request->enable_escape;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2622,7 +2622,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->filled_bars !== null) {
+        if (isset($request->filled_bars)) {
             $localName = lcfirst('FilledBars');
             $localValue = is_bool($request->filled_bars) ? ($request->filled_bars ? 'true' : 'false') : $request->filled_bars;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2632,7 +2632,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->always_show_checksum !== null) {
+        if (isset($request->always_show_checksum)) {
             $localName = lcfirst('AlwaysShowChecksum');
             $localValue = is_bool($request->always_show_checksum) ? ($request->always_show_checksum ? 'true' : 'false') : $request->always_show_checksum;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2642,7 +2642,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->wide_narrow_ratio !== null) {
+        if (isset($request->wide_narrow_ratio)) {
             $localName = lcfirst('WideNarrowRatio');
             $localValue = is_bool($request->wide_narrow_ratio) ? ($request->wide_narrow_ratio ? 'true' : 'false') : $request->wide_narrow_ratio;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2652,7 +2652,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->validate_text !== null) {
+        if (isset($request->validate_text)) {
             $localName = lcfirst('ValidateText');
             $localValue = is_bool($request->validate_text) ? ($request->validate_text ? 'true' : 'false') : $request->validate_text;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2662,7 +2662,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->supplement_data !== null) {
+        if (isset($request->supplement_data)) {
             $localName = lcfirst('SupplementData');
             $localValue = is_bool($request->supplement_data) ? ($request->supplement_data ? 'true' : 'false') : $request->supplement_data;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2672,7 +2672,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->supplement_space !== null) {
+        if (isset($request->supplement_space)) {
             $localName = lcfirst('SupplementSpace');
             $localValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2682,7 +2682,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->storage !== null) {
+        if (isset($request->storage)) {
             $localName = lcfirst('storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2692,7 +2692,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->folder !== null) {
+        if (isset($request->folder)) {
             $localName = lcfirst('folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2702,7 +2702,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->format !== null) {
+        if (isset($request->format)) {
             $localName = lcfirst('format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2757,7 +2757,7 @@ class BarcodeApi
             }
         }
 
-        if ($this->config->getAccessToken() === null) {
+        if (!$this->config->getAccessToken()) {
             $this->_requestToken();
         }
         $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -2838,7 +2838,7 @@ class BarcodeApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
@@ -2940,7 +2940,7 @@ class BarcodeApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        //$this->_refreshToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
@@ -2962,11 +2962,11 @@ class BarcodeApi
     protected function PutBarcodeRecognizeFromBodyRequest(Requests\PutBarcodeRecognizeFromBodyRequest $request)
     {
         // verify the required parameter 'name' is set
-        if ($request->name === null) {
+        if (!isset($request->name)) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putBarcodeRecognizeFromBody');
         }
         // verify the required parameter 'reader_params' is set
-        if ($request->reader_params === null) {
+        if (!isset($request->reader_params)) {
             throw new \InvalidArgumentException('Missing the required parameter $reader_params when calling putBarcodeRecognizeFromBody');
         }
 
@@ -2978,13 +2978,13 @@ class BarcodeApi
         $multipart = false;
 
         // path params
-        if ($request->name !== null) {
+        if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
         // query params
-        if ($request->type !== null) {
+        if (isset($request->type)) {
             $localName = lcfirst('type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -2994,7 +2994,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->storage !== null) {
+        if (isset($request->storage)) {
             $localName = lcfirst('storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -3004,7 +3004,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->folder !== null) {
+        if (isset($request->folder)) {
             $localName = lcfirst('folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -3066,7 +3066,7 @@ class BarcodeApi
             }
         }
 
-        if ($this->config->getAccessToken() === null) {
+        if (!$this->config->getAccessToken()) {
             $this->_requestToken();
         }
         $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -3147,7 +3147,7 @@ class BarcodeApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
@@ -3253,7 +3253,7 @@ class BarcodeApi
                     $statusCode = $response->getStatusCode();
 
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        //$this->_refreshToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
@@ -3275,11 +3275,11 @@ class BarcodeApi
     protected function PutGenerateMultipleRequest(Requests\PutGenerateMultipleRequest $request)
     {
         // verify the required parameter 'name' is set
-        if ($request->name === null) {
+        if (!isset($request->name)) {
             throw new \InvalidArgumentException('Missing the required parameter $name when calling putGenerateMultiple');
         }
         // verify the required parameter 'generator_params_list' is set
-        if ($request->generator_params_list === null) {
+        if (!isset($request->generator_params_list)) {
             throw new \InvalidArgumentException('Missing the required parameter $generator_params_list when calling putGenerateMultiple');
         }
 
@@ -3291,13 +3291,13 @@ class BarcodeApi
         $multipart = false;
 
         // path params
-        if ($request->name !== null) {
+        if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
         // query params
-        if ($request->format !== null) {
+        if (isset($request->format)) {
             $localName = lcfirst('format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -3307,7 +3307,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->folder !== null) {
+        if (isset($request->folder)) {
             $localName = lcfirst('folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -3317,7 +3317,7 @@ class BarcodeApi
             }
         }
         // query params
-        if ($request->storage !== null) {
+        if (isset($request->storage)) {
             $localName = lcfirst('storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
@@ -3379,7 +3379,7 @@ class BarcodeApi
             }
         }
 
-        if ($this->config->getAccessToken() === null) {
+        if (!$this->config->getAccessToken()) {
             $this->_requestToken();
         }
         $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
@@ -3489,14 +3489,5 @@ class BarcodeApi
         ]);
         $result = json_decode($response->getBody()->getContents(), true);
         $this->config->setAccessToken($result["access_token"]);
-    }
-
-    /*
-     * Refresh token
-     */
-    private function _refreshToken()
-    {
-        // TODO:
-        $this->_requestToken();
     }
 }

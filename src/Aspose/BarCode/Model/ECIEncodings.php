@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,132 +46,132 @@ class ECIEncodings
   /// <summary>
   /// Enum value ISO_8859_1
   /// </summary>
-  const ISO_8859_1_ =  "ISO_8859_1";
+  const ISO_8859_1 =  "ISO_8859_1";
   
   /// <summary>
   /// Enum value ISO_8859_2
   /// </summary>
-  const ISO_8859_2_ =  "ISO_8859_2";
+  const ISO_8859_2 =  "ISO_8859_2";
   
   /// <summary>
   /// Enum value ISO_8859_3
   /// </summary>
-  const ISO_8859_3_ =  "ISO_8859_3";
+  const ISO_8859_3 =  "ISO_8859_3";
   
   /// <summary>
   /// Enum value ISO_8859_4
   /// </summary>
-  const ISO_8859_4_ =  "ISO_8859_4";
+  const ISO_8859_4 =  "ISO_8859_4";
   
   /// <summary>
   /// Enum value ISO_8859_5
   /// </summary>
-  const ISO_8859_5_ =  "ISO_8859_5";
+  const ISO_8859_5 =  "ISO_8859_5";
   
   /// <summary>
   /// Enum value ISO_8859_6
   /// </summary>
-  const ISO_8859_6_ =  "ISO_8859_6";
+  const ISO_8859_6 =  "ISO_8859_6";
   
   /// <summary>
   /// Enum value ISO_8859_7
   /// </summary>
-  const ISO_8859_7_ =  "ISO_8859_7";
+  const ISO_8859_7 =  "ISO_8859_7";
   
   /// <summary>
   /// Enum value ISO_8859_8
   /// </summary>
-  const ISO_8859_8_ =  "ISO_8859_8";
+  const ISO_8859_8 =  "ISO_8859_8";
   
   /// <summary>
   /// Enum value ISO_8859_9
   /// </summary>
-  const ISO_8859_9_ =  "ISO_8859_9";
+  const ISO_8859_9 =  "ISO_8859_9";
   
   /// <summary>
   /// Enum value ISO_8859_10
   /// </summary>
-  const ISO_8859_10_ =  "ISO_8859_10";
+  const ISO_8859_10 =  "ISO_8859_10";
   
   /// <summary>
   /// Enum value ISO_8859_11
   /// </summary>
-  const ISO_8859_11_ =  "ISO_8859_11";
+  const ISO_8859_11 =  "ISO_8859_11";
   
   /// <summary>
   /// Enum value ISO_8859_13
   /// </summary>
-  const ISO_8859_13_ =  "ISO_8859_13";
+  const ISO_8859_13 =  "ISO_8859_13";
   
   /// <summary>
   /// Enum value ISO_8859_14
   /// </summary>
-  const ISO_8859_14_ =  "ISO_8859_14";
+  const ISO_8859_14 =  "ISO_8859_14";
   
   /// <summary>
   /// Enum value ISO_8859_15
   /// </summary>
-  const ISO_8859_15_ =  "ISO_8859_15";
+  const ISO_8859_15 =  "ISO_8859_15";
   
   /// <summary>
   /// Enum value ISO_8859_16
   /// </summary>
-  const ISO_8859_16_ =  "ISO_8859_16";
+  const ISO_8859_16 =  "ISO_8859_16";
   
   /// <summary>
   /// Enum value Shift_JIS
   /// </summary>
-  const Shift_JIS_ =  "Shift_JIS";
+  const Shift_JIS =  "Shift_JIS";
   
   /// <summary>
   /// Enum value Win1250
   /// </summary>
-  const Win1250_ =  "Win1250";
+  const Win1250 =  "Win1250";
   
   /// <summary>
   /// Enum value Win1251
   /// </summary>
-  const Win1251_ =  "Win1251";
+  const Win1251 =  "Win1251";
   
   /// <summary>
   /// Enum value Win1252
   /// </summary>
-  const Win1252_ =  "Win1252";
+  const Win1252 =  "Win1252";
   
   /// <summary>
   /// Enum value Win1256
   /// </summary>
-  const Win1256_ =  "Win1256";
+  const Win1256 =  "Win1256";
   
   /// <summary>
   /// Enum value UTF16BE
   /// </summary>
-  const UTF16BE_ =  "UTF16BE";
+  const UTF16BE =  "UTF16BE";
   
   /// <summary>
   /// Enum value UTF8
   /// </summary>
-  const UTF8_ =  "UTF8";
+  const UTF8 =  "UTF8";
   
   /// <summary>
   /// Enum value US_ASCII
   /// </summary>
-  const US_ASCII_ =  "US_ASCII";
+  const US_ASCII =  "US_ASCII";
   
   /// <summary>
   /// Enum value Big5
   /// </summary>
-  const Big5_ =  "Big5";
+  const Big5 =  "Big5";
   
   /// <summary>
   /// Enum value GB18030
   /// </summary>
-  const GB18030_ =  "GB18030";
+  const GB18030 =  "GB18030";
   
   /// <summary>
   /// Enum value EUC_KR
   /// </summary>
-  const EUC_KR_ =  "EUC_KR";
+  const EUC_KR =  "EUC_KR";
   
 }
 

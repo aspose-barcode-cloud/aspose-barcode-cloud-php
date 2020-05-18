@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,37 +46,37 @@ class DataMatrixEccType
   /// <summary>
   /// Enum value EccAuto
   /// </summary>
-  const EccAuto_ =  "EccAuto";
+  const EccAuto =  "EccAuto";
   
   /// <summary>
   /// Enum value Ecc000
   /// </summary>
-  const Ecc000_ =  "Ecc000";
+  const Ecc000 =  "Ecc000";
   
   /// <summary>
   /// Enum value Ecc050
   /// </summary>
-  const Ecc050_ =  "Ecc050";
+  const Ecc050 =  "Ecc050";
   
   /// <summary>
   /// Enum value Ecc080
   /// </summary>
-  const Ecc080_ =  "Ecc080";
+  const Ecc080 =  "Ecc080";
   
   /// <summary>
   /// Enum value Ecc100
   /// </summary>
-  const Ecc100_ =  "Ecc100";
+  const Ecc100 =  "Ecc100";
   
   /// <summary>
   /// Enum value Ecc140
   /// </summary>
-  const Ecc140_ =  "Ecc140";
+  const Ecc140 =  "Ecc140";
   
   /// <summary>
   /// Enum value Ecc200
   /// </summary>
-  const Ecc200_ =  "Ecc200";
+  const Ecc200 =  "Ecc200";
   
 }
 

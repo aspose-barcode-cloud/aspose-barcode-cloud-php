@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -46,47 +46,47 @@ class Pdf417ErrorLevel
   /// <summary>
   /// Enum value Level0
   /// </summary>
-  const Level0_ =  "Level0";
+  const Level0 =  "Level0";
   
   /// <summary>
   /// Enum value Level1
   /// </summary>
-  const Level1_ =  "Level1";
+  const Level1 =  "Level1";
   
   /// <summary>
   /// Enum value Level2
   /// </summary>
-  const Level2_ =  "Level2";
+  const Level2 =  "Level2";
   
   /// <summary>
   /// Enum value Level3
   /// </summary>
-  const Level3_ =  "Level3";
+  const Level3 =  "Level3";
   
   /// <summary>
   /// Enum value Level4
   /// </summary>
-  const Level4_ =  "Level4";
+  const Level4 =  "Level4";
   
   /// <summary>
   /// Enum value Level5
   /// </summary>
-  const Level5_ =  "Level5";
+  const Level5 =  "Level5";
   
   /// <summary>
   /// Enum value Level6
   /// </summary>
-  const Level6_ =  "Level6";
+  const Level6 =  "Level6";
   
   /// <summary>
   /// Enum value Level7
   /// </summary>
-  const Level7_ =  "Level7";
+  const Level7 =  "Level7";
   
   /// <summary>
   /// Enum value Level8
   /// </summary>
-  const Level8_ =  "Level8";
+  const Level8 =  "Level8";
   
 }
 

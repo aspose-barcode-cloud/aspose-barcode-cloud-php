@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,41 +30,36 @@
 //
 namespace Aspose\BarCode;
 
+use JsonSerializable;
+
 /*
  * Represents a set of configuration settings
  */
-
-use JsonSerializable;
 
 class Configuration implements JsonSerializable
 {
     private static $_defaultConfiguration;
 
     /*
-     * Associate array to store API key(s)
+     * Version of Aspose.BarCode Cloud API
      *
-     * @var string[]
+     * @var string
      */
-    protected $apiKeys = [];
+    protected $clientVersion = '18.3';
 
     /*
      * AppKey for API
      *
+     * @var string
      */
     protected $appKey = null;
 
     /*
      * AppSid for API
+     *
      * @var string
      */
     protected $appSid = null;
-
-    /*
-     * Associate array to store API prefix (e.g. Bearer)
-     *
-     * @var string[]
-     */
-    protected $apiKeyPrefixes = [];
 
     /*
      * Access token for OAuth
@@ -72,20 +67,6 @@ class Configuration implements JsonSerializable
      * @var string
      */
     protected $accessToken = null;
-
-    /*
-     * Username for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $username = null;
-
-    /*
-     * Password for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $password = null;
 
     /*
      * The host
@@ -99,14 +80,14 @@ class Configuration implements JsonSerializable
      * default value is v1
      * @var string
      */
-    protected $base_path = "/v3.0";
+    protected $base_path = '/v3.0';
 
     /*
-     * User agent of the HTTP request, set to "PHP-Swagger" by default
+     * User agent of the HTTP request, set to 'php sdk' by default
      *
      * @var string
      */
-    protected $userAgent = "php sdk";
+    protected $userAgent = 'php sdk';
 
     /*
      * Debug switch (default set to false)
@@ -130,12 +111,6 @@ class Configuration implements JsonSerializable
     protected $tempFolderPath;
 
     /*
-     * Version of Aspose.BarCode Cloud API
-     *
-     */
-    protected $clientVersion = '18.3';
-
-    /*
      * Constructor
      */
     public function __construct()
@@ -150,20 +125,6 @@ class Configuration implements JsonSerializable
     public function getClientVersion()
     {
         return $this->clientVersion;
-    }
-
-    /*
-     * Sets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
-     *
-     * @return $this
-     */
-    public function setApiKey($apiKeyIdentifier, $key)
-    {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
-        return $this;
     }
 
     /*
@@ -211,44 +172,6 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Gets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return string API key or token
-     */
-    public function getApiKey($apiKeyIdentifier)
-    {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
-    }
-
-    /*
-     * Sets the prefix for API key (e.g. Bearer)
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix           API key prefix, e.g. Bearer
-     *
-     * @return $this
-     */
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
-    {
-        $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
-        return $this;
-    }
-
-    /*
-     * Gets API key prefix
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return string
-     */
-    public function getApiKeyPrefix($apiKeyIdentifier)
-    {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
-    }
-
-    /*
      * Sets the access token for OAuth
      *
      * @param string $accessToken Token for OAuth
@@ -269,52 +192,6 @@ class Configuration implements JsonSerializable
     public function getAccessToken()
     {
         return $this->accessToken;
-    }
-
-    /*
-     * Sets the username for HTTP basic authentication
-     *
-     * @param string $username Username for HTTP basic authentication
-     *
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-        return $this;
-    }
-
-    /*
-     * Gets the username for HTTP basic authentication
-     *
-     * @return string Username for HTTP basic authentication
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /*
-     * Sets the password for HTTP basic authentication
-     *
-     * @param string $password Password for HTTP basic authentication
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-        return $this;
-    }
-
-    /*
-     * Gets the password for HTTP basic authentication
-     *
-     * @return string Password for HTTP basic authentication
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /*
@@ -503,52 +380,27 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Get API key (with prefix if set)
-     *
-     * @param  string $apiKeyIdentifier name of apikey
-     *
-     * @return string API key with the prefix
-     */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
-    {
-        $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
-        $apiKey = $this->getApiKey($apiKeyIdentifier);
-
-        if ($apiKey === null) {
-            return null;
-        }
-
-        if ($prefix === null) {
-            $keyWithPrefix = $apiKey;
-        } else {
-            $keyWithPrefix = $prefix . ' ' . $apiKey;
-        }
-
-        return $keyWithPrefix;
-    }
-
-    /*
      * implements JsonSerializable
      */
     public function jsonSerialize()
     {
         return [
-            "AppKey" => $this->appKey,
-            "AppSid" => $this->appSid,
-            "ApiBaseUrl" => $this->host,
-            "AccessToken" => $this->accessToken,
-            "Debug" => $this->debug
+            'AppKey' => $this->appKey,
+            'AppSid' => $this->appSid,
+            'Host' => $this->host,
+            'AccessToken' => $this->accessToken,
+            'Debug' => $this->debug,
         ];
     }
 
     public static function fromJson(string $jsonString): Configuration
     {
-        $values = \json_decode($jsonString, TRUE);
+        $values = \json_decode($jsonString, true);
 
         $config = new Configuration();
         if (isset($values['AppKey'])) $config->setAppKey($values['AppKey']);
         if (isset($values['AppSid'])) $config->setAppSid($values['AppSid']);
-        if (isset($values['ApiBaseUrl'])) $config->setHost($values['ApiBaseUrl']);
+        if (isset($values['Host'])) $config->setHost($values['Host']);
         if (isset($values['AccessToken'])) $config->setAccessToken($values['AccessToken']);
         if (isset($values['Debug'])) $config->setDebug($values['Debug']);
 
