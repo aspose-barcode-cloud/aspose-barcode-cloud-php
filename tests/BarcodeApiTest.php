@@ -2,16 +2,23 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Aspose\BarCode\BarCodeApi;
+use Aspose\BarCode\BarcodeApi;
 use Aspose\BarCode\Configuration;
+use Aspose\BarCode\FileApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
 use Aspose\BarCode\Model\EncodeBarcodeType;
 use Aspose\BarCode\Model\GeneratorParams;
 use Aspose\BarCode\Model\GeneratorParamsList;
 use Aspose\BarCode\Model\PresetType;
+use Aspose\BarCode\Model\ReaderParams;
 use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
+use Aspose\BarCode\Requests\GetBarcodeRecognizeRequest;
 use Aspose\BarCode\Requests\PostBarcodeRecognizeFromUrlOrContentRequest;
 use Aspose\BarCode\Requests\PostGenerateMultipleRequest;
+use Aspose\BarCode\Requests\PutBarcodeGenerateFileRequest;
+use Aspose\BarCode\Requests\PutBarcodeRecognizeFromBodyRequest;
+use Aspose\BarCode\Requests\PutGenerateMultipleRequest;
+use Aspose\BarCode\Requests\uploadFileRequest;
 use PHPUnit\Framework\TestCase;
 
 
@@ -26,7 +33,7 @@ use PHPUnit\Framework\TestCase;
 class BarcodeApiTest extends TestCase
 {
     /**
-     * @var BarCodeApi
+     * @var BarcodeApi
      */
     private static $api = null;
     /**
@@ -35,12 +42,18 @@ class BarcodeApiTest extends TestCase
     private static $config = null;
 
     /**
+     * @var string
+     */
+    private static $tempFolderPath = null;
+
+    /**
      * Setup before running any test cases
      */
     public static function setUpBeforeClass(): void
     {
         self::$config = Configuration::fromJson(file_get_contents('Configuration.json', true));
-        self::$api = new BarCodeApi(null, self::$config);
+        self::$api = new BarcodeApi(null, self::$config);
+        self::$tempFolderPath = 'BarcodeTests/' . \uniqid();
     }
 
     /**
@@ -89,6 +102,25 @@ class BarcodeApiTest extends TestCase
      */
     public function testGetBarcodeRecognize()
     {
+        $fileApi = new FileApi(null, self::$config);
+        $path = self::$tempFolderPath . '/' . 'testGetBarcodeRecognize.png';
+        $uploaded = $fileApi->uploadFile(
+            new uploadFileRequest(
+                $path,
+                new SplFileObject('./testdata/pdf417Sample.png')
+            )
+        );
+        $this->assertEmpty($uploaded->getErrors());
+
+        $request = new GetBarcodeRecognizeRequest($uploaded->getUploaded()[0]);
+        $request->folder = self::$tempFolderPath;
+
+        $response = self::$api->GetBarcoderecognize($request);
+
+        $barcodes = $response->getBarcodes();
+        $this->assertCount(1, $barcodes);
+        $this->assertEquals(DecodeBarcodeType::Pdf417, $barcodes[0]->getType());
+        $this->assertEquals('Aspose.BarCode for Cloud Sample', $barcodes[0]->getBarcodeValue());
     }
 
     /**
@@ -119,21 +151,26 @@ class BarcodeApiTest extends TestCase
      */
     public function testPostGenerateMultiple()
     {
-        $firstBarcode = new GeneratorParams([
-            'type_of_barcode' => EncodeBarcodeType::QR,
-            'text' => 'Hello QR!'
-        ]);
-        $secondBarcode = new GeneratorParams([
-            'type_of_barcode' => EncodeBarcodeType::Code128,
-            'text' => 'Hello Code128!'
-        ]);
-        $firstBarcode->setTypeOfBarcode([$firstBarcode, $secondBarcode]);
-        $list = new GeneratorParamsList([$firstBarcode]);
-        $request = new PostGenerateMultipleRequest($list);
+        $request = new PostGenerateMultipleRequest(
+            new GeneratorParamsList([
+                'barcode_builders' => [
+                    new GeneratorParams([
+                        'type_of_barcode' => EncodeBarcodeType::QR,
+                        'text' => 'Hello QR!',
+                    ]),
+                    new GeneratorParams([
+                        'type_of_barcode' => EncodeBarcodeType::Code128,
+                        'text' => 'Hello Code128!',
+                    ]),
+                ],
+                'x_step' => 0,
+                'y_step' => 0,
+            ])
+        );
 
         $response = self::$api->postGenerateMultiple($request);
 
-        $this->assertGreaterThan(0, $response->getSize);
+        $this->assertGreaterThan(0, $response->getSize());
     }
 
     /**
@@ -144,6 +181,18 @@ class BarcodeApiTest extends TestCase
      */
     public function testPutBarcodeGenerateFile()
     {
+        $request = new PutBarcodeGenerateFileRequest(
+            'testPutBarcodeGenerateFile.png',
+            EncodeBarcodeType::Code128,
+            'Hello!'
+        );
+        $request->folder = self::$tempFolderPath;
+
+        $response = self::$api->putBarcodeGenerateFile($request);
+
+        $this->assertGreaterThan(0, $response->getFileSize());
+        $this->assertGreaterThan(0, $response->getImageWidth());
+        $this->assertGreaterThan(0, $response->getImageHeight());
     }
 
     /**
@@ -154,6 +203,35 @@ class BarcodeApiTest extends TestCase
      */
     public function testPutBarcodeRecognizeFromBody()
     {
+        // Upload test file
+        $fileApi = new FileApi(null, self::$config);
+        $path = self::$tempFolderPath . '/' . 'testGetBarcodeRecognize.png';
+        $uploaded = $fileApi->uploadFile(
+            new uploadFileRequest(
+                $path,
+                new SplFileObject('./testdata/pdf417Sample.png')
+            )
+        );
+        $this->assertEmpty($uploaded->getErrors());
+
+        // Arrange
+        $request = new PutBarcodeRecognizeFromBodyRequest(
+            $uploaded->getUploaded()[0],
+            new ReaderParams([
+                'type' => DecodeBarcodeType::Pdf417,
+                'preset' => PresetType::HighPerformance,
+            ])
+        );
+        $request->folder = self::$tempFolderPath;
+
+        // Act
+        $response = self::$api->putBarcodeRecognizeFromBody($request);
+
+        // Assert
+        $barcodes = $response->getBarcodes();
+        $this->assertCount(1, $barcodes);
+        $this->assertEquals(DecodeBarcodeType::Pdf417, $barcodes[0]->getType());
+        $this->assertEquals('Aspose.BarCode for Cloud Sample', $barcodes[0]->getBarcodeValue());
     }
 
     /**
@@ -164,5 +242,29 @@ class BarcodeApiTest extends TestCase
      */
     public function testPutGenerateMultiple()
     {
+        $request = new PutGenerateMultipleRequest(
+            'testPutGenerateMultiple.png',
+            new GeneratorParamsList([
+                'barcode_builders' => [
+                    new GeneratorParams([
+                        'type_of_barcode' => EncodeBarcodeType::QR,
+                        'text' => 'Hello QR!',
+                    ]),
+                    new GeneratorParams([
+                        'type_of_barcode' => EncodeBarcodeType::Code128,
+                        'text' => 'Hello Code128!',
+                    ]),
+                ],
+                'x_step' => 0,
+                'y_step' => 0,
+            ])
+        );
+        $request->folder = self::$tempFolderPath;
+
+        $response = self::$api->putGenerateMultiple($request);
+
+        $this->assertGreaterThan(0, $response->getFileSize());
+        $this->assertGreaterThan(0, $response->getImageWidth());
+        $this->assertGreaterThan(0, $response->getImageHeight());
     }
 }

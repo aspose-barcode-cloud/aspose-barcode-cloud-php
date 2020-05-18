@@ -135,7 +135,7 @@ class BarcodeApi
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
@@ -241,7 +241,7 @@ class BarcodeApi
 
                     if ($exception instanceof RepeatRequestException) {
                         //$this->_refreshToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
                     throw new ApiException(
@@ -274,7 +274,7 @@ class BarcodeApi
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = "";
+        $httpBody = '';
         $multipart = false;
 
 
@@ -649,8 +649,6 @@ class BarcodeApi
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
-            } else {
-                // for HTTP post (form)
             }
         }
 
@@ -736,7 +734,7 @@ class BarcodeApi
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
@@ -838,7 +836,7 @@ class BarcodeApi
 
                     if ($exception instanceof RepeatRequestException) {
                         //$this->_refreshToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
                     throw new ApiException(
@@ -867,7 +865,7 @@ class BarcodeApi
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = "";
+        $httpBody = '';
         $multipart = false;
 
         // path params
@@ -1250,8 +1248,6 @@ class BarcodeApi
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
-            } else {
-                // for HTTP post (form)
             }
         }
 
@@ -1337,7 +1333,7 @@ class BarcodeApi
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
@@ -1439,7 +1435,7 @@ class BarcodeApi
 
                     if ($exception instanceof RepeatRequestException) {
                         //$this->_refreshToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
                     throw new ApiException(
@@ -1464,7 +1460,7 @@ class BarcodeApi
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = "";
+        $httpBody = '';
         $multipart = false;
 
 
@@ -1799,7 +1795,7 @@ class BarcodeApi
         if (isset($request->image)) {
             //$multipart = true;
             $filename = ObjectSerializer::toFormValue($request->image);
-            $handle = fopen($filename, "rb");
+            $handle = fopen($filename, 'rb');
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
             $formParams['image'] = $contents;
@@ -1814,7 +1810,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data']
+                ['application/octet-stream']
             );
         }
 
@@ -1843,7 +1839,7 @@ class BarcodeApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = $formParams["image"];
+                $httpBody = $formParams['image'];
             }
         }
 
@@ -1929,7 +1925,7 @@ class BarcodeApi
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
@@ -2031,7 +2027,7 @@ class BarcodeApi
 
                     if ($exception instanceof RepeatRequestException) {
                         //$this->_refreshToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
                     throw new ApiException(
@@ -2060,7 +2056,7 @@ class BarcodeApi
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = "";
+        $httpBody = '';
         $multipart = false;
 
 
@@ -2095,7 +2091,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['image/png', 'image/bmp', 'image/gif', 'image/jpeg', 'image/svg+xml', 'image/tiff'],
-                ['multipart/form-data']
+                ['application/json', 'application/xml']
             );
         }
 
@@ -2122,8 +2118,6 @@ class BarcodeApi
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
-            } else {
-                // for HTTP post (form)
             }
         }
 
@@ -2209,7 +2203,7 @@ class BarcodeApi
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
@@ -2315,7 +2309,7 @@ class BarcodeApi
 
                     if ($exception instanceof RepeatRequestException) {
                         //$this->_refreshToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
                     throw new ApiException(
@@ -2352,7 +2346,7 @@ class BarcodeApi
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = "";
+        $httpBody = '';
         $multipart = false;
 
         // path params
@@ -2725,7 +2719,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data']
+                ['application/json', 'application/xml']
             );
         }
 
@@ -2752,8 +2746,6 @@ class BarcodeApi
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
-            } else {
-                // for HTTP post (form)
             }
         }
 
@@ -2839,7 +2831,7 @@ class BarcodeApi
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
@@ -2941,7 +2933,7 @@ class BarcodeApi
 
                     if ($exception instanceof RepeatRequestException) {
                         //$this->_refreshToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
                     throw new ApiException(
@@ -2974,7 +2966,7 @@ class BarcodeApi
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = "";
+        $httpBody = '';
         $multipart = false;
 
         // path params
@@ -3061,8 +3053,6 @@ class BarcodeApi
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
-            } else {
-                // for HTTP post (form)
             }
         }
 
@@ -3148,7 +3138,7 @@ class BarcodeApi
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
                     $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                 }
 
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
@@ -3254,7 +3244,7 @@ class BarcodeApi
 
                     if ($exception instanceof RepeatRequestException) {
                         //$this->_refreshToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
                     }
 
                     throw new ApiException(
@@ -3287,7 +3277,7 @@ class BarcodeApi
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
-        $httpBody = "";
+        $httpBody = '';
         $multipart = false;
 
         // path params
@@ -3347,7 +3337,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data']
+                ['application/json', 'application/xml']
             );
         }
 
@@ -3374,8 +3364,6 @@ class BarcodeApi
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
-            } else {
-                // for HTTP post (form)
             }
         }
 
@@ -3453,10 +3441,10 @@ class BarcodeApi
     private function _writeHeadersAndBody($logInfo, $headers, $body)
     {
         foreach ($headers as $name => $value) {
-            $logInfo .= $name . ': ' . $value . "\n";
+            $logInfo .= $name . ': ' . $value . '\n';
         }
 
-        return $logInfo .= "Body: " . $body . "\n";
+        return $logInfo .= 'Body: ' . $body . '\n';
     }
 
     /*
@@ -3465,10 +3453,10 @@ class BarcodeApi
     private function _parseURL($url, $queryParams)
     {
         // parse the url
-        $UrlToSign = trim($url, "/");
+        $UrlToSign = trim($url, '/');
         $urlQuery = http_build_query($queryParams);
 
-        $urlPartToSign = $this->config->getBasePath() . "/" . parse_url($UrlToSign, PHP_URL_HOST) . parse_url($UrlToSign, PHP_URL_PATH) . "?" . $urlQuery;
+        $urlPartToSign = $this->config->getBasePath() . '/' . parse_url($UrlToSign, PHP_URL_HOST) . parse_url($UrlToSign, PHP_URL_PATH) . '?' . $urlQuery;
 
         return $urlPartToSign;
     }
@@ -3478,7 +3466,7 @@ class BarcodeApi
      */
     private function _requestToken()
     {
-        $requestUrl = $this->config->getHost() . "/connect/token";
+        $requestUrl = $this->config->getHost() . '/connect/token';
 
         $response = $this->client->request('POST', $requestUrl, [
             'form_params' => [
@@ -3488,6 +3476,6 @@ class BarcodeApi
             ]
         ]);
         $result = json_decode($response->getBody()->getContents(), true);
-        $this->config->setAccessToken($result["access_token"]);
+        $this->config->setAccessToken($result['access_token']);
     }
 }

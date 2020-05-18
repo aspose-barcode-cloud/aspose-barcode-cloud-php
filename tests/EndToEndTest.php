@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Aspose\BarCode\BarCodeApi;
+use Aspose\BarCode\BarcodeApi;
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\Model\PresetType;
 use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
@@ -15,7 +15,7 @@ final class EndToEndTest extends TestCase
     public function testGenerateAndRecognize(): void
     {
         $config = Configuration::fromJson(file_get_contents('Configuration.json', true));
-        $api = new BarCodeApi(null, $config);
+        $api = new BarcodeApi(null, $config);
 
         // Generate
 
