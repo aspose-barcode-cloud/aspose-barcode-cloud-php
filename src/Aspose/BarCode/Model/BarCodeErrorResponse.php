@@ -40,6 +40,7 @@ use Aspose\BarCode\ObjectSerializer;
 /*
  * BarCodeErrorResponse
  *
+ * @description BarCodeErrorResponse
  */
 class BarCodeErrorResponse implements ArrayAccess
 {
@@ -219,7 +220,7 @@ class BarCodeErrorResponse implements ArrayAccess
     /*
      * Sets error
      *
-     * @param \Aspose\BarCode\Model\Error $error error
+     * @param \Aspose\BarCode\Model\Error $error Error
      *
      * @return $this
      */

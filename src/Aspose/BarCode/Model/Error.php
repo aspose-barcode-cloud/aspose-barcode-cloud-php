@@ -40,6 +40,7 @@ use Aspose\BarCode\ObjectSerializer;
 /*
  * Error
  *
+ * @description Error
  */
 class Error implements ArrayAccess
 {
@@ -61,7 +62,7 @@ class Error implements ArrayAccess
         'code' => 'string',
         'message' => 'string',
         'description' => 'string',
-        'inner_error' => '\Aspose\BarCode\Model\InnerError'
+        'inner_error' => '\Aspose\BarCode\Model\ErrorDetails'
     ];
 
     /*
@@ -237,7 +238,7 @@ class Error implements ArrayAccess
     /*
      * Sets code
      *
-     * @param string $code code
+     * @param string $code Code
      *
      * @return $this
      */
@@ -261,7 +262,7 @@ class Error implements ArrayAccess
     /*
      * Sets message
      *
-     * @param string $message message
+     * @param string $message Message
      *
      * @return $this
      */
@@ -285,7 +286,7 @@ class Error implements ArrayAccess
     /*
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Description
      *
      * @return $this
      */
@@ -299,7 +300,7 @@ class Error implements ArrayAccess
     /*
      * Gets inner_error
      *
-     * @return \Aspose\BarCode\Model\InnerError
+     * @return \Aspose\BarCode\Model\ErrorDetails
      */
     public function getInnerError()
     {
@@ -309,7 +310,7 @@ class Error implements ArrayAccess
     /*
      * Sets inner_error
      *
-     * @param \Aspose\BarCode\Model\InnerError $inner_error inner_error
+     * @param \Aspose\BarCode\Model\ErrorDetails $inner_error Inner Error
      *
      * @return $this
      */

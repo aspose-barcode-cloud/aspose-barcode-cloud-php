@@ -60,7 +60,7 @@ class FilesUploadResult implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'uploaded' => 'string[]',
-        'errors' => '\Aspose\BarCode\Model\Error2[]'
+        'errors' => '\Aspose\BarCode\Model\Error[]'
     ];
 
     /*
@@ -240,7 +240,7 @@ class FilesUploadResult implements ArrayAccess
     /*
      * Gets errors
      *
-     * @return \Aspose\BarCode\Model\Error2[]
+     * @return \Aspose\BarCode\Model\Error[]
      */
     public function getErrors()
     {
@@ -250,7 +250,7 @@ class FilesUploadResult implements ArrayAccess
     /*
      * Sets errors
      *
-     * @param \Aspose\BarCode\Model\Error2[] $errors List of errors.
+     * @param \Aspose\BarCode\Model\Error[] $errors List of errors.
      *
      * @return $this
      */
