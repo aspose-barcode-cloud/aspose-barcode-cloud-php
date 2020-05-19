@@ -30,27 +30,24 @@ require __DIR__ . '/vendor/autoload.php';
 ### Sample usage
 
 ```php
-use Aspose\BarCode\Configuration;
-use Aspose\BarCode\BarCodeApi;
-use Aspose\BarCode\Requests\BarCodeGetBarCodeGenerateRequest;
-
+use Aspose\BarCode\{Configuration, BarcodeApi, Model\EncodeBarcodeType, Requests\GetBarcodeGenerateRequest};
 
 $config = new Configuration();
-$config->setAppKey("your_key");
-$config->setAppSid("your_sid");
+$config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');
+$config->setAppSid('App SID from https://dashboard.aspose.cloud/#/apps');
+// Or use Configuration.json file
+//$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
 
-$request = new BarCodeGetBarCodeGenerateRequest();
-$request->type = "QR";
-$request->text = "PHP SDK Test";
-$request->format = "png";
+$request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
+$request->format = 'png';
 
-$api = new BarCodeApi(null, $config);
-$response = $api->BarCodeGetBarCodeGenerate($request);
+$api = new BarcodeApi(null, $config);
+$response = $api->GetBarCodeGenerate($request);
 
 $type = 'image/png';
 $size = $response->getSize();
-header('Content-Type:'.$type);
-header('Content-Length: ' . $size);
+header("Content-Type: $type");
+header("Content-Length: $size");
 echo $response->fread($size);
 ```
 

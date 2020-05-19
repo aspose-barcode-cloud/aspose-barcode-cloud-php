@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="index.php">
@@ -28,14 +28,16 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Aspose\BarCode\Configuration;
-use Aspose\BarCode\BarcodeApi;
-use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
+use Aspose\BarCode\{Configuration, BarcodeApi, Model\EncodeBarcodeType, Requests\GetBarcodeGenerateRequest};
 
-$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
+$config = new Configuration();
+$config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');
+$config->setAppSid('App SID from https://dashboard.aspose.cloud/#/apps');
+// Or use Configuration.json file
+//$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
 
-$request = new GetBarcodeGenerateRequest('QR', 'PHP SDK Test');
-$request->format = "png";
+$request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
+$request->format = 'png';
 
 $api = new BarcodeApi(null, $config);
 $response = $api->GetBarCodeGenerate($request);
