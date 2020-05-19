@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StorageApi.php">
@@ -89,13 +89,13 @@ class StorageApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\BarCode\Model\DiscUsage
      */
-    public function getDiscUsage(Requests\getDiscUsageRequest $request)
+    public function getDiscUsage(Requests\GetDiscUsageRequest $request)
     {
         try {
             list($response) = $this->getDiscUsageWithHttpInfo($request);
@@ -111,16 +111,16 @@ class StorageApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\DiscUsage, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDiscUsageWithHttpInfo(Requests\getDiscUsageRequest $request)
+    public function getDiscUsageWithHttpInfo(Requests\GetDiscUsageRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\DiscUsage';
-        $request = $this->getDiscUsageRequest($request);
+        $request = $this->GetDiscUsageRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -177,12 +177,12 @@ class StorageApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDiscUsageAsync(Requests\getDiscUsageRequest $request)
+    public function getDiscUsageAsync(Requests\GetDiscUsageRequest $request)
     {
         return $this->getDiscUsageAsyncWithHttpInfo($request)
             ->then(
@@ -197,15 +197,15 @@ class StorageApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDiscUsageAsyncWithHttpInfo(Requests\getDiscUsageRequest $request)
+    public function getDiscUsageAsyncWithHttpInfo(Requests\GetDiscUsageRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\DiscUsage';
-        $request = $this->getDiscUsageRequest($request);
+        $request = $this->GetDiscUsageRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -250,12 +250,12 @@ class StorageApi
     /*
      * Create request for operation 'getDiscUsage'
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDiscUsageRequest(Requests\getDiscUsageRequest $request)
+    protected function GetDiscUsageRequest(Requests\GetDiscUsageRequest $request)
     {
 
         $resourcePath = '/barcode/storage/disc';
@@ -356,13 +356,13 @@ class StorageApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\BarCode\Model\FileVersions
      */
-    public function getFileVersions(Requests\getFileVersionsRequest $request)
+    public function getFileVersions(Requests\GetFileVersionsRequest $request)
     {
         try {
             list($response) = $this->getFileVersionsWithHttpInfo($request);
@@ -378,16 +378,16 @@ class StorageApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\FileVersions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFileVersionsWithHttpInfo(Requests\getFileVersionsRequest $request)
+    public function getFileVersionsWithHttpInfo(Requests\GetFileVersionsRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\FileVersions';
-        $request = $this->getFileVersionsRequest($request);
+        $request = $this->GetFileVersionsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -444,12 +444,12 @@ class StorageApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFileVersionsAsync(Requests\getFileVersionsRequest $request)
+    public function getFileVersionsAsync(Requests\GetFileVersionsRequest $request)
     {
         return $this->getFileVersionsAsyncWithHttpInfo($request)
             ->then(
@@ -464,15 +464,15 @@ class StorageApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFileVersionsAsyncWithHttpInfo(Requests\getFileVersionsRequest $request)
+    public function getFileVersionsAsyncWithHttpInfo(Requests\GetFileVersionsRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\FileVersions';
-        $request = $this->getFileVersionsRequest($request);
+        $request = $this->GetFileVersionsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -517,12 +517,12 @@ class StorageApi
     /*
      * Create request for operation 'getFileVersions'
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFileVersionsRequest(Requests\getFileVersionsRequest $request)
+    protected function GetFileVersionsRequest(Requests\GetFileVersionsRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -632,13 +632,13 @@ class StorageApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\BarCode\Model\ObjectExist
      */
-    public function objectExists(Requests\objectExistsRequest $request)
+    public function objectExists(Requests\ObjectExistsRequest $request)
     {
         try {
             list($response) = $this->objectExistsWithHttpInfo($request);
@@ -654,16 +654,16 @@ class StorageApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\ObjectExist, HTTP status code, HTTP response headers (array of strings)
      */
-    public function objectExistsWithHttpInfo(Requests\objectExistsRequest $request)
+    public function objectExistsWithHttpInfo(Requests\ObjectExistsRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\ObjectExist';
-        $request = $this->objectExistsRequest($request);
+        $request = $this->ObjectExistsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -720,12 +720,12 @@ class StorageApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function objectExistsAsync(Requests\objectExistsRequest $request)
+    public function objectExistsAsync(Requests\ObjectExistsRequest $request)
     {
         return $this->objectExistsAsyncWithHttpInfo($request)
             ->then(
@@ -740,15 +740,15 @@ class StorageApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function objectExistsAsyncWithHttpInfo(Requests\objectExistsRequest $request)
+    public function objectExistsAsyncWithHttpInfo(Requests\ObjectExistsRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\ObjectExist';
-        $request = $this->objectExistsRequest($request);
+        $request = $this->ObjectExistsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -793,12 +793,12 @@ class StorageApi
     /*
      * Create request for operation 'objectExists'
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function objectExistsRequest(Requests\objectExistsRequest $request)
+    protected function ObjectExistsRequest(Requests\ObjectExistsRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -918,13 +918,13 @@ class StorageApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\BarCode\Model\StorageExist
      */
-    public function storageExists(Requests\storageExistsRequest $request)
+    public function storageExists(Requests\StorageExistsRequest $request)
     {
         try {
             list($response) = $this->storageExistsWithHttpInfo($request);
@@ -940,16 +940,16 @@ class StorageApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\StorageExist, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storageExistsWithHttpInfo(Requests\storageExistsRequest $request)
+    public function storageExistsWithHttpInfo(Requests\StorageExistsRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\StorageExist';
-        $request = $this->storageExistsRequest($request);
+        $request = $this->StorageExistsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1006,12 +1006,12 @@ class StorageApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storageExistsAsync(Requests\storageExistsRequest $request)
+    public function storageExistsAsync(Requests\StorageExistsRequest $request)
     {
         return $this->storageExistsAsyncWithHttpInfo($request)
             ->then(
@@ -1026,15 +1026,15 @@ class StorageApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storageExistsAsyncWithHttpInfo(Requests\storageExistsRequest $request)
+    public function storageExistsAsyncWithHttpInfo(Requests\StorageExistsRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\StorageExist';
-        $request = $this->storageExistsRequest($request);
+        $request = $this->StorageExistsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1079,12 +1079,12 @@ class StorageApi
     /*
      * Create request for operation 'storageExists'
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function storageExistsRequest(Requests\storageExistsRequest $request)
+    protected function StorageExistsRequest(Requests\StorageExistsRequest $request)
     {
         // verify the required parameter 'storage_name' is set
         if (!isset($request->storage_name)) {
@@ -1260,233 +1260,3 @@ class StorageApi
         $this->config->setAccessToken($result['access_token']);
     }
 }
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="getDiscUsageRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "getDiscUsage" operation.
- */
-class getDiscUsageRequest
-{
-    /*
-     * Initializes a new instance of the getDiscUsageRequest class.
-     *
-     * @param string $storage_name Storage name
-     */
-    public function __construct($storage_name = null)
-    {
-        $this->storage_name = $storage_name;
-    }
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="getFileVersionsRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "getFileVersions" operation.
- */
-class getFileVersionsRequest
-{
-    /*
-     * Initializes a new instance of the getFileVersionsRequest class.
-     *
-     * @param string $path File path e.g. '/file.ext'
-     * @param string $storage_name Storage name
-     */
-    public function __construct($path, $storage_name = null)
-    {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-    }
-
-    /*
-     * File path e.g. '/file.ext'
-     */
-    public $path;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="objectExistsRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "objectExists" operation.
- */
-class objectExistsRequest
-{
-    /*
-     * Initializes a new instance of the objectExistsRequest class.
-     *
-     * @param string $path File or folder path e.g. '/file.ext' or '/folder'
-     * @param string $storage_name Storage name
-     * @param string $version_id File version ID
-     */
-    public function __construct($path, $storage_name = null, $version_id = null)
-    {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-        $this->version_id = $version_id;
-    }
-
-    /*
-     * File or folder path e.g. '/file.ext' or '/folder'
-     */
-    public $path;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-
-    /*
-     * File version ID
-     */
-    public $version_id;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="storageExistsRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "storageExists" operation.
- */
-class storageExistsRequest
-{
-    /*
-     * Initializes a new instance of the storageExistsRequest class.
-     *
-     * @param string $storage_name Storage name
-     */
-    public function __construct($storage_name)
-    {
-        $this->storage_name = $storage_name;
-    }
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-}
-

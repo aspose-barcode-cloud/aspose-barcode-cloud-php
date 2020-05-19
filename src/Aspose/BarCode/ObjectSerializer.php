@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file=".php">
@@ -171,12 +171,19 @@ class ObjectSerializer
      */
     public static function toString($value)
     {
-        if (date(\DATE_ATOM, preg_match("/^[1-9][0-9]*$/", $value)[0]) instanceof \DateTime) { // datetime in ISO8601 format
-            $datetime = preg_match("/^[1-9][0-9]*$/", $value)[0];
-            return date(\DATE_ATOM, $datetime);
-        } else {
+        $maybeDateStr = preg_match("/^[1-9][0-9]*$/", $value)[0];
+
+        if (!isset($maybeDateStr)) {
             return $value;
         }
+
+        $maybeDateTime = date(\DATE_ATOM, $maybeDateStr);
+
+        if ($maybeDateTime instanceof \DateTime) { // datetime in ISO8601 format
+            return $maybeDateTime;
+        }
+
+        return $value;
     }
 
     /*

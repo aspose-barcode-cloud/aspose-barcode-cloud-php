@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FileApi.php">
@@ -89,13 +89,13 @@ class FileApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function copyFile(Requests\copyFileRequest $request)
+    public function copyFile(Requests\CopyFileRequest $request)
     {
         try {
             $this->copyFileWithHttpInfo($request);
@@ -109,16 +109,16 @@ class FileApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function copyFileWithHttpInfo(Requests\copyFileRequest $request)
+    public function copyFileWithHttpInfo(Requests\CopyFileRequest $request)
     {
         $returnType = '';
-        $request = $this->copyFileRequest($request);
+        $request = $this->CopyFileRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -153,12 +153,12 @@ class FileApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFileAsync(Requests\copyFileRequest $request)
+    public function copyFileAsync(Requests\CopyFileRequest $request)
     {
         return $this->copyFileAsyncWithHttpInfo($request)
             ->then(
@@ -173,15 +173,15 @@ class FileApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFileAsyncWithHttpInfo(Requests\copyFileRequest $request)
+    public function copyFileAsyncWithHttpInfo(Requests\CopyFileRequest $request)
     {
         $returnType = '';
-        $request = $this->copyFileRequest($request);
+        $request = $this->CopyFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -208,12 +208,12 @@ class FileApi
     /*
      * Create request for operation 'copyFile'
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function copyFileRequest(Requests\copyFileRequest $request)
+    protected function CopyFileRequest(Requests\CopyFileRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
@@ -357,13 +357,13 @@ class FileApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFile(Requests\deleteFileRequest $request)
+    public function deleteFile(Requests\DeleteFileRequest $request)
     {
         try {
             $this->deleteFileWithHttpInfo($request);
@@ -377,16 +377,16 @@ class FileApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFileWithHttpInfo(Requests\deleteFileRequest $request)
+    public function deleteFileWithHttpInfo(Requests\DeleteFileRequest $request)
     {
         $returnType = '';
-        $request = $this->deleteFileRequest($request);
+        $request = $this->DeleteFileRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -421,12 +421,12 @@ class FileApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFileAsync(Requests\deleteFileRequest $request)
+    public function deleteFileAsync(Requests\DeleteFileRequest $request)
     {
         return $this->deleteFileAsyncWithHttpInfo($request)
             ->then(
@@ -441,15 +441,15 @@ class FileApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFileAsyncWithHttpInfo(Requests\deleteFileRequest $request)
+    public function deleteFileAsyncWithHttpInfo(Requests\DeleteFileRequest $request)
     {
         $returnType = '';
-        $request = $this->deleteFileRequest($request);
+        $request = $this->DeleteFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -476,12 +476,12 @@ class FileApi
     /*
      * Create request for operation 'deleteFile'
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteFileRequest(Requests\deleteFileRequest $request)
+    protected function DeleteFileRequest(Requests\DeleteFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -601,13 +601,13 @@ class FileApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function downloadFile(Requests\downloadFileRequest $request)
+    public function downloadFile(Requests\DownloadFileRequest $request)
     {
         try {
             list($response) = $this->downloadFileWithHttpInfo($request);
@@ -623,16 +623,16 @@ class FileApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadFileWithHttpInfo(Requests\downloadFileRequest $request)
+    public function downloadFileWithHttpInfo(Requests\DownloadFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->downloadFileRequest($request);
+        $request = $this->DownloadFileRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -689,12 +689,12 @@ class FileApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadFileAsync(Requests\downloadFileRequest $request)
+    public function downloadFileAsync(Requests\DownloadFileRequest $request)
     {
         return $this->downloadFileAsyncWithHttpInfo($request)
             ->then(
@@ -709,15 +709,15 @@ class FileApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadFileAsyncWithHttpInfo(Requests\downloadFileRequest $request)
+    public function downloadFileAsyncWithHttpInfo(Requests\DownloadFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->downloadFileRequest($request);
+        $request = $this->DownloadFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -762,12 +762,12 @@ class FileApi
     /*
      * Create request for operation 'downloadFile'
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function downloadFileRequest(Requests\downloadFileRequest $request)
+    protected function DownloadFileRequest(Requests\DownloadFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -887,13 +887,13 @@ class FileApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function moveFile(Requests\moveFileRequest $request)
+    public function moveFile(Requests\MoveFileRequest $request)
     {
         try {
             $this->moveFileWithHttpInfo($request);
@@ -907,16 +907,16 @@ class FileApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function moveFileWithHttpInfo(Requests\moveFileRequest $request)
+    public function moveFileWithHttpInfo(Requests\MoveFileRequest $request)
     {
         $returnType = '';
-        $request = $this->moveFileRequest($request);
+        $request = $this->MoveFileRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -951,12 +951,12 @@ class FileApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFileAsync(Requests\moveFileRequest $request)
+    public function moveFileAsync(Requests\MoveFileRequest $request)
     {
         return $this->moveFileAsyncWithHttpInfo($request)
             ->then(
@@ -971,15 +971,15 @@ class FileApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFileAsyncWithHttpInfo(Requests\moveFileRequest $request)
+    public function moveFileAsyncWithHttpInfo(Requests\MoveFileRequest $request)
     {
         $returnType = '';
-        $request = $this->moveFileRequest($request);
+        $request = $this->MoveFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1006,12 +1006,12 @@ class FileApi
     /*
      * Create request for operation 'moveFile'
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function moveFileRequest(Requests\moveFileRequest $request)
+    protected function MoveFileRequest(Requests\MoveFileRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
@@ -1155,13 +1155,13 @@ class FileApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\BarCode\Model\FilesUploadResult
      */
-    public function uploadFile(Requests\uploadFileRequest $request)
+    public function uploadFile(Requests\UploadFileRequest $request)
     {
         try {
             list($response) = $this->uploadFileWithHttpInfo($request);
@@ -1177,16 +1177,16 @@ class FileApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadFileWithHttpInfo(Requests\uploadFileRequest $request)
+    public function uploadFileWithHttpInfo(Requests\UploadFileRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\FilesUploadResult';
-        $request = $this->uploadFileRequest($request);
+        $request = $this->UploadFileRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1243,12 +1243,12 @@ class FileApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFileAsync(Requests\uploadFileRequest $request)
+    public function uploadFileAsync(Requests\UploadFileRequest $request)
     {
         return $this->uploadFileAsyncWithHttpInfo($request)
             ->then(
@@ -1263,15 +1263,15 @@ class FileApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFileAsyncWithHttpInfo(Requests\uploadFileRequest $request)
+    public function uploadFileAsyncWithHttpInfo(Requests\UploadFileRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\FilesUploadResult';
-        $request = $this->uploadFileRequest($request);
+        $request = $this->UploadFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1316,12 +1316,12 @@ class FileApi
     /*
      * Create request for operation 'uploadFile'
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function uploadFileRequest(Requests\uploadFileRequest $request)
+    protected function UploadFileRequest(Requests\UploadFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -1523,362 +1523,3 @@ class FileApi
         $this->config->setAccessToken($result['access_token']);
     }
 }
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="copyFileRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "copyFile" operation.
- */
-class copyFileRequest
-{
-    /*
-     * Initializes a new instance of the copyFileRequest class.
-     *
-     * @param string $src_path Source file path e.g. '/folder/file.ext'
-     * @param string $dest_path Destination file path
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
-     * @param string $version_id File version ID to copy
-     */
-    public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
-    {
-        $this->src_path = $src_path;
-        $this->dest_path = $dest_path;
-        $this->src_storage_name = $src_storage_name;
-        $this->dest_storage_name = $dest_storage_name;
-        $this->version_id = $version_id;
-    }
-
-    /*
-     * Source file path e.g. '/folder/file.ext'
-     */
-    public $src_path;
-
-    /*
-     * Destination file path
-     */
-    public $dest_path;
-
-    /*
-     * Source storage name
-     */
-    public $src_storage_name;
-
-    /*
-     * Destination storage name
-     */
-    public $dest_storage_name;
-
-    /*
-     * File version ID to copy
-     */
-    public $version_id;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="deleteFileRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "deleteFile" operation.
- */
-class deleteFileRequest
-{
-    /*
-     * Initializes a new instance of the deleteFileRequest class.
-     *
-     * @param string $path File path e.g. '/folder/file.ext'
-     * @param string $storage_name Storage name
-     * @param string $version_id File version ID to delete
-     */
-    public function __construct($path, $storage_name = null, $version_id = null)
-    {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-        $this->version_id = $version_id;
-    }
-
-    /*
-     * File path e.g. '/folder/file.ext'
-     */
-    public $path;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-
-    /*
-     * File version ID to delete
-     */
-    public $version_id;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="downloadFileRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "downloadFile" operation.
- */
-class downloadFileRequest
-{
-    /*
-     * Initializes a new instance of the downloadFileRequest class.
-     *
-     * @param string $path File path e.g. '/folder/file.ext'
-     * @param string $storage_name Storage name
-     * @param string $version_id File version ID to download
-     */
-    public function __construct($path, $storage_name = null, $version_id = null)
-    {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-        $this->version_id = $version_id;
-    }
-
-    /*
-     * File path e.g. '/folder/file.ext'
-     */
-    public $path;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-
-    /*
-     * File version ID to download
-     */
-    public $version_id;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="moveFileRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "moveFile" operation.
- */
-class moveFileRequest
-{
-    /*
-     * Initializes a new instance of the moveFileRequest class.
-     *
-     * @param string $src_path Source file path e.g. '/src.ext'
-     * @param string $dest_path Destination file path e.g. '/dest.ext'
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
-     * @param string $version_id File version ID to move
-     */
-    public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
-    {
-        $this->src_path = $src_path;
-        $this->dest_path = $dest_path;
-        $this->src_storage_name = $src_storage_name;
-        $this->dest_storage_name = $dest_storage_name;
-        $this->version_id = $version_id;
-    }
-
-    /*
-     * Source file path e.g. '/src.ext'
-     */
-    public $src_path;
-
-    /*
-     * Destination file path e.g. '/dest.ext'
-     */
-    public $dest_path;
-
-    /*
-     * Source storage name
-     */
-    public $src_storage_name;
-
-    /*
-     * Destination storage name
-     */
-    public $dest_storage_name;
-
-    /*
-     * File version ID to move
-     */
-    public $version_id;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="uploadFileRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "uploadFile" operation.
- */
-class uploadFileRequest
-{
-    /*
-     * Initializes a new instance of the uploadFileRequest class.
-     *
-     * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
-     * @param \SplFileObject $file File to upload
-     * @param string $storage_name Storage name
-     */
-    public function __construct($path, $file, $storage_name = null)
-    {
-        $this->path = $path;
-        $this->file = $file;
-        $this->storage_name = $storage_name;
-    }
-
-    /*
-     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
-     */
-    public $path;
-
-    /*
-     * File to upload
-     */
-    public $file;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-}
-

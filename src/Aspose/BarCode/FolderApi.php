@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FolderApi.php">
@@ -89,13 +89,13 @@ class FolderApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function copyFolder(Requests\copyFolderRequest $request)
+    public function copyFolder(Requests\CopyFolderRequest $request)
     {
         try {
             $this->copyFolderWithHttpInfo($request);
@@ -109,16 +109,16 @@ class FolderApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function copyFolderWithHttpInfo(Requests\copyFolderRequest $request)
+    public function copyFolderWithHttpInfo(Requests\CopyFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->copyFolderRequest($request);
+        $request = $this->CopyFolderRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -153,12 +153,12 @@ class FolderApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFolderAsync(Requests\copyFolderRequest $request)
+    public function copyFolderAsync(Requests\CopyFolderRequest $request)
     {
         return $this->copyFolderAsyncWithHttpInfo($request)
             ->then(
@@ -173,15 +173,15 @@ class FolderApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFolderAsyncWithHttpInfo(Requests\copyFolderRequest $request)
+    public function copyFolderAsyncWithHttpInfo(Requests\CopyFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->copyFolderRequest($request);
+        $request = $this->CopyFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -208,12 +208,12 @@ class FolderApi
     /*
      * Create request for operation 'copyFolder'
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function copyFolderRequest(Requests\copyFolderRequest $request)
+    protected function CopyFolderRequest(Requests\CopyFolderRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
@@ -347,13 +347,13 @@ class FolderApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createFolder(Requests\createFolderRequest $request)
+    public function createFolder(Requests\CreateFolderRequest $request)
     {
         try {
             $this->createFolderWithHttpInfo($request);
@@ -367,16 +367,16 @@ class FolderApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFolderWithHttpInfo(Requests\createFolderRequest $request)
+    public function createFolderWithHttpInfo(Requests\CreateFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->createFolderRequest($request);
+        $request = $this->CreateFolderRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -411,12 +411,12 @@ class FolderApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFolderAsync(Requests\createFolderRequest $request)
+    public function createFolderAsync(Requests\CreateFolderRequest $request)
     {
         return $this->createFolderAsyncWithHttpInfo($request)
             ->then(
@@ -431,15 +431,15 @@ class FolderApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFolderAsyncWithHttpInfo(Requests\createFolderRequest $request)
+    public function createFolderAsyncWithHttpInfo(Requests\CreateFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->createFolderRequest($request);
+        $request = $this->CreateFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -466,12 +466,12 @@ class FolderApi
     /*
      * Create request for operation 'createFolder'
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createFolderRequest(Requests\createFolderRequest $request)
+    protected function CreateFolderRequest(Requests\CreateFolderRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -581,13 +581,13 @@ class FolderApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFolder(Requests\deleteFolderRequest $request)
+    public function deleteFolder(Requests\DeleteFolderRequest $request)
     {
         try {
             $this->deleteFolderWithHttpInfo($request);
@@ -601,16 +601,16 @@ class FolderApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFolderWithHttpInfo(Requests\deleteFolderRequest $request)
+    public function deleteFolderWithHttpInfo(Requests\DeleteFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->deleteFolderRequest($request);
+        $request = $this->DeleteFolderRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -645,12 +645,12 @@ class FolderApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFolderAsync(Requests\deleteFolderRequest $request)
+    public function deleteFolderAsync(Requests\DeleteFolderRequest $request)
     {
         return $this->deleteFolderAsyncWithHttpInfo($request)
             ->then(
@@ -665,15 +665,15 @@ class FolderApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFolderAsyncWithHttpInfo(Requests\deleteFolderRequest $request)
+    public function deleteFolderAsyncWithHttpInfo(Requests\DeleteFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->deleteFolderRequest($request);
+        $request = $this->DeleteFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -700,12 +700,12 @@ class FolderApi
     /*
      * Create request for operation 'deleteFolder'
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteFolderRequest(Requests\deleteFolderRequest $request)
+    protected function DeleteFolderRequest(Requests\DeleteFolderRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -825,13 +825,13 @@ class FolderApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\BarCode\Model\FilesList
      */
-    public function getFilesList(Requests\getFilesListRequest $request)
+    public function getFilesList(Requests\GetFilesListRequest $request)
     {
         try {
             list($response) = $this->getFilesListWithHttpInfo($request);
@@ -847,16 +847,16 @@ class FolderApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\FilesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFilesListWithHttpInfo(Requests\getFilesListRequest $request)
+    public function getFilesListWithHttpInfo(Requests\GetFilesListRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\FilesList';
-        $request = $this->getFilesListRequest($request);
+        $request = $this->GetFilesListRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -913,12 +913,12 @@ class FolderApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFilesListAsync(Requests\getFilesListRequest $request)
+    public function getFilesListAsync(Requests\GetFilesListRequest $request)
     {
         return $this->getFilesListAsyncWithHttpInfo($request)
             ->then(
@@ -933,15 +933,15 @@ class FolderApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFilesListAsyncWithHttpInfo(Requests\getFilesListRequest $request)
+    public function getFilesListAsyncWithHttpInfo(Requests\GetFilesListRequest $request)
     {
         $returnType = '\Aspose\BarCode\Model\FilesList';
-        $request = $this->getFilesListRequest($request);
+        $request = $this->GetFilesListRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -986,12 +986,12 @@ class FolderApi
     /*
      * Create request for operation 'getFilesList'
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFilesListRequest(Requests\getFilesListRequest $request)
+    protected function GetFilesListRequest(Requests\GetFilesListRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
@@ -1101,13 +1101,13 @@ class FolderApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function moveFolder(Requests\moveFolderRequest $request)
+    public function moveFolder(Requests\MoveFolderRequest $request)
     {
         try {
             $this->moveFolderWithHttpInfo($request);
@@ -1121,16 +1121,16 @@ class FolderApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\BarCode\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function moveFolderWithHttpInfo(Requests\moveFolderRequest $request)
+    public function moveFolderWithHttpInfo(Requests\MoveFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->moveFolderRequest($request);
+        $request = $this->MoveFolderRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1165,12 +1165,12 @@ class FolderApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFolderAsync(Requests\moveFolderRequest $request)
+    public function moveFolderAsync(Requests\MoveFolderRequest $request)
     {
         return $this->moveFolderAsyncWithHttpInfo($request)
             ->then(
@@ -1185,15 +1185,15 @@ class FolderApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFolderAsyncWithHttpInfo(Requests\moveFolderRequest $request)
+    public function moveFolderAsyncWithHttpInfo(Requests\MoveFolderRequest $request)
     {
         $returnType = '';
-        $request = $this->moveFolderRequest($request);
+        $request = $this->MoveFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1220,12 +1220,12 @@ class FolderApi
     /*
      * Create request for operation 'moveFolder'
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function moveFolderRequest(Requests\moveFolderRequest $request)
+    protected function MoveFolderRequest(Requests\MoveFolderRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
@@ -1435,334 +1435,3 @@ class FolderApi
         $this->config->setAccessToken($result['access_token']);
     }
 }
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="copyFolderRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "copyFolder" operation.
- */
-class copyFolderRequest
-{
-    /*
-     * Initializes a new instance of the copyFolderRequest class.
-     *
-     * @param string $src_path Source folder path e.g. '/src'
-     * @param string $dest_path Destination folder path e.g. '/dst'
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
-     */
-    public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
-    {
-        $this->src_path = $src_path;
-        $this->dest_path = $dest_path;
-        $this->src_storage_name = $src_storage_name;
-        $this->dest_storage_name = $dest_storage_name;
-    }
-
-    /*
-     * Source folder path e.g. '/src'
-     */
-    public $src_path;
-
-    /*
-     * Destination folder path e.g. '/dst'
-     */
-    public $dest_path;
-
-    /*
-     * Source storage name
-     */
-    public $src_storage_name;
-
-    /*
-     * Destination storage name
-     */
-    public $dest_storage_name;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="createFolderRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "createFolder" operation.
- */
-class createFolderRequest
-{
-    /*
-     * Initializes a new instance of the createFolderRequest class.
-     *
-     * @param string $path Folder path to create e.g. 'folder_1/folder_2/'
-     * @param string $storage_name Storage name
-     */
-    public function __construct($path, $storage_name = null)
-    {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-    }
-
-    /*
-     * Folder path to create e.g. 'folder_1/folder_2/'
-     */
-    public $path;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="deleteFolderRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "deleteFolder" operation.
- */
-class deleteFolderRequest
-{
-    /*
-     * Initializes a new instance of the deleteFolderRequest class.
-     *
-     * @param string $path Folder path e.g. '/folder'
-     * @param string $storage_name Storage name
-     * @param bool $recursive Enable to delete folders, subfolders and files
-     */
-    public function __construct($path, $storage_name = null, $recursive = null)
-    {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-        $this->recursive = $recursive;
-    }
-
-    /*
-     * Folder path e.g. '/folder'
-     */
-    public $path;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-
-    /*
-     * Enable to delete folders, subfolders and files
-     */
-    public $recursive;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="getFilesListRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "getFilesList" operation.
- */
-class getFilesListRequest
-{
-    /*
-     * Initializes a new instance of the getFilesListRequest class.
-     *
-     * @param string $path Folder path e.g. '/folder'
-     * @param string $storage_name Storage name
-     */
-    public function __construct($path, $storage_name = null)
-    {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-    }
-
-    /*
-     * Folder path e.g. '/folder'
-     */
-    public $path;
-
-    /*
-     * Storage name
-     */
-    public $storage_name;
-}
-/*
- * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="moveFolderRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
- * </copyright>
- * <summary>
- *   Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- * </summary>
- * --------------------------------------------------------------------------------------------------------------------
- */
-
-//
-// This source code was auto-generated by AsposeBarcodeCloudCodegen.
-//
-namespace Aspose\BarCode\Requests;
-
-/*
- * Request model for "moveFolder" operation.
- */
-class moveFolderRequest
-{
-    /*
-     * Initializes a new instance of the moveFolderRequest class.
-     *
-     * @param string $src_path Folder path to move e.g. '/folder'
-     * @param string $dest_path Destination folder path to move to e.g '/dst'
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
-     */
-    public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
-    {
-        $this->src_path = $src_path;
-        $this->dest_path = $dest_path;
-        $this->src_storage_name = $src_storage_name;
-        $this->dest_storage_name = $dest_storage_name;
-    }
-
-    /*
-     * Folder path to move e.g. '/folder'
-     */
-    public $src_path;
-
-    /*
-     * Destination folder path to move to e.g '/dst'
-     */
-    public $dest_path;
-
-    /*
-     * Source storage name
-     */
-    public $src_storage_name;
-
-    /*
-     * Destination storage name
-     */
-    public $dest_storage_name;
-}
-
