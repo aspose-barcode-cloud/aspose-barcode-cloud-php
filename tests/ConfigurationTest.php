@@ -45,12 +45,12 @@ final class ConfigurationTest extends TestCase
 
     public function testConfigurationFromFile(): void
     {
-        $json = file_get_contents('Configuration.json.template', true);
+        $json = file_get_contents('Configuration.example.json', true);
 
         $config = Configuration::fromJson($json);
 
-        $this->assertEquals('Test.AppKey', $config->getAppKey());
-        $this->assertEquals('Test.AppSid', $config->getAppSid());
+        $this->assertEquals('App Key from https://dashboard.aspose.cloud/#/apps', $config->getAppKey());
+        $this->assertEquals('App SID from https://dashboard.aspose.cloud/#/apps', $config->getAppSid());
         $this->assertEquals('https://api.aspose.cloud', $config->getHost());
     }
 
