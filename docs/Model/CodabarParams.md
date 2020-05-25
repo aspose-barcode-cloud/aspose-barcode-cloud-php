@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **start_symbol** | [**\Aspose\BarCode\Model\CodabarSymbol**](CodabarSymbol.md) | Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A | [optional] 
 **stop_symbol** | [**\Aspose\BarCode\Model\CodabarSymbol**](CodabarSymbol.md) | Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

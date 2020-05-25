@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **region** | [**\Aspose\BarCode\Model\RegionPoint[]**](RegionPoint.md) | Region with barcode. | [optional] 
 **checksum** | **string** | Checksum of barcode. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

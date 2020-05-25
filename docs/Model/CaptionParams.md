@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **font** | [**\Aspose\BarCode\Model\FontParams**](FontParams.md) | Font. | [optional] 
 **padding** | [**\Aspose\BarCode\Model\Padding**](Padding.md) | Padding. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

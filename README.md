@@ -158,3 +158,4 @@ Class | Method | HTTP request | Description
 + [StorageFile](docs/Model/StorageFile.md)
 + [TextAlignment](docs/Model/TextAlignment.md)
 + [FileVersion](docs/Model/FileVersion.md)
+

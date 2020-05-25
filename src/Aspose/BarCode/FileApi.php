@@ -1522,4 +1522,4 @@ class FileApi
         $result = json_decode($response->getBody()->getContents(), true);
         $this->config->setAccessToken($result['access_token']);
     }
-}
+}

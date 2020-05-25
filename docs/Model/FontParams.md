@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **size** | **double** | Font size in units. | [optional] 
 **style** | [**\Aspose\BarCode\Model\FontStyle**](FontStyle.md) | Font style. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

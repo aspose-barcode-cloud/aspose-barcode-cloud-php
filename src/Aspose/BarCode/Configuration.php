@@ -45,7 +45,7 @@ class Configuration implements JsonSerializable
      *
      * @var string
      */
-    protected $clientVersion = '18.3';
+    protected $clientVersion = '20.5';
 
     /*
      * AppKey for API
@@ -218,19 +218,6 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Sets the base_path
-     *
-     * @param string $base_path api version
-     *
-     * @return $this
-     */
-    public function setBasePath($base_path)
-    {
-        $this->base_path = $base_path;
-        return $this;
-    }
-
-    /*
      * Gets the base_path
      *
      * @return string base_path
@@ -352,7 +339,7 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Sets the detault configuration instance
+     * Sets the default configuration instance
      *
      * @param Configuration $config An instance of the Configuration Object
      *

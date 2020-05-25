@@ -53,7 +53,7 @@ class BarcodeApiTest extends TestCase
     {
         self::$config = Configuration::fromJson(file_get_contents('Configuration.json', true));
         self::$api = new BarcodeApi(null, self::$config);
-        self::$tempFolderPath = 'BarcodeTests/' . \uniqid();
+        self::$tempFolderPath = 'BarcodeTests/' . uniqid();
     }
 
     /**

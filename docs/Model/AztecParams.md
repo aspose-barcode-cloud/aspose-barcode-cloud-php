@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **symbol_mode** | [**\Aspose\BarCode\Model\AztecSymbolMode**](AztecSymbolMode.md) | Aztec Symbol mode. Default value: AztecSymbolMode.Auto. | [optional] 
 **text_encoding** | **string** | Sets the encoding of codetext. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

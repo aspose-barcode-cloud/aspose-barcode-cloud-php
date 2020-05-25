@@ -53,4 +53,13 @@ final class ConfigurationTest extends TestCase
         $this->assertEquals('Test.AppSid', $config->getAppSid());
         $this->assertEquals('https://api.aspose.cloud', $config->getHost());
     }
+
+    public function testConfigurationUserAgent(): void
+    {
+        $config = new Configuration();
+
+        $config->setUserAgent('My sample app');
+
+        $this->assertEquals('My sample app', $config->getUserAgent());
+    }
 }

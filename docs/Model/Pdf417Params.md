@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **rows** | **int** | Rows count. | [optional] 
 **truncate** | **bool** | Whether Pdf417 symbology type of BarCode is truncated (to reduce space). | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 
