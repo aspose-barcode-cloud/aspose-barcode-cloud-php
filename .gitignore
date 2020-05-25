@@ -1,3 +1,5 @@
 /*.lock
 /vendor
 /nbproject/private
+Configuration*.json
+!Configuration.example.json

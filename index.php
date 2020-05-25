@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="index.php">
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -28,26 +28,22 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-
-use Aspose\BarCode\Configuration;
-use Aspose\BarCode\BarCodeApi;
-use Aspose\BarCode\Requests\BarCodeGetBarCodeGenerateRequest;
-
+use Aspose\BarCode\{Configuration, BarcodeApi, Model\EncodeBarcodeType, Requests\GetBarcodeGenerateRequest};
 
 $config = new Configuration();
-$config->setAppKey("your_key");
-$config->setAppSid("your_sid");
+$config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');
+$config->setAppSid('App SID from https://dashboard.aspose.cloud/#/apps');
+// Or use Configuration.json file
+//$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
 
-$request = new BarCodeGetBarCodeGenerateRequest();
-$request->type = "QR";
-$request->text = "PHP SDK Test";
-$request->format = "png";
+$request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
+$request->format = 'png';
 
-$api = new BarCodeApi(null, $config);
-$response = $api->BarCodeGetBarCodeGenerate($request);
+$api = new BarcodeApi(null, $config);
+$response = $api->GetBarCodeGenerate($request);
 
 $type = 'image/png';
 $size = $response->getSize();
-header('Content-Type:'.$type);
-header('Content-Length: ' . $size);
+header("Content-Type: $type");
+header("Content-Length: $size");
 echo $response->fread($size);
