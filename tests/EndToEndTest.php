@@ -9,7 +9,6 @@ use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 use Aspose\BarCode\Requests\PostBarcodeRecognizeFromUrlOrContentRequest;
 use PHPUnit\Framework\TestCase;
 
-
 final class EndToEndTest extends TestCase
 {
     public function testGenerateAndRecognize(): void

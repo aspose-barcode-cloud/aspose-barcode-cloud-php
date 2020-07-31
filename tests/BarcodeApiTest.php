@@ -21,7 +21,6 @@ use Aspose\BarCode\Requests\PutGenerateMultipleRequest;
 use Aspose\BarCode\Requests\uploadFileRequest;
 use PHPUnit\Framework\TestCase;
 
-
 /**
  * BarcodeApiTest Class Doc Comment
  *
@@ -110,7 +109,7 @@ class BarcodeApiTest extends TestCase
                 new SplFileObject('./testdata/pdf417Sample.png')
             )
         );
-        $this->assertEmpty($uploaded->getErrors());
+        $this->assertEmpty($uploaded->getErrors(), strval($uploaded));
 
         $request = new GetBarcodeRecognizeRequest($uploaded->getUploaded()[0]);
         $request->folder = self::$tempFolderPath;
@@ -212,7 +211,7 @@ class BarcodeApiTest extends TestCase
                 new SplFileObject('./testdata/pdf417Sample.png')
             )
         );
-        $this->assertEmpty($uploaded->getErrors());
+        $this->assertEmpty($uploaded->getErrors(), strval($uploaded));
 
         // Arrange
         $request = new PutBarcodeRecognizeFromBodyRequest(

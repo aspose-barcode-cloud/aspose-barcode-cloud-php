@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutBarcodeGenerateFileRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
+ *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,7 +72,7 @@ class PutBarcodeGenerateFileRequest
      * @param bool $filled_bars Value indicating whether bars are filled. Only for 1D barcodes. Default value: true.
      * @param bool $always_show_checksum Always display checksum digit in the human readable text for Code128 and GS1Code128 barcodes.
      * @param double $wide_narrow_ratio Wide bars to Narrow bars ratio. Default value: 3, that is, wide bars are 3 times as wide as narrow bars. Used for ITF, PZN, PharmaCode, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, VIN, DeutschePost, OPC, Code32, DataLogic2of5, PatchCode, Code39Extended, Code39Standard
-     * @param bool $validate_text Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode's specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingapurePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect.
+     * @param bool $validate_text Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode's specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingaporePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect.
      * @param string $supplement_data Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN.
      * @param double $supplement_space Space between main the BarCode and supplement BarCode.
      * @param string $storage Image's storage.
@@ -270,7 +270,7 @@ class PutBarcodeGenerateFileRequest
     public $wide_narrow_ratio;
 
     /*
-     * Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode's specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingapurePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect.
+     * Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode's specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingaporePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect.
      */
     public $validate_text;
 
@@ -298,4 +298,4 @@ class PutBarcodeGenerateFileRequest
      * The image format.
      */
     public $format;
-}
+}

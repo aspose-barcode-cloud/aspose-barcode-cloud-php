@@ -28,7 +28,10 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Aspose\BarCode\{Configuration, BarcodeApi, Model\EncodeBarcodeType, Requests\GetBarcodeGenerateRequest};
+use Aspose\BarCode\Configuration;
+use Aspose\BarCode\BarcodeApi;
+use Aspose\BarCode\Model\EncodeBarcodeType;
+use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 
 $config = new Configuration();
 $config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');

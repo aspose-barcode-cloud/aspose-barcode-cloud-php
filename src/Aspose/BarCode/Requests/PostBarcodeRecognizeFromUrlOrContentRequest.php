@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostBarcodeRecognizeFromUrlOrContentRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
+ *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,7 +72,7 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * @param double $similarity Similarity coefficient depends on how homogeneous barcodes are.  Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
      * @param bool $skip_diagonal_search Allows detector to skip search for diagonal barcodes.  Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
      * @param string $australian_post_encoding_table Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
-     * @param string $rectangle_region 
+     * @param string $rectangle_region
      * @param string $url The image file url.
      * @param \SplFileObject $image Image data
      */
@@ -277,4 +277,4 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * Image data
      */
     public $image;
-}
+}
