@@ -56,7 +56,7 @@ class TestConfiguration
     {
         $contents = false;
         try {
-            $contents = file_get_contents($filename, true);
+            $contents = @file_get_contents($filename, true);
         } catch (Exception $e) {
         }
 

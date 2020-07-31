@@ -172,13 +172,13 @@ class ObjectSerializer
      */
     public static function toString($value)
     {
-        $maybeDateStr = preg_match("/^[1-9][0-9]*$/", $value)[0];
+        $match = preg_match("/^[1-9][0-9]*$/", $value);
 
-        if (!isset($maybeDateStr)) {
+        if ($match === 0) {
             return $value;
         }
 
-        $maybeDateTime = date(\DATE_ATOM, $maybeDateStr);
+        $maybeDateTime = date(\DATE_ATOM, $match[0]);
 
         if ($maybeDateTime instanceof \DateTime) { // datetime in ISO8601 format
             return $maybeDateTime;
