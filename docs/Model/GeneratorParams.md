@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **filled_bars** | **bool** | Value indicating whether bars are filled. Only for 1D barcodes. Default value: true. | [optional] 
 **always_show_checksum** | **bool** | Always display checksum digit in the human readable text for Code128 and GS1Code128 barcodes. | [optional] 
 **wide_narrow_ratio** | **double** | Wide bars to Narrow bars ratio. Default value: 3, that is, wide bars are 3 times as wide as narrow bars. Used for ITF, PZN, PharmaCode, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, VIN, DeutschePost, OPC, Code32, DataLogic2of5, PatchCode, Code39Extended, Code39Standard | [optional] 
-**validate_text** | **bool** | Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode&#39;s specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingapurePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect. | [optional] 
+**validate_text** | **bool** | Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode&#39;s specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingaporePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect. | [optional] 
 **supplement_data** | **string** | Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional] 
 **supplement_space** | **double** | Space between main the BarCode and supplement BarCode. | [optional] 
 **australian_post** | [**\Aspose\BarCode\Model\AustralianPostParams**](AustralianPostParams.md) | AustralianPost params. | [optional] 
@@ -53,6 +53,7 @@ Name | Type | Description | Notes
 **pdf417** | [**\Aspose\BarCode\Model\Pdf417Params**](Pdf417Params.md) | Pdf417 params. | [optional] 
 **postal** | [**\Aspose\BarCode\Model\PostalParams**](PostalParams.md) | Postal params. | [optional] 
 **qr** | [**\Aspose\BarCode\Model\QrParams**](QrParams.md) | QR params. | [optional] 
+**patch_code** | [**\Aspose\BarCode\Model\PatchCodeParams**](PatchCodeParams.md) | PatchCode params. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

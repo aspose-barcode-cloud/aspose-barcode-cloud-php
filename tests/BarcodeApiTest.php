@@ -18,8 +18,10 @@ use Aspose\BarCode\Requests\PostGenerateMultipleRequest;
 use Aspose\BarCode\Requests\PutBarcodeGenerateFileRequest;
 use Aspose\BarCode\Requests\PutBarcodeRecognizeFromBodyRequest;
 use Aspose\BarCode\Requests\PutGenerateMultipleRequest;
-use Aspose\BarCode\Requests\uploadFileRequest;
+use Aspose\BarCode\Requests\UploadFileRequest;
 use PHPUnit\Framework\TestCase;
+
+require_once 'TestConfiguration.php';
 
 
 /**
@@ -51,7 +53,7 @@ class BarcodeApiTest extends TestCase
      */
     public static function setUpBeforeClass(): void
     {
-        self::$config = Configuration::fromJson(file_get_contents('Configuration.json', true));
+        self::$config = TestConfiguration::fromFileOrEnv();
         self::$api = new BarcodeApi(null, self::$config);
         self::$tempFolderPath = 'BarcodeTests/' . uniqid();
     }
@@ -105,12 +107,12 @@ class BarcodeApiTest extends TestCase
         $fileApi = new FileApi(null, self::$config);
         $path = self::$tempFolderPath . '/' . 'testGetBarcodeRecognize.png';
         $uploaded = $fileApi->uploadFile(
-            new uploadFileRequest(
+            new UploadFileRequest(
                 $path,
                 new SplFileObject('./testdata/pdf417Sample.png')
             )
         );
-        $this->assertEmpty($uploaded->getErrors());
+        $this->assertEmpty($uploaded->getErrors(), strval($uploaded));
 
         $request = new GetBarcodeRecognizeRequest($uploaded->getUploaded()[0]);
         $request->folder = self::$tempFolderPath;
@@ -207,12 +209,12 @@ class BarcodeApiTest extends TestCase
         $fileApi = new FileApi(null, self::$config);
         $path = self::$tempFolderPath . '/' . 'testGetBarcodeRecognize.png';
         $uploaded = $fileApi->uploadFile(
-            new uploadFileRequest(
+            new UploadFileRequest(
                 $path,
                 new SplFileObject('./testdata/pdf417Sample.png')
             )
         );
-        $this->assertEmpty($uploaded->getErrors());
+        $this->assertEmpty($uploaded->getErrors(), strval($uploaded));
 
         // Arrange
         $request = new PutBarcodeRecognizeFromBodyRequest(

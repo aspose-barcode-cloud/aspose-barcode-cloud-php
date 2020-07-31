@@ -1,7 +1,7 @@
 # Aspose.BarCode Cloud SDK for PHP
 
 - API version: 3.0
-- Package version: 20.5
+- Package version: 20.8.0
 
 Aspose.BarCode for Cloud is a REST API for Linear, 2D and postal barcode generation and recognition in the cloud. API recognizes and generates barcode images in a variety of formats. Barcode REST API allows to specify barcode image attributes like image width, height, border style and output image format in order to customize the generation process. Developers can also specify the barcode type and text attributes such as text location and font styles in order to suit the application requirements.
 
@@ -33,13 +33,14 @@ require __DIR__ . '/vendor/autoload.php';
 ### Sample usage
 
 ```php
-use Aspose\BarCode\{Configuration, BarcodeApi, Model\EncodeBarcodeType, Requests\GetBarcodeGenerateRequest};
+use Aspose\BarCode\Configuration;
+use Aspose\BarCode\BarcodeApi;
+use Aspose\BarCode\Model\EncodeBarcodeType;
+use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 
 $config = new Configuration();
 $config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');
 $config->setAppSid('App SID from https://dashboard.aspose.cloud/#/apps');
-// Or use Configuration.json file
-//$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
 
 $request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
 $request->format = 'png';
@@ -141,6 +142,8 @@ Class | Method | HTTP request | Description
 - [MaxiCodeParams](docs/Model/MaxiCodeParams.md)
 - [ObjectExist](docs/Model/ObjectExist.md)
 - [Padding](docs/Model/Padding.md)
+- [PatchCodeParams](docs/Model/PatchCodeParams.md)
+- [PatchFormat](docs/Model/PatchFormat.md)
 - [Pdf417CompactionMode](docs/Model/Pdf417CompactionMode.md)
 - [Pdf417ErrorLevel](docs/Model/Pdf417ErrorLevel.md)
 - [Pdf417Params](docs/Model/Pdf417Params.md)
@@ -158,3 +161,4 @@ Class | Method | HTTP request | Description
 - [StorageFile](docs/Model/StorageFile.md)
 - [TextAlignment](docs/Model/TextAlignment.md)
 - [FileVersion](docs/Model/FileVersion.md)
+

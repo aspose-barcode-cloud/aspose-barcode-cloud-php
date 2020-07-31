@@ -5,6 +5,9 @@ require __DIR__ . '/../vendor/autoload.php';
 use Aspose\BarCode\Configuration;
 use PHPUnit\Framework\TestCase;
 
+require_once 'TestConfiguration.php';
+
+
 final class ConfigurationTest extends TestCase
 {
     public function testConfigurationJsonEncode(): void
@@ -38,16 +41,32 @@ final class ConfigurationTest extends TestCase
         $config->setAccessToken('access token');
         $json = json_encode($config, JSON_PRETTY_PRINT);
 
-        $deserialized = Configuration::fromJson($json);
+        $deserialized = TestConfiguration::fromJson($json);
 
         $this->assertEquals($config, $deserialized);
     }
 
+    public function testConfigurationFromEnv(): void
+    {
+        $uniqPrefix = uniqid();
+        putenv("${uniqPrefix}_ACCESS_TOKEN=Access Token");
+        putenv("${uniqPrefix}_APP_SID=App Sid");
+        putenv("${uniqPrefix}_APP_KEY=App Key");
+        putenv("${uniqPrefix}_HOST=Host");
+        putenv("${uniqPrefix}_DEBUG=FALSE");
+
+        $config = TestConfiguration::fromEnv($uniqPrefix . '_');
+
+        $this->assertEquals("Access Token", $config->getAccessToken());
+        $this->assertEquals("App Sid", $config->getAppSid());
+        $this->assertEquals("App Key", $config->getAppKey());
+        $this->assertEquals("Host", $config->getHost());
+        $this->assertEquals(false, $config->getDebug());
+    }
+
     public function testConfigurationFromFile(): void
     {
-        $json = file_get_contents('Configuration.example.json', true);
-
-        $config = Configuration::fromJson($json);
+        $config = TestConfiguration::fromFileOrEnv('Configuration.example.json');
 
         $this->assertEquals('App Key from https://dashboard.aspose.cloud/#/apps', $config->getAppKey());
         $this->assertEquals('App SID from https://dashboard.aspose.cloud/#/apps', $config->getAppSid());

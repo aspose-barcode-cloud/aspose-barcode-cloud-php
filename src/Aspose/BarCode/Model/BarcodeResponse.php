@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ResultImageInfo.php">
+ * <copyright company="Aspose" file="BarcodeResponse.php">
  *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -39,11 +39,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * ResultImageInfo
+ * BarcodeResponse
  *
- * @description Created image info.
+ * @description Represents information about barcode.
  */
-class ResultImageInfo implements ArrayAccess
+class BarcodeResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class ResultImageInfo implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ResultImageInfo";
+    protected static $swaggerModelName = "BarcodeResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,10 @@ class ResultImageInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'file_size' => 'int',
-        'image_width' => 'int',
-        'image_height' => 'int'
+        'barcode_value' => 'string',
+        'type' => 'string',
+        'region' => '\Aspose\BarCode\Model\RegionPoint[]',
+        'checksum' => 'string'
     ];
 
     /*
@@ -71,9 +72,10 @@ class ResultImageInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'file_size' => 'int64',
-        'image_width' => 'int32',
-        'image_height' => 'int32'
+        'barcode_value' => null,
+        'type' => null,
+        'region' => null,
+        'checksum' => null
     ];
 
     /*
@@ -103,9 +105,10 @@ class ResultImageInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'file_size' => 'FileSize',
-        'image_width' => 'ImageWidth',
-        'image_height' => 'ImageHeight'
+        'barcode_value' => 'BarcodeValue',
+        'type' => 'Type',
+        'region' => 'Region',
+        'checksum' => 'Checksum'
     ];
 
     /*
@@ -114,9 +117,10 @@ class ResultImageInfo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'file_size' => 'setFileSize',
-        'image_width' => 'setImageWidth',
-        'image_height' => 'setImageHeight'
+        'barcode_value' => 'setBarcodeValue',
+        'type' => 'setType',
+        'region' => 'setRegion',
+        'checksum' => 'setChecksum'
     ];
 
     /*
@@ -125,9 +129,10 @@ class ResultImageInfo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'file_size' => 'getFileSize',
-        'image_width' => 'getImageWidth',
-        'image_height' => 'getImageHeight'
+        'barcode_value' => 'getBarcodeValue',
+        'type' => 'getType',
+        'region' => 'getRegion',
+        'checksum' => 'getChecksum'
     ];
 
     /*
@@ -190,9 +195,10 @@ class ResultImageInfo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['image_width'] = isset($data['image_width']) ? $data['image_width'] : null;
-        $this->container['image_height'] = isset($data['image_height']) ? $data['image_height'] : null;
+        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
     }
 
     /*
@@ -204,9 +210,6 @@ class ResultImageInfo implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -218,81 +221,102 @@ class ResultImageInfo implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['file_size'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /*
-     * Gets file_size
+     * Gets barcode_value
      *
-     * @return int
+     * @return string
      */
-    public function getFileSize()
+    public function getBarcodeValue()
     {
-        return $this->container['file_size'];
+        return $this->container['barcode_value'];
     }
 
     /*
-     * Sets file_size
+     * Sets barcode_value
      *
-     * @param int $file_size Result file size.
+     * @param string $barcode_value Barcode data.
      *
      * @return $this
      */
-    public function setFileSize($file_size)
+    public function setBarcodeValue($barcode_value)
     {
-        $this->container['file_size'] = $file_size;
+        $this->container['barcode_value'] = $barcode_value;
 
         return $this;
     }
 
     /*
-     * Gets image_width
+     * Gets type
      *
-     * @return int
+     * @return string
      */
-    public function getImageWidth()
+    public function getType()
     {
-        return $this->container['image_width'];
+        return $this->container['type'];
     }
 
     /*
-     * Sets image_width
+     * Sets type
      *
-     * @param int $image_width Result image width.
+     * @param string $type Type of the barcode.
      *
      * @return $this
      */
-    public function setImageWidth($image_width)
+    public function setType($type)
     {
-        $this->container['image_width'] = $image_width;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /*
-     * Gets image_height
+     * Gets region
      *
-     * @return int
+     * @return \Aspose\BarCode\Model\RegionPoint[]
      */
-    public function getImageHeight()
+    public function getRegion()
     {
-        return $this->container['image_height'];
+        return $this->container['region'];
     }
 
     /*
-     * Sets image_height
+     * Sets region
      *
-     * @param int $image_height Result image height.
+     * @param \Aspose\BarCode\Model\RegionPoint[] $region Region with barcode.
      *
      * @return $this
      */
-    public function setImageHeight($image_height)
+    public function setRegion($region)
     {
-        $this->container['image_height'] = $image_height;
+        $this->container['region'] = $region;
+
+        return $this;
+    }
+
+    /*
+     * Gets checksum
+     *
+     * @return string
+     */
+    public function getChecksum()
+    {
+        return $this->container['checksum'];
+    }
+
+    /*
+     * Sets checksum
+     *
+     * @param string $checksum Checksum of barcode.
+     *
+     * @return $this
+     */
+    public function setChecksum($checksum)
+    {
+        $this->container['checksum'] = $checksum;
 
         return $this;
     }

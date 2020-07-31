@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetBarcodeRecognizeRequest.php">
- *   Copyright (c) 2018 Aspose Pty Ltd
+ *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,12 +68,12 @@ class GetBarcodeRecognizeRequest
      * @param bool $allow_regular_image Allows engine to recognize regular image without any restorations as main scan. Mode to recognize image as is.
      * @param bool $allow_salt_and_pepper_filtering Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small noise with white and black dots.
      * @param bool $allow_white_spots_removing Allows engine to recognize image without small white spots as additional scan. Mode helps to recognize noised image as well as median smoothing filtering.
-     * @param double $region_likelihood_threshold_percent Sets threshold for detected regions that may contain barcodes.  Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
-     * @param int[] $scan_window_sizes Scan window sizes in pixels.  Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.
-     * @param double $similarity Similarity coefficient depends on how homogeneous barcodes are.  Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
-     * @param bool $skip_diagonal_search Allows detector to skip search for diagonal barcodes.  Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
+     * @param double $region_likelihood_threshold_percent Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
+     * @param int[] $scan_window_sizes Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.
+     * @param double $similarity Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
+     * @param bool $skip_diagonal_search Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
      * @param string $australian_post_encoding_table Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
-     * @param string $rectangle_region 
+     * @param string $rectangle_region
      * @param string $storage The image storage.
      * @param string $folder The image folder.
      */
@@ -246,22 +246,22 @@ class GetBarcodeRecognizeRequest
     public $allow_white_spots_removing;
 
     /*
-     * Sets threshold for detected regions that may contain barcodes.  Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
+     * Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
      */
     public $region_likelihood_threshold_percent;
 
     /*
-     * Scan window sizes in pixels.  Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.
+     * Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.
      */
     public $scan_window_sizes;
 
     /*
-     * Similarity coefficient depends on how homogeneous barcodes are.  Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
+     * Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
      */
     public $similarity;
 
     /*
-     * Allows detector to skip search for diagonal barcodes.  Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
+     * Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
      */
     public $skip_diagonal_search;
 
@@ -284,4 +284,4 @@ class GetBarcodeRecognizeRequest
      * The image folder.
      */
     public $folder;
-}
+}
