@@ -53,6 +53,7 @@ Name | Type | Description | Notes
 **pdf417** | [**\Aspose\BarCode\Model\Pdf417Params**](Pdf417Params.md) | Pdf417 params. | [optional] 
 **postal** | [**\Aspose\BarCode\Model\PostalParams**](PostalParams.md) | Postal params. | [optional] 
 **qr** | [**\Aspose\BarCode\Model\QrParams**](QrParams.md) | QR params. | [optional] 
+**patch_code** | [**\Aspose\BarCode\Model\PatchCodeParams**](PatchCodeParams.md) | PatchCode params. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

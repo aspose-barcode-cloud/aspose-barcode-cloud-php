@@ -42,7 +42,7 @@ class UploadFileRequest
     /*
      * Initializes a new instance of the UploadFileRequest class.
      *
-     * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
+     * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
      * @param \SplFileObject $file File to upload
      * @param string $storage_name Storage name
      */
@@ -54,7 +54,7 @@ class UploadFileRequest
     }
 
     /*
-     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
+     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
      */
     public $path;
 

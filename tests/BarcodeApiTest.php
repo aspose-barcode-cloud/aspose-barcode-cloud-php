@@ -21,6 +21,9 @@ use Aspose\BarCode\Requests\PutGenerateMultipleRequest;
 use Aspose\BarCode\Requests\uploadFileRequest;
 use PHPUnit\Framework\TestCase;
 
+require_once 'TestConfiguration.php';
+
+
 /**
  * BarcodeApiTest Class Doc Comment
  *
@@ -50,7 +53,7 @@ class BarcodeApiTest extends TestCase
      */
     public static function setUpBeforeClass(): void
     {
-        self::$config = Configuration::fromJson(file_get_contents('Configuration.json', true));
+        self::$config = TestConfiguration::fromFileOrEnv();
         self::$api = new BarcodeApi(null, self::$config);
         self::$tempFolderPath = 'BarcodeTests/' . uniqid();
     }

@@ -33,13 +33,14 @@ require __DIR__ . '/vendor/autoload.php';
 ### Sample usage
 
 ```php
-use Aspose\BarCode\{Configuration, BarcodeApi, Model\EncodeBarcodeType, Requests\GetBarcodeGenerateRequest};
+use Aspose\BarCode\Configuration;
+use Aspose\BarCode\BarcodeApi;
+use Aspose\BarCode\Model\EncodeBarcodeType;
+use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 
 $config = new Configuration();
 $config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');
 $config->setAppSid('App SID from https://dashboard.aspose.cloud/#/apps');
-// Or use Configuration.json file
-//$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
 
 $request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
 $request->format = 'png';
@@ -141,6 +142,8 @@ Class | Method | HTTP request | Description
 - [MaxiCodeParams](docs/Model/MaxiCodeParams.md)
 - [ObjectExist](docs/Model/ObjectExist.md)
 - [Padding](docs/Model/Padding.md)
+- [PatchCodeParams](docs/Model/PatchCodeParams.md)
+- [PatchFormat](docs/Model/PatchFormat.md)
 - [Pdf417CompactionMode](docs/Model/Pdf417CompactionMode.md)
 - [Pdf417ErrorLevel](docs/Model/Pdf417ErrorLevel.md)
 - [Pdf417Params](docs/Model/Pdf417Params.md)

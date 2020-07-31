@@ -36,8 +36,9 @@ use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 $config = new Configuration();
 $config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');
 $config->setAppSid('App SID from https://dashboard.aspose.cloud/#/apps');
-// Or use Configuration.json file
-//$config = Configuration::fromJson(file_get_contents('tests/Configuration.json'));
+if (getenv("TEST_ACCESS_TOKEN")) {
+    $config->setAccessToken(getenv("TEST_ACCESS_TOKEN"));
+}
 
 $request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
 $request->format = 'png';

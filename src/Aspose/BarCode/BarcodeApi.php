@@ -1812,7 +1812,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/octet-stream']
+                ['application/octet-stream', 'multipart/form-data']
             );
         }
 
@@ -2721,7 +2721,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json', 'application/xml']
+                ['application/json', 'application/xml', 'multipart/form-data']
             );
         }
 

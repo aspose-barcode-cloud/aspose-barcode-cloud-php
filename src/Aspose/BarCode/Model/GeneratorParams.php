@@ -109,7 +109,8 @@ class GeneratorParams implements ArrayAccess
         'maxi_code' => '\Aspose\BarCode\Model\MaxiCodeParams',
         'pdf417' => '\Aspose\BarCode\Model\Pdf417Params',
         'postal' => '\Aspose\BarCode\Model\PostalParams',
-        'qr' => '\Aspose\BarCode\Model\QrParams'
+        'qr' => '\Aspose\BarCode\Model\QrParams',
+        'patch_code' => '\Aspose\BarCode\Model\PatchCodeParams'
     ];
 
     /*
@@ -167,7 +168,8 @@ class GeneratorParams implements ArrayAccess
         'maxi_code' => null,
         'pdf417' => null,
         'postal' => null,
-        'qr' => null
+        'qr' => null,
+        'patch_code' => null
     ];
 
     /*
@@ -246,7 +248,8 @@ class GeneratorParams implements ArrayAccess
         'maxi_code' => 'MaxiCode',
         'pdf417' => 'Pdf417',
         'postal' => 'Postal',
-        'qr' => 'QR'
+        'qr' => 'QR',
+        'patch_code' => 'PatchCode'
     ];
 
     /*
@@ -304,7 +307,8 @@ class GeneratorParams implements ArrayAccess
         'maxi_code' => 'setMaxiCode',
         'pdf417' => 'setPdf417',
         'postal' => 'setPostal',
-        'qr' => 'setQr'
+        'qr' => 'setQr',
+        'patch_code' => 'setPatchCode'
     ];
 
     /*
@@ -362,7 +366,8 @@ class GeneratorParams implements ArrayAccess
         'maxi_code' => 'getMaxiCode',
         'pdf417' => 'getPdf417',
         'postal' => 'getPostal',
-        'qr' => 'getQr'
+        'qr' => 'getQr',
+        'patch_code' => 'getPatchCode'
     ];
 
     /*
@@ -475,6 +480,7 @@ class GeneratorParams implements ArrayAccess
         $this->container['pdf417'] = isset($data['pdf417']) ? $data['pdf417'] : null;
         $this->container['postal'] = isset($data['postal']) ? $data['postal'] : null;
         $this->container['qr'] = isset($data['qr']) ? $data['qr'] : null;
+        $this->container['patch_code'] = isset($data['patch_code']) ? $data['patch_code'] : null;
     }
 
     /*
@@ -1709,6 +1715,30 @@ class GeneratorParams implements ArrayAccess
     public function setQr($qr)
     {
         $this->container['qr'] = $qr;
+
+        return $this;
+    }
+
+    /*
+     * Gets patch_code
+     *
+     * @return \Aspose\BarCode\Model\PatchCodeParams
+     */
+    public function getPatchCode()
+    {
+        return $this->container['patch_code'];
+    }
+
+    /*
+     * Sets patch_code
+     *
+     * @param \Aspose\BarCode\Model\PatchCodeParams $patch_code PatchCode params.
+     *
+     * @return $this
+     */
+    public function setPatchCode($patch_code)
+    {
+        $this->container['patch_code'] = $patch_code;
 
         return $this;
     }

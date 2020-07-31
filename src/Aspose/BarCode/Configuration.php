@@ -381,28 +381,4 @@ class Configuration implements JsonSerializable
             'Debug' => $this->debug,
         ];
     }
-
-    public static function fromJson(string $jsonString): Configuration
-    {
-        $values = \json_decode($jsonString, true);
-
-        $config = new Configuration();
-        if (isset($values['AppKey'])) {
-            $config->setAppKey($values['AppKey']);
-        }
-        if (isset($values['AppSid'])) {
-            $config->setAppSid($values['AppSid']);
-        }
-        if (isset($values['Host'])) {
-            $config->setHost($values['Host']);
-        }
-        if (isset($values['AccessToken'])) {
-            $config->setAccessToken($values['AccessToken']);
-        }
-        if (isset($values['Debug'])) {
-            $config->setDebug($values['Debug']);
-        }
-
-        return $config;
-    }
 }

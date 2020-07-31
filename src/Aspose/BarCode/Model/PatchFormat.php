@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DataMatrixEncodeMode.php">
+ * <copyright company="Aspose" file="PatchFormat.php">
  *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,50 +38,35 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * DataMatrixEncodeMode
+ * PatchFormat
  *
  * @description
  */
-class DataMatrixEncodeMode
+class PatchFormat
 {
 
   /// <summary>
-    /// Enum value Auto
+    /// Enum value PatchOnly
     /// </summary>
-    const Auto =  "Auto";
+    const PatchOnly =  "PatchOnly";
   
     /// <summary>
-    /// Enum value ASCII
+    /// Enum value A4
     /// </summary>
-    const ASCII =  "ASCII";
+    const A4 =  "A4";
   
     /// <summary>
-    /// Enum value Full
+    /// Enum value A4_LANDSCAPE
     /// </summary>
-    const Full =  "Full";
+    const A4_LANDSCAPE =  "A4_LANDSCAPE";
   
     /// <summary>
-    /// Enum value Custom
+    /// Enum value US_Letter
     /// </summary>
-    const Custom =  "Custom";
+    const US_Letter =  "US_Letter";
   
     /// <summary>
-    /// Enum value C40
+    /// Enum value US_Letter_LANDSCAPE
     /// </summary>
-    const C40 =  "C40";
-  
-    /// <summary>
-    /// Enum value Text
-    /// </summary>
-    const Text =  "Text";
-  
-    /// <summary>
-    /// Enum value EDIFACT
-    /// </summary>
-    const EDIFACT =  "EDIFACT";
-  
-    /// <summary>
-    /// Enum value ANSIX12
-    /// </summary>
-    const ANSIX12 =  "ANSIX12";
+    const US_Letter_LANDSCAPE =  "US_Letter_LANDSCAPE";
 }

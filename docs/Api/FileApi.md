@@ -255,7 +255,7 @@ $apiInstance = new Aspose\BarCode\Api\FileApi(
     new GuzzleHttp\Client(),
     $config
 );
-$path = "path_example"; // string | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
+$path = "path_example"; // string | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
 $file = "/path/to/file.txt"; // \SplFileObject | File to upload
 $storage_name = "storage_name_example"; // string | Storage name
 
@@ -272,7 +272,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. |
+ **path** | **string**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header. |
  **file** | **\SplFileObject**| File to upload |
  **storage_name** | **string**| Storage name | [optional]
 
