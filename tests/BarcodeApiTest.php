@@ -18,7 +18,7 @@ use Aspose\BarCode\Requests\PostGenerateMultipleRequest;
 use Aspose\BarCode\Requests\PutBarcodeGenerateFileRequest;
 use Aspose\BarCode\Requests\PutBarcodeRecognizeFromBodyRequest;
 use Aspose\BarCode\Requests\PutGenerateMultipleRequest;
-use Aspose\BarCode\Requests\uploadFileRequest;
+use Aspose\BarCode\Requests\UploadFileRequest;
 use PHPUnit\Framework\TestCase;
 
 require_once 'TestConfiguration.php';
@@ -107,7 +107,7 @@ class BarcodeApiTest extends TestCase
         $fileApi = new FileApi(null, self::$config);
         $path = self::$tempFolderPath . '/' . 'testGetBarcodeRecognize.png';
         $uploaded = $fileApi->uploadFile(
-            new uploadFileRequest(
+            new UploadFileRequest(
                 $path,
                 new SplFileObject('./testdata/pdf417Sample.png')
             )
@@ -209,7 +209,7 @@ class BarcodeApiTest extends TestCase
         $fileApi = new FileApi(null, self::$config);
         $path = self::$tempFolderPath . '/' . 'testGetBarcodeRecognize.png';
         $uploaded = $fileApi->uploadFile(
-            new uploadFileRequest(
+            new UploadFileRequest(
                 $path,
                 new SplFileObject('./testdata/pdf417Sample.png')
             )
