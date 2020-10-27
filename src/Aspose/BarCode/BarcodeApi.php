@@ -168,7 +168,7 @@ class BarcodeApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\BarCodeErrorResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\ApiErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -595,6 +595,16 @@ class BarcodeApi
         if (isset($request->supplement_space)) {
             $localName = lcfirst('SupplementSpace');
             $localValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (isset($request->bar_width_reduction)) {
+            $localName = lcfirst('BarWidthReduction');
+            $localValue = is_bool($request->bar_width_reduction) ? ($request->bar_width_reduction ? 'true' : 'false') : $request->bar_width_reduction;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1164,6 +1174,16 @@ class BarcodeApi
         if (isset($request->skip_diagonal_search)) {
             $localName = lcfirst('SkipDiagonalSearch');
             $localValue = is_bool($request->skip_diagonal_search) ? ($request->skip_diagonal_search ? 'true' : 'false') : $request->skip_diagonal_search;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (isset($request->read_tiny_barcodes)) {
+            $localName = lcfirst('ReadTinyBarcodes');
+            $localValue = is_bool($request->read_tiny_barcodes) ? ($request->read_tiny_barcodes ? 'true' : 'false') : $request->read_tiny_barcodes;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1760,6 +1780,16 @@ class BarcodeApi
             }
         }
         // query params
+        if (isset($request->read_tiny_barcodes)) {
+            $localName = lcfirst('ReadTinyBarcodes');
+            $localValue = is_bool($request->read_tiny_barcodes) ? ($request->read_tiny_barcodes ? 'true' : 'false') : $request->read_tiny_barcodes;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->australian_post_encoding_table)) {
             $localName = lcfirst('AustralianPostEncodingTable');
             $localValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
@@ -1812,7 +1842,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/octet-stream', 'multipart/form-data']
+                ['multipart/form-data', 'application/octet-stream']
             );
         }
 
@@ -2235,7 +2265,7 @@ class BarcodeApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\BarCodeErrorResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\ApiErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2671,6 +2701,16 @@ class BarcodeApi
         if (isset($request->supplement_space)) {
             $localName = lcfirst('SupplementSpace');
             $localValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (isset($request->bar_width_reduction)) {
+            $localName = lcfirst('BarWidthReduction');
+            $localValue = is_bool($request->bar_width_reduction) ? ($request->bar_width_reduction ? 'true' : 'false') : $request->bar_width_reduction;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -3170,7 +3210,7 @@ class BarcodeApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\BarCodeErrorResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\ApiErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

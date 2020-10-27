@@ -46,6 +46,11 @@ class ECIEncodings
 {
 
   /// <summary>
+    /// Enum value NONE
+    /// </summary>
+    const NONE =  "NONE";
+  
+    /// <summary>
     /// Enum value ISO_8859_1
     /// </summary>
     const ISO_8859_1 =  "ISO_8859_1";

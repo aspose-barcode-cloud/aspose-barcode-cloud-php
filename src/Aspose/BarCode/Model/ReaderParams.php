@@ -89,6 +89,7 @@ class ReaderParams implements ArrayAccess
         'scan_window_sizes' => 'int[]',
         'similarity' => 'double',
         'skip_diagonal_search' => 'bool',
+        'read_tiny_barcodes' => 'bool',
         'australian_post_encoding_table' => '\Aspose\BarCode\Model\CustomerInformationInterpretingType'
     ];
 
@@ -127,6 +128,7 @@ class ReaderParams implements ArrayAccess
         'scan_window_sizes' => 'int32',
         'similarity' => 'double',
         'skip_diagonal_search' => null,
+        'read_tiny_barcodes' => null,
         'australian_post_encoding_table' => null
     ];
 
@@ -186,6 +188,7 @@ class ReaderParams implements ArrayAccess
         'scan_window_sizes' => 'ScanWindowSizes',
         'similarity' => 'Similarity',
         'skip_diagonal_search' => 'SkipDiagonalSearch',
+        'read_tiny_barcodes' => 'ReadTinyBarcodes',
         'australian_post_encoding_table' => 'AustralianPostEncodingTable'
     ];
 
@@ -224,6 +227,7 @@ class ReaderParams implements ArrayAccess
         'scan_window_sizes' => 'setScanWindowSizes',
         'similarity' => 'setSimilarity',
         'skip_diagonal_search' => 'setSkipDiagonalSearch',
+        'read_tiny_barcodes' => 'setReadTinyBarcodes',
         'australian_post_encoding_table' => 'setAustralianPostEncodingTable'
     ];
 
@@ -262,6 +266,7 @@ class ReaderParams implements ArrayAccess
         'scan_window_sizes' => 'getScanWindowSizes',
         'similarity' => 'getSimilarity',
         'skip_diagonal_search' => 'getSkipDiagonalSearch',
+        'read_tiny_barcodes' => 'getReadTinyBarcodes',
         'australian_post_encoding_table' => 'getAustralianPostEncodingTable'
     ];
 
@@ -354,6 +359,7 @@ class ReaderParams implements ArrayAccess
         $this->container['scan_window_sizes'] = isset($data['scan_window_sizes']) ? $data['scan_window_sizes'] : null;
         $this->container['similarity'] = isset($data['similarity']) ? $data['similarity'] : null;
         $this->container['skip_diagonal_search'] = isset($data['skip_diagonal_search']) ? $data['skip_diagonal_search'] : null;
+        $this->container['read_tiny_barcodes'] = isset($data['read_tiny_barcodes']) ? $data['read_tiny_barcodes'] : null;
         $this->container['australian_post_encoding_table'] = isset($data['australian_post_encoding_table']) ? $data['australian_post_encoding_table'] : null;
     }
 
@@ -1073,6 +1079,30 @@ class ReaderParams implements ArrayAccess
     public function setSkipDiagonalSearch($skip_diagonal_search)
     {
         $this->container['skip_diagonal_search'] = $skip_diagonal_search;
+
+        return $this;
+    }
+
+    /*
+     * Gets read_tiny_barcodes
+     *
+     * @return bool
+     */
+    public function getReadTinyBarcodes()
+    {
+        return $this->container['read_tiny_barcodes'];
+    }
+
+    /*
+     * Sets read_tiny_barcodes
+     *
+     * @param bool $read_tiny_barcodes Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
+     *
+     * @return $this
+     */
+    public function setReadTinyBarcodes($read_tiny_barcodes)
+    {
+        $this->container['read_tiny_barcodes'] = $read_tiny_barcodes;
 
         return $this;
     }

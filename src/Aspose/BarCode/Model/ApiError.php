@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarCodeErrorResponse.php">
+ * <copyright company="Aspose" file="ApiError.php">
  *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -39,11 +39,10 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * BarCodeErrorResponse
+ * ApiError
  *
- * @description BarCodeErrorResponse
  */
-class BarCodeErrorResponse implements ArrayAccess
+class ApiError implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class BarCodeErrorResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "BarCodeErrorResponse";
+    protected static $swaggerModelName = "ApiError";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +59,11 @@ class BarCodeErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'error' => '\Aspose\BarCode\Model\Error'
+        'code' => 'string',
+        'message' => 'string',
+        'description' => 'string',
+        'date_time' => '\DateTime',
+        'inner_error' => '\Aspose\BarCode\Model\ApiError'
     ];
 
     /*
@@ -69,7 +72,11 @@ class BarCodeErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'error' => null
+        'code' => null,
+        'message' => null,
+        'description' => null,
+        'date_time' => 'date-time',
+        'inner_error' => null
     ];
 
     /*
@@ -99,7 +106,11 @@ class BarCodeErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'error' => 'Error'
+        'code' => 'Code',
+        'message' => 'Message',
+        'description' => 'Description',
+        'date_time' => 'DateTime',
+        'inner_error' => 'InnerError'
     ];
 
     /*
@@ -108,7 +119,11 @@ class BarCodeErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'error' => 'setError'
+        'code' => 'setCode',
+        'message' => 'setMessage',
+        'description' => 'setDescription',
+        'date_time' => 'setDateTime',
+        'inner_error' => 'setInnerError'
     ];
 
     /*
@@ -117,7 +132,11 @@ class BarCodeErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'error' => 'getError'
+        'code' => 'getCode',
+        'message' => 'getMessage',
+        'description' => 'getDescription',
+        'date_time' => 'getDateTime',
+        'inner_error' => 'getInnerError'
     ];
 
     /*
@@ -180,7 +199,11 @@ class BarCodeErrorResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['date_time'] = isset($data['date_time']) ? $data['date_time'] : null;
+        $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
     }
 
     /*
@@ -208,25 +231,121 @@ class BarCodeErrorResponse implements ArrayAccess
 
 
     /*
-     * Gets error
+     * Gets code
      *
-     * @return \Aspose\BarCode\Model\Error
+     * @return string
      */
-    public function getError()
+    public function getCode()
     {
-        return $this->container['error'];
+        return $this->container['code'];
     }
 
     /*
-     * Sets error
+     * Sets code
      *
-     * @param \Aspose\BarCode\Model\Error $error Error
+     * @param string $code code
      *
      * @return $this
      */
-    public function setError($error)
+    public function setCode($code)
     {
-        $this->container['error'] = $error;
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /*
+     * Gets message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /*
+     * Sets message
+     *
+     * @param string $message message
+     *
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /*
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /*
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /*
+     * Gets date_time
+     *
+     * @return \DateTime
+     */
+    public function getDateTime()
+    {
+        return $this->container['date_time'];
+    }
+
+    /*
+     * Sets date_time
+     *
+     * @param \DateTime $date_time date_time
+     *
+     * @return $this
+     */
+    public function setDateTime($date_time)
+    {
+        $this->container['date_time'] = $date_time;
+
+        return $this;
+    }
+
+    /*
+     * Gets inner_error
+     *
+     * @return \Aspose\BarCode\Model\ApiError
+     */
+    public function getInnerError()
+    {
+        return $this->container['inner_error'];
+    }
+
+    /*
+     * Sets inner_error
+     *
+     * @param \Aspose\BarCode\Model\ApiError $inner_error inner_error
+     *
+     * @return $this
+     */
+    public function setInnerError($inner_error)
+    {
+        $this->container['inner_error'] = $inner_error;
 
         return $this;
     }
