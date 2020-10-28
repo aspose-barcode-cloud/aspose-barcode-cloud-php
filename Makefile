@@ -8,3 +8,8 @@ format:
 .PHONY: test
 test:
 	composer test
+
+.PHONY: update
+update:
+	composer update
+	composer validate
