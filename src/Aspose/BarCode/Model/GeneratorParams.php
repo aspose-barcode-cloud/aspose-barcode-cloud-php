@@ -96,6 +96,7 @@ class GeneratorParams implements ArrayAccess
         'validate_text' => 'bool',
         'supplement_data' => 'string',
         'supplement_space' => 'double',
+        'bar_width_reduction' => 'double',
         'australian_post' => '\Aspose\BarCode\Model\AustralianPostParams',
         'aztec' => '\Aspose\BarCode\Model\AztecParams',
         'codabar' => '\Aspose\BarCode\Model\CodabarParams',
@@ -155,6 +156,7 @@ class GeneratorParams implements ArrayAccess
         'validate_text' => null,
         'supplement_data' => null,
         'supplement_space' => 'double',
+        'bar_width_reduction' => 'double',
         'australian_post' => null,
         'aztec' => null,
         'codabar' => null,
@@ -235,6 +237,7 @@ class GeneratorParams implements ArrayAccess
         'validate_text' => 'ValidateText',
         'supplement_data' => 'SupplementData',
         'supplement_space' => 'SupplementSpace',
+        'bar_width_reduction' => 'BarWidthReduction',
         'australian_post' => 'AustralianPost',
         'aztec' => 'Aztec',
         'codabar' => 'Codabar',
@@ -294,6 +297,7 @@ class GeneratorParams implements ArrayAccess
         'validate_text' => 'setValidateText',
         'supplement_data' => 'setSupplementData',
         'supplement_space' => 'setSupplementSpace',
+        'bar_width_reduction' => 'setBarWidthReduction',
         'australian_post' => 'setAustralianPost',
         'aztec' => 'setAztec',
         'codabar' => 'setCodabar',
@@ -353,6 +357,7 @@ class GeneratorParams implements ArrayAccess
         'validate_text' => 'getValidateText',
         'supplement_data' => 'getSupplementData',
         'supplement_space' => 'getSupplementSpace',
+        'bar_width_reduction' => 'getBarWidthReduction',
         'australian_post' => 'getAustralianPost',
         'aztec' => 'getAztec',
         'codabar' => 'getCodabar',
@@ -466,6 +471,7 @@ class GeneratorParams implements ArrayAccess
         $this->container['validate_text'] = isset($data['validate_text']) ? $data['validate_text'] : null;
         $this->container['supplement_data'] = isset($data['supplement_data']) ? $data['supplement_data'] : null;
         $this->container['supplement_space'] = isset($data['supplement_space']) ? $data['supplement_space'] : null;
+        $this->container['bar_width_reduction'] = isset($data['bar_width_reduction']) ? $data['bar_width_reduction'] : null;
         $this->container['australian_post'] = isset($data['australian_post']) ? $data['australian_post'] : null;
         $this->container['aztec'] = isset($data['aztec']) ? $data['aztec'] : null;
         $this->container['codabar'] = isset($data['codabar']) ? $data['codabar'] : null;
@@ -1379,6 +1385,30 @@ class GeneratorParams implements ArrayAccess
     public function setSupplementSpace($supplement_space)
     {
         $this->container['supplement_space'] = $supplement_space;
+
+        return $this;
+    }
+
+    /*
+     * Gets bar_width_reduction
+     *
+     * @return double
+     */
+    public function getBarWidthReduction()
+    {
+        return $this->container['bar_width_reduction'];
+    }
+
+    /*
+     * Sets bar_width_reduction
+     *
+     * @param double $bar_width_reduction Bars reduction value that is used to compensate ink spread while printing.
+     *
+     * @return $this
+     */
+    public function setBarWidthReduction($bar_width_reduction)
+    {
+        $this->container['bar_width_reduction'] = $bar_width_reduction;
 
         return $this;
     }

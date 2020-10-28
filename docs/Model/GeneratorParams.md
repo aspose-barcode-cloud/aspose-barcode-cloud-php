@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **validate_text** | **bool** | Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode&#39;s specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingaporePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect. | [optional] 
 **supplement_data** | **string** | Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional] 
 **supplement_space** | **double** | Space between main the BarCode and supplement BarCode. | [optional] 
+**bar_width_reduction** | **double** | Bars reduction value that is used to compensate ink spread while printing. | [optional] 
 **australian_post** | [**\Aspose\BarCode\Model\AustralianPostParams**](AustralianPostParams.md) | AustralianPost params. | [optional] 
 **aztec** | [**\Aspose\BarCode\Model\AztecParams**](AztecParams.md) | Aztec params. | [optional] 
 **codabar** | [**\Aspose\BarCode\Model\CodabarParams**](CodabarParams.md) | Codabar params. | [optional] 

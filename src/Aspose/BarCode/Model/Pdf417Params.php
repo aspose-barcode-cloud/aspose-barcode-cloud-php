@@ -69,7 +69,9 @@ class Pdf417Params implements ArrayAccess
         'macro_segment_id' => 'int',
         'macro_segments_count' => 'int',
         'rows' => 'int',
-        'truncate' => 'bool'
+        'truncate' => 'bool',
+        'pdf417_eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
+        'is_reader_initialization' => 'bool'
     ];
 
     /*
@@ -87,7 +89,9 @@ class Pdf417Params implements ArrayAccess
         'macro_segment_id' => 'int32',
         'macro_segments_count' => 'int32',
         'rows' => 'int32',
-        'truncate' => null
+        'truncate' => null,
+        'pdf417_eci_encoding' => null,
+        'is_reader_initialization' => null
     ];
 
     /*
@@ -126,7 +130,9 @@ class Pdf417Params implements ArrayAccess
         'macro_segment_id' => 'MacroSegmentID',
         'macro_segments_count' => 'MacroSegmentsCount',
         'rows' => 'Rows',
-        'truncate' => 'Truncate'
+        'truncate' => 'Truncate',
+        'pdf417_eci_encoding' => 'Pdf417ECIEncoding',
+        'is_reader_initialization' => 'IsReaderInitialization'
     ];
 
     /*
@@ -144,7 +150,9 @@ class Pdf417Params implements ArrayAccess
         'macro_segment_id' => 'setMacroSegmentId',
         'macro_segments_count' => 'setMacroSegmentsCount',
         'rows' => 'setRows',
-        'truncate' => 'setTruncate'
+        'truncate' => 'setTruncate',
+        'pdf417_eci_encoding' => 'setPdf417EciEncoding',
+        'is_reader_initialization' => 'setIsReaderInitialization'
     ];
 
     /*
@@ -162,7 +170,9 @@ class Pdf417Params implements ArrayAccess
         'macro_segment_id' => 'getMacroSegmentId',
         'macro_segments_count' => 'getMacroSegmentsCount',
         'rows' => 'getRows',
-        'truncate' => 'getTruncate'
+        'truncate' => 'getTruncate',
+        'pdf417_eci_encoding' => 'getPdf417EciEncoding',
+        'is_reader_initialization' => 'getIsReaderInitialization'
     ];
 
     /*
@@ -235,6 +245,8 @@ class Pdf417Params implements ArrayAccess
         $this->container['macro_segments_count'] = isset($data['macro_segments_count']) ? $data['macro_segments_count'] : null;
         $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
         $this->container['truncate'] = isset($data['truncate']) ? $data['truncate'] : null;
+        $this->container['pdf417_eci_encoding'] = isset($data['pdf417_eci_encoding']) ? $data['pdf417_eci_encoding'] : null;
+        $this->container['is_reader_initialization'] = isset($data['is_reader_initialization']) ? $data['is_reader_initialization'] : null;
     }
 
     /*
@@ -497,6 +509,54 @@ class Pdf417Params implements ArrayAccess
     public function setTruncate($truncate)
     {
         $this->container['truncate'] = $truncate;
+
+        return $this;
+    }
+
+    /*
+     * Gets pdf417_eci_encoding
+     *
+     * @return \Aspose\BarCode\Model\ECIEncodings
+     */
+    public function getPdf417EciEncoding()
+    {
+        return $this->container['pdf417_eci_encoding'];
+    }
+
+    /*
+     * Sets pdf417_eci_encoding
+     *
+     * @param \Aspose\BarCode\Model\ECIEncodings $pdf417_eci_encoding Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings.
+     *
+     * @return $this
+     */
+    public function setPdf417EciEncoding($pdf417_eci_encoding)
+    {
+        $this->container['pdf417_eci_encoding'] = $pdf417_eci_encoding;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_reader_initialization
+     *
+     * @return bool
+     */
+    public function getIsReaderInitialization()
+    {
+        return $this->container['is_reader_initialization'];
+    }
+
+    /*
+     * Sets is_reader_initialization
+     *
+     * @param bool $is_reader_initialization Used to instruct the reader to interpret the data contained within the symbol as programming for reader initialization
+     *
+     * @return $this
+     */
+    public function setIsReaderInitialization($is_reader_initialization)
+    {
+        $this->container['is_reader_initialization'] = $is_reader_initialization;
 
         return $this;
     }
