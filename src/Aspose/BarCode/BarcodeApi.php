@@ -3511,8 +3511,8 @@ class BarcodeApi
         $response = $this->client->request('POST', $requestUrl, [
             'form_params' => [
                 'grant_type' => 'client_credentials',
-                'client_id' => $this->config->getAppSid(),
-                'client_secret' => $this->config->getAppKey(),
+                'client_id' => $this->config->getClientId(),
+                'client_secret' => $this->config->getClientSecret(),
             ]
         ]);
         $result = json_decode($response->getBody()->getContents(), true);
