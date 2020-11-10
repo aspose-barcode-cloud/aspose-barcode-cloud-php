@@ -46,21 +46,21 @@ class Configuration implements JsonSerializable
      *
      * @var string
      */
-    protected $clientVersion = '20.10.0';
+    protected $clientVersion = '20.11.0';
 
     /*
-     * AppKey for API
+     * ClientId for API
      *
      * @var string
      */
-    protected $appKey = null;
+    protected $clientId = null;
 
     /*
-     * AppSid for API
+     * ClientSecret for API
      *
      * @var string
      */
-    protected $appSid = null;
+    protected $clientSecret = null;
 
     /*
      * Access token for OAuth
@@ -129,47 +129,47 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Sets AppSid
+     * Sets ClientId
      *
-     * @param string $appSid
+     * @param string $clientId
      *
      * @return $this
      */
-    public function setAppSid($appSid)
+    public function setClientId($clientId)
     {
-        $this->appSid = $appSid;
+        $this->clientId = $clientId;
         return $this;
     }
 
     /*
-     * Gets AppSid
-     * @return $appSid
+     * Gets ClientId
+     * @return $clientId
      */
-    public function getAppSid()
+    public function getClientId()
     {
-        return $this->appSid;
+        return $this->clientId;
     }
 
     /*
-     * Sets AppKey
+     * Sets ClientSecret
      *
-     * @param string $appKey
+     * @param string $clientSecret
      *
      * @return $this
      */
-    public function setAppKey($appKey)
+    public function setClientSecret($clientSecret)
     {
-        $this->appKey = $appKey;
+        $this->clientSecret = $clientSecret;
         return $this;
     }
 
     /*
-     * Gets AppKey
-     * @return $appKey
+     * Gets ClientSecret
+     * @return $clientSecret
      */
-    public function getAppKey()
+    public function getClientSecret()
     {
-        return $this->appKey;
+        return $this->clientSecret;
     }
 
     /*
@@ -362,7 +362,7 @@ class Configuration implements JsonSerializable
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 20.10.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 20.11.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
@@ -374,8 +374,8 @@ class Configuration implements JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'AppKey' => $this->appKey,
-            'AppSid' => $this->appSid,
+            'ClientId' => $this->clientId,
+            'ClientSecret' => $this->clientSecret,
             'Host' => $this->host,
             'AccessToken' => $this->accessToken,
             'Debug' => $this->debug,

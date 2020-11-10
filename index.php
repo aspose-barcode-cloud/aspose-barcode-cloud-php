@@ -34,8 +34,8 @@ use Aspose\BarCode\Model\EncodeBarcodeType;
 use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 
 $config = new Configuration();
-$config->setAppKey('App Key from https://dashboard.aspose.cloud/#/apps');
-$config->setAppSid('App SID from https://dashboard.aspose.cloud/#/apps');
+$config->setClientId('ClientId from https://dashboard.aspose.cloud/applications');
+$config->setClientSecret('Client Secret from https://dashboard.aspose.cloud/applications');
 if (getenv("TEST_ACCESS_TOKEN")) {
     $config->setAccessToken(getenv("TEST_ACCESS_TOKEN"));
 }

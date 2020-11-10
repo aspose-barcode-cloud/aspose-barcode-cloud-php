@@ -11,11 +11,11 @@ class TestConfiguration
         $values = json_decode($jsonString, true);
 
         $config = new Configuration();
-        if (isset($values['AppKey'])) {
-            $config->setAppKey($values['AppKey']);
+        if (isset($values['ClientId'])) {
+            $config->setClientId($values['ClientId']);
         }
-        if (isset($values['AppSid'])) {
-            $config->setAppSid($values['AppSid']);
+        if (isset($values['ClientSecret'])) {
+            $config->setClientSecret($values['ClientSecret']);
         }
         if (isset($values['Host'])) {
             $config->setHost($values['Host']);
@@ -33,11 +33,11 @@ class TestConfiguration
     public static function fromEnv(string $prefix): Configuration
     {
         $config = new Configuration();
-        if (getenv($prefix . 'APP_KEY')) {
-            $config->setAppKey(getenv($prefix . 'APP_KEY'));
+        if (getenv($prefix . 'CLIENT_ID')) {
+            $config->setClientId(getenv($prefix . 'CLIENT_ID'));
         }
-        if (getenv($prefix . 'APP_SID')) {
-            $config->setAppSid(getenv($prefix . 'APP_SID'));
+        if (getenv($prefix . 'CLIENT_SECRET')) {
+            $config->setClientSecret(getenv($prefix . 'CLIENT_SECRET'));
         }
         if (getenv($prefix . 'HOST')) {
             $config->setHost(getenv($prefix . 'HOST'));

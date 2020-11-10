@@ -13,8 +13,8 @@ final class ConfigurationTest extends TestCase
     public function testConfigurationJsonEncode(): void
     {
         $config = new Configuration();
-        $config->setAppKey('api key');
-        $config->setAppSid('app sid');
+        $config->setClientId('client id');
+        $config->setClientSecret('client secret');
         $config->setHost('https://api-qa.aspose.cloud');
         $config->setAccessToken('access token');
 
@@ -22,8 +22,8 @@ final class ConfigurationTest extends TestCase
 
         $this->assertEquals(
             '{
-    "AppKey": "api key",
-    "AppSid": "app sid",
+    "ClientId": "client id",
+    "ClientSecret": "client secret",
     "Host": "https:\\/\\/api-qa.aspose.cloud",
     "AccessToken": "access token",
     "Debug": false
@@ -35,8 +35,8 @@ final class ConfigurationTest extends TestCase
     public function testConfigurationFromJson(): void
     {
         $config = new Configuration();
-        $config->setAppKey('api key');
-        $config->setAppSid('app sid');
+        $config->setClientId('client id');
+        $config->setClientSecret('client secret');
         $config->setHost('https://api-qa.aspose.cloud');
         $config->setAccessToken('access token');
         $json = json_encode($config, JSON_PRETTY_PRINT);
@@ -50,16 +50,16 @@ final class ConfigurationTest extends TestCase
     {
         $uniqPrefix = uniqid();
         putenv("${uniqPrefix}_ACCESS_TOKEN=Access Token");
-        putenv("${uniqPrefix}_APP_SID=App Sid");
-        putenv("${uniqPrefix}_APP_KEY=App Key");
+        putenv("${uniqPrefix}_CLIENT_ID=Client Id");
+        putenv("${uniqPrefix}_CLIENT_SECRET=Client Secret");
         putenv("${uniqPrefix}_HOST=Host");
         putenv("${uniqPrefix}_DEBUG=FALSE");
 
         $config = TestConfiguration::fromEnv($uniqPrefix . '_');
 
         $this->assertEquals("Access Token", $config->getAccessToken());
-        $this->assertEquals("App Sid", $config->getAppSid());
-        $this->assertEquals("App Key", $config->getAppKey());
+        $this->assertEquals("Client Id", $config->getClientId());
+        $this->assertEquals("Client Secret", $config->getClientSecret());
         $this->assertEquals("Host", $config->getHost());
         $this->assertEquals(false, $config->getDebug());
     }
@@ -68,8 +68,8 @@ final class ConfigurationTest extends TestCase
     {
         $config = TestConfiguration::fromFileOrEnv('Configuration.example.json');
 
-        $this->assertEquals('App Key from https://dashboard.aspose.cloud/#/apps', $config->getAppKey());
-        $this->assertEquals('App SID from https://dashboard.aspose.cloud/#/apps', $config->getAppSid());
+        $this->assertEquals('Client Id from https://dashboard.aspose.cloud/applications', $config->getClientId());
+        $this->assertEquals('Client Secret from https://dashboard.aspose.cloud/applications', $config->getClientSecret());
         $this->assertEquals('https://api.aspose.cloud', $config->getHost());
     }
 
