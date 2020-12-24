@@ -66,7 +66,8 @@ class QrParams implements ArrayAccess
         'eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
         'encode_mode' => '\Aspose\BarCode\Model\QREncodeMode',
         'error_level' => '\Aspose\BarCode\Model\QRErrorLevel',
-        'version' => '\Aspose\BarCode\Model\QRVersion'
+        'version' => '\Aspose\BarCode\Model\QRVersion',
+        'structured_append' => '\Aspose\BarCode\Model\StructuredAppend'
     ];
 
     /*
@@ -81,7 +82,8 @@ class QrParams implements ArrayAccess
         'eci_encoding' => null,
         'encode_mode' => null,
         'error_level' => null,
-        'version' => null
+        'version' => null,
+        'structured_append' => null
     ];
 
     /*
@@ -117,7 +119,8 @@ class QrParams implements ArrayAccess
         'eci_encoding' => 'ECIEncoding',
         'encode_mode' => 'EncodeMode',
         'error_level' => 'ErrorLevel',
-        'version' => 'Version'
+        'version' => 'Version',
+        'structured_append' => 'StructuredAppend'
     ];
 
     /*
@@ -132,7 +135,8 @@ class QrParams implements ArrayAccess
         'eci_encoding' => 'setEciEncoding',
         'encode_mode' => 'setEncodeMode',
         'error_level' => 'setErrorLevel',
-        'version' => 'setVersion'
+        'version' => 'setVersion',
+        'structured_append' => 'setStructuredAppend'
     ];
 
     /*
@@ -147,7 +151,8 @@ class QrParams implements ArrayAccess
         'eci_encoding' => 'getEciEncoding',
         'encode_mode' => 'getEncodeMode',
         'error_level' => 'getErrorLevel',
-        'version' => 'getVersion'
+        'version' => 'getVersion',
+        'structured_append' => 'getStructuredAppend'
     ];
 
     /*
@@ -217,6 +222,7 @@ class QrParams implements ArrayAccess
         $this->container['encode_mode'] = isset($data['encode_mode']) ? $data['encode_mode'] : null;
         $this->container['error_level'] = isset($data['error_level']) ? $data['error_level'] : null;
         $this->container['version'] = isset($data['version']) ? $data['version'] : null;
+        $this->container['structured_append'] = isset($data['structured_append']) ? $data['structured_append'] : null;
     }
 
     /*
@@ -407,6 +413,30 @@ class QrParams implements ArrayAccess
     public function setVersion($version)
     {
         $this->container['version'] = $version;
+
+        return $this;
+    }
+
+    /*
+     * Gets structured_append
+     *
+     * @return \Aspose\BarCode\Model\StructuredAppend
+     */
+    public function getStructuredAppend()
+    {
+        return $this->container['structured_append'];
+    }
+
+    /*
+     * Sets structured_append
+     *
+     * @param \Aspose\BarCode\Model\StructuredAppend $structured_append QR structured append parameters.
+     *
+     * @return $this
+     */
+    public function setStructuredAppend($structured_append)
+    {
+        $this->container['structured_append'] = $structured_append;
 
         return $this;
     }

@@ -49,6 +49,7 @@ class GetBarcodeGenerateRequest
      * @param string $text_alignment Text alignment.
      * @param string $text_color Specify the displaying CodeText's Color. Default value: Color.Black.
      * @param string $font_size_mode Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
+     * @param bool $no_wrap Specify word wraps (line breaks) within text. Default value: false.
      * @param double $resolution Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
      * @param double $resolution_x DEPRECATED: Use 'Resolution' instead.
      * @param double $resolution_y DEPRECATED: Use 'Resolution' instead.
@@ -77,7 +78,7 @@ class GetBarcodeGenerateRequest
      * @param double $bar_width_reduction Bars reduction value that is used to compensate ink spread while printing.
      * @param string $format Result image format.
      */
-    public function __construct($type, $text, $two_d_display_text = null, $text_location = null, $text_alignment = null, $text_color = null, $font_size_mode = null, $resolution = null, $resolution_x = null, $resolution_y = null, $dimension_x = null, $text_space = null, $units = null, $size_mode = null, $bar_height = null, $image_height = null, $image_width = null, $rotation_angle = null, $back_color = null, $bar_color = null, $border_color = null, $border_width = null, $border_dash_style = null, $border_visible = null, $enable_checksum = null, $enable_escape = null, $filled_bars = null, $always_show_checksum = null, $wide_narrow_ratio = null, $validate_text = null, $supplement_data = null, $supplement_space = null, $bar_width_reduction = null, $format = null)
+    public function __construct($type, $text, $two_d_display_text = null, $text_location = null, $text_alignment = null, $text_color = null, $font_size_mode = null, $no_wrap = null, $resolution = null, $resolution_x = null, $resolution_y = null, $dimension_x = null, $text_space = null, $units = null, $size_mode = null, $bar_height = null, $image_height = null, $image_width = null, $rotation_angle = null, $back_color = null, $bar_color = null, $border_color = null, $border_width = null, $border_dash_style = null, $border_visible = null, $enable_checksum = null, $enable_escape = null, $filled_bars = null, $always_show_checksum = null, $wide_narrow_ratio = null, $validate_text = null, $supplement_data = null, $supplement_space = null, $bar_width_reduction = null, $format = null)
     {
         $this->type = $type;
         $this->text = $text;
@@ -86,6 +87,7 @@ class GetBarcodeGenerateRequest
         $this->text_alignment = $text_alignment;
         $this->text_color = $text_color;
         $this->font_size_mode = $font_size_mode;
+        $this->no_wrap = $no_wrap;
         $this->resolution = $resolution;
         $this->resolution_x = $resolution_x;
         $this->resolution_y = $resolution_y;
@@ -149,6 +151,11 @@ class GetBarcodeGenerateRequest
      * Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
      */
     public $font_size_mode;
+
+    /*
+     * Specify word wraps (line breaks) within text. Default value: false.
+     */
+    public $no_wrap;
 
     /*
      * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.

@@ -62,7 +62,9 @@ class DataBarParams implements ArrayAccess
     protected static $swaggerTypes = [
         'aspect_ratio' => 'double',
         'columns' => 'int',
-        'rows' => 'int'
+        'rows' => 'int',
+        'is2_d_composite_component' => 'bool',
+        'is_allow_only_gs1_encoding' => 'bool'
     ];
 
     /*
@@ -73,7 +75,9 @@ class DataBarParams implements ArrayAccess
     protected static $swaggerFormats = [
         'aspect_ratio' => 'double',
         'columns' => 'int32',
-        'rows' => 'int32'
+        'rows' => 'int32',
+        'is2_d_composite_component' => null,
+        'is_allow_only_gs1_encoding' => null
     ];
 
     /*
@@ -105,7 +109,9 @@ class DataBarParams implements ArrayAccess
     protected static $attributeMap = [
         'aspect_ratio' => 'AspectRatio',
         'columns' => 'Columns',
-        'rows' => 'Rows'
+        'rows' => 'Rows',
+        'is2_d_composite_component' => 'Is2DCompositeComponent',
+        'is_allow_only_gs1_encoding' => 'IsAllowOnlyGS1Encoding'
     ];
 
     /*
@@ -116,7 +122,9 @@ class DataBarParams implements ArrayAccess
     protected static $setters = [
         'aspect_ratio' => 'setAspectRatio',
         'columns' => 'setColumns',
-        'rows' => 'setRows'
+        'rows' => 'setRows',
+        'is2_d_composite_component' => 'setIs2DCompositeComponent',
+        'is_allow_only_gs1_encoding' => 'setIsAllowOnlyGs1Encoding'
     ];
 
     /*
@@ -127,7 +135,9 @@ class DataBarParams implements ArrayAccess
     protected static $getters = [
         'aspect_ratio' => 'getAspectRatio',
         'columns' => 'getColumns',
-        'rows' => 'getRows'
+        'rows' => 'getRows',
+        'is2_d_composite_component' => 'getIs2DCompositeComponent',
+        'is_allow_only_gs1_encoding' => 'getIsAllowOnlyGs1Encoding'
     ];
 
     /*
@@ -193,6 +203,8 @@ class DataBarParams implements ArrayAccess
         $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
         $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
         $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
+        $this->container['is2_d_composite_component'] = isset($data['is2_d_composite_component']) ? $data['is2_d_composite_component'] : null;
+        $this->container['is_allow_only_gs1_encoding'] = isset($data['is_allow_only_gs1_encoding']) ? $data['is_allow_only_gs1_encoding'] : null;
     }
 
     /*
@@ -287,6 +299,54 @@ class DataBarParams implements ArrayAccess
     public function setRows($rows)
     {
         $this->container['rows'] = $rows;
+
+        return $this;
+    }
+
+    /*
+     * Gets is2_d_composite_component
+     *
+     * @return bool
+     */
+    public function getIs2DCompositeComponent()
+    {
+        return $this->container['is2_d_composite_component'];
+    }
+
+    /*
+     * Sets is2_d_composite_component
+     *
+     * @param bool $is2_d_composite_component Enables flag of 2D composite component with DataBar barcode
+     *
+     * @return $this
+     */
+    public function setIs2DCompositeComponent($is2_d_composite_component)
+    {
+        $this->container['is2_d_composite_component'] = $is2_d_composite_component;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_allow_only_gs1_encoding
+     *
+     * @return bool
+     */
+    public function getIsAllowOnlyGs1Encoding()
+    {
+        return $this->container['is_allow_only_gs1_encoding'];
+    }
+
+    /*
+     * Sets is_allow_only_gs1_encoding
+     *
+     * @param bool $is_allow_only_gs1_encoding If this flag is set, it allows only GS1 encoding standard for Databar barcode types
+     *
+     * @return $this
+     */
+    public function setIsAllowOnlyGs1Encoding($is_allow_only_gs1_encoding)
+    {
+        $this->container['is_allow_only_gs1_encoding'] = $is_allow_only_gs1_encoding;
 
         return $this;
     }

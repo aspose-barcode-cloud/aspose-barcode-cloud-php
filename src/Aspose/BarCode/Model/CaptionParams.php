@@ -65,7 +65,8 @@ class CaptionParams implements ArrayAccess
         'color' => 'string',
         'visible' => 'bool',
         'font' => '\Aspose\BarCode\Model\FontParams',
-        'padding' => '\Aspose\BarCode\Model\Padding'
+        'padding' => '\Aspose\BarCode\Model\Padding',
+        'no_wrap' => 'bool'
     ];
 
     /*
@@ -79,7 +80,8 @@ class CaptionParams implements ArrayAccess
         'color' => null,
         'visible' => null,
         'font' => null,
-        'padding' => null
+        'padding' => null,
+        'no_wrap' => null
     ];
 
     /*
@@ -114,7 +116,8 @@ class CaptionParams implements ArrayAccess
         'color' => 'Color',
         'visible' => 'Visible',
         'font' => 'Font',
-        'padding' => 'Padding'
+        'padding' => 'Padding',
+        'no_wrap' => 'NoWrap'
     ];
 
     /*
@@ -128,7 +131,8 @@ class CaptionParams implements ArrayAccess
         'color' => 'setColor',
         'visible' => 'setVisible',
         'font' => 'setFont',
-        'padding' => 'setPadding'
+        'padding' => 'setPadding',
+        'no_wrap' => 'setNoWrap'
     ];
 
     /*
@@ -142,7 +146,8 @@ class CaptionParams implements ArrayAccess
         'color' => 'getColor',
         'visible' => 'getVisible',
         'font' => 'getFont',
-        'padding' => 'getPadding'
+        'padding' => 'getPadding',
+        'no_wrap' => 'getNoWrap'
     ];
 
     /*
@@ -211,6 +216,7 @@ class CaptionParams implements ArrayAccess
         $this->container['visible'] = isset($data['visible']) ? $data['visible'] : null;
         $this->container['font'] = isset($data['font']) ? $data['font'] : null;
         $this->container['padding'] = isset($data['padding']) ? $data['padding'] : null;
+        $this->container['no_wrap'] = isset($data['no_wrap']) ? $data['no_wrap'] : null;
     }
 
     /*
@@ -377,6 +383,30 @@ class CaptionParams implements ArrayAccess
     public function setPadding($padding)
     {
         $this->container['padding'] = $padding;
+
+        return $this;
+    }
+
+    /*
+     * Gets no_wrap
+     *
+     * @return bool
+     */
+    public function getNoWrap()
+    {
+        return $this->container['no_wrap'];
+    }
+
+    /*
+     * Sets no_wrap
+     *
+     * @param bool $no_wrap Specify word wraps (line breaks) within text. Default value: false.
+     *
+     * @return $this
+     */
+    public function setNoWrap($no_wrap)
+    {
+        $this->container['no_wrap'] = $no_wrap;
 
         return $this;
     }

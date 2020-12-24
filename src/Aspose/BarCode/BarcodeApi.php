@@ -352,6 +352,16 @@ class BarcodeApi
             }
         }
         // query params
+        if (isset($request->no_wrap)) {
+            $localName = lcfirst('NoWrap');
+            $localValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->resolution)) {
             $localName = lcfirst('Resolution');
             $localValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
@@ -2451,6 +2461,16 @@ class BarcodeApi
         if (isset($request->font_size_mode)) {
             $localName = lcfirst('FontSizeMode');
             $localValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (isset($request->no_wrap)) {
+            $localName = lcfirst('NoWrap');
+            $localValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

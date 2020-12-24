@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DataMatrixEncodeMode.php">
+ * <copyright company="Aspose" file="MacroCharacter.php">
  *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,55 +38,25 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * DataMatrixEncodeMode
+ * MacroCharacter
  *
  * @description
  */
-class DataMatrixEncodeMode
+class MacroCharacter
 {
 
   /// <summary>
-    /// Enum value Auto
+    /// Enum value None
     /// </summary>
-    const Auto =  "Auto";
+    const None =  "None";
   
     /// <summary>
-    /// Enum value ASCII
+    /// Enum value Macro05
     /// </summary>
-    const ASCII =  "ASCII";
+    const Macro05 =  "Macro05";
   
     /// <summary>
-    /// Enum value Full
+    /// Enum value Macro06
     /// </summary>
-    const Full =  "Full";
-  
-    /// <summary>
-    /// Enum value Custom
-    /// </summary>
-    const Custom =  "Custom";
-  
-    /// <summary>
-    /// Enum value C40
-    /// </summary>
-    const C40 =  "C40";
-  
-    /// <summary>
-    /// Enum value Text
-    /// </summary>
-    const Text =  "Text";
-  
-    /// <summary>
-    /// Enum value EDIFACT
-    /// </summary>
-    const EDIFACT =  "EDIFACT";
-  
-    /// <summary>
-    /// Enum value ANSIX12
-    /// </summary>
-    const ANSIX12 =  "ANSIX12";
-  
-    /// <summary>
-    /// Enum value ExtendedCodetext
-    /// </summary>
-    const ExtendedCodetext =  "ExtendedCodetext";
+    const Macro06 =  "Macro06";
 }

@@ -68,6 +68,7 @@ class GeneratorParams implements ArrayAccess
         'text_color' => 'string',
         'font' => '\Aspose\BarCode\Model\FontParams',
         'font_size_mode' => '\Aspose\BarCode\Model\FontMode',
+        'no_wrap' => 'bool',
         'resolution' => 'double',
         'resolution_x' => 'double',
         'resolution_y' => 'double',
@@ -128,6 +129,7 @@ class GeneratorParams implements ArrayAccess
         'text_color' => null,
         'font' => null,
         'font_size_mode' => null,
+        'no_wrap' => null,
         'resolution' => 'double',
         'resolution_x' => 'double',
         'resolution_y' => 'double',
@@ -209,6 +211,7 @@ class GeneratorParams implements ArrayAccess
         'text_color' => 'TextColor',
         'font' => 'Font',
         'font_size_mode' => 'FontSizeMode',
+        'no_wrap' => 'NoWrap',
         'resolution' => 'Resolution',
         'resolution_x' => 'ResolutionX',
         'resolution_y' => 'ResolutionY',
@@ -269,6 +272,7 @@ class GeneratorParams implements ArrayAccess
         'text_color' => 'setTextColor',
         'font' => 'setFont',
         'font_size_mode' => 'setFontSizeMode',
+        'no_wrap' => 'setNoWrap',
         'resolution' => 'setResolution',
         'resolution_x' => 'setResolutionX',
         'resolution_y' => 'setResolutionY',
@@ -329,6 +333,7 @@ class GeneratorParams implements ArrayAccess
         'text_color' => 'getTextColor',
         'font' => 'getFont',
         'font_size_mode' => 'getFontSizeMode',
+        'no_wrap' => 'getNoWrap',
         'resolution' => 'getResolution',
         'resolution_x' => 'getResolutionX',
         'resolution_y' => 'getResolutionY',
@@ -443,6 +448,7 @@ class GeneratorParams implements ArrayAccess
         $this->container['text_color'] = isset($data['text_color']) ? $data['text_color'] : null;
         $this->container['font'] = isset($data['font']) ? $data['font'] : null;
         $this->container['font_size_mode'] = isset($data['font_size_mode']) ? $data['font_size_mode'] : null;
+        $this->container['no_wrap'] = isset($data['no_wrap']) ? $data['no_wrap'] : null;
         $this->container['resolution'] = isset($data['resolution']) ? $data['resolution'] : null;
         $this->container['resolution_x'] = isset($data['resolution_x']) ? $data['resolution_x'] : null;
         $this->container['resolution_y'] = isset($data['resolution_y']) ? $data['resolution_y'] : null;
@@ -713,6 +719,30 @@ class GeneratorParams implements ArrayAccess
     public function setFontSizeMode($font_size_mode)
     {
         $this->container['font_size_mode'] = $font_size_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets no_wrap
+     *
+     * @return bool
+     */
+    public function getNoWrap()
+    {
+        return $this->container['no_wrap'];
+    }
+
+    /*
+     * Sets no_wrap
+     *
+     * @param bool $no_wrap Specify word wraps (line breaks) within text. Default value: false.
+     *
+     * @return $this
+     */
+    public function setNoWrap($no_wrap)
+    {
+        $this->container['no_wrap'] = $no_wrap;
 
         return $this;
     }

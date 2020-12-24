@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DataMatrixParams.php">
+ * <copyright company="Aspose" file="StructuredAppend.php">
  *   Copyright (c) 2020 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -39,11 +39,11 @@ use \ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
- * DataMatrixParams
+ * StructuredAppend
  *
- * @description DataMatrix parameters.
+ * @description QR structured append parameters.
  */
-class DataMatrixParams implements ArrayAccess
+class StructuredAppend implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class DataMatrixParams implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "DataMatrixParams";
+    protected static $swaggerModelName = "StructuredAppend";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -60,13 +60,9 @@ class DataMatrixParams implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'aspect_ratio' => 'double',
-        'text_encoding' => 'string',
-        'columns' => 'int',
-        'data_matrix_ecc' => '\Aspose\BarCode\Model\DataMatrixEccType',
-        'data_matrix_encode_mode' => '\Aspose\BarCode\Model\DataMatrixEncodeMode',
-        'rows' => 'int',
-        'macro_characters' => '\Aspose\BarCode\Model\MacroCharacter'
+        'sequence_indicator' => 'int',
+        'total_count' => 'int',
+        'parity_byte' => 'int'
     ];
 
     /*
@@ -75,13 +71,9 @@ class DataMatrixParams implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'aspect_ratio' => 'double',
-        'text_encoding' => null,
-        'columns' => 'int32',
-        'data_matrix_ecc' => null,
-        'data_matrix_encode_mode' => null,
-        'rows' => 'int32',
-        'macro_characters' => null
+        'sequence_indicator' => 'int32',
+        'total_count' => 'int32',
+        'parity_byte' => 'byte'
     ];
 
     /*
@@ -111,13 +103,9 @@ class DataMatrixParams implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'aspect_ratio' => 'AspectRatio',
-        'text_encoding' => 'TextEncoding',
-        'columns' => 'Columns',
-        'data_matrix_ecc' => 'DataMatrixEcc',
-        'data_matrix_encode_mode' => 'DataMatrixEncodeMode',
-        'rows' => 'Rows',
-        'macro_characters' => 'MacroCharacters'
+        'sequence_indicator' => 'SequenceIndicator',
+        'total_count' => 'TotalCount',
+        'parity_byte' => 'ParityByte'
     ];
 
     /*
@@ -126,13 +114,9 @@ class DataMatrixParams implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'aspect_ratio' => 'setAspectRatio',
-        'text_encoding' => 'setTextEncoding',
-        'columns' => 'setColumns',
-        'data_matrix_ecc' => 'setDataMatrixEcc',
-        'data_matrix_encode_mode' => 'setDataMatrixEncodeMode',
-        'rows' => 'setRows',
-        'macro_characters' => 'setMacroCharacters'
+        'sequence_indicator' => 'setSequenceIndicator',
+        'total_count' => 'setTotalCount',
+        'parity_byte' => 'setParityByte'
     ];
 
     /*
@@ -141,13 +125,9 @@ class DataMatrixParams implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'aspect_ratio' => 'getAspectRatio',
-        'text_encoding' => 'getTextEncoding',
-        'columns' => 'getColumns',
-        'data_matrix_ecc' => 'getDataMatrixEcc',
-        'data_matrix_encode_mode' => 'getDataMatrixEncodeMode',
-        'rows' => 'getRows',
-        'macro_characters' => 'getMacroCharacters'
+        'sequence_indicator' => 'getSequenceIndicator',
+        'total_count' => 'getTotalCount',
+        'parity_byte' => 'getParityByte'
     ];
 
     /*
@@ -210,13 +190,9 @@ class DataMatrixParams implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
-        $this->container['text_encoding'] = isset($data['text_encoding']) ? $data['text_encoding'] : null;
-        $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
-        $this->container['data_matrix_ecc'] = isset($data['data_matrix_ecc']) ? $data['data_matrix_ecc'] : null;
-        $this->container['data_matrix_encode_mode'] = isset($data['data_matrix_encode_mode']) ? $data['data_matrix_encode_mode'] : null;
-        $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
-        $this->container['macro_characters'] = isset($data['macro_characters']) ? $data['macro_characters'] : null;
+        $this->container['sequence_indicator'] = isset($data['sequence_indicator']) ? $data['sequence_indicator'] : null;
+        $this->container['total_count'] = isset($data['total_count']) ? $data['total_count'] : null;
+        $this->container['parity_byte'] = isset($data['parity_byte']) ? $data['parity_byte'] : null;
     }
 
     /*
@@ -244,169 +220,73 @@ class DataMatrixParams implements ArrayAccess
 
 
     /*
-     * Gets aspect_ratio
-     *
-     * @return double
-     */
-    public function getAspectRatio()
-    {
-        return $this->container['aspect_ratio'];
-    }
-
-    /*
-     * Sets aspect_ratio
-     *
-     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module
-     *
-     * @return $this
-     */
-    public function setAspectRatio($aspect_ratio)
-    {
-        $this->container['aspect_ratio'] = $aspect_ratio;
-
-        return $this;
-    }
-
-    /*
-     * Gets text_encoding
-     *
-     * @return string
-     */
-    public function getTextEncoding()
-    {
-        return $this->container['text_encoding'];
-    }
-
-    /*
-     * Sets text_encoding
-     *
-     * @param string $text_encoding Encoding of codetext.
-     *
-     * @return $this
-     */
-    public function setTextEncoding($text_encoding)
-    {
-        $this->container['text_encoding'] = $text_encoding;
-
-        return $this;
-    }
-
-    /*
-     * Gets columns
+     * Gets sequence_indicator
      *
      * @return int
      */
-    public function getColumns()
+    public function getSequenceIndicator()
     {
-        return $this->container['columns'];
+        return $this->container['sequence_indicator'];
     }
 
     /*
-     * Sets columns
+     * Sets sequence_indicator
      *
-     * @param int $columns Columns count.
+     * @param int $sequence_indicator The index of the QR structured append mode barcode. Index starts from 0.
      *
      * @return $this
      */
-    public function setColumns($columns)
+    public function setSequenceIndicator($sequence_indicator)
     {
-        $this->container['columns'] = $columns;
+        $this->container['sequence_indicator'] = $sequence_indicator;
 
         return $this;
     }
 
     /*
-     * Gets data_matrix_ecc
-     *
-     * @return \Aspose\BarCode\Model\DataMatrixEccType
-     */
-    public function getDataMatrixEcc()
-    {
-        return $this->container['data_matrix_ecc'];
-    }
-
-    /*
-     * Sets data_matrix_ecc
-     *
-     * @param \Aspose\BarCode\Model\DataMatrixEccType $data_matrix_ecc Datamatrix ECC type. Default value: DataMatrixEccType.Ecc200.
-     *
-     * @return $this
-     */
-    public function setDataMatrixEcc($data_matrix_ecc)
-    {
-        $this->container['data_matrix_ecc'] = $data_matrix_ecc;
-
-        return $this;
-    }
-
-    /*
-     * Gets data_matrix_encode_mode
-     *
-     * @return \Aspose\BarCode\Model\DataMatrixEncodeMode
-     */
-    public function getDataMatrixEncodeMode()
-    {
-        return $this->container['data_matrix_encode_mode'];
-    }
-
-    /*
-     * Sets data_matrix_encode_mode
-     *
-     * @param \Aspose\BarCode\Model\DataMatrixEncodeMode $data_matrix_encode_mode Encode mode of Datamatrix barcode. Default value: DataMatrixEncodeMode.Auto.
-     *
-     * @return $this
-     */
-    public function setDataMatrixEncodeMode($data_matrix_encode_mode)
-    {
-        $this->container['data_matrix_encode_mode'] = $data_matrix_encode_mode;
-
-        return $this;
-    }
-
-    /*
-     * Gets rows
+     * Gets total_count
      *
      * @return int
      */
-    public function getRows()
+    public function getTotalCount()
     {
-        return $this->container['rows'];
+        return $this->container['total_count'];
     }
 
     /*
-     * Sets rows
+     * Sets total_count
      *
-     * @param int $rows Rows count.
+     * @param int $total_count Gets or sets the QR structured append mode barcodes quantity. Max value is 16.
      *
      * @return $this
      */
-    public function setRows($rows)
+    public function setTotalCount($total_count)
     {
-        $this->container['rows'] = $rows;
+        $this->container['total_count'] = $total_count;
 
         return $this;
     }
 
     /*
-     * Gets macro_characters
+     * Gets parity_byte
      *
-     * @return \Aspose\BarCode\Model\MacroCharacter
+     * @return int
      */
-    public function getMacroCharacters()
+    public function getParityByte()
     {
-        return $this->container['macro_characters'];
+        return $this->container['parity_byte'];
     }
 
     /*
-     * Sets macro_characters
+     * Sets parity_byte
      *
-     * @param \Aspose\BarCode\Model\MacroCharacter $macro_characters Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with DataMatrixEccType.Ecc200 or DataMatrixEccType.EccAuto. Cannot be used with EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None.
+     * @param int $parity_byte Gets or sets the QR structured append mode parity data.
      *
      * @return $this
      */
-    public function setMacroCharacters($macro_characters)
+    public function setParityByte($parity_byte)
     {
-        $this->container['macro_characters'] = $macro_characters;
+        $this->container['parity_byte'] = $parity_byte;
 
         return $this;
     }
