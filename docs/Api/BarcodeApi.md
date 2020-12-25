@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getBarcodeGenerate**
-> \SplFileObject getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $format)
+> \SplFileObject getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $format)
 
 Generate barcode.
 
@@ -39,6 +39,7 @@ $text_location = "text_location_example"; // string | Specify the displaying Tex
 $text_alignment = "text_alignment_example"; // string | Text alignment.
 $text_color = "text_color_example"; // string | Specify the displaying CodeText's Color. Default value: Color.Black.
 $font_size_mode = "font_size_mode_example"; // string | Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
+$no_wrap = true; // bool | Specify word wraps (line breaks) within text. Default value: false.
 $resolution = 1.2; // double | Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
 $resolution_x = 1.2; // double | DEPRECATED: Use 'Resolution' instead.
 $resolution_y = 1.2; // double | DEPRECATED: Use 'Resolution' instead.
@@ -68,7 +69,7 @@ $bar_width_reduction = 1.2; // double | Bars reduction value that is used to com
 $format = "format_example"; // string | Result image format.
 
 try {
-    $result = $apiInstance->getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $format);
+    $result = $apiInstance->getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $format);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->getBarcodeGenerate: ', $e->getMessage(), PHP_EOL;
@@ -87,6 +88,7 @@ Name | Type | Description  | Notes
  **text_alignment** | **string**| Text alignment. | [optional]
  **text_color** | **string**| Specify the displaying CodeText&#39;s Color. Default value: Color.Black. | [optional]
  **font_size_mode** | **string**| Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto. | [optional]
+ **no_wrap** | **bool**| Specify word wraps (line breaks) within text. Default value: false. | [optional]
  **resolution** | **double**| Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. | [optional]
  **resolution_x** | **double**| DEPRECATED: Use &#39;Resolution&#39; instead. | [optional]
  **resolution_y** | **double**| DEPRECATED: Use &#39;Resolution&#39; instead. | [optional]
@@ -420,7 +422,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putBarcodeGenerateFile**
-> \Aspose\BarCode\Model\ResultImageInfo putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $storage, $folder, $format)
+> \Aspose\BarCode\Model\ResultImageInfo putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $storage, $folder, $format)
 
 Generate barcode and save on server (from query params or from file with json or xml content)
 
@@ -446,6 +448,7 @@ $text_location = "text_location_example"; // string | Specify the displaying Tex
 $text_alignment = "text_alignment_example"; // string | Text alignment.
 $text_color = "text_color_example"; // string | Specify the displaying CodeText's Color. Default value: Color.Black.
 $font_size_mode = "font_size_mode_example"; // string | Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
+$no_wrap = true; // bool | Specify word wraps (line breaks) within text. Default value: false.
 $resolution = 1.2; // double | Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
 $resolution_x = 1.2; // double | DEPRECATED: Use 'Resolution' instead.
 $resolution_y = 1.2; // double | DEPRECATED: Use 'Resolution' instead.
@@ -477,7 +480,7 @@ $folder = "folder_example"; // string | Image's folder.
 $format = "format_example"; // string | The image format.
 
 try {
-    $result = $apiInstance->putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $storage, $folder, $format);
+    $result = $apiInstance->putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $storage, $folder, $format);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->putBarcodeGenerateFile: ', $e->getMessage(), PHP_EOL;
@@ -497,6 +500,7 @@ Name | Type | Description  | Notes
  **text_alignment** | **string**| Text alignment. | [optional]
  **text_color** | **string**| Specify the displaying CodeText&#39;s Color. Default value: Color.Black. | [optional]
  **font_size_mode** | **string**| Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto. | [optional]
+ **no_wrap** | **bool**| Specify word wraps (line breaks) within text. Default value: false. | [optional]
  **resolution** | **double**| Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. | [optional]
  **resolution_x** | **double**| DEPRECATED: Use &#39;Resolution&#39; instead. | [optional]
  **resolution_y** | **double**| DEPRECATED: Use &#39;Resolution&#39; instead. | [optional]
