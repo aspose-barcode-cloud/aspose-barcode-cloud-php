@@ -85,6 +85,7 @@ class ReaderParams implements ArrayAccess
         'allow_regular_image' => 'bool',
         'allow_salt_and_pepper_filtering' => 'bool',
         'allow_white_spots_removing' => 'bool',
+        'check_more1_d_variants' => 'bool',
         'region_likelihood_threshold_percent' => 'double',
         'scan_window_sizes' => 'int[]',
         'similarity' => 'double',
@@ -124,6 +125,7 @@ class ReaderParams implements ArrayAccess
         'allow_regular_image' => null,
         'allow_salt_and_pepper_filtering' => null,
         'allow_white_spots_removing' => null,
+        'check_more1_d_variants' => null,
         'region_likelihood_threshold_percent' => 'double',
         'scan_window_sizes' => 'int32',
         'similarity' => 'double',
@@ -184,6 +186,7 @@ class ReaderParams implements ArrayAccess
         'allow_regular_image' => 'AllowRegularImage',
         'allow_salt_and_pepper_filtering' => 'AllowSaltAndPepperFiltering',
         'allow_white_spots_removing' => 'AllowWhiteSpotsRemoving',
+        'check_more1_d_variants' => 'CheckMore1DVariants',
         'region_likelihood_threshold_percent' => 'RegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'ScanWindowSizes',
         'similarity' => 'Similarity',
@@ -223,6 +226,7 @@ class ReaderParams implements ArrayAccess
         'allow_regular_image' => 'setAllowRegularImage',
         'allow_salt_and_pepper_filtering' => 'setAllowSaltAndPepperFiltering',
         'allow_white_spots_removing' => 'setAllowWhiteSpotsRemoving',
+        'check_more1_d_variants' => 'setCheckMore1DVariants',
         'region_likelihood_threshold_percent' => 'setRegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'setScanWindowSizes',
         'similarity' => 'setSimilarity',
@@ -262,6 +266,7 @@ class ReaderParams implements ArrayAccess
         'allow_regular_image' => 'getAllowRegularImage',
         'allow_salt_and_pepper_filtering' => 'getAllowSaltAndPepperFiltering',
         'allow_white_spots_removing' => 'getAllowWhiteSpotsRemoving',
+        'check_more1_d_variants' => 'getCheckMore1DVariants',
         'region_likelihood_threshold_percent' => 'getRegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'getScanWindowSizes',
         'similarity' => 'getSimilarity',
@@ -355,6 +360,7 @@ class ReaderParams implements ArrayAccess
         $this->container['allow_regular_image'] = isset($data['allow_regular_image']) ? $data['allow_regular_image'] : null;
         $this->container['allow_salt_and_pepper_filtering'] = isset($data['allow_salt_and_pepper_filtering']) ? $data['allow_salt_and_pepper_filtering'] : null;
         $this->container['allow_white_spots_removing'] = isset($data['allow_white_spots_removing']) ? $data['allow_white_spots_removing'] : null;
+        $this->container['check_more1_d_variants'] = isset($data['check_more1_d_variants']) ? $data['check_more1_d_variants'] : null;
         $this->container['region_likelihood_threshold_percent'] = isset($data['region_likelihood_threshold_percent']) ? $data['region_likelihood_threshold_percent'] : null;
         $this->container['scan_window_sizes'] = isset($data['scan_window_sizes']) ? $data['scan_window_sizes'] : null;
         $this->container['similarity'] = isset($data['similarity']) ? $data['similarity'] : null;
@@ -983,6 +989,30 @@ class ReaderParams implements ArrayAccess
     public function setAllowWhiteSpotsRemoving($allow_white_spots_removing)
     {
         $this->container['allow_white_spots_removing'] = $allow_white_spots_removing;
+
+        return $this;
+    }
+
+    /*
+     * Gets check_more1_d_variants
+     *
+     * @return bool
+     */
+    public function getCheckMore1DVariants()
+    {
+        return $this->container['check_more1_d_variants'];
+    }
+
+    /*
+     * Sets check_more1_d_variants
+     *
+     * @param bool $check_more1_d_variants Allows engine to recognize 1D barcodes with checksum by checking more recognition variants. Default value: False.
+     *
+     * @return $this
+     */
+    public function setCheckMore1DVariants($check_more1_d_variants)
+    {
+        $this->container['check_more1_d_variants'] = $check_more1_d_variants;
 
         return $this;
     }
