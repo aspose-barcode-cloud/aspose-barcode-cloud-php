@@ -256,7 +256,7 @@ class StructuredAppend implements ArrayAccess
     /*
      * Sets total_count
      *
-     * @param int $total_count Gets or sets the QR structured append mode barcodes quantity. Max value is 16.
+     * @param int $total_count QR structured append mode barcodes quantity. Max value is 16.
      *
      * @return $this
      */
@@ -280,7 +280,7 @@ class StructuredAppend implements ArrayAccess
     /*
      * Sets parity_byte
      *
-     * @param int $parity_byte Gets or sets the QR structured append mode parity data.
+     * @param int $parity_byte QR structured append mode parity data.
      *
      * @return $this
      */

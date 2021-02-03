@@ -71,7 +71,14 @@ class Pdf417Params implements ArrayAccess
         'rows' => 'int',
         'truncate' => 'bool',
         'pdf417_eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
-        'is_reader_initialization' => 'bool'
+        'is_reader_initialization' => 'bool',
+        'macro_time_stamp' => '\DateTime',
+        'macro_sender' => 'string',
+        'macro_file_size' => 'int',
+        'macro_checksum' => 'int',
+        'macro_file_name' => 'string',
+        'macro_addressee' => 'string',
+        'macro_eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings'
     ];
 
     /*
@@ -91,7 +98,14 @@ class Pdf417Params implements ArrayAccess
         'rows' => 'int32',
         'truncate' => null,
         'pdf417_eci_encoding' => null,
-        'is_reader_initialization' => null
+        'is_reader_initialization' => null,
+        'macro_time_stamp' => 'date-time',
+        'macro_sender' => null,
+        'macro_file_size' => 'int32',
+        'macro_checksum' => 'int32',
+        'macro_file_name' => null,
+        'macro_addressee' => null,
+        'macro_eci_encoding' => null
     ];
 
     /*
@@ -132,7 +146,14 @@ class Pdf417Params implements ArrayAccess
         'rows' => 'Rows',
         'truncate' => 'Truncate',
         'pdf417_eci_encoding' => 'Pdf417ECIEncoding',
-        'is_reader_initialization' => 'IsReaderInitialization'
+        'is_reader_initialization' => 'IsReaderInitialization',
+        'macro_time_stamp' => 'MacroTimeStamp',
+        'macro_sender' => 'MacroSender',
+        'macro_file_size' => 'MacroFileSize',
+        'macro_checksum' => 'MacroChecksum',
+        'macro_file_name' => 'MacroFileName',
+        'macro_addressee' => 'MacroAddressee',
+        'macro_eci_encoding' => 'MacroECIEncoding'
     ];
 
     /*
@@ -152,7 +173,14 @@ class Pdf417Params implements ArrayAccess
         'rows' => 'setRows',
         'truncate' => 'setTruncate',
         'pdf417_eci_encoding' => 'setPdf417EciEncoding',
-        'is_reader_initialization' => 'setIsReaderInitialization'
+        'is_reader_initialization' => 'setIsReaderInitialization',
+        'macro_time_stamp' => 'setMacroTimeStamp',
+        'macro_sender' => 'setMacroSender',
+        'macro_file_size' => 'setMacroFileSize',
+        'macro_checksum' => 'setMacroChecksum',
+        'macro_file_name' => 'setMacroFileName',
+        'macro_addressee' => 'setMacroAddressee',
+        'macro_eci_encoding' => 'setMacroEciEncoding'
     ];
 
     /*
@@ -172,7 +200,14 @@ class Pdf417Params implements ArrayAccess
         'rows' => 'getRows',
         'truncate' => 'getTruncate',
         'pdf417_eci_encoding' => 'getPdf417EciEncoding',
-        'is_reader_initialization' => 'getIsReaderInitialization'
+        'is_reader_initialization' => 'getIsReaderInitialization',
+        'macro_time_stamp' => 'getMacroTimeStamp',
+        'macro_sender' => 'getMacroSender',
+        'macro_file_size' => 'getMacroFileSize',
+        'macro_checksum' => 'getMacroChecksum',
+        'macro_file_name' => 'getMacroFileName',
+        'macro_addressee' => 'getMacroAddressee',
+        'macro_eci_encoding' => 'getMacroEciEncoding'
     ];
 
     /*
@@ -247,6 +282,13 @@ class Pdf417Params implements ArrayAccess
         $this->container['truncate'] = isset($data['truncate']) ? $data['truncate'] : null;
         $this->container['pdf417_eci_encoding'] = isset($data['pdf417_eci_encoding']) ? $data['pdf417_eci_encoding'] : null;
         $this->container['is_reader_initialization'] = isset($data['is_reader_initialization']) ? $data['is_reader_initialization'] : null;
+        $this->container['macro_time_stamp'] = isset($data['macro_time_stamp']) ? $data['macro_time_stamp'] : null;
+        $this->container['macro_sender'] = isset($data['macro_sender']) ? $data['macro_sender'] : null;
+        $this->container['macro_file_size'] = isset($data['macro_file_size']) ? $data['macro_file_size'] : null;
+        $this->container['macro_checksum'] = isset($data['macro_checksum']) ? $data['macro_checksum'] : null;
+        $this->container['macro_file_name'] = isset($data['macro_file_name']) ? $data['macro_file_name'] : null;
+        $this->container['macro_addressee'] = isset($data['macro_addressee']) ? $data['macro_addressee'] : null;
+        $this->container['macro_eci_encoding'] = isset($data['macro_eci_encoding']) ? $data['macro_eci_encoding'] : null;
     }
 
     /*
@@ -557,6 +599,174 @@ class Pdf417Params implements ArrayAccess
     public function setIsReaderInitialization($is_reader_initialization)
     {
         $this->container['is_reader_initialization'] = $is_reader_initialization;
+
+        return $this;
+    }
+
+    /*
+     * Gets macro_time_stamp
+     *
+     * @return \DateTime
+     */
+    public function getMacroTimeStamp()
+    {
+        return $this->container['macro_time_stamp'];
+    }
+
+    /*
+     * Sets macro_time_stamp
+     *
+     * @param \DateTime $macro_time_stamp Macro Pdf417 barcode time stamp
+     *
+     * @return $this
+     */
+    public function setMacroTimeStamp($macro_time_stamp)
+    {
+        $this->container['macro_time_stamp'] = $macro_time_stamp;
+
+        return $this;
+    }
+
+    /*
+     * Gets macro_sender
+     *
+     * @return string
+     */
+    public function getMacroSender()
+    {
+        return $this->container['macro_sender'];
+    }
+
+    /*
+     * Sets macro_sender
+     *
+     * @param string $macro_sender Macro Pdf417 barcode sender name
+     *
+     * @return $this
+     */
+    public function setMacroSender($macro_sender)
+    {
+        $this->container['macro_sender'] = $macro_sender;
+
+        return $this;
+    }
+
+    /*
+     * Gets macro_file_size
+     *
+     * @return int
+     */
+    public function getMacroFileSize()
+    {
+        return $this->container['macro_file_size'];
+    }
+
+    /*
+     * Sets macro_file_size
+     *
+     * @param int $macro_file_size Macro Pdf417 file size. The file size field contains the size in bytes of the entire source file
+     *
+     * @return $this
+     */
+    public function setMacroFileSize($macro_file_size)
+    {
+        $this->container['macro_file_size'] = $macro_file_size;
+
+        return $this;
+    }
+
+    /*
+     * Gets macro_checksum
+     *
+     * @return int
+     */
+    public function getMacroChecksum()
+    {
+        return $this->container['macro_checksum'];
+    }
+
+    /*
+     * Sets macro_checksum
+     *
+     * @param int $macro_checksum Macro Pdf417 barcode checksum. The checksum field contains the value of the 16-bit (2 bytes) CRC checksum using the CCITT-16 polynomial
+     *
+     * @return $this
+     */
+    public function setMacroChecksum($macro_checksum)
+    {
+        $this->container['macro_checksum'] = $macro_checksum;
+
+        return $this;
+    }
+
+    /*
+     * Gets macro_file_name
+     *
+     * @return string
+     */
+    public function getMacroFileName()
+    {
+        return $this->container['macro_file_name'];
+    }
+
+    /*
+     * Sets macro_file_name
+     *
+     * @param string $macro_file_name Macro Pdf417 barcode file name
+     *
+     * @return $this
+     */
+    public function setMacroFileName($macro_file_name)
+    {
+        $this->container['macro_file_name'] = $macro_file_name;
+
+        return $this;
+    }
+
+    /*
+     * Gets macro_addressee
+     *
+     * @return string
+     */
+    public function getMacroAddressee()
+    {
+        return $this->container['macro_addressee'];
+    }
+
+    /*
+     * Sets macro_addressee
+     *
+     * @param string $macro_addressee Macro Pdf417 barcode addressee name
+     *
+     * @return $this
+     */
+    public function setMacroAddressee($macro_addressee)
+    {
+        $this->container['macro_addressee'] = $macro_addressee;
+
+        return $this;
+    }
+
+    /*
+     * Gets macro_eci_encoding
+     *
+     * @return \Aspose\BarCode\Model\ECIEncodings
+     */
+    public function getMacroEciEncoding()
+    {
+        return $this->container['macro_eci_encoding'];
+    }
+
+    /*
+     * Sets macro_eci_encoding
+     *
+     * @param \Aspose\BarCode\Model\ECIEncodings $macro_eci_encoding Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text fields.
+     *
+     * @return $this
+     */
+    public function setMacroEciEncoding($macro_eci_encoding)
+    {
+        $this->container['macro_eci_encoding'] = $macro_eci_encoding;
 
         return $this;
     }

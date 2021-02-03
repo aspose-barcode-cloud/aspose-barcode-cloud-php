@@ -13,3 +13,7 @@ test:
 update:
 	composer update
 	composer validate
+
+.PHONY: init
+init:
+	composer install
