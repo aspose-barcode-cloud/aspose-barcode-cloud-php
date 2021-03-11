@@ -78,7 +78,8 @@ class Pdf417Params implements ArrayAccess
         'macro_checksum' => 'int',
         'macro_file_name' => 'string',
         'macro_addressee' => 'string',
-        'macro_eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings'
+        'macro_eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
+        'code128_emulation' => '\Aspose\BarCode\Model\Code128Emulation'
     ];
 
     /*
@@ -105,7 +106,8 @@ class Pdf417Params implements ArrayAccess
         'macro_checksum' => 'int32',
         'macro_file_name' => null,
         'macro_addressee' => null,
-        'macro_eci_encoding' => null
+        'macro_eci_encoding' => null,
+        'code128_emulation' => null
     ];
 
     /*
@@ -153,7 +155,8 @@ class Pdf417Params implements ArrayAccess
         'macro_checksum' => 'MacroChecksum',
         'macro_file_name' => 'MacroFileName',
         'macro_addressee' => 'MacroAddressee',
-        'macro_eci_encoding' => 'MacroECIEncoding'
+        'macro_eci_encoding' => 'MacroECIEncoding',
+        'code128_emulation' => 'Code128Emulation'
     ];
 
     /*
@@ -180,7 +183,8 @@ class Pdf417Params implements ArrayAccess
         'macro_checksum' => 'setMacroChecksum',
         'macro_file_name' => 'setMacroFileName',
         'macro_addressee' => 'setMacroAddressee',
-        'macro_eci_encoding' => 'setMacroEciEncoding'
+        'macro_eci_encoding' => 'setMacroEciEncoding',
+        'code128_emulation' => 'setCode128Emulation'
     ];
 
     /*
@@ -207,7 +211,8 @@ class Pdf417Params implements ArrayAccess
         'macro_checksum' => 'getMacroChecksum',
         'macro_file_name' => 'getMacroFileName',
         'macro_addressee' => 'getMacroAddressee',
-        'macro_eci_encoding' => 'getMacroEciEncoding'
+        'macro_eci_encoding' => 'getMacroEciEncoding',
+        'code128_emulation' => 'getCode128Emulation'
     ];
 
     /*
@@ -289,6 +294,7 @@ class Pdf417Params implements ArrayAccess
         $this->container['macro_file_name'] = isset($data['macro_file_name']) ? $data['macro_file_name'] : null;
         $this->container['macro_addressee'] = isset($data['macro_addressee']) ? $data['macro_addressee'] : null;
         $this->container['macro_eci_encoding'] = isset($data['macro_eci_encoding']) ? $data['macro_eci_encoding'] : null;
+        $this->container['code128_emulation'] = isset($data['code128_emulation']) ? $data['code128_emulation'] : null;
     }
 
     /*
@@ -767,6 +773,30 @@ class Pdf417Params implements ArrayAccess
     public function setMacroEciEncoding($macro_eci_encoding)
     {
         $this->container['macro_eci_encoding'] = $macro_eci_encoding;
+
+        return $this;
+    }
+
+    /*
+     * Gets code128_emulation
+     *
+     * @return \Aspose\BarCode\Model\Code128Emulation
+     */
+    public function getCode128Emulation()
+    {
+        return $this->container['code128_emulation'];
+    }
+
+    /*
+     * Sets code128_emulation
+     *
+     * @param \Aspose\BarCode\Model\Code128Emulation $code128_emulation Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
+     *
+     * @return $this
+     */
+    public function setCode128Emulation($code128_emulation)
+    {
+        $this->container['code128_emulation'] = $code128_emulation;
 
         return $this;
     }
