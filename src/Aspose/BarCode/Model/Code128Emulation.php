@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Code128Emulation.php">
@@ -44,24 +46,23 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class Code128Emulation
 {
-
   /// <summary>
     /// Enum value None
     /// </summary>
-    const None =  "None";
-  
+    public const None =  "None";
+
     /// <summary>
     /// Enum value Code903
     /// </summary>
-    const Code903 =  "Code903";
-  
+    public const Code903 =  "Code903";
+
     /// <summary>
     /// Enum value Code904
     /// </summary>
-    const Code904 =  "Code904";
-  
+    public const Code904 =  "Code904";
+
     /// <summary>
     /// Enum value Code905
     /// </summary>
-    const Code905 =  "Code905";
+    public const Code905 =  "Code905";
 }

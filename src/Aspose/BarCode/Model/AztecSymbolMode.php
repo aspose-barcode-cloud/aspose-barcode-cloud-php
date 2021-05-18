@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AztecSymbolMode.php">
@@ -44,24 +46,23 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class AztecSymbolMode
 {
-
   /// <summary>
     /// Enum value Auto
     /// </summary>
-    const Auto =  "Auto";
-  
+    public const Auto =  "Auto";
+
     /// <summary>
     /// Enum value Compact
     /// </summary>
-    const Compact =  "Compact";
-  
+    public const Compact =  "Compact";
+
     /// <summary>
     /// Enum value FullRange
     /// </summary>
-    const FullRange =  "FullRange";
-  
+    public const FullRange =  "FullRange";
+
     /// <summary>
     /// Enum value Rune
     /// </summary>
-    const Rune =  "Rune";
+    public const Rune =  "Rune";
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CodeLocation.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CodeLocation
 {
-
   /// <summary>
     /// Enum value Below
     /// </summary>
-    const Below =  "Below";
-  
+    public const Below =  "Below";
+
     /// <summary>
     /// Enum value Above
     /// </summary>
-    const Above =  "Above";
-  
+    public const Above =  "Above";
+
     /// <summary>
     /// Enum value None
     /// </summary>
-    const None =  "None";
+    public const None =  "None";
 }

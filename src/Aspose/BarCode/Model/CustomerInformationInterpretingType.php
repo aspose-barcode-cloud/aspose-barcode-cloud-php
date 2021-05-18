@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CustomerInformationInterpretingType.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CustomerInformationInterpretingType
 {
-
   /// <summary>
     /// Enum value CTable
     /// </summary>
-    const CTable =  "CTable";
-  
+    public const CTable =  "CTable";
+
     /// <summary>
     /// Enum value NTable
     /// </summary>
-    const NTable =  "NTable";
-  
+    public const NTable =  "NTable";
+
     /// <summary>
     /// Enum value Other
     /// </summary>
-    const Other =  "Other";
+    public const Other =  "Other";
 }

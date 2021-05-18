@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Pdf417CompactionMode.php">
@@ -44,24 +46,23 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class Pdf417CompactionMode
 {
-
   /// <summary>
     /// Enum value Auto
     /// </summary>
-    const Auto =  "Auto";
-  
+    public const Auto =  "Auto";
+
     /// <summary>
     /// Enum value Text
     /// </summary>
-    const Text =  "Text";
-  
+    public const Text =  "Text";
+
     /// <summary>
     /// Enum value Numeric
     /// </summary>
-    const Numeric =  "Numeric";
-  
+    public const Numeric =  "Numeric";
+
     /// <summary>
     /// Enum value Binary
     /// </summary>
-    const Binary =  "Binary";
+    public const Binary =  "Binary";
 }

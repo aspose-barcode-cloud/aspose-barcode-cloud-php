@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ChecksumValidation.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class ChecksumValidation
 {
-
   /// <summary>
     /// Enum value Default
     /// </summary>
-    const Default =  "Default";
-  
+    public const Default =  "Default";
+
     /// <summary>
     /// Enum value On
     /// </summary>
-    const On =  "On";
-  
+    public const On =  "On";
+
     /// <summary>
     /// Enum value Off
     /// </summary>
-    const Off =  "Off";
+    public const Off =  "Off";
 }

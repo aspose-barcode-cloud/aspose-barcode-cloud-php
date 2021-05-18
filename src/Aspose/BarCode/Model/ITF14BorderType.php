@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ITF14BorderType.php">
@@ -44,29 +46,28 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class ITF14BorderType
 {
-
   /// <summary>
     /// Enum value None
     /// </summary>
-    const None =  "None";
-  
+    public const None =  "None";
+
     /// <summary>
     /// Enum value Frame
     /// </summary>
-    const Frame =  "Frame";
-  
+    public const Frame =  "Frame";
+
     /// <summary>
     /// Enum value Bar
     /// </summary>
-    const Bar =  "Bar";
-  
+    public const Bar =  "Bar";
+
     /// <summary>
     /// Enum value FrameOut
     /// </summary>
-    const FrameOut =  "FrameOut";
-  
+    public const FrameOut =  "FrameOut";
+
     /// <summary>
     /// Enum value BarOut
     /// </summary>
-    const BarOut =  "BarOut";
+    public const BarOut =  "BarOut";
 }

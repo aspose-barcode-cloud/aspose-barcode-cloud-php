@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CodabarChecksumMode.php">
@@ -44,14 +46,13 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CodabarChecksumMode
 {
-
   /// <summary>
     /// Enum value Mod10
     /// </summary>
-    const Mod10 =  "Mod10";
-  
+    public const Mod10 =  "Mod10";
+
     /// <summary>
     /// Enum value Mod16
     /// </summary>
-    const Mod16 =  "Mod16";
+    public const Mod16 =  "Mod16";
 }

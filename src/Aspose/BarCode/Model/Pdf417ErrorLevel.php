@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Pdf417ErrorLevel.php">
@@ -44,49 +46,48 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class Pdf417ErrorLevel
 {
-
   /// <summary>
     /// Enum value Level0
     /// </summary>
-    const Level0 =  "Level0";
-  
+    public const Level0 =  "Level0";
+
     /// <summary>
     /// Enum value Level1
     /// </summary>
-    const Level1 =  "Level1";
-  
+    public const Level1 =  "Level1";
+
     /// <summary>
     /// Enum value Level2
     /// </summary>
-    const Level2 =  "Level2";
-  
+    public const Level2 =  "Level2";
+
     /// <summary>
     /// Enum value Level3
     /// </summary>
-    const Level3 =  "Level3";
-  
+    public const Level3 =  "Level3";
+
     /// <summary>
     /// Enum value Level4
     /// </summary>
-    const Level4 =  "Level4";
-  
+    public const Level4 =  "Level4";
+
     /// <summary>
     /// Enum value Level5
     /// </summary>
-    const Level5 =  "Level5";
-  
+    public const Level5 =  "Level5";
+
     /// <summary>
     /// Enum value Level6
     /// </summary>
-    const Level6 =  "Level6";
-  
+    public const Level6 =  "Level6";
+
     /// <summary>
     /// Enum value Level7
     /// </summary>
-    const Level7 =  "Level7";
-  
+    public const Level7 =  "Level7";
+
     /// <summary>
     /// Enum value Level8
     /// </summary>
-    const Level8 =  "Level8";
+    public const Level8 =  "Level8";
 }

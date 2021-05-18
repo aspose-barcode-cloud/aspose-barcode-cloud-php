@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EnableChecksum.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class EnableChecksum
 {
-
   /// <summary>
     /// Enum value Default
     /// </summary>
-    const Default =  "Default";
-  
+    public const Default =  "Default";
+
     /// <summary>
     /// Enum value Yes
     /// </summary>
-    const Yes =  "Yes";
-  
+    public const Yes =  "Yes";
+
     /// <summary>
     /// Enum value No
     /// </summary>
-    const No =  "No";
+    public const No =  "No";
 }

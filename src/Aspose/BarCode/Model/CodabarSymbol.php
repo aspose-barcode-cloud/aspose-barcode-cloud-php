@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CodabarSymbol.php">
@@ -44,24 +46,23 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CodabarSymbol
 {
-
   /// <summary>
     /// Enum value A
     /// </summary>
-    const A =  "A";
-  
+    public const A =  "A";
+
     /// <summary>
     /// Enum value B
     /// </summary>
-    const B =  "B";
-  
+    public const B =  "B";
+
     /// <summary>
     /// Enum value C
     /// </summary>
-    const C =  "C";
-  
+    public const C =  "C";
+
     /// <summary>
     /// Enum value D
     /// </summary>
-    const D =  "D";
+    public const D =  "D";
 }

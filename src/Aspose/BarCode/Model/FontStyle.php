@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FontStyle.php">
@@ -44,29 +46,28 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class FontStyle
 {
-
   /// <summary>
     /// Enum value Regular
     /// </summary>
-    const Regular =  "Regular";
-  
+    public const Regular =  "Regular";
+
     /// <summary>
     /// Enum value Bold
     /// </summary>
-    const Bold =  "Bold";
-  
+    public const Bold =  "Bold";
+
     /// <summary>
     /// Enum value Italic
     /// </summary>
-    const Italic =  "Italic";
-  
+    public const Italic =  "Italic";
+
     /// <summary>
     /// Enum value Underline
     /// </summary>
-    const Underline =  "Underline";
-  
+    public const Underline =  "Underline";
+
     /// <summary>
     /// Enum value Strikeout
     /// </summary>
-    const Strikeout =  "Strikeout";
+    public const Strikeout =  "Strikeout";
 }

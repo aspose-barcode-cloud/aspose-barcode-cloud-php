@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DataMatrixEccType.php">
@@ -44,39 +46,38 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class DataMatrixEccType
 {
-
   /// <summary>
     /// Enum value EccAuto
     /// </summary>
-    const EccAuto =  "EccAuto";
-  
+    public const EccAuto =  "EccAuto";
+
     /// <summary>
     /// Enum value Ecc000
     /// </summary>
-    const Ecc000 =  "Ecc000";
-  
+    public const Ecc000 =  "Ecc000";
+
     /// <summary>
     /// Enum value Ecc050
     /// </summary>
-    const Ecc050 =  "Ecc050";
-  
+    public const Ecc050 =  "Ecc050";
+
     /// <summary>
     /// Enum value Ecc080
     /// </summary>
-    const Ecc080 =  "Ecc080";
-  
+    public const Ecc080 =  "Ecc080";
+
     /// <summary>
     /// Enum value Ecc100
     /// </summary>
-    const Ecc100 =  "Ecc100";
-  
+    public const Ecc100 =  "Ecc100";
+
     /// <summary>
     /// Enum value Ecc140
     /// </summary>
-    const Ecc140 =  "Ecc140";
-  
+    public const Ecc140 =  "Ecc140";
+
     /// <summary>
     /// Enum value Ecc200
     /// </summary>
-    const Ecc200 =  "Ecc200";
+    public const Ecc200 =  "Ecc200";
 }

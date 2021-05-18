@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FontMode.php">
@@ -44,14 +46,13 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class FontMode
 {
-
   /// <summary>
     /// Enum value Auto
     /// </summary>
-    const Auto =  "Auto";
-  
+    public const Auto =  "Auto";
+
     /// <summary>
     /// Enum value Manual
     /// </summary>
-    const Manual =  "Manual";
+    public const Manual =  "Manual";
 }
