@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AutoSizeMode.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class AutoSizeMode
 {
-
   /// <summary>
     /// Enum value None
     /// </summary>
-    const None =  "None";
-  
+    public const None =  "None";
+
     /// <summary>
     /// Enum value Nearest
     /// </summary>
-    const Nearest =  "Nearest";
-  
+    public const Nearest =  "Nearest";
+
     /// <summary>
     /// Enum value Interpolation
     /// </summary>
-    const Interpolation =  "Interpolation";
+    public const Interpolation =  "Interpolation";
 }

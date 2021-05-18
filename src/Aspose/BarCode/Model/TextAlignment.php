@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TextAlignment.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class TextAlignment
 {
-
   /// <summary>
     /// Enum value Left
     /// </summary>
-    const Left =  "Left";
-  
+    public const Left =  "Left";
+
     /// <summary>
     /// Enum value Center
     /// </summary>
-    const Center =  "Center";
-  
+    public const Center =  "Center";
+
     /// <summary>
     /// Enum value Right
     /// </summary>
-    const Right =  "Right";
+    public const Right =  "Right";
 }

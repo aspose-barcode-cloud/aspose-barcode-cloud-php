@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MacroCharacter.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class MacroCharacter
 {
-
   /// <summary>
     /// Enum value None
     /// </summary>
-    const None =  "None";
-  
+    public const None =  "None";
+
     /// <summary>
     /// Enum value Macro05
     /// </summary>
-    const Macro05 =  "Macro05";
-  
+    public const Macro05 =  "Macro05";
+
     /// <summary>
     /// Enum value Macro06
     /// </summary>
-    const Macro06 =  "Macro06";
+    public const Macro06 =  "Macro06";
 }

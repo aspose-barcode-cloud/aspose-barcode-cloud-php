@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DataMatrixEncodeMode.php">
@@ -44,49 +46,48 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class DataMatrixEncodeMode
 {
-
   /// <summary>
     /// Enum value Auto
     /// </summary>
-    const Auto =  "Auto";
-  
+    public const Auto =  "Auto";
+
     /// <summary>
     /// Enum value ASCII
     /// </summary>
-    const ASCII =  "ASCII";
-  
+    public const ASCII =  "ASCII";
+
     /// <summary>
     /// Enum value Full
     /// </summary>
-    const Full =  "Full";
-  
+    public const Full =  "Full";
+
     /// <summary>
     /// Enum value Custom
     /// </summary>
-    const Custom =  "Custom";
-  
+    public const Custom =  "Custom";
+
     /// <summary>
     /// Enum value C40
     /// </summary>
-    const C40 =  "C40";
-  
+    public const C40 =  "C40";
+
     /// <summary>
     /// Enum value Text
     /// </summary>
-    const Text =  "Text";
-  
+    public const Text =  "Text";
+
     /// <summary>
     /// Enum value EDIFACT
     /// </summary>
-    const EDIFACT =  "EDIFACT";
-  
+    public const EDIFACT =  "EDIFACT";
+
     /// <summary>
     /// Enum value ANSIX12
     /// </summary>
-    const ANSIX12 =  "ANSIX12";
-  
+    public const ANSIX12 =  "ANSIX12";
+
     /// <summary>
     /// Enum value ExtendedCodetext
     /// </summary>
-    const ExtendedCodetext =  "ExtendedCodetext";
+    public const ExtendedCodetext =  "ExtendedCodetext";
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PresetType.php">
@@ -44,34 +46,33 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class PresetType
 {
-
   /// <summary>
     /// Enum value HighPerformance
     /// </summary>
-    const HighPerformance =  "HighPerformance";
-  
+    public const HighPerformance =  "HighPerformance";
+
     /// <summary>
     /// Enum value NormalQuality
     /// </summary>
-    const NormalQuality =  "NormalQuality";
-  
+    public const NormalQuality =  "NormalQuality";
+
     /// <summary>
     /// Enum value HighQualityDetection
     /// </summary>
-    const HighQualityDetection =  "HighQualityDetection";
-  
+    public const HighQualityDetection =  "HighQualityDetection";
+
     /// <summary>
     /// Enum value MaxQualityDetection
     /// </summary>
-    const MaxQualityDetection =  "MaxQualityDetection";
-  
+    public const MaxQualityDetection =  "MaxQualityDetection";
+
     /// <summary>
     /// Enum value HighQuality
     /// </summary>
-    const HighQuality =  "HighQuality";
-  
+    public const HighQuality =  "HighQuality";
+
     /// <summary>
     /// Enum value MaxBarCodes
     /// </summary>
-    const MaxBarCodes =  "MaxBarCodes";
+    public const MaxBarCodes =  "MaxBarCodes";
 }

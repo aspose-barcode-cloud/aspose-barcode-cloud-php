@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AvailableGraphicsUnit.php">
@@ -44,24 +46,23 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class AvailableGraphicsUnit
 {
-
   /// <summary>
     /// Enum value Pixel
     /// </summary>
-    const Pixel =  "Pixel";
-  
+    public const Pixel =  "Pixel";
+
     /// <summary>
     /// Enum value Point
     /// </summary>
-    const Point =  "Point";
-  
+    public const Point =  "Point";
+
     /// <summary>
     /// Enum value Inch
     /// </summary>
-    const Inch =  "Inch";
-  
+    public const Inch =  "Inch";
+
     /// <summary>
     /// Enum value Millimeter
     /// </summary>
-    const Millimeter =  "Millimeter";
+    public const Millimeter =  "Millimeter";
 }

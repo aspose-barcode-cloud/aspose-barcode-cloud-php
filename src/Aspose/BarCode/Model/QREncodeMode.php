@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="QREncodeMode.php">
@@ -44,34 +46,33 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class QREncodeMode
 {
-
   /// <summary>
     /// Enum value Auto
     /// </summary>
-    const Auto =  "Auto";
-  
+    public const Auto =  "Auto";
+
     /// <summary>
     /// Enum value Bytes
     /// </summary>
-    const Bytes =  "Bytes";
-  
+    public const Bytes =  "Bytes";
+
     /// <summary>
     /// Enum value Utf8BOM
     /// </summary>
-    const Utf8BOM =  "Utf8BOM";
-  
+    public const Utf8BOM =  "Utf8BOM";
+
     /// <summary>
     /// Enum value Utf16BEBOM
     /// </summary>
-    const Utf16BEBOM =  "Utf16BEBOM";
-  
+    public const Utf16BEBOM =  "Utf16BEBOM";
+
     /// <summary>
     /// Enum value ECIEncoding
     /// </summary>
-    const ECIEncoding =  "ECIEncoding";
-  
+    public const ECIEncoding =  "ECIEncoding";
+
     /// <summary>
     /// Enum value ExtendedCodetext
     /// </summary>
-    const ExtendedCodetext =  "ExtendedCodetext";
+    public const ExtendedCodetext =  "ExtendedCodetext";
 }

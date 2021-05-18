@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="QREncodeType.php">
@@ -44,19 +46,18 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class QREncodeType
 {
-
   /// <summary>
     /// Enum value Auto
     /// </summary>
-    const Auto =  "Auto";
-  
+    public const Auto =  "Auto";
+
     /// <summary>
     /// Enum value ForceQR
     /// </summary>
-    const ForceQR =  "ForceQR";
-  
+    public const ForceQR =  "ForceQR";
+
     /// <summary>
     /// Enum value ForceMicroQR
     /// </summary>
-    const ForceMicroQR =  "ForceMicroQR";
+    public const ForceMicroQR =  "ForceMicroQR";
 }

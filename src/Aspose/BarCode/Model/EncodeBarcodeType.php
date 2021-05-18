@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EncodeBarcodeType.php">
@@ -44,334 +46,333 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class EncodeBarcodeType
 {
-
   /// <summary>
     /// Enum value Codabar
     /// </summary>
-    const Codabar =  "Codabar";
-  
+    public const Codabar =  "Codabar";
+
     /// <summary>
     /// Enum value Code11
     /// </summary>
-    const Code11 =  "Code11";
-  
+    public const Code11 =  "Code11";
+
     /// <summary>
     /// Enum value Code39Standard
     /// </summary>
-    const Code39Standard =  "Code39Standard";
-  
+    public const Code39Standard =  "Code39Standard";
+
     /// <summary>
     /// Enum value Code39Extended
     /// </summary>
-    const Code39Extended =  "Code39Extended";
-  
+    public const Code39Extended =  "Code39Extended";
+
     /// <summary>
     /// Enum value Code93Standard
     /// </summary>
-    const Code93Standard =  "Code93Standard";
-  
+    public const Code93Standard =  "Code93Standard";
+
     /// <summary>
     /// Enum value Code93Extended
     /// </summary>
-    const Code93Extended =  "Code93Extended";
-  
+    public const Code93Extended =  "Code93Extended";
+
     /// <summary>
     /// Enum value Code128
     /// </summary>
-    const Code128 =  "Code128";
-  
+    public const Code128 =  "Code128";
+
     /// <summary>
     /// Enum value GS1Code128
     /// </summary>
-    const GS1Code128 =  "GS1Code128";
-  
+    public const GS1Code128 =  "GS1Code128";
+
     /// <summary>
     /// Enum value EAN8
     /// </summary>
-    const EAN8 =  "EAN8";
-  
+    public const EAN8 =  "EAN8";
+
     /// <summary>
     /// Enum value EAN13
     /// </summary>
-    const EAN13 =  "EAN13";
-  
+    public const EAN13 =  "EAN13";
+
     /// <summary>
     /// Enum value EAN14
     /// </summary>
-    const EAN14 =  "EAN14";
-  
+    public const EAN14 =  "EAN14";
+
     /// <summary>
     /// Enum value SCC14
     /// </summary>
-    const SCC14 =  "SCC14";
-  
+    public const SCC14 =  "SCC14";
+
     /// <summary>
     /// Enum value SSCC18
     /// </summary>
-    const SSCC18 =  "SSCC18";
-  
+    public const SSCC18 =  "SSCC18";
+
     /// <summary>
     /// Enum value UPCA
     /// </summary>
-    const UPCA =  "UPCA";
-  
+    public const UPCA =  "UPCA";
+
     /// <summary>
     /// Enum value UPCE
     /// </summary>
-    const UPCE =  "UPCE";
-  
+    public const UPCE =  "UPCE";
+
     /// <summary>
     /// Enum value ISBN
     /// </summary>
-    const ISBN =  "ISBN";
-  
+    public const ISBN =  "ISBN";
+
     /// <summary>
     /// Enum value ISSN
     /// </summary>
-    const ISSN =  "ISSN";
-  
+    public const ISSN =  "ISSN";
+
     /// <summary>
     /// Enum value ISMN
     /// </summary>
-    const ISMN =  "ISMN";
-  
+    public const ISMN =  "ISMN";
+
     /// <summary>
     /// Enum value Standard2of5
     /// </summary>
-    const Standard2of5 =  "Standard2of5";
-  
+    public const Standard2of5 =  "Standard2of5";
+
     /// <summary>
     /// Enum value Interleaved2of5
     /// </summary>
-    const Interleaved2of5 =  "Interleaved2of5";
-  
+    public const Interleaved2of5 =  "Interleaved2of5";
+
     /// <summary>
     /// Enum value Matrix2of5
     /// </summary>
-    const Matrix2of5 =  "Matrix2of5";
-  
+    public const Matrix2of5 =  "Matrix2of5";
+
     /// <summary>
     /// Enum value ItalianPost25
     /// </summary>
-    const ItalianPost25 =  "ItalianPost25";
-  
+    public const ItalianPost25 =  "ItalianPost25";
+
     /// <summary>
     /// Enum value IATA2of5
     /// </summary>
-    const IATA2of5 =  "IATA2of5";
-  
+    public const IATA2of5 =  "IATA2of5";
+
     /// <summary>
     /// Enum value ITF14
     /// </summary>
-    const ITF14 =  "ITF14";
-  
+    public const ITF14 =  "ITF14";
+
     /// <summary>
     /// Enum value ITF6
     /// </summary>
-    const ITF6 =  "ITF6";
-  
+    public const ITF6 =  "ITF6";
+
     /// <summary>
     /// Enum value MSI
     /// </summary>
-    const MSI =  "MSI";
-  
+    public const MSI =  "MSI";
+
     /// <summary>
     /// Enum value VIN
     /// </summary>
-    const VIN =  "VIN";
-  
+    public const VIN =  "VIN";
+
     /// <summary>
     /// Enum value DeutschePostIdentcode
     /// </summary>
-    const DeutschePostIdentcode =  "DeutschePostIdentcode";
-  
+    public const DeutschePostIdentcode =  "DeutschePostIdentcode";
+
     /// <summary>
     /// Enum value DeutschePostLeitcode
     /// </summary>
-    const DeutschePostLeitcode =  "DeutschePostLeitcode";
-  
+    public const DeutschePostLeitcode =  "DeutschePostLeitcode";
+
     /// <summary>
     /// Enum value OPC
     /// </summary>
-    const OPC =  "OPC";
-  
+    public const OPC =  "OPC";
+
     /// <summary>
     /// Enum value PZN
     /// </summary>
-    const PZN =  "PZN";
-  
+    public const PZN =  "PZN";
+
     /// <summary>
     /// Enum value Code16K
     /// </summary>
-    const Code16K =  "Code16K";
-  
+    public const Code16K =  "Code16K";
+
     /// <summary>
     /// Enum value Pharmacode
     /// </summary>
-    const Pharmacode =  "Pharmacode";
-  
+    public const Pharmacode =  "Pharmacode";
+
     /// <summary>
     /// Enum value DataMatrix
     /// </summary>
-    const DataMatrix =  "DataMatrix";
-  
+    public const DataMatrix =  "DataMatrix";
+
     /// <summary>
     /// Enum value QR
     /// </summary>
-    const QR =  "QR";
-  
+    public const QR =  "QR";
+
     /// <summary>
     /// Enum value Aztec
     /// </summary>
-    const Aztec =  "Aztec";
-  
+    public const Aztec =  "Aztec";
+
     /// <summary>
     /// Enum value Pdf417
     /// </summary>
-    const Pdf417 =  "Pdf417";
-  
+    public const Pdf417 =  "Pdf417";
+
     /// <summary>
     /// Enum value MacroPdf417
     /// </summary>
-    const MacroPdf417 =  "MacroPdf417";
-  
+    public const MacroPdf417 =  "MacroPdf417";
+
     /// <summary>
     /// Enum value AustraliaPost
     /// </summary>
-    const AustraliaPost =  "AustraliaPost";
-  
+    public const AustraliaPost =  "AustraliaPost";
+
     /// <summary>
     /// Enum value Postnet
     /// </summary>
-    const Postnet =  "Postnet";
-  
+    public const Postnet =  "Postnet";
+
     /// <summary>
     /// Enum value Planet
     /// </summary>
-    const Planet =  "Planet";
-  
+    public const Planet =  "Planet";
+
     /// <summary>
     /// Enum value OneCode
     /// </summary>
-    const OneCode =  "OneCode";
-  
+    public const OneCode =  "OneCode";
+
     /// <summary>
     /// Enum value RM4SCC
     /// </summary>
-    const RM4SCC =  "RM4SCC";
-  
+    public const RM4SCC =  "RM4SCC";
+
     /// <summary>
     /// Enum value DatabarOmniDirectional
     /// </summary>
-    const DatabarOmniDirectional =  "DatabarOmniDirectional";
-  
+    public const DatabarOmniDirectional =  "DatabarOmniDirectional";
+
     /// <summary>
     /// Enum value DatabarTruncated
     /// </summary>
-    const DatabarTruncated =  "DatabarTruncated";
-  
+    public const DatabarTruncated =  "DatabarTruncated";
+
     /// <summary>
     /// Enum value DatabarLimited
     /// </summary>
-    const DatabarLimited =  "DatabarLimited";
-  
+    public const DatabarLimited =  "DatabarLimited";
+
     /// <summary>
     /// Enum value DatabarExpanded
     /// </summary>
-    const DatabarExpanded =  "DatabarExpanded";
-  
+    public const DatabarExpanded =  "DatabarExpanded";
+
     /// <summary>
     /// Enum value SingaporePost
     /// </summary>
-    const SingaporePost =  "SingaporePost";
-  
+    public const SingaporePost =  "SingaporePost";
+
     /// <summary>
     /// Enum value GS1DataMatrix
     /// </summary>
-    const GS1DataMatrix =  "GS1DataMatrix";
-  
+    public const GS1DataMatrix =  "GS1DataMatrix";
+
     /// <summary>
     /// Enum value AustralianPosteParcel
     /// </summary>
-    const AustralianPosteParcel =  "AustralianPosteParcel";
-  
+    public const AustralianPosteParcel =  "AustralianPosteParcel";
+
     /// <summary>
     /// Enum value SwissPostParcel
     /// </summary>
-    const SwissPostParcel =  "SwissPostParcel";
-  
+    public const SwissPostParcel =  "SwissPostParcel";
+
     /// <summary>
     /// Enum value PatchCode
     /// </summary>
-    const PatchCode =  "PatchCode";
-  
+    public const PatchCode =  "PatchCode";
+
     /// <summary>
     /// Enum value DatabarExpandedStacked
     /// </summary>
-    const DatabarExpandedStacked =  "DatabarExpandedStacked";
-  
+    public const DatabarExpandedStacked =  "DatabarExpandedStacked";
+
     /// <summary>
     /// Enum value DatabarStacked
     /// </summary>
-    const DatabarStacked =  "DatabarStacked";
-  
+    public const DatabarStacked =  "DatabarStacked";
+
     /// <summary>
     /// Enum value DatabarStackedOmniDirectional
     /// </summary>
-    const DatabarStackedOmniDirectional =  "DatabarStackedOmniDirectional";
-  
+    public const DatabarStackedOmniDirectional =  "DatabarStackedOmniDirectional";
+
     /// <summary>
     /// Enum value MicroPdf417
     /// </summary>
-    const MicroPdf417 =  "MicroPdf417";
-  
+    public const MicroPdf417 =  "MicroPdf417";
+
     /// <summary>
     /// Enum value GS1QR
     /// </summary>
-    const GS1QR =  "GS1QR";
-  
+    public const GS1QR =  "GS1QR";
+
     /// <summary>
     /// Enum value MaxiCode
     /// </summary>
-    const MaxiCode =  "MaxiCode";
-  
+    public const MaxiCode =  "MaxiCode";
+
     /// <summary>
     /// Enum value Code32
     /// </summary>
-    const Code32 =  "Code32";
-  
+    public const Code32 =  "Code32";
+
     /// <summary>
     /// Enum value DataLogic2of5
     /// </summary>
-    const DataLogic2of5 =  "DataLogic2of5";
-  
+    public const DataLogic2of5 =  "DataLogic2of5";
+
     /// <summary>
     /// Enum value DotCode
     /// </summary>
-    const DotCode =  "DotCode";
-  
+    public const DotCode =  "DotCode";
+
     /// <summary>
     /// Enum value DutchKIX
     /// </summary>
-    const DutchKIX =  "DutchKIX";
-  
+    public const DutchKIX =  "DutchKIX";
+
     /// <summary>
     /// Enum value UpcaGs1Code128Coupon
     /// </summary>
-    const UpcaGs1Code128Coupon =  "UpcaGs1Code128Coupon";
-  
+    public const UpcaGs1Code128Coupon =  "UpcaGs1Code128Coupon";
+
     /// <summary>
     /// Enum value UpcaGs1DatabarCoupon
     /// </summary>
-    const UpcaGs1DatabarCoupon =  "UpcaGs1DatabarCoupon";
-  
+    public const UpcaGs1DatabarCoupon =  "UpcaGs1DatabarCoupon";
+
     /// <summary>
     /// Enum value CodablockF
     /// </summary>
-    const CodablockF =  "CodablockF";
-  
+    public const CodablockF =  "CodablockF";
+
     /// <summary>
     /// Enum value GS1CodablockF
     /// </summary>
-    const GS1CodablockF =  "GS1CodablockF";
+    public const GS1CodablockF =  "GS1CodablockF";
 }

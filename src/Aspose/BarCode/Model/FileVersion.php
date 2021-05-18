@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FileVersion.php">
@@ -35,7 +37,7 @@
 
 namespace Aspose\BarCode\Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /*
@@ -44,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class FileVersion implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
@@ -190,9 +192,9 @@ class FileVersion implements ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
 
-    
+
+
 
     /*
      * Associative array for storing property values

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="QRErrorLevel.php">
@@ -44,24 +46,23 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class QRErrorLevel
 {
-
   /// <summary>
     /// Enum value LevelL
     /// </summary>
-    const LevelL =  "LevelL";
-  
+    public const LevelL =  "LevelL";
+
     /// <summary>
     /// Enum value LevelM
     /// </summary>
-    const LevelM =  "LevelM";
-  
+    public const LevelM =  "LevelM";
+
     /// <summary>
     /// Enum value LevelQ
     /// </summary>
-    const LevelQ =  "LevelQ";
-  
+    public const LevelQ =  "LevelQ";
+
     /// <summary>
     /// Enum value LevelH
     /// </summary>
-    const LevelH =  "LevelH";
+    public const LevelH =  "LevelH";
 }

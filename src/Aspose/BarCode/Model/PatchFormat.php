@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PatchFormat.php">
@@ -44,29 +46,28 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class PatchFormat
 {
-
   /// <summary>
     /// Enum value PatchOnly
     /// </summary>
-    const PatchOnly =  "PatchOnly";
-  
+    public const PatchOnly =  "PatchOnly";
+
     /// <summary>
     /// Enum value A4
     /// </summary>
-    const A4 =  "A4";
-  
+    public const A4 =  "A4";
+
     /// <summary>
     /// Enum value A4_LANDSCAPE
     /// </summary>
-    const A4_LANDSCAPE =  "A4_LANDSCAPE";
-  
+    public const A4_LANDSCAPE =  "A4_LANDSCAPE";
+
     /// <summary>
     /// Enum value US_Letter
     /// </summary>
-    const US_Letter =  "US_Letter";
-  
+    public const US_Letter =  "US_Letter";
+
     /// <summary>
     /// Enum value US_Letter_LANDSCAPE
     /// </summary>
-    const US_Letter_LANDSCAPE =  "US_Letter_LANDSCAPE";
+    public const US_Letter_LANDSCAPE =  "US_Letter_LANDSCAPE";
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BorderDashStyle.php">
@@ -44,29 +46,28 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class BorderDashStyle
 {
-
   /// <summary>
     /// Enum value Solid
     /// </summary>
-    const Solid =  "Solid";
-  
+    public const Solid =  "Solid";
+
     /// <summary>
     /// Enum value Dash
     /// </summary>
-    const Dash =  "Dash";
-  
+    public const Dash =  "Dash";
+
     /// <summary>
     /// Enum value Dot
     /// </summary>
-    const Dot =  "Dot";
-  
+    public const Dot =  "Dot";
+
     /// <summary>
     /// Enum value DashDot
     /// </summary>
-    const DashDot =  "DashDot";
-  
+    public const DashDot =  "DashDot";
+
     /// <summary>
     /// Enum value DashDotDot
     /// </summary>
-    const DashDotDot =  "DashDotDot";
+    public const DashDotDot =  "DashDotDot";
 }
