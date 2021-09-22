@@ -236,7 +236,6 @@ class FileApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->src_path)) {
             $localName = lcfirst('srcPath');
@@ -315,7 +314,8 @@ class FileApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -500,7 +500,6 @@ class FileApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -559,7 +558,8 @@ class FileApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -786,7 +786,6 @@ class FileApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -845,7 +844,8 @@ class FileApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1034,7 +1034,6 @@ class FileApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->src_path)) {
             $localName = lcfirst('srcPath');
@@ -1113,7 +1112,8 @@ class FileApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1344,7 +1344,6 @@ class FileApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -1367,7 +1366,7 @@ class FileApi
 
         // form params
         if (isset($request->file)) {
-            //$multipart = true;
+            $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
             $handle = fopen($filename, 'rb');
             $fsize = filesize($filename);
@@ -1402,7 +1401,8 @@ class FileApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1514,7 +1514,7 @@ class FileApi
      */
     private function _requestToken()
     {
-        $requestUrl = $this->config->getHost() . '/connect/token';
+        $requestUrl = $this->config->getAuthUrl();
 
         $response = $this->client->request('POST', $requestUrl, [
             'form_params' => [

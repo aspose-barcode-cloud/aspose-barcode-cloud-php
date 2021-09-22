@@ -283,7 +283,6 @@ class BarcodeApi
         $httpBody = '';
         $multipart = false;
 
-
         // query params
         if (isset($request->type)) {
             $localName = lcfirst('Type');
@@ -666,7 +665,8 @@ class BarcodeApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -893,7 +893,6 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
@@ -1285,7 +1284,8 @@ class BarcodeApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1507,7 +1507,6 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // query params
         if (isset($request->type)) {
@@ -1858,7 +1857,7 @@ class BarcodeApi
 
         // form params
         if (isset($request->image)) {
-            //$multipart = true;
+            $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->image);
             $handle = fopen($filename, 'rb');
             $fsize = filesize($filename);
@@ -1875,7 +1874,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data', 'application/octet-stream']
+                ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/octet-stream']
             );
         }
 
@@ -1893,7 +1892,8 @@ class BarcodeApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -2124,7 +2124,6 @@ class BarcodeApi
         $httpBody = '';
         $multipart = false;
 
-
         // query params
         if (isset($request->format)) {
             $localName = lcfirst('format');
@@ -2174,7 +2173,8 @@ class BarcodeApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -2413,7 +2413,6 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
@@ -2804,7 +2803,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json', 'application/xml', 'multipart/form-data']
+                ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/json', 'application/xml']
             );
         }
 
@@ -2822,7 +2821,8 @@ class BarcodeApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -3053,7 +3053,6 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
@@ -3129,7 +3128,8 @@ class BarcodeApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -3364,7 +3364,6 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
@@ -3440,7 +3439,8 @@ class BarcodeApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -3549,7 +3549,7 @@ class BarcodeApi
      */
     private function _requestToken()
     {
-        $requestUrl = $this->config->getHost() . '/connect/token';
+        $requestUrl = $this->config->getAuthUrl();
 
         $response = $this->client->request('POST', $requestUrl, [
             'form_params' => [

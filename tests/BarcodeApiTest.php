@@ -84,7 +84,7 @@ class BarcodeApiTest extends TestCase
     /**
      * Test case for getBarcodeGenerate
      *
-     * Generate barcode..
+     * Generate barcode.
      *
      */
     public function testGetBarcodeGenerate()
@@ -101,7 +101,7 @@ class BarcodeApiTest extends TestCase
     /**
      * Test case for getBarcodeRecognize
      *
-     * Recognize barcode from a file on server..
+     * Recognize barcode from a file on server.
      *
      */
     public function testGetBarcodeRecognize()
@@ -130,7 +130,7 @@ class BarcodeApiTest extends TestCase
     /**
      * Test case for postBarcodeRecognizeFromUrlOrContent
      *
-     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64..
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
      *
      */
     public function testPostBarcodeRecognizeFromUrlOrContent()
@@ -202,7 +202,7 @@ class BarcodeApiTest extends TestCase
     /**
      * Test case for putBarcodeRecognizeFromBody
      *
-     * Recognition of a barcode from file on server with parameters in body..
+     * Recognition of a barcode from file on server with parameters in body.
      *
      */
     public function testPutBarcodeRecognizeFromBody()

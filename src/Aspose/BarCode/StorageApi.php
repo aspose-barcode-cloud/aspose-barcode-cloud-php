@@ -270,7 +270,6 @@ class StorageApi
         $httpBody = '';
         $multipart = false;
 
-
         // query params
         if (isset($request->storage_name)) {
             $localName = lcfirst('storageName');
@@ -313,7 +312,8 @@ class StorageApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -540,7 +540,6 @@ class StorageApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -589,7 +588,8 @@ class StorageApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -816,7 +816,6 @@ class StorageApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -875,7 +874,8 @@ class StorageApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1102,7 +1102,6 @@ class StorageApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->storage_name)) {
             $localName = lcfirst('storageName');
@@ -1141,7 +1140,8 @@ class StorageApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1250,7 +1250,7 @@ class StorageApi
      */
     private function _requestToken()
     {
-        $requestUrl = $this->config->getHost() . '/connect/token';
+        $requestUrl = $this->config->getAuthUrl();
 
         $response = $this->client->request('POST', $requestUrl, [
             'form_params' => [
