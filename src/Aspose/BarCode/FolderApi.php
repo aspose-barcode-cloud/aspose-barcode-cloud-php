@@ -236,7 +236,6 @@ class FolderApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->src_path)) {
             $localName = lcfirst('srcPath');
@@ -305,7 +304,8 @@ class FolderApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -490,7 +490,6 @@ class FolderApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -539,7 +538,8 @@ class FolderApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -724,7 +724,6 @@ class FolderApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -783,7 +782,8 @@ class FolderApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1010,7 +1010,6 @@ class FolderApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->path)) {
             $localName = lcfirst('path');
@@ -1059,7 +1058,8 @@ class FolderApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1248,7 +1248,6 @@ class FolderApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
         // path params
         if (isset($request->src_path)) {
             $localName = lcfirst('srcPath');
@@ -1317,7 +1316,8 @@ class FolderApi
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue
+                        'contents' => $formParamValue,
+                        'filename' => $filename
                     ];
                 }
                 // for HTTP post (form)
@@ -1426,7 +1426,7 @@ class FolderApi
      */
     private function _requestToken()
     {
-        $requestUrl = $this->config->getHost() . '/connect/token';
+        $requestUrl = $this->config->getAuthUrl();
 
         $response = $this->client->request('POST', $requestUrl, [
             'form_params' => [

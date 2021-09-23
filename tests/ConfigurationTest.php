@@ -18,6 +18,7 @@ final class ConfigurationTest extends TestCase
         $config->setClientId('client id');
         $config->setClientSecret('client secret');
         $config->setHost('https://api-qa.aspose.cloud');
+        $config->setAuthUrl('https://api-qa.aspose.cloud/connect/token');
         $config->setAccessToken('access token');
 
         $json = json_encode($config, JSON_PRETTY_PRINT);
@@ -27,6 +28,7 @@ final class ConfigurationTest extends TestCase
     "ClientId": "client id",
     "ClientSecret": "client secret",
     "Host": "https:\\/\\/api-qa.aspose.cloud",
+    "AuthUrl": "https:\\/\\/api-qa.aspose.cloud\\/connect\\/token",
     "AccessToken": "access token",
     "Debug": false
 }',
@@ -40,6 +42,7 @@ final class ConfigurationTest extends TestCase
         $config->setClientId('client id');
         $config->setClientSecret('client secret');
         $config->setHost('https://api-qa.aspose.cloud');
+        $config->setAuthUrl('https://api-qa.aspose.cloud/connect/token');
         $config->setAccessToken('access token');
         $json = json_encode($config, JSON_PRETTY_PRINT);
 

@@ -22,6 +22,9 @@ class TestConfiguration
         if (isset($values['Host'])) {
             $config->setHost($values['Host']);
         }
+        if (isset($values['AuthUrl'])) {
+            $config->setAuthUrl($values['AuthUrl']);
+        }
         if (isset($values['AccessToken'])) {
             $config->setAccessToken($values['AccessToken']);
         }
@@ -43,6 +46,9 @@ class TestConfiguration
         }
         if (getenv($prefix . 'HOST')) {
             $config->setHost(getenv($prefix . 'HOST'));
+        }
+        if (getenv($prefix . 'AUTH_URL')) {
+            $config->setAuthUrl(getenv($prefix . 'AUTH_URL'));
         }
         if (getenv($prefix . 'ACCESS_TOKEN')) {
             $config->setAccessToken(getenv($prefix . 'ACCESS_TOKEN'));

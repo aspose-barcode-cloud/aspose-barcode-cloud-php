@@ -105,7 +105,7 @@ class HeaderSelector
         } elseif (preg_grep("/application\/json/i", $contentType)) {
             return 'application/json';
         } else {
-            return implode(',', $contentType);
+            return $contentType[0];
         }
     }
 }
