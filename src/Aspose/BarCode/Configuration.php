@@ -49,7 +49,7 @@ class Configuration implements JsonSerializable
      *
      * @var string
      */
-    protected $clientVersion = '21.9.0';
+    protected $clientVersion = '21.10.0';
 
     /*
      * ClientId for API
@@ -378,7 +378,7 @@ class Configuration implements JsonSerializable
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 21.9.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 21.10.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

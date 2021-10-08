@@ -1160,6 +1160,16 @@ class BarcodeApi
             }
         }
         // query params
+        if (isset($request->fast_scan_only)) {
+            $localName = lcfirst('FastScanOnly');
+            $localValue = is_bool($request->fast_scan_only) ? ($request->fast_scan_only ? 'true' : 'false') : $request->fast_scan_only;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->region_likelihood_threshold_percent)) {
             $localName = lcfirst('RegionLikelihoodThresholdPercent');
             $localValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
@@ -1216,6 +1226,16 @@ class BarcodeApi
         if (isset($request->australian_post_encoding_table)) {
             $localName = lcfirst('AustralianPostEncodingTable');
             $localValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (isset($request->ignore_ending_filling_patterns_for_c_table)) {
+            $localName = lcfirst('IgnoreEndingFillingPatternsForCTable');
+            $localValue = is_bool($request->ignore_ending_filling_patterns_for_c_table) ? ($request->ignore_ending_filling_patterns_for_c_table ? 'true' : 'false') : $request->ignore_ending_filling_patterns_for_c_table;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1769,6 +1789,16 @@ class BarcodeApi
             }
         }
         // query params
+        if (isset($request->fast_scan_only)) {
+            $localName = lcfirst('FastScanOnly');
+            $localValue = is_bool($request->fast_scan_only) ? ($request->fast_scan_only ? 'true' : 'false') : $request->fast_scan_only;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->region_likelihood_threshold_percent)) {
             $localName = lcfirst('RegionLikelihoodThresholdPercent');
             $localValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
@@ -1832,6 +1862,16 @@ class BarcodeApi
             }
         }
         // query params
+        if (isset($request->ignore_ending_filling_patterns_for_c_table)) {
+            $localName = lcfirst('IgnoreEndingFillingPatternsForCTable');
+            $localValue = is_bool($request->ignore_ending_filling_patterns_for_c_table) ? ($request->ignore_ending_filling_patterns_for_c_table ? 'true' : 'false') : $request->ignore_ending_filling_patterns_for_c_table;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->rectangle_region)) {
             $localName = lcfirst('RectangleRegion');
             $localValue = is_bool($request->rectangle_region) ? ($request->rectangle_region ? 'true' : 'false') : $request->rectangle_region;
@@ -1874,7 +1914,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/octet-stream']
+                ['multipart/form-data', 'application/octet-stream']
             );
         }
 
@@ -2803,7 +2843,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/json', 'application/xml']
+                ['application/json', 'application/xml', 'multipart/form-data']
             );
         }
 

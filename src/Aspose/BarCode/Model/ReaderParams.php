@@ -88,12 +88,14 @@ class ReaderParams implements ArrayAccess
         'allow_salt_and_pepper_filtering' => 'bool',
         'allow_white_spots_removing' => 'bool',
         'check_more1_d_variants' => 'bool',
+        'fast_scan_only' => 'bool',
         'region_likelihood_threshold_percent' => 'double',
         'scan_window_sizes' => 'int[]',
         'similarity' => 'double',
         'skip_diagonal_search' => 'bool',
         'read_tiny_barcodes' => 'bool',
-        'australian_post_encoding_table' => '\Aspose\BarCode\Model\CustomerInformationInterpretingType'
+        'australian_post_encoding_table' => '\Aspose\BarCode\Model\CustomerInformationInterpretingType',
+        'ignore_ending_filling_patterns_for_c_table' => 'bool'
     ];
 
     /*
@@ -128,12 +130,14 @@ class ReaderParams implements ArrayAccess
         'allow_salt_and_pepper_filtering' => null,
         'allow_white_spots_removing' => null,
         'check_more1_d_variants' => null,
+        'fast_scan_only' => null,
         'region_likelihood_threshold_percent' => 'double',
         'scan_window_sizes' => 'int32',
         'similarity' => 'double',
         'skip_diagonal_search' => null,
         'read_tiny_barcodes' => null,
-        'australian_post_encoding_table' => null
+        'australian_post_encoding_table' => null,
+        'ignore_ending_filling_patterns_for_c_table' => null
     ];
 
     /*
@@ -189,12 +193,14 @@ class ReaderParams implements ArrayAccess
         'allow_salt_and_pepper_filtering' => 'AllowSaltAndPepperFiltering',
         'allow_white_spots_removing' => 'AllowWhiteSpotsRemoving',
         'check_more1_d_variants' => 'CheckMore1DVariants',
+        'fast_scan_only' => 'FastScanOnly',
         'region_likelihood_threshold_percent' => 'RegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'ScanWindowSizes',
         'similarity' => 'Similarity',
         'skip_diagonal_search' => 'SkipDiagonalSearch',
         'read_tiny_barcodes' => 'ReadTinyBarcodes',
-        'australian_post_encoding_table' => 'AustralianPostEncodingTable'
+        'australian_post_encoding_table' => 'AustralianPostEncodingTable',
+        'ignore_ending_filling_patterns_for_c_table' => 'IgnoreEndingFillingPatternsForCTable'
     ];
 
     /*
@@ -229,12 +235,14 @@ class ReaderParams implements ArrayAccess
         'allow_salt_and_pepper_filtering' => 'setAllowSaltAndPepperFiltering',
         'allow_white_spots_removing' => 'setAllowWhiteSpotsRemoving',
         'check_more1_d_variants' => 'setCheckMore1DVariants',
+        'fast_scan_only' => 'setFastScanOnly',
         'region_likelihood_threshold_percent' => 'setRegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'setScanWindowSizes',
         'similarity' => 'setSimilarity',
         'skip_diagonal_search' => 'setSkipDiagonalSearch',
         'read_tiny_barcodes' => 'setReadTinyBarcodes',
-        'australian_post_encoding_table' => 'setAustralianPostEncodingTable'
+        'australian_post_encoding_table' => 'setAustralianPostEncodingTable',
+        'ignore_ending_filling_patterns_for_c_table' => 'setIgnoreEndingFillingPatternsForCTable'
     ];
 
     /*
@@ -269,12 +277,14 @@ class ReaderParams implements ArrayAccess
         'allow_salt_and_pepper_filtering' => 'getAllowSaltAndPepperFiltering',
         'allow_white_spots_removing' => 'getAllowWhiteSpotsRemoving',
         'check_more1_d_variants' => 'getCheckMore1DVariants',
+        'fast_scan_only' => 'getFastScanOnly',
         'region_likelihood_threshold_percent' => 'getRegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'getScanWindowSizes',
         'similarity' => 'getSimilarity',
         'skip_diagonal_search' => 'getSkipDiagonalSearch',
         'read_tiny_barcodes' => 'getReadTinyBarcodes',
-        'australian_post_encoding_table' => 'getAustralianPostEncodingTable'
+        'australian_post_encoding_table' => 'getAustralianPostEncodingTable',
+        'ignore_ending_filling_patterns_for_c_table' => 'getIgnoreEndingFillingPatternsForCTable'
     ];
 
     /*
@@ -363,12 +373,14 @@ class ReaderParams implements ArrayAccess
         $this->container['allow_salt_and_pepper_filtering'] = isset($data['allow_salt_and_pepper_filtering']) ? $data['allow_salt_and_pepper_filtering'] : null;
         $this->container['allow_white_spots_removing'] = isset($data['allow_white_spots_removing']) ? $data['allow_white_spots_removing'] : null;
         $this->container['check_more1_d_variants'] = isset($data['check_more1_d_variants']) ? $data['check_more1_d_variants'] : null;
+        $this->container['fast_scan_only'] = isset($data['fast_scan_only']) ? $data['fast_scan_only'] : null;
         $this->container['region_likelihood_threshold_percent'] = isset($data['region_likelihood_threshold_percent']) ? $data['region_likelihood_threshold_percent'] : null;
         $this->container['scan_window_sizes'] = isset($data['scan_window_sizes']) ? $data['scan_window_sizes'] : null;
         $this->container['similarity'] = isset($data['similarity']) ? $data['similarity'] : null;
         $this->container['skip_diagonal_search'] = isset($data['skip_diagonal_search']) ? $data['skip_diagonal_search'] : null;
         $this->container['read_tiny_barcodes'] = isset($data['read_tiny_barcodes']) ? $data['read_tiny_barcodes'] : null;
         $this->container['australian_post_encoding_table'] = isset($data['australian_post_encoding_table']) ? $data['australian_post_encoding_table'] : null;
+        $this->container['ignore_ending_filling_patterns_for_c_table'] = isset($data['ignore_ending_filling_patterns_for_c_table']) ? $data['ignore_ending_filling_patterns_for_c_table'] : null;
     }
 
     /*
@@ -1020,6 +1032,30 @@ class ReaderParams implements ArrayAccess
     }
 
     /*
+     * Gets fast_scan_only
+     *
+     * @return bool
+     */
+    public function getFastScanOnly()
+    {
+        return $this->container['fast_scan_only'];
+    }
+
+    /*
+     * Sets fast_scan_only
+     *
+     * @param bool $fast_scan_only Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False.
+     *
+     * @return $this
+     */
+    public function setFastScanOnly($fast_scan_only)
+    {
+        $this->container['fast_scan_only'] = $fast_scan_only;
+
+        return $this;
+    }
+
+    /*
      * Gets region_likelihood_threshold_percent
      *
      * @return double
@@ -1159,6 +1195,30 @@ class ReaderParams implements ArrayAccess
     public function setAustralianPostEncodingTable($australian_post_encoding_table)
     {
         $this->container['australian_post_encoding_table'] = $australian_post_encoding_table;
+
+        return $this;
+    }
+
+    /*
+     * Gets ignore_ending_filling_patterns_for_c_table
+     *
+     * @return bool
+     */
+    public function getIgnoreEndingFillingPatternsForCTable()
+    {
+        return $this->container['ignore_ending_filling_patterns_for_c_table'];
+    }
+
+    /*
+     * Sets ignore_ending_filling_patterns_for_c_table
+     *
+     * @param bool $ignore_ending_filling_patterns_for_c_table The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
+     *
+     * @return $this
+     */
+    public function setIgnoreEndingFillingPatternsForCTable($ignore_ending_filling_patterns_for_c_table)
+    {
+        $this->container['ignore_ending_filling_patterns_for_c_table'] = $ignore_ending_filling_patterns_for_c_table;
 
         return $this;
     }

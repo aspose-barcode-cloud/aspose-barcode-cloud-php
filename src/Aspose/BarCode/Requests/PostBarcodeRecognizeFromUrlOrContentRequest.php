@@ -68,17 +68,19 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * @param bool $allow_salt_and_pepper_filtering Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small noise with white and black dots.
      * @param bool $allow_white_spots_removing Allows engine to recognize image without small white spots as additional scan. Mode helps to recognize noised image as well as median smoothing filtering.
      * @param bool $check_more1_d_variants Allows engine to recognize 1D barcodes with checksum by checking more recognition variants. Default value: False.
+     * @param bool $fast_scan_only Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False.
      * @param double $region_likelihood_threshold_percent Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
      * @param int[] $scan_window_sizes Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.
      * @param double $similarity Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
      * @param bool $skip_diagonal_search Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
      * @param bool $read_tiny_barcodes Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
      * @param string $australian_post_encoding_table Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
+     * @param bool $ignore_ending_filling_patterns_for_c_table The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
      * @param string $rectangle_region
      * @param string $url The image file url.
      * @param \SplFileObject $image Image data
      */
-    public function __construct($type = null, $checksum_validation = null, $detect_encoding = null, $preset = null, $rect_x = null, $rect_y = null, $rect_width = null, $rect_height = null, $strip_fnc = null, $timeout = null, $median_smoothing_window_size = null, $allow_median_smoothing = null, $allow_complex_background = null, $allow_datamatrix_industrial_barcodes = null, $allow_decreased_image = null, $allow_detect_scan_gap = null, $allow_incorrect_barcodes = null, $allow_invert_image = null, $allow_micro_white_spots_removing = null, $allow_one_d_fast_barcodes_detector = null, $allow_one_d_wiped_bars_restoration = null, $allow_qr_micro_qr_restoration = null, $allow_regular_image = null, $allow_salt_and_pepper_filtering = null, $allow_white_spots_removing = null, $check_more1_d_variants = null, $region_likelihood_threshold_percent = null, $scan_window_sizes = null, $similarity = null, $skip_diagonal_search = null, $read_tiny_barcodes = null, $australian_post_encoding_table = null, $rectangle_region = null, $url = null, $image = null)
+    public function __construct($type = null, $checksum_validation = null, $detect_encoding = null, $preset = null, $rect_x = null, $rect_y = null, $rect_width = null, $rect_height = null, $strip_fnc = null, $timeout = null, $median_smoothing_window_size = null, $allow_median_smoothing = null, $allow_complex_background = null, $allow_datamatrix_industrial_barcodes = null, $allow_decreased_image = null, $allow_detect_scan_gap = null, $allow_incorrect_barcodes = null, $allow_invert_image = null, $allow_micro_white_spots_removing = null, $allow_one_d_fast_barcodes_detector = null, $allow_one_d_wiped_bars_restoration = null, $allow_qr_micro_qr_restoration = null, $allow_regular_image = null, $allow_salt_and_pepper_filtering = null, $allow_white_spots_removing = null, $check_more1_d_variants = null, $fast_scan_only = null, $region_likelihood_threshold_percent = null, $scan_window_sizes = null, $similarity = null, $skip_diagonal_search = null, $read_tiny_barcodes = null, $australian_post_encoding_table = null, $ignore_ending_filling_patterns_for_c_table = null, $rectangle_region = null, $url = null, $image = null)
     {
         $this->type = $type;
         $this->checksum_validation = $checksum_validation;
@@ -106,12 +108,14 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
         $this->allow_salt_and_pepper_filtering = $allow_salt_and_pepper_filtering;
         $this->allow_white_spots_removing = $allow_white_spots_removing;
         $this->check_more1_d_variants = $check_more1_d_variants;
+        $this->fast_scan_only = $fast_scan_only;
         $this->region_likelihood_threshold_percent = $region_likelihood_threshold_percent;
         $this->scan_window_sizes = $scan_window_sizes;
         $this->similarity = $similarity;
         $this->skip_diagonal_search = $skip_diagonal_search;
         $this->read_tiny_barcodes = $read_tiny_barcodes;
         $this->australian_post_encoding_table = $australian_post_encoding_table;
+        $this->ignore_ending_filling_patterns_for_c_table = $ignore_ending_filling_patterns_for_c_table;
         $this->rectangle_region = $rectangle_region;
         $this->url = $url;
         $this->image = $image;
@@ -248,6 +252,11 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
     public $check_more1_d_variants;
 
     /*
+     * Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False.
+     */
+    public $fast_scan_only;
+
+    /*
      * Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
      */
     public $region_likelihood_threshold_percent;
@@ -276,6 +285,11 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
      */
     public $australian_post_encoding_table;
+
+    /*
+     * The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
+     */
+    public $ignore_ending_filling_patterns_for_c_table;
 
     /*
      * Gets or sets rectangle_region

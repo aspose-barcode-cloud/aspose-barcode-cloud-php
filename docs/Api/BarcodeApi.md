@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBarcodeRecognize**
-> \Aspose\BarCode\Model\BarcodeResponseList getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $rectangle_region, $storage, $folder)
+> \Aspose\BarCode\Model\BarcodeResponseList getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $storage, $folder)
 
 Recognize barcode from a file on server.
 
@@ -178,18 +178,20 @@ $allow_regular_image = true; // bool | Allows engine to recognize regular image 
 $allow_salt_and_pepper_filtering = true; // bool | Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small noise with white and black dots.
 $allow_white_spots_removing = true; // bool | Allows engine to recognize image without small white spots as additional scan. Mode helps to recognize noised image as well as median smoothing filtering.
 $check_more1_d_variants = true; // bool | Allows engine to recognize 1D barcodes with checksum by checking more recognition variants. Default value: False.
+$fast_scan_only = true; // bool | Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False.
 $region_likelihood_threshold_percent = 1.2; // double | Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
 $scan_window_sizes = array(56); // int[] | Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.
 $similarity = 1.2; // double | Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
 $skip_diagonal_search = true; // bool | Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
 $read_tiny_barcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 $australian_post_encoding_table = "australian_post_encoding_table_example"; // string | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
+$ignore_ending_filling_patterns_for_c_table = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
 $rectangle_region = "rectangle_region_example"; // string | 
 $storage = "storage_example"; // string | The image storage.
 $folder = "folder_example"; // string | The image folder.
 
 try {
-    $result = $apiInstance->getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $rectangle_region, $storage, $folder);
+    $result = $apiInstance->getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $storage, $folder);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->getBarcodeRecognize: ', $e->getMessage(), PHP_EOL;
@@ -228,12 +230,14 @@ Name | Type | Description  | Notes
  **allow_salt_and_pepper_filtering** | **bool**| Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small noise with white and black dots. | [optional]
  **allow_white_spots_removing** | **bool**| Allows engine to recognize image without small white spots as additional scan. Mode helps to recognize noised image as well as median smoothing filtering. | [optional]
  **check_more1_d_variants** | **bool**| Allows engine to recognize 1D barcodes with checksum by checking more recognition variants. Default value: False. | [optional]
+ **fast_scan_only** | **bool**| Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False. | [optional]
  **region_likelihood_threshold_percent** | **double**| Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time. | [optional]
  **scan_window_sizes** | [**int[]**](../Model/int.md)| Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality. | [optional]
  **similarity** | **double**| Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9] | [optional]
  **skip_diagonal_search** | **bool**| Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time. | [optional]
  **read_tiny_barcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional]
  **australian_post_encoding_table** | **string**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional]
+ **ignore_ending_filling_patterns_for_c_table** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \&quot;333\&quot; of filling paterns is decoded as letter \&quot;z\&quot;. | [optional]
  **rectangle_region** | **string**|  | [optional]
  **storage** | **string**| The image storage. | [optional]
  **folder** | **string**| The image folder. | [optional]
@@ -254,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postBarcodeRecognizeFromUrlOrContent**
-> \Aspose\BarCode\Model\BarcodeResponseList postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $rectangle_region, $url, $image)
+> \Aspose\BarCode\Model\BarcodeResponseList postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $url, $image)
 
 Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
 
@@ -298,18 +302,20 @@ $allow_regular_image = true; // bool | Allows engine to recognize regular image 
 $allow_salt_and_pepper_filtering = true; // bool | Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small noise with white and black dots.
 $allow_white_spots_removing = true; // bool | Allows engine to recognize image without small white spots as additional scan. Mode helps to recognize noised image as well as median smoothing filtering.
 $check_more1_d_variants = true; // bool | Allows engine to recognize 1D barcodes with checksum by checking more recognition variants. Default value: False.
+$fast_scan_only = true; // bool | Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False.
 $region_likelihood_threshold_percent = 1.2; // double | Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.
 $scan_window_sizes = array(56); // int[] | Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.
 $similarity = 1.2; // double | Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]
 $skip_diagonal_search = true; // bool | Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.
 $read_tiny_barcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 $australian_post_encoding_table = "australian_post_encoding_table_example"; // string | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
+$ignore_ending_filling_patterns_for_c_table = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
 $rectangle_region = "rectangle_region_example"; // string | 
 $url = "url_example"; // string | The image file url.
 $image = "/path/to/file.txt"; // \SplFileObject | Image data
 
 try {
-    $result = $apiInstance->postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $rectangle_region, $url, $image);
+    $result = $apiInstance->postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $url, $image);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->postBarcodeRecognizeFromUrlOrContent: ', $e->getMessage(), PHP_EOL;
@@ -347,12 +353,14 @@ Name | Type | Description  | Notes
  **allow_salt_and_pepper_filtering** | **bool**| Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small noise with white and black dots. | [optional]
  **allow_white_spots_removing** | **bool**| Allows engine to recognize image without small white spots as additional scan. Mode helps to recognize noised image as well as median smoothing filtering. | [optional]
  **check_more1_d_variants** | **bool**| Allows engine to recognize 1D barcodes with checksum by checking more recognition variants. Default value: False. | [optional]
+ **fast_scan_only** | **bool**| Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False. | [optional]
  **region_likelihood_threshold_percent** | **double**| Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time. | [optional]
  **scan_window_sizes** | [**int[]**](../Model/int.md)| Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality. | [optional]
  **similarity** | **double**| Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9] | [optional]
  **skip_diagonal_search** | **bool**| Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time. | [optional]
  **read_tiny_barcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional]
  **australian_post_encoding_table** | **string**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional]
+ **ignore_ending_filling_patterns_for_c_table** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method.  CTable encoding method does not have any gaps in encoding table and sequnce \&quot;333\&quot; of filling paterns is decoded as letter \&quot;z\&quot;. | [optional]
  **rectangle_region** | **string**|  | [optional]
  **url** | **string**| The image file url. | [optional]
  **image** | **\SplFileObject**| Image data | [optional]
@@ -367,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/octet-stream
+ - **Content-Type**: multipart/form-data, application/octet-stream
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -545,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json, application/xml
+ - **Content-Type**: application/json, application/xml, multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
