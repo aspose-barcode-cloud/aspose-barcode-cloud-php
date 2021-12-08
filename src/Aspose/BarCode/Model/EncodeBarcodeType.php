@@ -375,4 +375,9 @@ class EncodeBarcodeType
     /// Enum value GS1CodablockF
     /// </summary>
     public const GS1CodablockF =  "GS1CodablockF";
+
+    /// <summary>
+    /// Enum value Mailmark
+    /// </summary>
+    public const Mailmark =  "Mailmark";
 }
