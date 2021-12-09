@@ -380,4 +380,9 @@ class DecodeBarcodeType
     /// Enum value CodablockF
     /// </summary>
     public const CodablockF =  "CodablockF";
+
+    /// <summary>
+    /// Enum value Mailmark
+    /// </summary>
+    public const Mailmark =  "Mailmark";
 }
