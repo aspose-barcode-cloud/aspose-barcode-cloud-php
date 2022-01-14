@@ -16,4 +16,5 @@ update:
 
 .PHONY: init
 init:
+	sudo apt install php-parser
 	composer install

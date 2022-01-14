@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutBarcodeGenerateFileRequest.php">
- *   Copyright (c) 2021 Aspose Pty Ltd
+ *   Copyright (c) 2022 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
