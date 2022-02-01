@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BarcodeApi.php">
- *   Copyright (c) 2021 Aspose Pty Ltd
+ *   Copyright (c) 2022 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -1914,7 +1914,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data', 'application/octet-stream']
+                ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/octet-stream']
             );
         }
 
@@ -2843,7 +2843,7 @@ class BarcodeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json', 'application/xml', 'multipart/form-data']
+                ['multipart/form-data', 'application/x-www-form-urlencoded', 'application/json', 'application/xml']
             );
         }
 
