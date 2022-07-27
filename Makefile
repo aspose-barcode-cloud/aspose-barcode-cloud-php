@@ -9,12 +9,12 @@ format:
 test:
 	composer test
 
-.PHONY: update
-update:
-	composer update
-	composer validate
-
 .PHONY: init
 init:
 	sudo apt install php-parser
 	composer install
+
+.PHONY: update
+update:
+	composer update
+	composer validate
