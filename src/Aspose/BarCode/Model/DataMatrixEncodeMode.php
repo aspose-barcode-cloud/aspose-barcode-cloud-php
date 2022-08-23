@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class DataMatrixEncodeMode
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Auto
     /// </summary>
     public const Auto =  "Auto";

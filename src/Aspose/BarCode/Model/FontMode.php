@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class FontMode
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Auto
     /// </summary>
     public const Auto =  "Auto";

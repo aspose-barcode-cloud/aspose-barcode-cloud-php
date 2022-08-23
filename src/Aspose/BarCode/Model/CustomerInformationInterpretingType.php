@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CustomerInformationInterpretingType
 {
-  /// <summary>
+    /// <summary>
     /// Enum value CTable
     /// </summary>
     public const CTable =  "CTable";

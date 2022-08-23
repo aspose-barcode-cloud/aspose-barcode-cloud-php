@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CodabarSymbol
 {
-  /// <summary>
+    /// <summary>
     /// Enum value A
     /// </summary>
     public const A =  "A";

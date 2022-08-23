@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class QREncodeMode
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Auto
     /// </summary>
     public const Auto =  "Auto";

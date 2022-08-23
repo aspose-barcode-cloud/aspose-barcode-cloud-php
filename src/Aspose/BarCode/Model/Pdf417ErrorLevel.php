@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class Pdf417ErrorLevel
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Level0
     /// </summary>
     public const Level0 =  "Level0";

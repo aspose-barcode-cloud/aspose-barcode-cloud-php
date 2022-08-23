@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class AvailableGraphicsUnit
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Pixel
     /// </summary>
     public const Pixel =  "Pixel";

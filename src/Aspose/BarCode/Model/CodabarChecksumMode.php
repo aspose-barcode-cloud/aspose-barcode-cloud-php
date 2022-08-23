@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CodabarChecksumMode
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Mod10
     /// </summary>
     public const Mod10 =  "Mod10";

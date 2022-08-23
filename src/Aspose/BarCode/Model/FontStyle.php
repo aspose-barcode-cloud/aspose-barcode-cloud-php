@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class FontStyle
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Regular
     /// </summary>
     public const Regular =  "Regular";
