@@ -11,7 +11,6 @@ test:
 
 .PHONY: init
 init:
-	sudo apt install php-parser
 	composer install
 
 .PHONY: update
