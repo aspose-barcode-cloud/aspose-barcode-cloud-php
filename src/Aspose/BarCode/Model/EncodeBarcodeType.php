@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class EncodeBarcodeType
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Codabar
     /// </summary>
     public const Codabar =  "Codabar";

@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class DecodeBarcodeType
 {
-  /// <summary>
+    /// <summary>
     /// Enum value all
     /// </summary>
     public const all =  "all";

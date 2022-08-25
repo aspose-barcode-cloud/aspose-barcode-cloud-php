@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class ChecksumValidation
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Default
     /// </summary>
     public const Default =  "Default";

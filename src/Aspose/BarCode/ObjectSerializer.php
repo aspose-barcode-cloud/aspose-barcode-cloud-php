@@ -208,16 +208,16 @@ class ObjectSerializer
             return preg_replace('/%5B[0-9]+%5D=/', '=', http_build_query($collection, '', '&'));
         }
         switch ($collectionFormat) {
-        case 'pipes':
-            return implode('|', $collection);
-        case 'tsv':
-            return implode("\t", $collection);
-        case 'ssv':
-            return implode(' ', $collection);
-        case 'csv':
-            // Deliberate fall through. CSV is default format.
-        default:
-            return implode(',', $collection);
+            case 'pipes':
+                return implode('|', $collection);
+            case 'tsv':
+                return implode("\t", $collection);
+            case 'ssv':
+                return implode(' ', $collection);
+            case 'csv':
+                // Deliberate fall through. CSV is default format.
+            default:
+                return implode(',', $collection);
         }
     }
 

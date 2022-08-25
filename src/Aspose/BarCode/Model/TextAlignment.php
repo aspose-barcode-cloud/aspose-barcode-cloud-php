@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class TextAlignment
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Left
     /// </summary>
     public const Left =  "Left";

@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class Code128Emulation
 {
-  /// <summary>
+    /// <summary>
     /// Enum value None
     /// </summary>
     public const None =  "None";

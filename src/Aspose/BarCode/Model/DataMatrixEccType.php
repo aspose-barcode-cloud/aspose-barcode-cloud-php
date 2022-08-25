@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class DataMatrixEccType
 {
-  /// <summary>
+    /// <summary>
     /// Enum value EccAuto
     /// </summary>
     public const EccAuto =  "EccAuto";

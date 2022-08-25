@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class PresetType
 {
-  /// <summary>
+    /// <summary>
     /// Enum value HighPerformance
     /// </summary>
     public const HighPerformance =  "HighPerformance";

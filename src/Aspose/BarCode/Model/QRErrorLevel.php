@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class QRErrorLevel
 {
-  /// <summary>
+    /// <summary>
     /// Enum value LevelL
     /// </summary>
     public const LevelL =  "LevelL";

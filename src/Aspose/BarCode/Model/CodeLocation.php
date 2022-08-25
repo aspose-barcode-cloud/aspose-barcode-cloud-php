@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class CodeLocation
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Below
     /// </summary>
     public const Below =  "Below";

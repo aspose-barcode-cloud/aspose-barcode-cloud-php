@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class BorderDashStyle
 {
-  /// <summary>
+    /// <summary>
     /// Enum value Solid
     /// </summary>
     public const Solid =  "Solid";

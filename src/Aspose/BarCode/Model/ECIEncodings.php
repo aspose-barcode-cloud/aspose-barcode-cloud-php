@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class ECIEncodings
 {
-  /// <summary>
+    /// <summary>
     /// Enum value NONE
     /// </summary>
     public const NONE =  "NONE";

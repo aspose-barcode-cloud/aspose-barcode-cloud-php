@@ -46,7 +46,7 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class PatchFormat
 {
-  /// <summary>
+    /// <summary>
     /// Enum value PatchOnly
     /// </summary>
     public const PatchOnly =  "PatchOnly";
