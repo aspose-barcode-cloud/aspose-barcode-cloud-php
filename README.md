@@ -5,7 +5,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/aspose/barcode-cloud-php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 22.8.0
+- Package version: 22.9.0
 
 ## Demo applications
 
