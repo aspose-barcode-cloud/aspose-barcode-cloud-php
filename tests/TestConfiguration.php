@@ -60,7 +60,7 @@ class TestConfiguration
         return $config;
     }
 
-    public static function fromFileOrEnv(string $filename = 'Configuration.json', string $prefix = 'TEST_'): Configuration
+    public static function fromFileOrEnv(string $filename = 'Configuration.json', string $prefix = 'TEST_CONFIGURATION_'): Configuration
     {
         $contents = false;
         try {

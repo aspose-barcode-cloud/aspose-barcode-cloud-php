@@ -22,6 +22,8 @@ final class ConfigurationTest extends TestCase
         $config->setAccessToken('access token');
 
         $json = json_encode($config, JSON_PRETTY_PRINT);
+        // Fix line endings on Windows
+        $json = preg_replace("/(?<=[^\r]|^)\n/", PHP_EOL, $json);
 
         $this->assertEquals(
             '{
