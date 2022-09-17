@@ -32,5 +32,5 @@ jobs:
 
     - name: Run test suite
       env:
-        TEST_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
+        TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
       run: composer run-script test
