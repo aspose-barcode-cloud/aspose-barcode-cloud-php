@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/github/license/aspose-barcode-cloud/aspose-barcode-cloud-php)](LICENSE)
 [![Test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php.yml/badge.svg)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php.yml)
 [![Packagist Version](https://img.shields.io/packagist/v/aspose/barcode-cloud-php)](https://packagist.org/packages/aspose/barcode-cloud-php)
-![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/aspose-barcode-cloud/php.svg?)
+[![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
 - Package version: 22.9.0
