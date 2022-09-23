@@ -3,3 +3,5 @@
 /nbproject/private
 Configuration*.json
 !Configuration.example.json
+
+/.php-cs-fixer.cache
