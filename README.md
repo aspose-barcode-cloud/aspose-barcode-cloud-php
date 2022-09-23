@@ -1,12 +1,13 @@
 # Aspose.BarCode Cloud SDK for PHP
 
 [![License](https://img.shields.io/github/license/aspose-barcode-cloud/aspose-barcode-cloud-php)](LICENSE)
-[![PHP Latest Version](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php.yml/badge.svg)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php.yml)
-[![PHP Supported Versions](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php-versions.yml/badge.svg)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php-versions.yml)
+[![Test](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php.yml/badge.svg)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-php/actions/workflows/php.yml)
 [![Packagist Version](https://img.shields.io/packagist/v/aspose/barcode-cloud-php)](https://packagist.org/packages/aspose/barcode-cloud-php)
+[![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/aspose-barcode-cloud/php.svg?)]
 
 - API version: 3.0
 - Package version: 22.9.0
+- Supported PHP versions: "^7.3 || ^8.0"
 
 ## Demo applications
 
