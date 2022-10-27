@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 22.9.0
+- Package version: 22.10.0
 - Supported PHP versions: ">=7.3 || >=8.0"
 
 ## Demo applications
@@ -163,6 +163,7 @@ Class | Method | HTTP request | Description
 - [PatchFormat](docs/Model/PatchFormat.md)
 - [Pdf417CompactionMode](docs/Model/Pdf417CompactionMode.md)
 - [Pdf417ErrorLevel](docs/Model/Pdf417ErrorLevel.md)
+- [Pdf417MacroTerminator](docs/Model/Pdf417MacroTerminator.md)
 - [Pdf417Params](docs/Model/Pdf417Params.md)
 - [PostalParams](docs/Model/PostalParams.md)
 - [PresetType](docs/Model/PresetType.md)
@@ -179,3 +180,4 @@ Class | Method | HTTP request | Description
 - [StructuredAppend](docs/Model/StructuredAppend.md)
 - [TextAlignment](docs/Model/TextAlignment.md)
 - [FileVersion](docs/Model/FileVersion.md)
+
