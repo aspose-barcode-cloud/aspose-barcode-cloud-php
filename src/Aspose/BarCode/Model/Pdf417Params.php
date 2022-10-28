@@ -81,7 +81,8 @@ class Pdf417Params implements ArrayAccess
         'macro_file_name' => 'string',
         'macro_addressee' => 'string',
         'macro_eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
-        'code128_emulation' => '\Aspose\BarCode\Model\Code128Emulation'
+        'code128_emulation' => '\Aspose\BarCode\Model\Code128Emulation',
+        'pdf417_macro_terminator' => '\Aspose\BarCode\Model\Pdf417MacroTerminator'
     ];
 
     /*
@@ -109,7 +110,8 @@ class Pdf417Params implements ArrayAccess
         'macro_file_name' => null,
         'macro_addressee' => null,
         'macro_eci_encoding' => null,
-        'code128_emulation' => null
+        'code128_emulation' => null,
+        'pdf417_macro_terminator' => null
     ];
 
     /*
@@ -158,7 +160,8 @@ class Pdf417Params implements ArrayAccess
         'macro_file_name' => 'MacroFileName',
         'macro_addressee' => 'MacroAddressee',
         'macro_eci_encoding' => 'MacroECIEncoding',
-        'code128_emulation' => 'Code128Emulation'
+        'code128_emulation' => 'Code128Emulation',
+        'pdf417_macro_terminator' => 'Pdf417MacroTerminator'
     ];
 
     /*
@@ -186,7 +189,8 @@ class Pdf417Params implements ArrayAccess
         'macro_file_name' => 'setMacroFileName',
         'macro_addressee' => 'setMacroAddressee',
         'macro_eci_encoding' => 'setMacroEciEncoding',
-        'code128_emulation' => 'setCode128Emulation'
+        'code128_emulation' => 'setCode128Emulation',
+        'pdf417_macro_terminator' => 'setPdf417MacroTerminator'
     ];
 
     /*
@@ -214,7 +218,8 @@ class Pdf417Params implements ArrayAccess
         'macro_file_name' => 'getMacroFileName',
         'macro_addressee' => 'getMacroAddressee',
         'macro_eci_encoding' => 'getMacroEciEncoding',
-        'code128_emulation' => 'getCode128Emulation'
+        'code128_emulation' => 'getCode128Emulation',
+        'pdf417_macro_terminator' => 'getPdf417MacroTerminator'
     ];
 
     /*
@@ -297,6 +302,7 @@ class Pdf417Params implements ArrayAccess
         $this->container['macro_addressee'] = isset($data['macro_addressee']) ? $data['macro_addressee'] : null;
         $this->container['macro_eci_encoding'] = isset($data['macro_eci_encoding']) ? $data['macro_eci_encoding'] : null;
         $this->container['code128_emulation'] = isset($data['code128_emulation']) ? $data['code128_emulation'] : null;
+        $this->container['pdf417_macro_terminator'] = isset($data['pdf417_macro_terminator']) ? $data['pdf417_macro_terminator'] : null;
     }
 
     /*
@@ -799,6 +805,30 @@ class Pdf417Params implements ArrayAccess
     public function setCode128Emulation($code128_emulation)
     {
         $this->container['code128_emulation'] = $code128_emulation;
+
+        return $this;
+    }
+
+    /*
+     * Gets pdf417_macro_terminator
+     *
+     * @return \Aspose\BarCode\Model\Pdf417MacroTerminator
+     */
+    public function getPdf417MacroTerminator()
+    {
+        return $this->container['pdf417_macro_terminator'];
+    }
+
+    /*
+     * Sets pdf417_macro_terminator
+     *
+     * @param \Aspose\BarCode\Model\Pdf417MacroTerminator $pdf417_macro_terminator Used to tell the encoder whether to add Macro PDF417 Terminator (codeword 922) to the segment. Applied only for Macro PDF417.
+     *
+     * @return $this
+     */
+    public function setPdf417MacroTerminator($pdf417_macro_terminator)
+    {
+        $this->container['pdf417_macro_terminator'] = $pdf417_macro_terminator;
 
         return $this;
     }
