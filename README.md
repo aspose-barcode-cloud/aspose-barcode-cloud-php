@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 22.10.0
+- Package version: 22.11.0
 - Supported PHP versions: ">=7.3 || >=8.0"
 
 ## Demo applications
@@ -156,6 +156,7 @@ Class | Method | HTTP request | Description
 - [ITF14BorderType](docs/Model/ITF14BorderType.md)
 - [ITFParams](docs/Model/ITFParams.md)
 - [MacroCharacter](docs/Model/MacroCharacter.md)
+- [MaxiCodeMode](docs/Model/MaxiCodeMode.md)
 - [MaxiCodeParams](docs/Model/MaxiCodeParams.md)
 - [ObjectExist](docs/Model/ObjectExist.md)
 - [Padding](docs/Model/Padding.md)
