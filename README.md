@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 22.11.0
+- Package version: 22.12.0
 - Supported PHP versions: ">=7.3 || >=8.0"
 
 ## Demo applications
@@ -87,7 +87,7 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 All URIs are relative to *<https://api.aspose.cloud/v3.0>*
 
 Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
+----- | ------ | ------------ | -----------
 *BarcodeApi* | [**getBarcodeGenerate**](docs/Api/BarcodeApi.md#getbarcodegenerate) | **GET** /barcode/generate | Generate barcode.
 *BarcodeApi* | [**getBarcodeRecognize**](docs/Api/BarcodeApi.md#getbarcoderecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
 *BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](docs/Api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.

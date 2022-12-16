@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **encoding_table** | [**\Aspose\BarCode\Model\CustomerInformationInterpretingType**](CustomerInformationInterpretingType.md) | Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\&quot; | [optional] 
 **short_bar_height** | **double** | Short bar&#39;s height of AustralianPost barcode. | [optional] 
 

@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **name** | **string** | File or folder name. | [optional] 
 **is_folder** | **bool** | True if it is a folder. | 
 **modified_date** | [**\DateTime**](\DateTime.md) | File or folder last modified DateTime. | [optional] 

@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **file_size** | **int** | Result file size. | 
 **image_width** | **int** | Result image width. | [optional] 
 **image_height** | **int** | Result image height. | [optional] 

@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **code** | **string** | Code | [optional] 
 **message** | **string** | Message | [optional] 
 **description** | **string** | Description | [optional] 

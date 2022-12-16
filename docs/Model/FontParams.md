@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **family** | **string** | Font family. | [optional] 
 **size** | **double** | Font size in units. | [optional] 
 **style** | [**\Aspose\BarCode\Model\FontStyle**](FontStyle.md) | Font style. | [optional] 

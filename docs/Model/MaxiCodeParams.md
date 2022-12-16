@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **aspect_ratio** | **double** | Height/Width ratio of 2D BarCode module. | [optional] 
 **mode** | [**\Aspose\BarCode\Model\MaxiCodeMode**](MaxiCodeMode.md) | Encoding mode for MaxiCode barcodes. | [optional] 
 

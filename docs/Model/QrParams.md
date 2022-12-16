@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **aspect_ratio** | **double** | Height/Width ratio of 2D BarCode module. | [optional] 
 **text_encoding** | **string** | Encoding of codetext. | [optional] 
 **encode_type** | [**\Aspose\BarCode\Model\QREncodeType**](QREncodeType.md) | QR / MicroQR selector mode. Select ForceQR for standard QR symbols, Auto for MicroQR. | [optional] 

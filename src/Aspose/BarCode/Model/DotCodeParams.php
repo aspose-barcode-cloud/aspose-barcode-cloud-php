@@ -252,7 +252,7 @@ class DotCodeParams implements ArrayAccess
     /*
      * Sets dot_code_mask
      *
-     * @param int $dot_code_mask Mask of Dotcode barcode. Default value: -1.
+     * @param int $dot_code_mask DEPRECATED: DotCodeMask is now calculated automatically
      *
      * @return $this
      */
