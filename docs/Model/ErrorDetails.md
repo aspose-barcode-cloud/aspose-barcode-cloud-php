@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **request_id** | **string** | The request id | [optional] 
 **date** | [**\DateTime**](\DateTime.md) | Date | 
 

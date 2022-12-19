@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **type_of_barcode** | [**\Aspose\BarCode\Model\EncodeBarcodeType**](EncodeBarcodeType.md) | Type of barcode to generate. | 
 **text** | **string** | Text to encode. | 
 **two_d_display_text** | **string** | Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] 

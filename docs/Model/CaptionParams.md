@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **text** | **string** | Caption text. | [optional] 
 **alignment** | [**\Aspose\BarCode\Model\TextAlignment**](TextAlignment.md) | Text alignment. | [optional] 
 **color** | **string** | Text color. | [optional] 

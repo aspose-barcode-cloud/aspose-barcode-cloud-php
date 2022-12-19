@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **aspect_ratio** | **double** | Height/Width ratio of 2D BarCode module | [optional] 
 **text_encoding** | **string** | Encoding of codetext. | [optional] 
 **columns** | **int** | Columns count. | [optional] 

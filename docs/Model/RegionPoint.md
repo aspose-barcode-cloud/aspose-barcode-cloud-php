@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **x** | **int** | X-coordinate | 
 **y** | **int** | Y-coordinate | 
 

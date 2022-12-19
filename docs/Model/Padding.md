@@ -2,7 +2,7 @@
 
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **left** | **double** | Left padding. | [optional] 
 **right** | **double** | Right padding. | [optional] 
 **top** | **double** | Top padding. | [optional] 
