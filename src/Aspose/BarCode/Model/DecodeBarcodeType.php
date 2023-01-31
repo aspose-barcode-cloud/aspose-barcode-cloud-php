@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DecodeBarcodeType.php">
- *   Copyright (c) 2022 Aspose Pty Ltd
+ *   Copyright (c) 2023 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -385,4 +385,59 @@ class DecodeBarcodeType
     /// Enum value Mailmark
     /// </summary>
     public const Mailmark =  "Mailmark";
+
+    /// <summary>
+    /// Enum value GS1DotCode
+    /// </summary>
+    public const GS1DotCode =  "GS1DotCode";
+
+    /// <summary>
+    /// Enum value HIBCCode39LIC
+    /// </summary>
+    public const HIBCCode39LIC =  "HIBCCode39LIC";
+
+    /// <summary>
+    /// Enum value HIBCCode128LIC
+    /// </summary>
+    public const HIBCCode128LIC =  "HIBCCode128LIC";
+
+    /// <summary>
+    /// Enum value HIBCAztecLIC
+    /// </summary>
+    public const HIBCAztecLIC =  "HIBCAztecLIC";
+
+    /// <summary>
+    /// Enum value HIBCDataMatrixLIC
+    /// </summary>
+    public const HIBCDataMatrixLIC =  "HIBCDataMatrixLIC";
+
+    /// <summary>
+    /// Enum value HIBCQRLIC
+    /// </summary>
+    public const HIBCQRLIC =  "HIBCQRLIC";
+
+    /// <summary>
+    /// Enum value HIBCCode39PAS
+    /// </summary>
+    public const HIBCCode39PAS =  "HIBCCode39PAS";
+
+    /// <summary>
+    /// Enum value HIBCCode128PAS
+    /// </summary>
+    public const HIBCCode128PAS =  "HIBCCode128PAS";
+
+    /// <summary>
+    /// Enum value HIBCAztecPAS
+    /// </summary>
+    public const HIBCAztecPAS =  "HIBCAztecPAS";
+
+    /// <summary>
+    /// Enum value HIBCDataMatrixPAS
+    /// </summary>
+    public const HIBCDataMatrixPAS =  "HIBCDataMatrixPAS";
+
+    /// <summary>
+    /// Enum value HIBCQRPAS
+    /// </summary>
+    public const HIBCQRPAS =  "HIBCQRPAS";
 }

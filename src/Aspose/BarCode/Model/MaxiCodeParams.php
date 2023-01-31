@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MaxiCodeParams.php">
- *   Copyright (c) 2022 Aspose Pty Ltd
+ *   Copyright (c) 2023 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,7 +63,8 @@ class MaxiCodeParams implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'aspect_ratio' => 'double',
-        'mode' => '\Aspose\BarCode\Model\MaxiCodeMode'
+        'mode' => '\Aspose\BarCode\Model\MaxiCodeMode',
+        'encode_mode' => '\Aspose\BarCode\Model\MaxiCodeEncodeMode'
     ];
 
     /*
@@ -73,7 +74,8 @@ class MaxiCodeParams implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'aspect_ratio' => 'double',
-        'mode' => null
+        'mode' => null,
+        'encode_mode' => null
     ];
 
     /*
@@ -104,7 +106,8 @@ class MaxiCodeParams implements ArrayAccess
      */
     protected static $attributeMap = [
         'aspect_ratio' => 'AspectRatio',
-        'mode' => 'Mode'
+        'mode' => 'Mode',
+        'encode_mode' => 'EncodeMode'
     ];
 
     /*
@@ -114,7 +117,8 @@ class MaxiCodeParams implements ArrayAccess
      */
     protected static $setters = [
         'aspect_ratio' => 'setAspectRatio',
-        'mode' => 'setMode'
+        'mode' => 'setMode',
+        'encode_mode' => 'setEncodeMode'
     ];
 
     /*
@@ -124,7 +128,8 @@ class MaxiCodeParams implements ArrayAccess
      */
     protected static $getters = [
         'aspect_ratio' => 'getAspectRatio',
-        'mode' => 'getMode'
+        'mode' => 'getMode',
+        'encode_mode' => 'getEncodeMode'
     ];
 
     /*
@@ -189,6 +194,7 @@ class MaxiCodeParams implements ArrayAccess
     {
         $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
+        $this->container['encode_mode'] = isset($data['encode_mode']) ? $data['encode_mode'] : null;
     }
 
     /*
@@ -252,13 +258,37 @@ class MaxiCodeParams implements ArrayAccess
     /*
      * Sets mode
      *
-     * @param \Aspose\BarCode\Model\MaxiCodeMode $mode Encoding mode for MaxiCode barcodes.
+     * @param \Aspose\BarCode\Model\MaxiCodeMode $mode Mode for MaxiCode barcodes.
      *
      * @return $this
      */
     public function setMode($mode)
     {
         $this->container['mode'] = $mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets encode_mode
+     *
+     * @return \Aspose\BarCode\Model\MaxiCodeEncodeMode
+     */
+    public function getEncodeMode()
+    {
+        return $this->container['encode_mode'];
+    }
+
+    /*
+     * Sets encode_mode
+     *
+     * @param \Aspose\BarCode\Model\MaxiCodeEncodeMode $encode_mode Encoding mode for MaxiCode barcodes.
+     *
+     * @return $this
+     */
+    public function setEncodeMode($encode_mode)
+    {
+        $this->container['encode_mode'] = $encode_mode;
 
         return $this;
     }

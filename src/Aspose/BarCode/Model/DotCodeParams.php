@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DotCodeParams.php">
- *   Copyright (c) 2022 Aspose Pty Ltd
+ *   Copyright (c) 2023 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,7 +63,11 @@ class DotCodeParams implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'aspect_ratio' => 'double',
-        'dot_code_mask' => 'int'
+        'columns' => 'int',
+        'encode_mode' => '\Aspose\BarCode\Model\DotCodeEncodeMode',
+        'eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
+        'is_reader_initialization' => 'bool',
+        'rows' => 'int'
     ];
 
     /*
@@ -73,7 +77,11 @@ class DotCodeParams implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'aspect_ratio' => 'double',
-        'dot_code_mask' => 'int32'
+        'columns' => 'int32',
+        'encode_mode' => null,
+        'eci_encoding' => null,
+        'is_reader_initialization' => null,
+        'rows' => 'int32'
     ];
 
     /*
@@ -104,7 +112,11 @@ class DotCodeParams implements ArrayAccess
      */
     protected static $attributeMap = [
         'aspect_ratio' => 'AspectRatio',
-        'dot_code_mask' => 'DotCodeMask'
+        'columns' => 'Columns',
+        'encode_mode' => 'EncodeMode',
+        'eci_encoding' => 'ECIEncoding',
+        'is_reader_initialization' => 'IsReaderInitialization',
+        'rows' => 'Rows'
     ];
 
     /*
@@ -114,7 +126,11 @@ class DotCodeParams implements ArrayAccess
      */
     protected static $setters = [
         'aspect_ratio' => 'setAspectRatio',
-        'dot_code_mask' => 'setDotCodeMask'
+        'columns' => 'setColumns',
+        'encode_mode' => 'setEncodeMode',
+        'eci_encoding' => 'setEciEncoding',
+        'is_reader_initialization' => 'setIsReaderInitialization',
+        'rows' => 'setRows'
     ];
 
     /*
@@ -124,7 +140,11 @@ class DotCodeParams implements ArrayAccess
      */
     protected static $getters = [
         'aspect_ratio' => 'getAspectRatio',
-        'dot_code_mask' => 'getDotCodeMask'
+        'columns' => 'getColumns',
+        'encode_mode' => 'getEncodeMode',
+        'eci_encoding' => 'getEciEncoding',
+        'is_reader_initialization' => 'getIsReaderInitialization',
+        'rows' => 'getRows'
     ];
 
     /*
@@ -188,7 +208,11 @@ class DotCodeParams implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
-        $this->container['dot_code_mask'] = isset($data['dot_code_mask']) ? $data['dot_code_mask'] : null;
+        $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
+        $this->container['encode_mode'] = isset($data['encode_mode']) ? $data['encode_mode'] : null;
+        $this->container['eci_encoding'] = isset($data['eci_encoding']) ? $data['eci_encoding'] : null;
+        $this->container['is_reader_initialization'] = isset($data['is_reader_initialization']) ? $data['is_reader_initialization'] : null;
+        $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
     }
 
     /*
@@ -240,25 +264,121 @@ class DotCodeParams implements ArrayAccess
     }
 
     /*
-     * Gets dot_code_mask
+     * Gets columns
      *
      * @return int
      */
-    public function getDotCodeMask()
+    public function getColumns()
     {
-        return $this->container['dot_code_mask'];
+        return $this->container['columns'];
     }
 
     /*
-     * Sets dot_code_mask
+     * Sets columns
      *
-     * @param int $dot_code_mask DEPRECATED: DotCodeMask is now calculated automatically
+     * @param int $columns Identifies columns count. Sum of the number of rows plus the number of columns of a DotCode symbol must be odd. Number of columns must be at least 5.
      *
      * @return $this
      */
-    public function setDotCodeMask($dot_code_mask)
+    public function setColumns($columns)
     {
-        $this->container['dot_code_mask'] = $dot_code_mask;
+        $this->container['columns'] = $columns;
+
+        return $this;
+    }
+
+    /*
+     * Gets encode_mode
+     *
+     * @return \Aspose\BarCode\Model\DotCodeEncodeMode
+     */
+    public function getEncodeMode()
+    {
+        return $this->container['encode_mode'];
+    }
+
+    /*
+     * Sets encode_mode
+     *
+     * @param \Aspose\BarCode\Model\DotCodeEncodeMode $encode_mode Identifies DotCode encode mode. Default value: Auto.
+     *
+     * @return $this
+     */
+    public function setEncodeMode($encode_mode)
+    {
+        $this->container['encode_mode'] = $encode_mode;
+
+        return $this;
+    }
+
+    /*
+     * Gets eci_encoding
+     *
+     * @return \Aspose\BarCode\Model\ECIEncodings
+     */
+    public function getEciEncoding()
+    {
+        return $this->container['eci_encoding'];
+    }
+
+    /*
+     * Sets eci_encoding
+     *
+     * @param \Aspose\BarCode\Model\ECIEncodings $eci_encoding Identifies ECI encoding. Used when DotCodeEncodeMode is Auto. Default value: ISO-8859-1.
+     *
+     * @return $this
+     */
+    public function setEciEncoding($eci_encoding)
+    {
+        $this->container['eci_encoding'] = $eci_encoding;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_reader_initialization
+     *
+     * @return bool
+     */
+    public function getIsReaderInitialization()
+    {
+        return $this->container['is_reader_initialization'];
+    }
+
+    /*
+     * Sets is_reader_initialization
+     *
+     * @param bool $is_reader_initialization Indicates whether code is used for instruct reader to interpret the following data as instructions for initialization or reprogramming of the bar code reader. Default value is false.
+     *
+     * @return $this
+     */
+    public function setIsReaderInitialization($is_reader_initialization)
+    {
+        $this->container['is_reader_initialization'] = $is_reader_initialization;
+
+        return $this;
+    }
+
+    /*
+     * Gets rows
+     *
+     * @return int
+     */
+    public function getRows()
+    {
+        return $this->container['rows'];
+    }
+
+    /*
+     * Sets rows
+     *
+     * @param int $rows Identifies rows count. Sum of the number of rows plus the number of columns of a DotCode symbol must be odd. Number of rows must be at least 5.
+     *
+     * @return $this
+     */
+    public function setRows($rows)
+    {
+        $this->container['rows'] = $rows;
 
         return $this;
     }

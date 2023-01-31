@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 22.12.0
+- Package version: 23.1.0
 - Supported PHP versions: ">=7.3 || >=8.0"
 
 ## Demo applications
@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
 - [DataMatrixParams](docs/Model/DataMatrixParams.md)
 - [DecodeBarcodeType](docs/Model/DecodeBarcodeType.md)
 - [DiscUsage](docs/Model/DiscUsage.md)
+- [DotCodeEncodeMode](docs/Model/DotCodeEncodeMode.md)
 - [DotCodeParams](docs/Model/DotCodeParams.md)
 - [ECIEncodings](docs/Model/ECIEncodings.md)
 - [EnableChecksum](docs/Model/EnableChecksum.md)
@@ -156,6 +157,7 @@ Class | Method | HTTP request | Description
 - [ITF14BorderType](docs/Model/ITF14BorderType.md)
 - [ITFParams](docs/Model/ITFParams.md)
 - [MacroCharacter](docs/Model/MacroCharacter.md)
+- [MaxiCodeEncodeMode](docs/Model/MaxiCodeEncodeMode.md)
 - [MaxiCodeMode](docs/Model/MaxiCodeMode.md)
 - [MaxiCodeParams](docs/Model/MaxiCodeParams.md)
 - [ObjectExist](docs/Model/ObjectExist.md)

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EncodeBarcodeType.php">
- *   Copyright (c) 2022 Aspose Pty Ltd
+ *   Copyright (c) 2023 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -380,4 +380,9 @@ class EncodeBarcodeType
     /// Enum value Mailmark
     /// </summary>
     public const Mailmark =  "Mailmark";
+
+    /// <summary>
+    /// Enum value GS1DotCode
+    /// </summary>
+    public const GS1DotCode =  "GS1DotCode";
 }
