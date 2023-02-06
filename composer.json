@@ -139,7 +139,7 @@
     }
   },
   "scripts": {
-    "format": "php-cs-fixer fix index.php && php-cs-fixer fix src/Aspose/ && php-cs-fixer fix tests/",
-    "test": "phpunit --log-events-verbose-text=phpunit.log"
+    "format": "php-cs-fixer fix index.php src/Aspose/ tests/ --config=php-cs-fixer.conf",
+    "test": "phpunit"
   }
 }
