@@ -140,6 +140,6 @@
   },
   "scripts": {
     "format": "php-cs-fixer fix index.php && php-cs-fixer fix src/Aspose/ && php-cs-fixer fix tests/",
-    "test": "phpunit --testdox tests"
+    "test": "phpunit --log-events-verbose-text=phpunit.log"
   }
 }

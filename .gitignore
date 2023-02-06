@@ -5,3 +5,5 @@ Configuration*.json
 !Configuration.example.json
 
 /.php-cs-fixer.cache
+/.phpunit.cache
+phpunit.log

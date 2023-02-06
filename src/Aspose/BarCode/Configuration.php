@@ -34,6 +34,7 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode;
 
+use InvalidArgumentException;
 use JsonSerializable;
 
 /*
@@ -143,7 +144,6 @@ class Configuration implements JsonSerializable
     public function setClientId($clientId)
     {
         $this->clientId = $clientId;
-        return $this;
     }
 
     /*
@@ -165,7 +165,6 @@ class Configuration implements JsonSerializable
     public function setClientSecret($clientSecret)
     {
         $this->clientSecret = $clientSecret;
-        return $this;
     }
 
     /*
@@ -187,7 +186,6 @@ class Configuration implements JsonSerializable
     public function setAccessToken($accessToken)
     {
         $this->accessToken = $accessToken;
-        return $this;
     }
 
     /*
@@ -210,7 +208,6 @@ class Configuration implements JsonSerializable
     public function setHost($host)
     {
         $this->host = $host;
-        return $this;
     }
 
     /*
@@ -226,7 +223,6 @@ class Configuration implements JsonSerializable
     public function setAuthUrl($authUrl)
     {
         $this->authUrl = $authUrl;
-        return $this;
     }
 
     public function getAuthUrl()
@@ -255,11 +251,10 @@ class Configuration implements JsonSerializable
     public function setUserAgent($userAgent)
     {
         if (!is_string($userAgent)) {
-            throw new \InvalidArgumentException('User-agent must be a string.');
+            throw new InvalidArgumentException('User-agent must be a string.');
         }
 
         $this->userAgent = $userAgent;
-        return $this;
     }
 
     /*
@@ -282,7 +277,6 @@ class Configuration implements JsonSerializable
     public function setDebug($debug)
     {
         $this->debug = $debug;
-        return $this;
     }
 
     /*
@@ -296,19 +290,6 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Sets the debug file
-     *
-     * @param string $debugFile Debug file
-     *
-     * @return $this
-     */
-    public function setDebugFile($debugFile)
-    {
-        $this->debugFile = $debugFile;
-        return $this;
-    }
-
-    /*
      * Gets the debug file
      *
      * @return string
@@ -319,24 +300,11 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Sets the temp folder path
-     *
-     * @param string $tempFolderPath Temp folder path
-     *
-     * @return $this
-     */
-    public function setTempFolderPath($tempFolderPath)
-    {
-        $this->tempFolderPath = $tempFolderPath;
-        return $this;
-    }
-
-    /*
      * Gets the temp folder path
      *
      * @return string Temp folder path
      */
-    public function getTempFolderPath()
+    public function getTempFolderPath(): string
     {
         return $this->tempFolderPath;
     }
@@ -346,7 +314,7 @@ class Configuration implements JsonSerializable
      *
      * @return Configuration
      */
-    public static function getDefaultConfiguration()
+    public static function getDefaultConfiguration(): Configuration
     {
         if (self::$_defaultConfiguration === null) {
             self::$_defaultConfiguration = new Configuration();
@@ -356,38 +324,9 @@ class Configuration implements JsonSerializable
     }
 
     /*
-     * Sets the default configuration instance
-     *
-     * @param Configuration $config An instance of the Configuration Object
-     *
-     * @return void
-     */
-    public static function setDefaultConfiguration(Configuration $config)
-    {
-        self::$_defaultConfiguration = $config;
-    }
-
-    /*
-     * Gets the essential information for debugging
-     *
-     * @return string The report for debugging
-     */
-    public static function toDebugReport()
-    {
-        $report = 'PHP SDK (Aspose\BarCode) Debug Report:' . PHP_EOL;
-        $report .= '    OS: ' . php_uname() . PHP_EOL;
-        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 23.1.0' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
-
-        return $report;
-    }
-
-    /*
      * implements JsonSerializable
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'ClientId' => $this->clientId,
