@@ -16,7 +16,6 @@ test:
 .PHONY: init
 init:
 	composer install
-	composer global require friendsofphp/php-cs-fixer
 
 .PHONY: update
 update:
