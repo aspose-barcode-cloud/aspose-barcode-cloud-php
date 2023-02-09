@@ -38,14 +38,6 @@ class ObjectSerializer
             foreach ($data::swaggerTypes() as $property => $swaggerType) {
                 $getter = $data::getters()[$property];
                 $value = $data->$getter();
-                if ($value !== null
-                    && !in_array($swaggerType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)
-                    && method_exists($swaggerType, 'getAllowableEnumValues')
-                    && !in_array($value, $swaggerType::getAllowableEnumValues())
-                ) {
-                    $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
-                    throw new \InvalidArgumentException("Invalid value for enum '$swaggerType', must be one of: '$imploded'");
-                }
                 if ($value !== null) {
                     $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $swaggerType, $formats[$property]);
                 }
@@ -265,12 +257,6 @@ class ObjectSerializer
             fclose($file);
 
             return new \SplFileObject($filename, 'r');
-        } elseif (method_exists($class, 'getAllowableEnumValues')) {
-            if (!in_array($data, $class::getAllowableEnumValues())) {
-                $imploded = implode("', '", $class::getAllowableEnumValues());
-                throw new \InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
-            }
-            return $data;
         } else {
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
