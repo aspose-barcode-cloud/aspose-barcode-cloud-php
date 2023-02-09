@@ -289,11 +289,9 @@ class ObjectSerializer
                     continue;
                 }
 
-                $propertyValue = $data->{$key};
-                if (isset($propertyValue)) {
-                    $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
-                }
+                $instance->$propertySetter(self::deserialize($data->{$key}, $type, null));
             }
+
             return $instance;
         }
     }

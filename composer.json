@@ -131,7 +131,8 @@
   },
   "require-dev": {
     "phpunit/phpunit": ">=7.5.20",
-    "friendsofphp/php-cs-fixer": ">=2.16"
+    "friendsofphp/php-cs-fixer": ">=2.16",
+    "phpstan/phpstan": "^1.9"
   },
   "autoload": {
     "psr-4": {
@@ -140,6 +141,7 @@
   },
   "scripts": {
     "format": "php-cs-fixer fix index.php src/Aspose/ tests/ --config=php-cs-fixer.conf",
+    "lint": "phpstan analyse index.php src/ tests/ --level=1",
     "test": "phpunit"
   }
 }

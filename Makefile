@@ -1,9 +1,13 @@
 .PHONY: all
-all: format test
+all: format lint test
 
 .PHONY: format
 format:
 	composer format
+
+.PHONY: lint
+lint:
+	composer lint
 
 .PHONY: test
 test:
