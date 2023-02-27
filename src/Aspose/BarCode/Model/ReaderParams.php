@@ -633,7 +633,7 @@ class ReaderParams implements ArrayAccess
     /**
      * Sets timeout
      *
-     * @param int $timeout Timeout of recognition process.
+     * @param int $timeout Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to avoid timeout.
      *
      * @return $this
      */
@@ -1209,7 +1209,7 @@ class ReaderParams implements ArrayAccess
     /**
      * Sets ignore_ending_filling_patterns_for_c_table
      *
-     * @param bool $ignore_ending_filling_patterns_for_c_table The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".
+     * @param bool $ignore_ending_filling_patterns_for_c_table The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
      *
      * @return $this
      */

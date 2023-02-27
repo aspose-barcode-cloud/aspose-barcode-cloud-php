@@ -1303,7 +1303,7 @@ class BarcodeApi
     /*
      * Operation postBarcodeRecognizeFromUrlOrContent
      *
-     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
@@ -1325,7 +1325,7 @@ class BarcodeApi
     /*
      * Operation postBarcodeRecognizeFromUrlOrContentWithHttpInfo
      *
-     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
@@ -1390,7 +1390,7 @@ class BarcodeApi
     /*
      * Operation postBarcodeRecognizeFromUrlOrContentAsync
      *
-     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
@@ -1410,7 +1410,7 @@ class BarcodeApi
     /*
      * Operation postBarcodeRecognizeFromUrlOrContentAsyncWithHttpInfo
      *
-     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
