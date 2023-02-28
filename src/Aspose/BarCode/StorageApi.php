@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StorageApi.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -36,41 +36,44 @@ namespace Aspose\BarCode;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\BarCode\Requests;
+use InvalidArgumentException;
+use RuntimeException;
 
-/*
+/**
  * Aspose.BarCode for Cloud API.
  */
 
 class StorageApi
 {
-    /*
+    /**
      * Stores client instance
      * @var ClientInterface client for calling api
      */
     protected $client;
 
-    /*
+    /**
      * Stores configuration
      * @var Configuration configuration info
      */
     protected $config;
 
-    /*
+    /**
      * Stores header selector
      * HeaderSelector class for header selection
      */
     protected $headerSelector;
 
-    /*
-     * Initialize a new instance of WordsApi
-     * @param ClientInterface   $client client for calling api
-     * @param Configuration   $config configuration info
-     * @param HeaderSelector   $selector class for header selection
+    /**
+     * Initialize a new instance of Api
+     * @param ClientInterface|null $client client for calling api
+     * @param Configuration|null $config configuration info
+     * @param HeaderSelector|null $selector class for header selection
      */
     public function __construct(ClientInterface $client = null, Configuration $config = null, HeaderSelector $selector = null)
     {
@@ -79,7 +82,7 @@ class StorageApi
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
-    /*
+    /**
      * Gets the config
      * @return Configuration
      */
@@ -88,15 +91,15 @@ class StorageApi
         return $this->config;
     }
 
-    /*
+    /**
      * Operation getDiscUsage
      *
      * Get disc usage
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\DiscUsage
      */
     public function getDiscUsage(Requests\GetDiscUsageRequest $request)
@@ -110,15 +113,15 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation getDiscUsageWithHttpInfo
      *
      * Get disc usage
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\DiscUsage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDiscUsageWithHttpInfo(Requests\GetDiscUsageRequest $request)
@@ -175,14 +178,14 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation getDiscUsageAsync
      *
      * Get disc usage
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDiscUsageAsync(Requests\GetDiscUsageRequest $request)
@@ -195,14 +198,14 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Operation getDiscUsageAsyncWithHttpInfo
      *
      * Get disc usage
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDiscUsageAsyncWithHttpInfo(Requests\GetDiscUsageRequest $request)
@@ -253,12 +256,12 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getDiscUsage'
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function GetDiscUsageRequest(Requests\GetDiscUsageRequest $request)
@@ -331,15 +334,15 @@ class StorageApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getFileVersions
      *
      * Get file versions
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\FileVersions
      */
     public function getFileVersions(Requests\GetFileVersionsRequest $request)
@@ -353,15 +356,15 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation getFileVersionsWithHttpInfo
      *
      * Get file versions
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\FileVersions, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFileVersionsWithHttpInfo(Requests\GetFileVersionsRequest $request)
@@ -418,14 +421,14 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation getFileVersionsAsync
      *
      * Get file versions
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFileVersionsAsync(Requests\GetFileVersionsRequest $request)
@@ -438,14 +441,14 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Operation getFileVersionsAsyncWithHttpInfo
      *
      * Get file versions
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFileVersionsAsyncWithHttpInfo(Requests\GetFileVersionsRequest $request)
@@ -496,19 +499,19 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getFileVersions'
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function GetFileVersionsRequest(Requests\GetFileVersionsRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling getFileVersions');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling getFileVersions');
         }
 
         $resourcePath = '/barcode/storage/version/{path}';
@@ -584,15 +587,15 @@ class StorageApi
         return $req;
     }
 
-    /*
+    /**
      * Operation objectExists
      *
      * Check if file or folder exists
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\ObjectExist
      */
     public function objectExists(Requests\ObjectExistsRequest $request)
@@ -606,15 +609,15 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation objectExistsWithHttpInfo
      *
      * Check if file or folder exists
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\ObjectExist, HTTP status code, HTTP response headers (array of strings)
      */
     public function objectExistsWithHttpInfo(Requests\ObjectExistsRequest $request)
@@ -671,14 +674,14 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation objectExistsAsync
      *
      * Check if file or folder exists
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function objectExistsAsync(Requests\ObjectExistsRequest $request)
@@ -691,14 +694,14 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Operation objectExistsAsyncWithHttpInfo
      *
      * Check if file or folder exists
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function objectExistsAsyncWithHttpInfo(Requests\ObjectExistsRequest $request)
@@ -749,19 +752,19 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'objectExists'
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function ObjectExistsRequest(Requests\ObjectExistsRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling objectExists');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling objectExists');
         }
 
         $resourcePath = '/barcode/storage/exist/{path}';
@@ -847,15 +850,15 @@ class StorageApi
         return $req;
     }
 
-    /*
+    /**
      * Operation storageExists
      *
      * Check if storage exists
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\StorageExist
      */
     public function storageExists(Requests\StorageExistsRequest $request)
@@ -869,15 +872,15 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation storageExistsWithHttpInfo
      *
      * Check if storage exists
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\StorageExist, HTTP status code, HTTP response headers (array of strings)
      */
     public function storageExistsWithHttpInfo(Requests\StorageExistsRequest $request)
@@ -934,14 +937,14 @@ class StorageApi
         }
     }
 
-    /*
+    /**
      * Operation storageExistsAsync
      *
      * Check if storage exists
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function storageExistsAsync(Requests\StorageExistsRequest $request)
@@ -954,14 +957,14 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Operation storageExistsAsyncWithHttpInfo
      *
      * Check if storage exists
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function storageExistsAsyncWithHttpInfo(Requests\StorageExistsRequest $request)
@@ -1012,19 +1015,19 @@ class StorageApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'storageExists'
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function StorageExistsRequest(Requests\StorageExistsRequest $request)
     {
         // verify the required parameter 'storage_name' is set
         if (!isset($request->storage_name)) {
-            throw new \InvalidArgumentException('Missing the required parameter $storage_name when calling storageExists');
+            throw new InvalidArgumentException('Missing the required parameter $storage_name when calling storageExists');
         }
 
         $resourcePath = '/barcode/storage/{storageName}/exist';
@@ -1090,10 +1093,10 @@ class StorageApi
         return $req;
     }
 
-    /*
+    /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
+     * @throws RuntimeException on file opening failure
      * @return array of http client options
      */
     private function _createHttpClientOption()
@@ -1109,7 +1112,7 @@ class StorageApi
         return $options;
     }
 
-    /*
+    /**
      * Executes response logging
      */
     private function _writeResponseLog($statusCode, $headers, $body)
@@ -1118,7 +1121,7 @@ class StorageApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes request logging
      */
     private function _writeRequestLog($method, $url, $headers, $body)
@@ -1127,7 +1130,7 @@ class StorageApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes header and boy formatting
      */
     private function _writeHeadersAndBody($logInfo, $headers, $body)
@@ -1139,7 +1142,7 @@ class StorageApi
         return $logInfo .= 'Body: ' . $body . '\n';
     }
 
-    /*
+    /**
      * Executes url parsing
      */
     private function _parseURL($url, $queryParams)
@@ -1153,7 +1156,7 @@ class StorageApi
         return $urlPartToSign;
     }
 
-    /*
+    /**
      * Gets a request token from server
      */
     private function _requestToken()

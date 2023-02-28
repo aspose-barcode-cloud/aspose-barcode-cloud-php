@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ObjectExistsRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "objectExists" operation.
  */
 class ObjectExistsRequest
 {
-    /*
+    /**
      * Initializes a new instance of the ObjectExistsRequest class.
      *
      * @param string $path File or folder path e.g. '/file.ext' or '/folder'
@@ -53,17 +53,17 @@ class ObjectExistsRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * File or folder path e.g. '/file.ext' or '/folder'
      */
     public $path;
 
-    /*
+    /**
      * Storage name
      */
     public $storage_name;
 
-    /*
+    /**
      * File version ID
      */
     public $version_id;

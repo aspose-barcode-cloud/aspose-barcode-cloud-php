@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteFolderRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "deleteFolder" operation.
  */
 class DeleteFolderRequest
 {
-    /*
+    /**
      * Initializes a new instance of the DeleteFolderRequest class.
      *
      * @param string $path Folder path e.g. '/folder'
@@ -53,17 +53,17 @@ class DeleteFolderRequest
         $this->recursive = $recursive;
     }
 
-    /*
+    /**
      * Folder path e.g. '/folder'
      */
     public $path;
 
-    /*
+    /**
      * Storage name
      */
     public $storage_name;
 
-    /*
+    /**
      * Enable to delete folders, subfolders and files
      */
     public $recursive;

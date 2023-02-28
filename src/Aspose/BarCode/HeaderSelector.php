@@ -7,14 +7,9 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode;
 
-use Exception;
-
-/*
- * ApiException Class Doc Comment
- */
 class HeaderSelector
 {
-    /*
+    /**
      * Selects headers for request
      * @param string[] $accept type of header
      * @param string[] $contentTypes types of content
@@ -33,7 +28,7 @@ class HeaderSelector
         return $headers;
     }
 
-    /*
+    /**
      * Selects headers for multipart form
      * @param string[] $accept type of header
      * @return array
@@ -46,12 +41,12 @@ class HeaderSelector
         return $headers;
     }
 
-    /*
+    /**
      * Return the header 'Accept' based on an array of Accept provided
      *
      * @param string[] $accept Array of header
      *
-     * @return string Accept (e.g. application/json)
+     * @return string|null Accept (e.g. application/json)
      */
     private function _selectAcceptHeader($accept)
     {
@@ -64,7 +59,7 @@ class HeaderSelector
         }
     }
 
-    /*
+    /**
      * Return the content type based on an array of content-type provided
      *
      * @param string[] $contentType Array fo content-type

@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutBarcodeRecognizeFromBodyRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "putBarcodeRecognizeFromBody" operation.
  */
 class PutBarcodeRecognizeFromBodyRequest
 {
-    /*
+    /**
      * Initializes a new instance of the PutBarcodeRecognizeFromBodyRequest class.
      *
      * @param string $name The image file name.
@@ -57,27 +57,27 @@ class PutBarcodeRecognizeFromBodyRequest
         $this->folder = $folder;
     }
 
-    /*
+    /**
      * The image file name.
      */
     public $name;
 
-    /*
+    /**
      * BarcodeReader object with parameters.
      */
     public $reader_params;
 
-    /*
+    /**
      * Gets or sets type
      */
     public $type;
 
-    /*
+    /**
      * The storage name
      */
     public $storage;
 
-    /*
+    /**
      * The image folder.
      */
     public $folder;

@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FilesList.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -37,7 +37,7 @@ namespace Aspose\BarCode\Model;
 use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
-/*
+/**
  * FilesList
  *
  * @description Files list

@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BarcodeApi.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -36,41 +36,44 @@ namespace Aspose\BarCode;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\BarCode\Requests;
+use InvalidArgumentException;
+use RuntimeException;
 
-/*
+/**
  * Aspose.BarCode for Cloud API.
  */
 
 class BarcodeApi
 {
-    /*
+    /**
      * Stores client instance
      * @var ClientInterface client for calling api
      */
     protected $client;
 
-    /*
+    /**
      * Stores configuration
      * @var Configuration configuration info
      */
     protected $config;
 
-    /*
+    /**
      * Stores header selector
      * HeaderSelector class for header selection
      */
     protected $headerSelector;
 
-    /*
-     * Initialize a new instance of WordsApi
-     * @param ClientInterface   $client client for calling api
-     * @param Configuration   $config configuration info
-     * @param HeaderSelector   $selector class for header selection
+    /**
+     * Initialize a new instance of Api
+     * @param ClientInterface|null $client client for calling api
+     * @param Configuration|null $config configuration info
+     * @param HeaderSelector|null $selector class for header selection
      */
     public function __construct(ClientInterface $client = null, Configuration $config = null, HeaderSelector $selector = null)
     {
@@ -79,7 +82,7 @@ class BarcodeApi
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
-    /*
+    /**
      * Gets the config
      * @return Configuration
      */
@@ -88,15 +91,15 @@ class BarcodeApi
         return $this->config;
     }
 
-    /*
+    /**
      * Operation getBarcodeGenerate
      *
      * Generate barcode.
      *
      * @param Requests\GetBarcodeGenerateRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \SplFileObject
      */
     public function getBarcodeGenerate(Requests\GetBarcodeGenerateRequest $request)
@@ -110,15 +113,15 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation getBarcodeGenerateWithHttpInfo
      *
      * Generate barcode.
      *
      * @param Requests\GetBarcodeGenerateRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBarcodeGenerateWithHttpInfo(Requests\GetBarcodeGenerateRequest $request)
@@ -179,14 +182,14 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation getBarcodeGenerateAsync
      *
      * Generate barcode.
      *
      * @param Requests\GetBarcodeGenerateRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBarcodeGenerateAsync(Requests\GetBarcodeGenerateRequest $request)
@@ -199,14 +202,14 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Operation getBarcodeGenerateAsyncWithHttpInfo
      *
      * Generate barcode.
      *
      * @param Requests\GetBarcodeGenerateRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBarcodeGenerateAsyncWithHttpInfo(Requests\GetBarcodeGenerateRequest $request)
@@ -257,23 +260,23 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getBarcodeGenerate'
      *
      * @param Requests\GetBarcodeGenerateRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function GetBarcodeGenerateRequest(Requests\GetBarcodeGenerateRequest $request)
     {
         // verify the required parameter 'type' is set
         if (!isset($request->type)) {
-            throw new \InvalidArgumentException('Missing the required parameter $type when calling getBarcodeGenerate');
+            throw new InvalidArgumentException('Missing the required parameter $type when calling getBarcodeGenerate');
         }
         // verify the required parameter 'text' is set
         if (!isset($request->text)) {
-            throw new \InvalidArgumentException('Missing the required parameter $text when calling getBarcodeGenerate');
+            throw new InvalidArgumentException('Missing the required parameter $text when calling getBarcodeGenerate');
         }
 
         $resourcePath = '/barcode/generate';
@@ -684,15 +687,15 @@ class BarcodeApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getBarcodeRecognize
      *
      * Recognize barcode from a file on server.
      *
      * @param Requests\GetBarcodeRecognizeRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\BarcodeResponseList
      */
     public function getBarcodeRecognize(Requests\GetBarcodeRecognizeRequest $request)
@@ -706,15 +709,15 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation getBarcodeRecognizeWithHttpInfo
      *
      * Recognize barcode from a file on server.
      *
      * @param Requests\GetBarcodeRecognizeRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\BarcodeResponseList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBarcodeRecognizeWithHttpInfo(Requests\GetBarcodeRecognizeRequest $request)
@@ -771,14 +774,14 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation getBarcodeRecognizeAsync
      *
      * Recognize barcode from a file on server.
      *
      * @param Requests\GetBarcodeRecognizeRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBarcodeRecognizeAsync(Requests\GetBarcodeRecognizeRequest $request)
@@ -791,14 +794,14 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Operation getBarcodeRecognizeAsyncWithHttpInfo
      *
      * Recognize barcode from a file on server.
      *
      * @param Requests\GetBarcodeRecognizeRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBarcodeRecognizeAsyncWithHttpInfo(Requests\GetBarcodeRecognizeRequest $request)
@@ -849,19 +852,19 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getBarcodeRecognize'
      *
      * @param Requests\GetBarcodeRecognizeRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function GetBarcodeRecognizeRequest(Requests\GetBarcodeRecognizeRequest $request)
     {
         // verify the required parameter 'name' is set
         if (!isset($request->name)) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling getBarcodeRecognize');
+            throw new InvalidArgumentException('Missing the required parameter $name when calling getBarcodeRecognize');
         }
 
         $resourcePath = '/barcode/{name}/recognize';
@@ -1300,15 +1303,15 @@ class BarcodeApi
         return $req;
     }
 
-    /*
+    /**
      * Operation postBarcodeRecognizeFromUrlOrContent
      *
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\BarcodeResponseList
      */
     public function postBarcodeRecognizeFromUrlOrContent(Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request)
@@ -1322,15 +1325,15 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation postBarcodeRecognizeFromUrlOrContentWithHttpInfo
      *
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\BarcodeResponseList, HTTP status code, HTTP response headers (array of strings)
      */
     public function postBarcodeRecognizeFromUrlOrContentWithHttpInfo(Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request)
@@ -1387,14 +1390,14 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation postBarcodeRecognizeFromUrlOrContentAsync
      *
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postBarcodeRecognizeFromUrlOrContentAsync(Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request)
@@ -1407,14 +1410,14 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Operation postBarcodeRecognizeFromUrlOrContentAsyncWithHttpInfo
      *
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postBarcodeRecognizeFromUrlOrContentAsyncWithHttpInfo(Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request)
@@ -1465,12 +1468,12 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'postBarcodeRecognizeFromUrlOrContent'
      *
      * @param Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function PostBarcodeRecognizeFromUrlOrContentRequest(Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request)
@@ -1920,15 +1923,15 @@ class BarcodeApi
         return $req;
     }
 
-    /*
+    /**
      * Operation postGenerateMultiple
      *
      * Generate multiple barcodes and return in response stream
      *
      * @param Requests\PostGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \SplFileObject
      */
     public function postGenerateMultiple(Requests\PostGenerateMultipleRequest $request)
@@ -1942,15 +1945,15 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation postGenerateMultipleWithHttpInfo
      *
      * Generate multiple barcodes and return in response stream
      *
      * @param Requests\PostGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function postGenerateMultipleWithHttpInfo(Requests\PostGenerateMultipleRequest $request)
@@ -2007,14 +2010,14 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation postGenerateMultipleAsync
      *
      * Generate multiple barcodes and return in response stream
      *
      * @param Requests\PostGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postGenerateMultipleAsync(Requests\PostGenerateMultipleRequest $request)
@@ -2027,14 +2030,14 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Operation postGenerateMultipleAsyncWithHttpInfo
      *
      * Generate multiple barcodes and return in response stream
      *
      * @param Requests\PostGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postGenerateMultipleAsyncWithHttpInfo(Requests\PostGenerateMultipleRequest $request)
@@ -2085,19 +2088,19 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'postGenerateMultiple'
      *
      * @param Requests\PostGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function PostGenerateMultipleRequest(Requests\PostGenerateMultipleRequest $request)
     {
         // verify the required parameter 'generator_params_list' is set
         if (!isset($request->generator_params_list)) {
-            throw new \InvalidArgumentException('Missing the required parameter $generator_params_list when calling postGenerateMultiple');
+            throw new InvalidArgumentException('Missing the required parameter $generator_params_list when calling postGenerateMultiple');
         }
 
         $resourcePath = '/barcode/generateMultiple';
@@ -2181,15 +2184,15 @@ class BarcodeApi
         return $req;
     }
 
-    /*
+    /**
      * Operation putBarcodeGenerateFile
      *
      * Generate barcode and save on server (from query params or from file with json or xml content)
      *
      * @param Requests\PutBarcodeGenerateFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\ResultImageInfo
      */
     public function putBarcodeGenerateFile(Requests\PutBarcodeGenerateFileRequest $request)
@@ -2203,15 +2206,15 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation putBarcodeGenerateFileWithHttpInfo
      *
      * Generate barcode and save on server (from query params or from file with json or xml content)
      *
      * @param Requests\PutBarcodeGenerateFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\ResultImageInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function putBarcodeGenerateFileWithHttpInfo(Requests\PutBarcodeGenerateFileRequest $request)
@@ -2272,14 +2275,14 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation putBarcodeGenerateFileAsync
      *
      * Generate barcode and save on server (from query params or from file with json or xml content)
      *
      * @param Requests\PutBarcodeGenerateFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putBarcodeGenerateFileAsync(Requests\PutBarcodeGenerateFileRequest $request)
@@ -2292,14 +2295,14 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Operation putBarcodeGenerateFileAsyncWithHttpInfo
      *
      * Generate barcode and save on server (from query params or from file with json or xml content)
      *
      * @param Requests\PutBarcodeGenerateFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putBarcodeGenerateFileAsyncWithHttpInfo(Requests\PutBarcodeGenerateFileRequest $request)
@@ -2350,27 +2353,27 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'putBarcodeGenerateFile'
      *
      * @param Requests\PutBarcodeGenerateFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function PutBarcodeGenerateFileRequest(Requests\PutBarcodeGenerateFileRequest $request)
     {
         // verify the required parameter 'name' is set
         if (!isset($request->name)) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling putBarcodeGenerateFile');
+            throw new InvalidArgumentException('Missing the required parameter $name when calling putBarcodeGenerateFile');
         }
         // verify the required parameter 'type' is set
         if (!isset($request->type)) {
-            throw new \InvalidArgumentException('Missing the required parameter $type when calling putBarcodeGenerateFile');
+            throw new InvalidArgumentException('Missing the required parameter $type when calling putBarcodeGenerateFile');
         }
         // verify the required parameter 'text' is set
         if (!isset($request->text)) {
-            throw new \InvalidArgumentException('Missing the required parameter $text when calling putBarcodeGenerateFile');
+            throw new InvalidArgumentException('Missing the required parameter $text when calling putBarcodeGenerateFile');
         }
 
         $resourcePath = '/barcode/{name}/generate';
@@ -2806,15 +2809,15 @@ class BarcodeApi
         return $req;
     }
 
-    /*
+    /**
      * Operation putBarcodeRecognizeFromBody
      *
      * Recognition of a barcode from file on server with parameters in body.
      *
      * @param Requests\PutBarcodeRecognizeFromBodyRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\BarcodeResponseList
      */
     public function putBarcodeRecognizeFromBody(Requests\PutBarcodeRecognizeFromBodyRequest $request)
@@ -2828,15 +2831,15 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation putBarcodeRecognizeFromBodyWithHttpInfo
      *
      * Recognition of a barcode from file on server with parameters in body.
      *
      * @param Requests\PutBarcodeRecognizeFromBodyRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\BarcodeResponseList, HTTP status code, HTTP response headers (array of strings)
      */
     public function putBarcodeRecognizeFromBodyWithHttpInfo(Requests\PutBarcodeRecognizeFromBodyRequest $request)
@@ -2893,14 +2896,14 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation putBarcodeRecognizeFromBodyAsync
      *
      * Recognition of a barcode from file on server with parameters in body.
      *
      * @param Requests\PutBarcodeRecognizeFromBodyRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putBarcodeRecognizeFromBodyAsync(Requests\PutBarcodeRecognizeFromBodyRequest $request)
@@ -2913,14 +2916,14 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Operation putBarcodeRecognizeFromBodyAsyncWithHttpInfo
      *
      * Recognition of a barcode from file on server with parameters in body.
      *
      * @param Requests\PutBarcodeRecognizeFromBodyRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putBarcodeRecognizeFromBodyAsyncWithHttpInfo(Requests\PutBarcodeRecognizeFromBodyRequest $request)
@@ -2971,23 +2974,23 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'putBarcodeRecognizeFromBody'
      *
      * @param Requests\PutBarcodeRecognizeFromBodyRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function PutBarcodeRecognizeFromBodyRequest(Requests\PutBarcodeRecognizeFromBodyRequest $request)
     {
         // verify the required parameter 'name' is set
         if (!isset($request->name)) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling putBarcodeRecognizeFromBody');
+            throw new InvalidArgumentException('Missing the required parameter $name when calling putBarcodeRecognizeFromBody');
         }
         // verify the required parameter 'reader_params' is set
         if (!isset($request->reader_params)) {
-            throw new \InvalidArgumentException('Missing the required parameter $reader_params when calling putBarcodeRecognizeFromBody');
+            throw new InvalidArgumentException('Missing the required parameter $reader_params when calling putBarcodeRecognizeFromBody');
         }
 
         $resourcePath = '/barcode/{name}/recognize';
@@ -3096,15 +3099,15 @@ class BarcodeApi
         return $req;
     }
 
-    /*
+    /**
      * Operation putGenerateMultiple
      *
      * Generate image with multiple barcodes and put new file on server
      *
      * @param Requests\PutGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\ResultImageInfo
      */
     public function putGenerateMultiple(Requests\PutGenerateMultipleRequest $request)
@@ -3118,15 +3121,15 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation putGenerateMultipleWithHttpInfo
      *
      * Generate image with multiple barcodes and put new file on server
      *
      * @param Requests\PutGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\ResultImageInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function putGenerateMultipleWithHttpInfo(Requests\PutGenerateMultipleRequest $request)
@@ -3187,14 +3190,14 @@ class BarcodeApi
         }
     }
 
-    /*
+    /**
      * Operation putGenerateMultipleAsync
      *
      * Generate image with multiple barcodes and put new file on server
      *
      * @param Requests\PutGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putGenerateMultipleAsync(Requests\PutGenerateMultipleRequest $request)
@@ -3207,14 +3210,14 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Operation putGenerateMultipleAsyncWithHttpInfo
      *
      * Generate image with multiple barcodes and put new file on server
      *
      * @param Requests\PutGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putGenerateMultipleAsyncWithHttpInfo(Requests\PutGenerateMultipleRequest $request)
@@ -3265,23 +3268,23 @@ class BarcodeApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'putGenerateMultiple'
      *
      * @param Requests\PutGenerateMultipleRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function PutGenerateMultipleRequest(Requests\PutGenerateMultipleRequest $request)
     {
         // verify the required parameter 'name' is set
         if (!isset($request->name)) {
-            throw new \InvalidArgumentException('Missing the required parameter $name when calling putGenerateMultiple');
+            throw new InvalidArgumentException('Missing the required parameter $name when calling putGenerateMultiple');
         }
         // verify the required parameter 'generator_params_list' is set
         if (!isset($request->generator_params_list)) {
-            throw new \InvalidArgumentException('Missing the required parameter $generator_params_list when calling putGenerateMultiple');
+            throw new InvalidArgumentException('Missing the required parameter $generator_params_list when calling putGenerateMultiple');
         }
 
         $resourcePath = '/barcode/{name}/generateMultiple';
@@ -3390,10 +3393,10 @@ class BarcodeApi
         return $req;
     }
 
-    /*
+    /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
+     * @throws RuntimeException on file opening failure
      * @return array of http client options
      */
     private function _createHttpClientOption()
@@ -3409,7 +3412,7 @@ class BarcodeApi
         return $options;
     }
 
-    /*
+    /**
      * Executes response logging
      */
     private function _writeResponseLog($statusCode, $headers, $body)
@@ -3418,7 +3421,7 @@ class BarcodeApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes request logging
      */
     private function _writeRequestLog($method, $url, $headers, $body)
@@ -3427,7 +3430,7 @@ class BarcodeApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes header and boy formatting
      */
     private function _writeHeadersAndBody($logInfo, $headers, $body)
@@ -3439,7 +3442,7 @@ class BarcodeApi
         return $logInfo .= 'Body: ' . $body . '\n';
     }
 
-    /*
+    /**
      * Executes url parsing
      */
     private function _parseURL($url, $queryParams)
@@ -3453,7 +3456,7 @@ class BarcodeApi
         return $urlPartToSign;
     }
 
-    /*
+    /**
      * Gets a request token from server
      */
     private function _requestToken()

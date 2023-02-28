@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AutoSizeMode.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -36,7 +36,7 @@ namespace Aspose\BarCode\Model;
 
 use Aspose\BarCode\ObjectSerializer;
 
-/*
+/**
  * AutoSizeMode
  *
  * @description

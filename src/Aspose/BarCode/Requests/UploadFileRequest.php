@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="UploadFileRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "uploadFile" operation.
  */
 class UploadFileRequest
 {
-    /*
+    /**
      * Initializes a new instance of the UploadFileRequest class.
      *
      * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
@@ -53,17 +53,17 @@ class UploadFileRequest
         $this->storage_name = $storage_name;
     }
 
-    /*
+    /**
      * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
      */
     public $path;
 
-    /*
+    /**
      * File to upload
      */
     public $file;
 
-    /*
+    /**
      * Storage name
      */
     public $storage_name;

@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostGenerateMultipleRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "postGenerateMultiple" operation.
  */
 class PostGenerateMultipleRequest
 {
-    /*
+    /**
      * Initializes a new instance of the PostGenerateMultipleRequest class.
      *
      * @param \Aspose\BarCode\Model\GeneratorParamsList $generator_params_list List of barcodes
@@ -51,12 +51,12 @@ class PostGenerateMultipleRequest
         $this->format = $format;
     }
 
-    /*
+    /**
      * List of barcodes
      */
     public $generator_params_list;
 
-    /*
+    /**
      * Format to return stream in
      */
     public $format;
