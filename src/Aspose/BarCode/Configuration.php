@@ -284,8 +284,7 @@ class Configuration implements JsonSerializable
 
     /**
      * implements JsonSerializable
-     *
-     * @return array object
+     * @return array
      */
     public function jsonSerialize(): array
     {

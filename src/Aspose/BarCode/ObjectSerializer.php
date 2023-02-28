@@ -57,7 +57,7 @@ class ObjectSerializer
      *
      * @return string the sanitized filename
      */
-    public static function sanitizeFilename(string $filename): string
+    public static function sanitizeFilename(string $filename)
     {
         if (preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
             return $match[1];
@@ -74,7 +74,7 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toPathValue(string $value): string
+    public static function toPathValue(string $value)
     {
         return self::toString($value);
     }
@@ -144,7 +144,7 @@ class ObjectSerializer
      *
      * @return string
      */
-    public static function serializeCollection(array $collection, string $collectionFormat, bool $allowCollectionFormatMulti = false): string
+    public static function serializeCollection(array $collection, string $collectionFormat, bool $allowCollectionFormatMulti = false)
     {
         if ($allowCollectionFormatMulti && ('multi' === $collectionFormat)) {
             // http_build_query() almost does the job for us. We just
