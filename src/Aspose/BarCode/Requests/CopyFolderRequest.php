@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CopyFolderRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "copyFolder" operation.
  */
 class CopyFolderRequest
 {
-    /*
+    /**
      * Initializes a new instance of the CopyFolderRequest class.
      *
      * @param string $src_path Source folder path e.g. '/src'
@@ -55,22 +55,22 @@ class CopyFolderRequest
         $this->dest_storage_name = $dest_storage_name;
     }
 
-    /*
+    /**
      * Source folder path e.g. '/src'
      */
     public $src_path;
 
-    /*
+    /**
      * Destination folder path e.g. '/dst'
      */
     public $dest_path;
 
-    /*
+    /**
      * Source storage name
      */
     public $src_storage_name;
 
-    /*
+    /**
      * Destination storage name
      */
     public $dest_storage_name;

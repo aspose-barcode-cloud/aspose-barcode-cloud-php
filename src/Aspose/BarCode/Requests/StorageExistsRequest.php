@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StorageExistsRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "storageExists" operation.
  */
 class StorageExistsRequest
 {
-    /*
+    /**
      * Initializes a new instance of the StorageExistsRequest class.
      *
      * @param string $storage_name Storage name
@@ -49,7 +49,7 @@ class StorageExistsRequest
         $this->storage_name = $storage_name;
     }
 
-    /*
+    /**
      * Storage name
      */
     public $storage_name;

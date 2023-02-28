@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CopyFileRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "copyFile" operation.
  */
 class CopyFileRequest
 {
-    /*
+    /**
      * Initializes a new instance of the CopyFileRequest class.
      *
      * @param string $src_path Source file path e.g. '/folder/file.ext'
@@ -57,27 +57,27 @@ class CopyFileRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * Source file path e.g. '/folder/file.ext'
      */
     public $src_path;
 
-    /*
+    /**
      * Destination file path
      */
     public $dest_path;
 
-    /*
+    /**
      * Source storage name
      */
     public $src_storage_name;
 
-    /*
+    /**
      * Destination storage name
      */
     public $dest_storage_name;
 
-    /*
+    /**
      * File version ID to copy
      */
     public $version_id;

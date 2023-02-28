@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DownloadFileRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "downloadFile" operation.
  */
 class DownloadFileRequest
 {
-    /*
+    /**
      * Initializes a new instance of the DownloadFileRequest class.
      *
      * @param string $path File path e.g. '/folder/file.ext'
@@ -53,17 +53,17 @@ class DownloadFileRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * File path e.g. '/folder/file.ext'
      */
     public $path;
 
-    /*
+    /**
      * Storage name
      */
     public $storage_name;
 
-    /*
+    /**
      * File version ID to download
      */
     public $version_id;

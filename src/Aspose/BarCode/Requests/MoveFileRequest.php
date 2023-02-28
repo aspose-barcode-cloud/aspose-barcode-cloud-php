@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MoveFileRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "moveFile" operation.
  */
 class MoveFileRequest
 {
-    /*
+    /**
      * Initializes a new instance of the MoveFileRequest class.
      *
      * @param string $src_path Source file path e.g. '/src.ext'
@@ -57,27 +57,27 @@ class MoveFileRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * Source file path e.g. '/src.ext'
      */
     public $src_path;
 
-    /*
+    /**
      * Destination file path e.g. '/dest.ext'
      */
     public $dest_path;
 
-    /*
+    /**
      * Source storage name
      */
     public $src_storage_name;
 
-    /*
+    /**
      * Destination storage name
      */
     public $dest_storage_name;
 
-    /*
+    /**
      * File version ID to move
      */
     public $version_id;

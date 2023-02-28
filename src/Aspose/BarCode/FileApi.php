@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FileApi.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -36,41 +36,44 @@ namespace Aspose\BarCode;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\BarCode\Requests;
+use InvalidArgumentException;
+use RuntimeException;
 
-/*
+/**
  * Aspose.BarCode for Cloud API.
  */
 
 class FileApi
 {
-    /*
+    /**
      * Stores client instance
      * @var ClientInterface client for calling api
      */
     protected $client;
 
-    /*
+    /**
      * Stores configuration
      * @var Configuration configuration info
      */
     protected $config;
 
-    /*
+    /**
      * Stores header selector
      * HeaderSelector class for header selection
      */
     protected $headerSelector;
 
-    /*
-     * Initialize a new instance of WordsApi
-     * @param ClientInterface   $client client for calling api
-     * @param Configuration   $config configuration info
-     * @param HeaderSelector   $selector class for header selection
+    /**
+     * Initialize a new instance of Api
+     * @param ClientInterface|null $client client for calling api
+     * @param Configuration|null $config configuration info
+     * @param HeaderSelector|null $selector class for header selection
      */
     public function __construct(ClientInterface $client = null, Configuration $config = null, HeaderSelector $selector = null)
     {
@@ -79,7 +82,7 @@ class FileApi
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
-    /*
+    /**
      * Gets the config
      * @return Configuration
      */
@@ -88,15 +91,15 @@ class FileApi
         return $this->config;
     }
 
-    /*
+    /**
      * Operation copyFile
      *
      * Copy file
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return void
      */
     public function copyFile(Requests\CopyFileRequest $request)
@@ -108,15 +111,15 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation copyFileWithHttpInfo
      *
      * Copy file
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function copyFileWithHttpInfo(Requests\CopyFileRequest $request)
@@ -151,14 +154,14 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation copyFileAsync
      *
      * Copy file
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function copyFileAsync(Requests\CopyFileRequest $request)
@@ -171,14 +174,14 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Operation copyFileAsyncWithHttpInfo
      *
      * Copy file
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function copyFileAsyncWithHttpInfo(Requests\CopyFileRequest $request)
@@ -189,7 +192,7 @@ class FileApi
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -211,23 +214,23 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'copyFile'
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function CopyFileRequest(Requests\CopyFileRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $src_path when calling copyFile');
+            throw new InvalidArgumentException('Missing the required parameter $src_path when calling copyFile');
         }
         // verify the required parameter 'dest_path' is set
         if (!isset($request->dest_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $dest_path when calling copyFile');
+            throw new InvalidArgumentException('Missing the required parameter $dest_path when calling copyFile');
         }
 
         $resourcePath = '/barcode/storage/file/copy/{srcPath}';
@@ -301,29 +304,6 @@ class FileApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -356,15 +336,15 @@ class FileApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteFile
      *
      * Delete file
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return void
      */
     public function deleteFile(Requests\DeleteFileRequest $request)
@@ -376,15 +356,15 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation deleteFileWithHttpInfo
      *
      * Delete file
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteFileWithHttpInfo(Requests\DeleteFileRequest $request)
@@ -419,14 +399,14 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation deleteFileAsync
      *
      * Delete file
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFileAsync(Requests\DeleteFileRequest $request)
@@ -439,14 +419,14 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Operation deleteFileAsyncWithHttpInfo
      *
      * Delete file
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFileAsyncWithHttpInfo(Requests\DeleteFileRequest $request)
@@ -457,7 +437,7 @@ class FileApi
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -479,19 +459,19 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteFile'
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function DeleteFileRequest(Requests\DeleteFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling deleteFile');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling deleteFile');
         }
 
         $resourcePath = '/barcode/storage/file/{path}';
@@ -545,29 +525,6 @@ class FileApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -600,15 +557,15 @@ class FileApi
         return $req;
     }
 
-    /*
+    /**
      * Operation downloadFile
      *
      * Download file
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \SplFileObject
      */
     public function downloadFile(Requests\DownloadFileRequest $request)
@@ -622,15 +579,15 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation downloadFileWithHttpInfo
      *
      * Download file
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadFileWithHttpInfo(Requests\DownloadFileRequest $request)
@@ -687,14 +644,14 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation downloadFileAsync
      *
      * Download file
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function downloadFileAsync(Requests\DownloadFileRequest $request)
@@ -707,14 +664,14 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Operation downloadFileAsyncWithHttpInfo
      *
      * Download file
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function downloadFileAsyncWithHttpInfo(Requests\DownloadFileRequest $request)
@@ -765,19 +722,19 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'downloadFile'
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function DownloadFileRequest(Requests\DownloadFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling downloadFile');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling downloadFile');
         }
 
         $resourcePath = '/barcode/storage/file/{path}';
@@ -831,29 +788,6 @@ class FileApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -886,15 +820,15 @@ class FileApi
         return $req;
     }
 
-    /*
+    /**
      * Operation moveFile
      *
      * Move file
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return void
      */
     public function moveFile(Requests\MoveFileRequest $request)
@@ -906,15 +840,15 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation moveFileWithHttpInfo
      *
      * Move file
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function moveFileWithHttpInfo(Requests\MoveFileRequest $request)
@@ -949,14 +883,14 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation moveFileAsync
      *
      * Move file
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function moveFileAsync(Requests\MoveFileRequest $request)
@@ -969,14 +903,14 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Operation moveFileAsyncWithHttpInfo
      *
      * Move file
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function moveFileAsyncWithHttpInfo(Requests\MoveFileRequest $request)
@@ -987,7 +921,7 @@ class FileApi
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1009,23 +943,23 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'moveFile'
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function MoveFileRequest(Requests\MoveFileRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $src_path when calling moveFile');
+            throw new InvalidArgumentException('Missing the required parameter $src_path when calling moveFile');
         }
         // verify the required parameter 'dest_path' is set
         if (!isset($request->dest_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $dest_path when calling moveFile');
+            throw new InvalidArgumentException('Missing the required parameter $dest_path when calling moveFile');
         }
 
         $resourcePath = '/barcode/storage/file/move/{srcPath}';
@@ -1099,29 +1033,6 @@ class FileApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -1154,15 +1065,15 @@ class FileApi
         return $req;
     }
 
-    /*
+    /**
      * Operation uploadFile
      *
      * Upload file
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\FilesUploadResult
      */
     public function uploadFile(Requests\UploadFileRequest $request)
@@ -1176,15 +1087,15 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation uploadFileWithHttpInfo
      *
      * Upload file
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadFileWithHttpInfo(Requests\UploadFileRequest $request)
@@ -1241,14 +1152,14 @@ class FileApi
         }
     }
 
-    /*
+    /**
      * Operation uploadFileAsync
      *
      * Upload file
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadFileAsync(Requests\UploadFileRequest $request)
@@ -1261,14 +1172,14 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Operation uploadFileAsyncWithHttpInfo
      *
      * Upload file
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadFileAsyncWithHttpInfo(Requests\UploadFileRequest $request)
@@ -1319,23 +1230,23 @@ class FileApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'uploadFile'
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function UploadFileRequest(Requests\UploadFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling uploadFile');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling uploadFile');
         }
         // verify the required parameter 'file' is set
         if (!isset($request->file)) {
-            throw new \InvalidArgumentException('Missing the required parameter $file when calling uploadFile');
+            throw new InvalidArgumentException('Missing the required parameter $file when calling uploadFile');
         }
 
         $resourcePath = '/barcode/storage/file/{path}';
@@ -1365,14 +1276,12 @@ class FileApi
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // form params
-        if (isset($request->file)) {
-            $multipart = true;
-            $filename = ObjectSerializer::toFormValue($request->file);
-            $handle = fopen($filename, 'rb');
-            $fsize = filesize($filename);
-            $contents = fread($handle, $fsize);
-            $formParams['file'] = $contents;
-        }
+        $multipart = true;
+        $filename = ObjectSerializer::toFormValue($request->file);
+        $handle = fopen($filename, 'rb');
+        $fsize = filesize($filename);
+        $contents = fread($handle, $fsize);
+        $formParams['file'] = $contents;
         // body params
         $_tempBody = null;
 
@@ -1388,31 +1297,22 @@ class FileApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
+        if ($multipart) {
+            $multipartContents = [];
+            foreach ($formParams as $formParamName => $formParamValue) {
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue,
+                    'filename' => $filename
+                ];
             }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = $formParams['file'];
-            }
+            // for HTTP post (form)
+            $httpBody = new MultipartStream($multipartContents);
+        } elseif ($headers['Content-Type'] === 'application/json') {
+            $httpBody = \GuzzleHttp\json_encode($formParams);
+        } else {
+            // for HTTP post (form)
+            $httpBody = $formParams['file'];
         }
 
         if (!$this->config->getAccessToken()) {
@@ -1446,10 +1346,10 @@ class FileApi
         return $req;
     }
 
-    /*
+    /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
+     * @throws RuntimeException on file opening failure
      * @return array of http client options
      */
     private function _createHttpClientOption()
@@ -1465,7 +1365,7 @@ class FileApi
         return $options;
     }
 
-    /*
+    /**
      * Executes response logging
      */
     private function _writeResponseLog($statusCode, $headers, $body)
@@ -1474,7 +1374,7 @@ class FileApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes request logging
      */
     private function _writeRequestLog($method, $url, $headers, $body)
@@ -1483,7 +1383,7 @@ class FileApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes header and boy formatting
      */
     private function _writeHeadersAndBody($logInfo, $headers, $body)
@@ -1495,7 +1395,7 @@ class FileApi
         return $logInfo .= 'Body: ' . $body . '\n';
     }
 
-    /*
+    /**
      * Executes url parsing
      */
     private function _parseURL($url, $queryParams)
@@ -1509,7 +1409,7 @@ class FileApi
         return $urlPartToSign;
     }
 
-    /*
+    /**
      * Gets a request token from server
      */
     private function _requestToken()

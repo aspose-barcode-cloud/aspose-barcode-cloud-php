@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../vendor/autoload.php';
-
 use Aspose\BarCode\Configuration;
 use PHPUnit\Framework\TestCase;
 
@@ -56,11 +54,11 @@ final class ConfigurationTest extends TestCase
     public function testConfigurationFromEnv(): void
     {
         $uniqPrefix = uniqid();
-        putenv("${uniqPrefix}_ACCESS_TOKEN=Access Token");
-        putenv("${uniqPrefix}_CLIENT_ID=Client Id");
-        putenv("${uniqPrefix}_CLIENT_SECRET=Client Secret");
-        putenv("${uniqPrefix}_HOST=Host");
-        putenv("${uniqPrefix}_DEBUG=FALSE");
+        putenv("{$uniqPrefix}_ACCESS_TOKEN=Access Token");
+        putenv("{$uniqPrefix}_CLIENT_ID=Client Id");
+        putenv("{$uniqPrefix}_CLIENT_SECRET=Client Secret");
+        putenv("{$uniqPrefix}_HOST=Host");
+        putenv("{$uniqPrefix}_DEBUG=FALSE");
 
         $config = TestConfiguration::fromEnv($uniqPrefix . '_');
 
@@ -68,7 +66,7 @@ final class ConfigurationTest extends TestCase
         $this->assertEquals("Client Id", $config->getClientId());
         $this->assertEquals("Client Secret", $config->getClientSecret());
         $this->assertEquals("Host", $config->getHost());
-        $this->assertEquals(false, $config->getDebug());
+        $this->assertFalse($config->getDebug());
     }
 
     public function testConfigurationFromFile(): void

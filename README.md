@@ -6,8 +6,8 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 23.1.0
-- Supported PHP versions: ">=7.3 || >=8.0"
+- Package version: 23.2.0
+- Supported PHP versions: ">=7.4 || >=8.0"
 
 ## Demo applications
 
@@ -90,7 +90,7 @@ Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
 *BarcodeApi* | [**getBarcodeGenerate**](docs/Api/BarcodeApi.md#getbarcodegenerate) | **GET** /barcode/generate | Generate barcode.
 *BarcodeApi* | [**getBarcodeRecognize**](docs/Api/BarcodeApi.md#getbarcoderecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
-*BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](docs/Api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+*BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](docs/Api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
 *BarcodeApi* | [**postGenerateMultiple**](docs/Api/BarcodeApi.md#postgeneratemultiple) | **POST** /barcode/generateMultiple | Generate multiple barcodes and return in response stream
 *BarcodeApi* | [**putBarcodeGenerateFile**](docs/Api/BarcodeApi.md#putbarcodegeneratefile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
 *BarcodeApi* | [**putBarcodeRecognizeFromBody**](docs/Api/BarcodeApi.md#putbarcoderecognizefrombody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.

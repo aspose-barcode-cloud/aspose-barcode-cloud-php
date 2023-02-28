@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FolderApi.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -36,41 +36,44 @@ namespace Aspose\BarCode;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\BarCode\Requests;
+use InvalidArgumentException;
+use RuntimeException;
 
-/*
+/**
  * Aspose.BarCode for Cloud API.
  */
 
 class FolderApi
 {
-    /*
+    /**
      * Stores client instance
      * @var ClientInterface client for calling api
      */
     protected $client;
 
-    /*
+    /**
      * Stores configuration
      * @var Configuration configuration info
      */
     protected $config;
 
-    /*
+    /**
      * Stores header selector
      * HeaderSelector class for header selection
      */
     protected $headerSelector;
 
-    /*
-     * Initialize a new instance of WordsApi
-     * @param ClientInterface   $client client for calling api
-     * @param Configuration   $config configuration info
-     * @param HeaderSelector   $selector class for header selection
+    /**
+     * Initialize a new instance of Api
+     * @param ClientInterface|null $client client for calling api
+     * @param Configuration|null $config configuration info
+     * @param HeaderSelector|null $selector class for header selection
      */
     public function __construct(ClientInterface $client = null, Configuration $config = null, HeaderSelector $selector = null)
     {
@@ -79,7 +82,7 @@ class FolderApi
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
-    /*
+    /**
      * Gets the config
      * @return Configuration
      */
@@ -88,15 +91,15 @@ class FolderApi
         return $this->config;
     }
 
-    /*
+    /**
      * Operation copyFolder
      *
      * Copy folder
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return void
      */
     public function copyFolder(Requests\CopyFolderRequest $request)
@@ -108,15 +111,15 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation copyFolderWithHttpInfo
      *
      * Copy folder
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function copyFolderWithHttpInfo(Requests\CopyFolderRequest $request)
@@ -151,14 +154,14 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation copyFolderAsync
      *
      * Copy folder
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function copyFolderAsync(Requests\CopyFolderRequest $request)
@@ -171,14 +174,14 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Operation copyFolderAsyncWithHttpInfo
      *
      * Copy folder
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function copyFolderAsyncWithHttpInfo(Requests\CopyFolderRequest $request)
@@ -189,7 +192,7 @@ class FolderApi
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -211,23 +214,23 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'copyFolder'
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function CopyFolderRequest(Requests\CopyFolderRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $src_path when calling copyFolder');
+            throw new InvalidArgumentException('Missing the required parameter $src_path when calling copyFolder');
         }
         // verify the required parameter 'dest_path' is set
         if (!isset($request->dest_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $dest_path when calling copyFolder');
+            throw new InvalidArgumentException('Missing the required parameter $dest_path when calling copyFolder');
         }
 
         $resourcePath = '/barcode/storage/folder/copy/{srcPath}';
@@ -291,29 +294,6 @@ class FolderApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -346,15 +326,15 @@ class FolderApi
         return $req;
     }
 
-    /*
+    /**
      * Operation createFolder
      *
      * Create the folder
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return void
      */
     public function createFolder(Requests\CreateFolderRequest $request)
@@ -366,15 +346,15 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation createFolderWithHttpInfo
      *
      * Create the folder
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFolderWithHttpInfo(Requests\CreateFolderRequest $request)
@@ -409,14 +389,14 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation createFolderAsync
      *
      * Create the folder
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFolderAsync(Requests\CreateFolderRequest $request)
@@ -429,14 +409,14 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Operation createFolderAsyncWithHttpInfo
      *
      * Create the folder
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFolderAsyncWithHttpInfo(Requests\CreateFolderRequest $request)
@@ -447,7 +427,7 @@ class FolderApi
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -469,19 +449,19 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'createFolder'
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function CreateFolderRequest(Requests\CreateFolderRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling createFolder');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling createFolder');
         }
 
         $resourcePath = '/barcode/storage/folder/{path}';
@@ -525,29 +505,6 @@ class FolderApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -580,15 +537,15 @@ class FolderApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteFolder
      *
      * Delete folder
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return void
      */
     public function deleteFolder(Requests\DeleteFolderRequest $request)
@@ -600,15 +557,15 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation deleteFolderWithHttpInfo
      *
      * Delete folder
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteFolderWithHttpInfo(Requests\DeleteFolderRequest $request)
@@ -643,14 +600,14 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation deleteFolderAsync
      *
      * Delete folder
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFolderAsync(Requests\DeleteFolderRequest $request)
@@ -663,14 +620,14 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Operation deleteFolderAsyncWithHttpInfo
      *
      * Delete folder
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFolderAsyncWithHttpInfo(Requests\DeleteFolderRequest $request)
@@ -681,7 +638,7 @@ class FolderApi
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -703,19 +660,19 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteFolder'
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function DeleteFolderRequest(Requests\DeleteFolderRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling deleteFolder');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling deleteFolder');
         }
 
         $resourcePath = '/barcode/storage/folder/{path}';
@@ -769,29 +726,6 @@ class FolderApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -824,15 +758,15 @@ class FolderApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getFilesList
      *
      * Get all files and folders within a folder
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return \Aspose\BarCode\Model\FilesList
      */
     public function getFilesList(Requests\GetFilesListRequest $request)
@@ -846,15 +780,15 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation getFilesListWithHttpInfo
      *
      * Get all files and folders within a folder
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of \Aspose\BarCode\Model\FilesList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFilesListWithHttpInfo(Requests\GetFilesListRequest $request)
@@ -911,14 +845,14 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation getFilesListAsync
      *
      * Get all files and folders within a folder
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFilesListAsync(Requests\GetFilesListRequest $request)
@@ -931,14 +865,14 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Operation getFilesListAsyncWithHttpInfo
      *
      * Get all files and folders within a folder
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFilesListAsyncWithHttpInfo(Requests\GetFilesListRequest $request)
@@ -989,19 +923,19 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getFilesList'
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function GetFilesListRequest(Requests\GetFilesListRequest $request)
     {
         // verify the required parameter 'path' is set
         if (!isset($request->path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $path when calling getFilesList');
+            throw new InvalidArgumentException('Missing the required parameter $path when calling getFilesList');
         }
 
         $resourcePath = '/barcode/storage/folder/{path}';
@@ -1045,29 +979,6 @@ class FolderApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -1100,15 +1011,15 @@ class FolderApi
         return $req;
     }
 
-    /*
+    /**
      * Operation moveFolder
      *
      * Move folder
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return void
      */
     public function moveFolder(Requests\MoveFolderRequest $request)
@@ -1120,15 +1031,15 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation moveFolderWithHttpInfo
      *
      * Move folder
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
-     * @throws \Aspose\BarCode\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function moveFolderWithHttpInfo(Requests\MoveFolderRequest $request)
@@ -1163,14 +1074,14 @@ class FolderApi
         }
     }
 
-    /*
+    /**
      * Operation moveFolderAsync
      *
      * Move folder
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function moveFolderAsync(Requests\MoveFolderRequest $request)
@@ -1183,14 +1094,14 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Operation moveFolderAsyncWithHttpInfo
      *
      * Move folder
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function moveFolderAsyncWithHttpInfo(Requests\MoveFolderRequest $request)
@@ -1201,7 +1112,7 @@ class FolderApi
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1223,23 +1134,23 @@ class FolderApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'moveFolder'
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function MoveFolderRequest(Requests\MoveFolderRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if (!isset($request->src_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $src_path when calling moveFolder');
+            throw new InvalidArgumentException('Missing the required parameter $src_path when calling moveFolder');
         }
         // verify the required parameter 'dest_path' is set
         if (!isset($request->dest_path)) {
-            throw new \InvalidArgumentException('Missing the required parameter $dest_path when calling moveFolder');
+            throw new InvalidArgumentException('Missing the required parameter $dest_path when calling moveFolder');
         }
 
         $resourcePath = '/barcode/storage/folder/move/{srcPath}';
@@ -1303,29 +1214,6 @@ class FolderApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-            }
-        }
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();
@@ -1358,10 +1246,10 @@ class FolderApi
         return $req;
     }
 
-    /*
+    /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
+     * @throws RuntimeException on file opening failure
      * @return array of http client options
      */
     private function _createHttpClientOption()
@@ -1377,7 +1265,7 @@ class FolderApi
         return $options;
     }
 
-    /*
+    /**
      * Executes response logging
      */
     private function _writeResponseLog($statusCode, $headers, $body)
@@ -1386,7 +1274,7 @@ class FolderApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes request logging
      */
     private function _writeRequestLog($method, $url, $headers, $body)
@@ -1395,7 +1283,7 @@ class FolderApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 
-    /*
+    /**
      * Executes header and boy formatting
      */
     private function _writeHeadersAndBody($logInfo, $headers, $body)
@@ -1407,7 +1295,7 @@ class FolderApi
         return $logInfo .= 'Body: ' . $body . '\n';
     }
 
-    /*
+    /**
      * Executes url parsing
      */
     private function _parseURL($url, $queryParams)
@@ -1421,7 +1309,7 @@ class FolderApi
         return $urlPartToSign;
     }
 
-    /*
+    /**
      * Gets a request token from server
      */
     private function _requestToken()

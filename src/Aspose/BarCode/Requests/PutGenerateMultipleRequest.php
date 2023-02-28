@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutGenerateMultipleRequest.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
@@ -34,12 +34,12 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Requests;
 
-/*
+/**
  * Request model for "putGenerateMultiple" operation.
  */
 class PutGenerateMultipleRequest
 {
-    /*
+    /**
      * Initializes a new instance of the PutGenerateMultipleRequest class.
      *
      * @param string $name New filename
@@ -57,27 +57,27 @@ class PutGenerateMultipleRequest
         $this->storage = $storage;
     }
 
-    /*
+    /**
      * New filename
      */
     public $name;
 
-    /*
+    /**
      * List of barcodes
      */
     public $generator_params_list;
 
-    /*
+    /**
      * Format of file
      */
     public $format;
 
-    /*
+    /**
      * Folder to place file to
      */
     public $folder;
 
-    /*
+    /**
      * The storage name
      */
     public $storage;

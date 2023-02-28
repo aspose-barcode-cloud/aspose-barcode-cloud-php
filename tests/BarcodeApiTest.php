@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../vendor/autoload.php';
-
+use Aspose\BarCode\ApiException;
 use Aspose\BarCode\BarcodeApi;
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\FileApi;
@@ -37,18 +36,18 @@ require_once 'TestConfiguration.php';
 class BarcodeApiTest extends TestCase
 {
     /**
-     * @var BarcodeApi
+     * @var ?BarcodeApi
      */
-    private static $api = null;
+    private static ?BarcodeApi $api = null;
     /**
-     * @var Configuration
+     * @var ?Configuration
      */
-    private static $config = null;
+    private static ?Configuration $config = null;
 
     /**
-     * @var string
+     * @var ?string
      */
-    private static $tempFolderPath = null;
+    private static ?string $tempFolderPath = null;
 
     /**
      * Setup before running any test cases
@@ -81,11 +80,11 @@ class BarcodeApiTest extends TestCase
     {
     }
 
+
     /**
      * Test case for getBarcodeGenerate
      *
      * Generate barcode.
-     *
      */
     public function testGetBarcodeGenerate()
     {
@@ -98,11 +97,11 @@ class BarcodeApiTest extends TestCase
         $this->assertGreaterThan(0, $imageSize);
     }
 
+
     /**
      * Test case for getBarcodeRecognize
      *
      * Recognize barcode from a file on server.
-     *
      */
     public function testGetBarcodeRecognize()
     {
@@ -127,11 +126,11 @@ class BarcodeApiTest extends TestCase
         $this->assertEquals('Aspose.BarCode for Cloud Sample', $barcodes[0]->getBarcodeValue());
     }
 
+
     /**
      * Test case for postBarcodeRecognizeFromUrlOrContent
      *
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
-     *
      */
     public function testPostBarcodeRecognizeFromUrlOrContent()
     {
@@ -147,11 +146,27 @@ class BarcodeApiTest extends TestCase
         $this->assertEquals('Aspose.BarCode for Cloud Sample', $barcodes[0]->getBarcodeValue());
     }
 
+
+    public function testPostBarcodeRecognizeFromUrlOrContentWithTimeout()
+    {
+        $request = new PostBarCodeRecognizeFromUrlorContentRequest();
+        $request->image = new SplFileObject('./testdata/pdf417Sample.png');
+        $request->preset = PresetType::HighPerformance;
+        $request->timeout = 1;
+
+        try {
+            self::$api->PostBarCodeRecognizeFromUrlorContent($request);
+            $this->fail("Exception was not thrown!");
+        } catch (ApiException $e) {
+            $this->assertEquals(408, $e->getCode());
+        }
+    }
+
+
     /**
      * Test case for postGenerateMultiple
      *
      * Generate multiple barcodes and return in response stream.
-     *
      */
     public function testPostGenerateMultiple()
     {
@@ -177,11 +192,11 @@ class BarcodeApiTest extends TestCase
         $this->assertGreaterThan(0, $response->getSize());
     }
 
+
     /**
      * Test case for putBarcodeGenerateFile
      *
      * Generate barcode and save on server (from query params or from file with json or xml content).
-     *
      */
     public function testPutBarcodeGenerateFile()
     {
@@ -199,11 +214,11 @@ class BarcodeApiTest extends TestCase
         $this->assertGreaterThan(0, $response->getImageHeight());
     }
 
+
     /**
      * Test case for putBarcodeRecognizeFromBody
      *
      * Recognition of a barcode from file on server with parameters in body.
-     *
      */
     public function testPutBarcodeRecognizeFromBody()
     {
@@ -238,11 +253,11 @@ class BarcodeApiTest extends TestCase
         $this->assertEquals('Aspose.BarCode for Cloud Sample', $barcodes[0]->getBarcodeValue());
     }
 
+
     /**
      * Test case for putGenerateMultiple
      *
      * Generate image with multiple barcodes and put new file on server.
-     *
      */
     public function testPutGenerateMultiple()
     {
