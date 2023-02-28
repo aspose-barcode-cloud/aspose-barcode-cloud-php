@@ -89,7 +89,7 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toQueryValue($object)
+    public static function toQueryValue($object): string
     {
         if (is_array($object)) {
             return implode(',', $object);
@@ -107,7 +107,7 @@ class ObjectSerializer
      *
      * @return string the form string
      */
-    public static function toFormValue($value)
+    public static function toFormValue($value): string
     {
         if ($value instanceof SplFileObject) {
             return $value->getRealPath();
@@ -125,12 +125,12 @@ class ObjectSerializer
      *
      * @return string the header string
      */
-    public static function toString($value)
+    public static function toString($value): string
     {
         if ($value instanceof DateTime) { // datetime in ISO8601 format
             return $value->format(DateTimeInterface::ATOM);
         } else {
-            return $value;
+            return strval($value);
         }
     }
 
