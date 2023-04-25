@@ -67,4 +67,5 @@ class MaxiCodeMode
     /// Enum value Mode6
     /// </summary>
     public const Mode6 =  "Mode6";
+
 }

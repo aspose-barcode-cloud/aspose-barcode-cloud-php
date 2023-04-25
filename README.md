@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 23.3.0
+- Package version: 23.4.0
 - Supported PHP versions: ">=7.4 || >=8.0"
 
 ## Demo applications
@@ -146,6 +146,7 @@ Class | Method | HTTP request | Description
 - [EncodeBarcodeType](docs/Model/EncodeBarcodeType.md)
 - [Error](docs/Model/Error.md)
 - [ErrorDetails](docs/Model/ErrorDetails.md)
+- [FileVersion](docs/Model/FileVersion.md)
 - [FileVersions](docs/Model/FileVersions.md)
 - [FilesList](docs/Model/FilesList.md)
 - [FilesUploadResult](docs/Model/FilesUploadResult.md)
@@ -182,5 +183,4 @@ Class | Method | HTTP request | Description
 - [StorageFile](docs/Model/StorageFile.md)
 - [StructuredAppend](docs/Model/StructuredAppend.md)
 - [TextAlignment](docs/Model/TextAlignment.md)
-- [FileVersion](docs/Model/FileVersion.md)
 

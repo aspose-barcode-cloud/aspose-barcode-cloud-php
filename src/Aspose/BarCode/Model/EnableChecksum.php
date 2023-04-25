@@ -57,4 +57,5 @@ class EnableChecksum
     /// Enum value No
     /// </summary>
     public const No =  "No";
+
 }

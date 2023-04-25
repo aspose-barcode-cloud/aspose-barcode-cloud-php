@@ -266,6 +266,7 @@ class StorageApi
      */
     protected function GetDiscUsageRequest(Requests\GetDiscUsageRequest $request)
     {
+
         $resourcePath = '/barcode/storage/disc';
         $formParams = [];
         $queryParams = [];

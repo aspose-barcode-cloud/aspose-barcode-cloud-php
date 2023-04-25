@@ -57,4 +57,5 @@ class ChecksumValidation
     /// Enum value Off
     /// </summary>
     public const Off =  "Off";
+
 }

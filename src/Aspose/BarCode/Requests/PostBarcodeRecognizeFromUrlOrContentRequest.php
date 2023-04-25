@@ -46,8 +46,8 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * @param string $checksum_validation Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
      * @param bool $detect_encoding A flag which force engine to detect codetext encoding for Unicode.
      * @param string $preset Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality.
-     * @param int $rect_x Set X for area for recognition.
-     * @param int $rect_y Set Y for area for recognition.
+     * @param int $rect_x Set X of top left corner of area for recognition.
+     * @param int $rect_y Set Y of top left corner of area for recognition.
      * @param int $rect_width Set Width of area for recognition.
      * @param int $rect_height Set Height of area for recognition.
      * @param bool $strip_fnc Value indicating whether FNC symbol strip must be done.
@@ -76,11 +76,10 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * @param bool $read_tiny_barcodes Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
      * @param string $australian_post_encoding_table Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
      * @param bool $ignore_ending_filling_patterns_for_c_table The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
-     * @param string $rectangle_region
      * @param string $url The image file url.
      * @param \SplFileObject $image Image data
      */
-    public function __construct($type = null, $checksum_validation = null, $detect_encoding = null, $preset = null, $rect_x = null, $rect_y = null, $rect_width = null, $rect_height = null, $strip_fnc = null, $timeout = null, $median_smoothing_window_size = null, $allow_median_smoothing = null, $allow_complex_background = null, $allow_datamatrix_industrial_barcodes = null, $allow_decreased_image = null, $allow_detect_scan_gap = null, $allow_incorrect_barcodes = null, $allow_invert_image = null, $allow_micro_white_spots_removing = null, $allow_one_d_fast_barcodes_detector = null, $allow_one_d_wiped_bars_restoration = null, $allow_qr_micro_qr_restoration = null, $allow_regular_image = null, $allow_salt_and_pepper_filtering = null, $allow_white_spots_removing = null, $check_more1_d_variants = null, $fast_scan_only = null, $region_likelihood_threshold_percent = null, $scan_window_sizes = null, $similarity = null, $skip_diagonal_search = null, $read_tiny_barcodes = null, $australian_post_encoding_table = null, $ignore_ending_filling_patterns_for_c_table = null, $rectangle_region = null, $url = null, $image = null)
+    public function __construct($type = null, $checksum_validation = null, $detect_encoding = null, $preset = null, $rect_x = null, $rect_y = null, $rect_width = null, $rect_height = null, $strip_fnc = null, $timeout = null, $median_smoothing_window_size = null, $allow_median_smoothing = null, $allow_complex_background = null, $allow_datamatrix_industrial_barcodes = null, $allow_decreased_image = null, $allow_detect_scan_gap = null, $allow_incorrect_barcodes = null, $allow_invert_image = null, $allow_micro_white_spots_removing = null, $allow_one_d_fast_barcodes_detector = null, $allow_one_d_wiped_bars_restoration = null, $allow_qr_micro_qr_restoration = null, $allow_regular_image = null, $allow_salt_and_pepper_filtering = null, $allow_white_spots_removing = null, $check_more1_d_variants = null, $fast_scan_only = null, $region_likelihood_threshold_percent = null, $scan_window_sizes = null, $similarity = null, $skip_diagonal_search = null, $read_tiny_barcodes = null, $australian_post_encoding_table = null, $ignore_ending_filling_patterns_for_c_table = null, $url = null, $image = null)
     {
         $this->type = $type;
         $this->checksum_validation = $checksum_validation;
@@ -116,7 +115,6 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
         $this->read_tiny_barcodes = $read_tiny_barcodes;
         $this->australian_post_encoding_table = $australian_post_encoding_table;
         $this->ignore_ending_filling_patterns_for_c_table = $ignore_ending_filling_patterns_for_c_table;
-        $this->rectangle_region = $rectangle_region;
         $this->url = $url;
         $this->image = $image;
     }
@@ -142,12 +140,12 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
     public $preset;
 
     /**
-     * Set X for area for recognition.
+     * Set X of top left corner of area for recognition.
      */
     public $rect_x;
 
     /**
-     * Set Y for area for recognition.
+     * Set Y of top left corner of area for recognition.
      */
     public $rect_y;
 
@@ -290,11 +288,6 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
      */
     public $ignore_ending_filling_patterns_for_c_table;
-
-    /**
-     * Gets or sets rectangle_region
-     */
-    public $rectangle_region;
 
     /**
      * The image file url.

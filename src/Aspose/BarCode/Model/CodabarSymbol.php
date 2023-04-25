@@ -62,4 +62,5 @@ class CodabarSymbol
     /// Enum value D
     /// </summary>
     public const D =  "D";
+
 }

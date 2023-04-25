@@ -87,4 +87,5 @@ class DataMatrixEncodeMode
     /// Enum value ExtendedCodetext
     /// </summary>
     public const ExtendedCodetext =  "ExtendedCodetext";
+
 }

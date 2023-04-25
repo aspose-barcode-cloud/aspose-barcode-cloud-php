@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getBarcodeGenerate**
-> \SplFileObject getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $format)
+> \SplFileObject getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $use_anti_alias, $format)
 
 Generate barcode.
 
@@ -66,10 +66,11 @@ $validate_text = true; // bool | Only for 1D barcodes. If codetext is incorrect 
 $supplement_data = "supplement_data_example"; // string | Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN.
 $supplement_space = 1.2; // double | Space between main the BarCode and supplement BarCode.
 $bar_width_reduction = 1.2; // double | Bars reduction value that is used to compensate ink spread while printing.
+$use_anti_alias = true; // bool | Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.
 $format = "format_example"; // string | Result image format.
 
 try {
-    $result = $apiInstance->getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $format);
+    $result = $apiInstance->getBarcodeGenerate($type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $use_anti_alias, $format);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->getBarcodeGenerate: ', $e->getMessage(), PHP_EOL;
@@ -115,6 +116,7 @@ Name | Type | Description  | Notes
  **supplement_data** | **string**| Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional]
  **supplement_space** | **double**| Space between main the BarCode and supplement BarCode. | [optional]
  **bar_width_reduction** | **double**| Bars reduction value that is used to compensate ink spread while printing. | [optional]
+ **use_anti_alias** | **bool**| Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing. | [optional]
  **format** | **string**| Result image format. | [optional]
 
 ### Return type
@@ -133,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBarcodeRecognize**
-> \Aspose\BarCode\Model\BarcodeResponseList getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $storage, $folder)
+> \Aspose\BarCode\Model\BarcodeResponseList getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $storage, $folder)
 
 Recognize barcode from a file on server.
 
@@ -156,8 +158,8 @@ $type = "type_example"; // string | The type of barcode to read.
 $checksum_validation = "checksum_validation_example"; // string | Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
 $detect_encoding = true; // bool | A flag which force engine to detect codetext encoding for Unicode.
 $preset = "preset_example"; // string | Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality.
-$rect_x = 56; // int | Set X for area for recognition.
-$rect_y = 56; // int | Set Y for area for recognition.
+$rect_x = 56; // int | Set X of top left corner of area for recognition.
+$rect_y = 56; // int | Set Y of top left corner of area for recognition.
 $rect_width = 56; // int | Set Width of area for recognition.
 $rect_height = 56; // int | Set Height of area for recognition.
 $strip_fnc = true; // bool | Value indicating whether FNC symbol strip must be done.
@@ -186,12 +188,11 @@ $skip_diagonal_search = true; // bool | Allows detector to skip search for diago
 $read_tiny_barcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 $australian_post_encoding_table = "australian_post_encoding_table_example"; // string | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
 $ignore_ending_filling_patterns_for_c_table = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
-$rectangle_region = "rectangle_region_example"; // string | 
 $storage = "storage_example"; // string | The image storage.
 $folder = "folder_example"; // string | The image folder.
 
 try {
-    $result = $apiInstance->getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $storage, $folder);
+    $result = $apiInstance->getBarcodeRecognize($name, $type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $storage, $folder);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->getBarcodeRecognize: ', $e->getMessage(), PHP_EOL;
@@ -208,8 +209,8 @@ Name | Type | Description  | Notes
  **checksum_validation** | **string**| Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies | [optional]
  **detect_encoding** | **bool**| A flag which force engine to detect codetext encoding for Unicode. | [optional]
  **preset** | **string**| Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality. | [optional]
- **rect_x** | **int**| Set X for area for recognition. | [optional]
- **rect_y** | **int**| Set Y for area for recognition. | [optional]
+ **rect_x** | **int**| Set X of top left corner of area for recognition. | [optional]
+ **rect_y** | **int**| Set Y of top left corner of area for recognition. | [optional]
  **rect_width** | **int**| Set Width of area for recognition. | [optional]
  **rect_height** | **int**| Set Height of area for recognition. | [optional]
  **strip_fnc** | **bool**| Value indicating whether FNC symbol strip must be done. | [optional]
@@ -238,7 +239,6 @@ Name | Type | Description  | Notes
  **read_tiny_barcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional]
  **australian_post_encoding_table** | **string**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional]
  **ignore_ending_filling_patterns_for_c_table** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as letter \&quot;z\&quot;. | [optional]
- **rectangle_region** | **string**|  | [optional]
  **storage** | **string**| The image storage. | [optional]
  **folder** | **string**| The image folder. | [optional]
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postBarcodeRecognizeFromUrlOrContent**
-> \Aspose\BarCode\Model\BarcodeResponseList postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $url, $image)
+> \Aspose\BarCode\Model\BarcodeResponseList postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $url, $image)
 
 Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \"application/octet-stream\". An image can also be passed as a form field.
 
@@ -280,8 +280,8 @@ $type = "type_example"; // string | The type of barcode to read.
 $checksum_validation = "checksum_validation_example"; // string | Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
 $detect_encoding = true; // bool | A flag which force engine to detect codetext encoding for Unicode.
 $preset = "preset_example"; // string | Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality.
-$rect_x = 56; // int | Set X for area for recognition.
-$rect_y = 56; // int | Set Y for area for recognition.
+$rect_x = 56; // int | Set X of top left corner of area for recognition.
+$rect_y = 56; // int | Set Y of top left corner of area for recognition.
 $rect_width = 56; // int | Set Width of area for recognition.
 $rect_height = 56; // int | Set Height of area for recognition.
 $strip_fnc = true; // bool | Value indicating whether FNC symbol strip must be done.
@@ -310,12 +310,11 @@ $skip_diagonal_search = true; // bool | Allows detector to skip search for diago
 $read_tiny_barcodes = true; // bool | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.
 $australian_post_encoding_table = "australian_post_encoding_table_example"; // string | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.
 $ignore_ending_filling_patterns_for_c_table = true; // bool | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".
-$rectangle_region = "rectangle_region_example"; // string | 
 $url = "url_example"; // string | The image file url.
 $image = "/path/to/file.txt"; // \SplFileObject | Image data
 
 try {
-    $result = $apiInstance->postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $rectangle_region, $url, $image);
+    $result = $apiInstance->postBarcodeRecognizeFromUrlOrContent($type, $checksum_validation, $detect_encoding, $preset, $rect_x, $rect_y, $rect_width, $rect_height, $strip_fnc, $timeout, $median_smoothing_window_size, $allow_median_smoothing, $allow_complex_background, $allow_datamatrix_industrial_barcodes, $allow_decreased_image, $allow_detect_scan_gap, $allow_incorrect_barcodes, $allow_invert_image, $allow_micro_white_spots_removing, $allow_one_d_fast_barcodes_detector, $allow_one_d_wiped_bars_restoration, $allow_qr_micro_qr_restoration, $allow_regular_image, $allow_salt_and_pepper_filtering, $allow_white_spots_removing, $check_more1_d_variants, $fast_scan_only, $region_likelihood_threshold_percent, $scan_window_sizes, $similarity, $skip_diagonal_search, $read_tiny_barcodes, $australian_post_encoding_table, $ignore_ending_filling_patterns_for_c_table, $url, $image);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->postBarcodeRecognizeFromUrlOrContent: ', $e->getMessage(), PHP_EOL;
@@ -331,8 +330,8 @@ Name | Type | Description  | Notes
  **checksum_validation** | **string**| Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies | [optional]
  **detect_encoding** | **bool**| A flag which force engine to detect codetext encoding for Unicode. | [optional]
  **preset** | **string**| Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality. | [optional]
- **rect_x** | **int**| Set X for area for recognition. | [optional]
- **rect_y** | **int**| Set Y for area for recognition. | [optional]
+ **rect_x** | **int**| Set X of top left corner of area for recognition. | [optional]
+ **rect_y** | **int**| Set Y of top left corner of area for recognition. | [optional]
  **rect_width** | **int**| Set Width of area for recognition. | [optional]
  **rect_height** | **int**| Set Height of area for recognition. | [optional]
  **strip_fnc** | **bool**| Value indicating whether FNC symbol strip must be done. | [optional]
@@ -361,7 +360,6 @@ Name | Type | Description  | Notes
  **read_tiny_barcodes** | **bool**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional]
  **australian_post_encoding_table** | **string**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional]
  **ignore_ending_filling_patterns_for_c_table** | **bool**| The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as letter \&quot;z\&quot;. | [optional]
- **rectangle_region** | **string**|  | [optional]
  **url** | **string**| The image file url. | [optional]
  **image** | **\SplFileObject**| Image data | [optional]
 
@@ -434,7 +432,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putBarcodeGenerateFile**
-> \Aspose\BarCode\Model\ResultImageInfo putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $storage, $folder, $format)
+> \Aspose\BarCode\Model\ResultImageInfo putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $use_anti_alias, $storage, $folder, $format)
 
 Generate barcode and save on server (from query params or from file with json or xml content)
 
@@ -487,12 +485,13 @@ $validate_text = true; // bool | Only for 1D barcodes. If codetext is incorrect 
 $supplement_data = "supplement_data_example"; // string | Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN.
 $supplement_space = 1.2; // double | Space between main the BarCode and supplement BarCode.
 $bar_width_reduction = 1.2; // double | Bars reduction value that is used to compensate ink spread while printing.
+$use_anti_alias = true; // bool | Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.
 $storage = "storage_example"; // string | Image's storage.
 $folder = "folder_example"; // string | Image's folder.
 $format = "format_example"; // string | The image format.
 
 try {
-    $result = $apiInstance->putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $storage, $folder, $format);
+    $result = $apiInstance->putBarcodeGenerateFile($name, $type, $text, $two_d_display_text, $text_location, $text_alignment, $text_color, $font_size_mode, $no_wrap, $resolution, $resolution_x, $resolution_y, $dimension_x, $text_space, $units, $size_mode, $bar_height, $image_height, $image_width, $rotation_angle, $back_color, $bar_color, $border_color, $border_width, $border_dash_style, $border_visible, $enable_checksum, $enable_escape, $filled_bars, $always_show_checksum, $wide_narrow_ratio, $validate_text, $supplement_data, $supplement_space, $bar_width_reduction, $use_anti_alias, $storage, $folder, $format);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BarcodeApi->putBarcodeGenerateFile: ', $e->getMessage(), PHP_EOL;
@@ -539,6 +538,7 @@ Name | Type | Description  | Notes
  **supplement_data** | **string**| Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional]
  **supplement_space** | **double**| Space between main the BarCode and supplement BarCode. | [optional]
  **bar_width_reduction** | **double**| Bars reduction value that is used to compensate ink spread while printing. | [optional]
+ **use_anti_alias** | **bool**| Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing. | [optional]
  **storage** | **string**| Image&#39;s storage. | [optional]
  **folder** | **string**| Image&#39;s folder. | [optional]
  **format** | **string**| The image format. | [optional]

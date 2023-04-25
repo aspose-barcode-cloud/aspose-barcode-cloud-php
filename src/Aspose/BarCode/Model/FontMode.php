@@ -52,4 +52,5 @@ class FontMode
     /// Enum value Manual
     /// </summary>
     public const Manual =  "Manual";
+
 }

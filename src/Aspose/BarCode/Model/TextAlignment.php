@@ -57,4 +57,5 @@ class TextAlignment
     /// Enum value Right
     /// </summary>
     public const Right =  "Right";
+
 }

@@ -57,4 +57,5 @@ class QREncodeType
     /// Enum value ForceMicroQR
     /// </summary>
     public const ForceMicroQR =  "ForceMicroQR";
+
 }

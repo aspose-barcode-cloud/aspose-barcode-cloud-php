@@ -267,4 +267,5 @@ class QRVersion
     /// Enum value VersionM4
     /// </summary>
     public const VersionM4 =  "VersionM4";
+
 }

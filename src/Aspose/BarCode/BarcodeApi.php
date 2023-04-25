@@ -627,6 +627,16 @@ class BarcodeApi
             }
         }
         // query params
+        if (isset($request->use_anti_alias)) {
+            $localName = lcfirst('UseAntiAlias');
+            $localValue = is_bool($request->use_anti_alias) ? ($request->use_anti_alias ? 'true' : 'false') : $request->use_anti_alias;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->format)) {
             $localName = lcfirst('format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
@@ -1223,16 +1233,6 @@ class BarcodeApi
             }
         }
         // query params
-        if (isset($request->rectangle_region)) {
-            $localName = lcfirst('RectangleRegion');
-            $localValue = is_bool($request->rectangle_region) ? ($request->rectangle_region ? 'true' : 'false') : $request->rectangle_region;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if (isset($request->storage)) {
             $localName = lcfirst('storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
@@ -1478,6 +1478,7 @@ class BarcodeApi
      */
     protected function PostBarcodeRecognizeFromUrlOrContentRequest(Requests\PostBarcodeRecognizeFromUrlOrContentRequest $request)
     {
+
         $resourcePath = '/barcode/recognize';
         $formParams = [];
         $queryParams = [];
@@ -1829,16 +1830,6 @@ class BarcodeApi
             }
         }
         // query params
-        if (isset($request->rectangle_region)) {
-            $localName = lcfirst('RectangleRegion');
-            $localValue = is_bool($request->rectangle_region) ? ($request->rectangle_region ? 'true' : 'false') : $request->rectangle_region;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if (isset($request->url)) {
             $localName = lcfirst('url');
             $localValue = is_bool($request->url) ? ($request->url ? 'true' : 'false') : $request->url;
@@ -1885,8 +1876,10 @@ class BarcodeApi
             }
             // for HTTP post (form)
             $httpBody = new MultipartStream($multipartContents);
+
         } elseif ($headers['Content-Type'] === 'application/json') {
             $httpBody = \GuzzleHttp\json_encode($formParams);
+
         } else {
             // for HTTP post (form)
             $httpBody = $formParams['image'];
@@ -2722,6 +2715,16 @@ class BarcodeApi
         if (isset($request->bar_width_reduction)) {
             $localName = lcfirst('BarWidthReduction');
             $localValue = is_bool($request->bar_width_reduction) ? ($request->bar_width_reduction ? 'true' : 'false') : $request->bar_width_reduction;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (isset($request->use_anti_alias)) {
+            $localName = lcfirst('UseAntiAlias');
+            $localValue = is_bool($request->use_anti_alias) ? ($request->use_anti_alias ? 'true' : 'false') : $request->use_anti_alias;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

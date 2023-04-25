@@ -57,4 +57,5 @@ class AutoSizeMode
     /// Enum value Interpolation
     /// </summary>
     public const Interpolation =  "Interpolation";
+
 }

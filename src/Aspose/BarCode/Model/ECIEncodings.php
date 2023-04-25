@@ -177,4 +177,5 @@ class ECIEncodings
     /// Enum value EUC_KR
     /// </summary>
     public const EUC_KR =  "EUC_KR";
+
 }

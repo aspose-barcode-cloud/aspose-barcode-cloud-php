@@ -57,4 +57,5 @@ class MacroCharacter
     /// Enum value Macro06
     /// </summary>
     public const Macro06 =  "Macro06";
+
 }

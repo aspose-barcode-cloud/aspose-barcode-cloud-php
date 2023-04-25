@@ -87,4 +87,5 @@ class Pdf417ErrorLevel
     /// Enum value Level8
     /// </summary>
     public const Level8 =  "Level8";
+
 }

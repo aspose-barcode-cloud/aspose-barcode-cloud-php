@@ -1308,8 +1308,10 @@ class FileApi
             }
             // for HTTP post (form)
             $httpBody = new MultipartStream($multipartContents);
+
         } elseif ($headers['Content-Type'] === 'application/json') {
             $httpBody = \GuzzleHttp\json_encode($formParams);
+
         } else {
             // for HTTP post (form)
             $httpBody = $formParams['file'];

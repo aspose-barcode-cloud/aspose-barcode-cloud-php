@@ -382,4 +382,5 @@ class EncodeBarcodeType
     /// Enum value GS1DotCode
     /// </summary>
     public const GS1DotCode =  "GS1DotCode";
+
 }
