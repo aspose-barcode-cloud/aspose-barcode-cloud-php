@@ -202,6 +202,7 @@ class FilesList implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

@@ -526,6 +526,7 @@ class GeneratorParams implements ArrayAccess
      */
     public function valid()
     {
+
         if ($this->container['type_of_barcode'] === null) {
             return false;
         }

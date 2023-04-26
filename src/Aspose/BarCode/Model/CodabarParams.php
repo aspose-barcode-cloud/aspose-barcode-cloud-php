@@ -214,6 +214,7 @@ class CodabarParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

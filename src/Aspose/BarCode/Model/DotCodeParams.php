@@ -232,6 +232,7 @@ class DotCodeParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

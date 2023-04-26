@@ -208,6 +208,7 @@ class AustralianPostParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

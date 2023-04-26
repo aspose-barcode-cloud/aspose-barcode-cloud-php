@@ -322,6 +322,7 @@ class Pdf417Params implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

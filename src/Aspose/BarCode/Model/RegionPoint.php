@@ -214,6 +214,7 @@ class RegionPoint implements ArrayAccess
      */
     public function valid()
     {
+
         if ($this->container['x'] === null) {
             return false;
         }

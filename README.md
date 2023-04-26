@@ -146,7 +146,6 @@ Class | Method | HTTP request | Description
 - [EncodeBarcodeType](docs/Model/EncodeBarcodeType.md)
 - [Error](docs/Model/Error.md)
 - [ErrorDetails](docs/Model/ErrorDetails.md)
-- [FileVersion](docs/Model/FileVersion.md)
 - [FileVersions](docs/Model/FileVersions.md)
 - [FilesList](docs/Model/FilesList.md)
 - [FilesUploadResult](docs/Model/FilesUploadResult.md)
@@ -183,4 +182,5 @@ Class | Method | HTTP request | Description
 - [StorageFile](docs/Model/StorageFile.md)
 - [StructuredAppend](docs/Model/StructuredAppend.md)
 - [TextAlignment](docs/Model/TextAlignment.md)
+- [FileVersion](docs/Model/FileVersion.md)
 

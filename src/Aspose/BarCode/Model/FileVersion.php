@@ -34,13 +34,14 @@ declare(strict_types=1);
 
 namespace Aspose\BarCode\Model;
 
+use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
  * FileVersion
  *
  */
-class FileVersion extends StorageFile
+class FileVersion implements ArrayAccess
 {
     public const DISCRIMINATOR = null;
 
@@ -57,6 +58,11 @@ class FileVersion extends StorageFile
      * @var string[]
      */
     protected static array $swaggerTypes = [
+        'name' => 'string',
+        'is_folder' => 'bool',
+        'modified_date' => '\DateTime',
+        'size' => 'int',
+        'path' => 'string',
         'version_id' => 'string',
         'is_latest' => 'bool'
     ];
@@ -67,6 +73,11 @@ class FileVersion extends StorageFile
      * @var (string|null)[]
      */
     protected static array $swaggerFormats = [
+        'name' => null,
+        'is_folder' => null,
+        'modified_date' => 'date-time',
+        'size' => 'int64',
+        'path' => null,
         'version_id' => null,
         'is_latest' => null
     ];
@@ -78,7 +89,7 @@ class FileVersion extends StorageFile
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /**
@@ -88,7 +99,7 @@ class FileVersion extends StorageFile
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /**
@@ -98,6 +109,11 @@ class FileVersion extends StorageFile
      * @var string[]
      */
     protected static $attributeMap = [
+        'name' => 'Name',
+        'is_folder' => 'IsFolder',
+        'modified_date' => 'ModifiedDate',
+        'size' => 'Size',
+        'path' => 'Path',
         'version_id' => 'VersionId',
         'is_latest' => 'IsLatest'
     ];
@@ -108,6 +124,11 @@ class FileVersion extends StorageFile
      * @var string[]
      */
     protected static $setters = [
+        'name' => 'setName',
+        'is_folder' => 'setIsFolder',
+        'modified_date' => 'setModifiedDate',
+        'size' => 'setSize',
+        'path' => 'setPath',
         'version_id' => 'setVersionId',
         'is_latest' => 'setIsLatest'
     ];
@@ -118,6 +139,11 @@ class FileVersion extends StorageFile
      * @var string[]
      */
     protected static $getters = [
+        'name' => 'getName',
+        'is_folder' => 'getIsFolder',
+        'modified_date' => 'getModifiedDate',
+        'size' => 'getSize',
+        'path' => 'getPath',
         'version_id' => 'getVersionId',
         'is_latest' => 'getIsLatest'
     ];
@@ -130,7 +156,7 @@ class FileVersion extends StorageFile
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -140,7 +166,7 @@ class FileVersion extends StorageFile
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -150,7 +176,7 @@ class FileVersion extends StorageFile
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -167,6 +193,12 @@ class FileVersion extends StorageFile
 
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -176,8 +208,11 @@ class FileVersion extends StorageFile
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['is_folder'] = isset($data['is_folder']) ? $data['is_folder'] : null;
+        $this->container['modified_date'] = isset($data['modified_date']) ? $data['modified_date'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
         $this->container['version_id'] = isset($data['version_id']) ? $data['version_id'] : null;
         $this->container['is_latest'] = isset($data['is_latest']) ? $data['is_latest'] : null;
     }
@@ -189,8 +224,14 @@ class FileVersion extends StorageFile
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
+        if ($this->container['is_folder'] === null) {
+            $invalidProperties[] = "'is_folder' can't be null";
+        }
+        if ($this->container['size'] === null) {
+            $invalidProperties[] = "'size' can't be null";
+        }
         if ($this->container['is_latest'] === null) {
             $invalidProperties[] = "'is_latest' can't be null";
         }
@@ -205,7 +246,11 @@ class FileVersion extends StorageFile
      */
     public function valid()
     {
-        if (!parent::valid()) {
+
+        if ($this->container['is_folder'] === null) {
+            return false;
+        }
+        if ($this->container['size'] === null) {
             return false;
         }
         if ($this->container['is_latest'] === null) {
@@ -214,6 +259,126 @@ class FileVersion extends StorageFile
         return true;
     }
 
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name File or folder name.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_folder
+     *
+     * @return bool
+     */
+    public function getIsFolder()
+    {
+        return $this->container['is_folder'];
+    }
+
+    /**
+     * Sets is_folder
+     *
+     * @param bool $is_folder True if it is a folder.
+     *
+     * @return $this
+     */
+    public function setIsFolder($is_folder)
+    {
+        $this->container['is_folder'] = $is_folder;
+
+        return $this;
+    }
+
+    /**
+     * Gets modified_date
+     *
+     * @return \DateTime
+     */
+    public function getModifiedDate()
+    {
+        return $this->container['modified_date'];
+    }
+
+    /**
+     * Sets modified_date
+     *
+     * @param \DateTime $modified_date File or folder last modified DateTime.
+     *
+     * @return $this
+     */
+    public function setModifiedDate($modified_date)
+    {
+        $this->container['modified_date'] = $modified_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets size
+     *
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /**
+     * Sets size
+     *
+     * @param int $size File or folder size.
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
+
+        return $this;
+    }
+
+    /**
+     * Gets path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->container['path'];
+    }
+
+    /**
+     * Sets path
+     *
+     * @param string $path File or folder path.
+     *
+     * @return $this
+     */
+    public function setPath($path)
+    {
+        $this->container['path'] = $path;
+
+        return $this;
+    }
 
     /**
      * Gets version_id

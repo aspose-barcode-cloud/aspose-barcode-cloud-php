@@ -232,6 +232,7 @@ class StorageFile implements ArrayAccess
      */
     public function valid()
     {
+
         if ($this->container['is_folder'] === null) {
             return false;
         }
