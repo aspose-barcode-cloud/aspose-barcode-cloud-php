@@ -214,6 +214,7 @@ class MaxiCodeParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

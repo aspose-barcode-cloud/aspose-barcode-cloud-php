@@ -67,4 +67,5 @@ class PatchFormat
     /// Enum value US_Letter_LANDSCAPE
     /// </summary>
     public const US_Letter_LANDSCAPE =  "US_Letter_LANDSCAPE";
+
 }

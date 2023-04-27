@@ -226,6 +226,7 @@ class DataBarParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

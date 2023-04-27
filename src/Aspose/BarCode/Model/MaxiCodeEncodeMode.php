@@ -57,4 +57,5 @@ class MaxiCodeEncodeMode
     /// Enum value ExtendedCodetext
     /// </summary>
     public const ExtendedCodetext =  "ExtendedCodetext";
+
 }

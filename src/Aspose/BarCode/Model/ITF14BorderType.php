@@ -67,4 +67,5 @@ class ITF14BorderType
     /// Enum value BarOut
     /// </summary>
     public const BarOut =  "BarOut";
+
 }

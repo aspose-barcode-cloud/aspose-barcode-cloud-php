@@ -400,6 +400,7 @@ class ReaderParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 
@@ -513,7 +514,7 @@ class ReaderParams implements ArrayAccess
     /**
      * Sets rect_x
      *
-     * @param int $rect_x Set X for area for recognition.
+     * @param int $rect_x Set X of top left corner of area for recognition.
      *
      * @return $this
      */
@@ -537,7 +538,7 @@ class ReaderParams implements ArrayAccess
     /**
      * Sets rect_y
      *
-     * @param int $rect_y Set Y for area for recognition.
+     * @param int $rect_y Set Y of top left corner of area for recognition.
      *
      * @return $this
      */

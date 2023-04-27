@@ -202,6 +202,7 @@ class FileVersions implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

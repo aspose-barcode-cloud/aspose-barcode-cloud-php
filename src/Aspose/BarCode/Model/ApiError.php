@@ -225,6 +225,7 @@ class ApiError implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

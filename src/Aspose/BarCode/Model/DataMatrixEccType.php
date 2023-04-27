@@ -77,4 +77,5 @@ class DataMatrixEccType
     /// Enum value Ecc200
     /// </summary>
     public const Ecc200 =  "Ecc200";
+
 }

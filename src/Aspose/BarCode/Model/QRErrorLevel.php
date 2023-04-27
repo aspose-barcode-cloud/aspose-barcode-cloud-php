@@ -62,4 +62,5 @@ class QRErrorLevel
     /// Enum value LevelH
     /// </summary>
     public const LevelH =  "LevelH";
+
 }

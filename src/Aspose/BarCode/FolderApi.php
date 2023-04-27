@@ -147,6 +147,7 @@ class FolderApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -382,6 +383,7 @@ class FolderApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -593,6 +595,7 @@ class FolderApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
@@ -834,6 +837,7 @@ class FolderApi
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -1067,6 +1071,7 @@ class FolderApi
             }
 
             return [null, $statusCode, $response->getHeaders()];
+
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }

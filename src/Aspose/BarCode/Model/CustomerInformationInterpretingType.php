@@ -57,4 +57,5 @@ class CustomerInformationInterpretingType
     /// Enum value Other
     /// </summary>
     public const Other =  "Other";
+
 }

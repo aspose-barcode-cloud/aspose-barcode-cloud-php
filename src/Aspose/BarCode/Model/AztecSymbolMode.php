@@ -62,4 +62,5 @@ class AztecSymbolMode
     /// Enum value Rune
     /// </summary>
     public const Rune =  "Rune";
+
 }

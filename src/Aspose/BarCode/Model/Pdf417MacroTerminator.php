@@ -57,4 +57,5 @@ class Pdf417MacroTerminator
     /// Enum value Set
     /// </summary>
     public const Set =  "Set";
+
 }

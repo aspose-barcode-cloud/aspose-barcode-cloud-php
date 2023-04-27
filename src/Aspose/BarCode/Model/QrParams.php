@@ -244,6 +244,7 @@ class QrParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

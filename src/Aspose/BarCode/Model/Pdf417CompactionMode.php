@@ -62,4 +62,5 @@ class Pdf417CompactionMode
     /// Enum value Binary
     /// </summary>
     public const Binary =  "Binary";
+
 }

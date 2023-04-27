@@ -97,6 +97,7 @@ class GeneratorParams implements ArrayAccess
         'supplement_data' => 'string',
         'supplement_space' => 'double',
         'bar_width_reduction' => 'double',
+        'use_anti_alias' => 'bool',
         'australian_post' => '\Aspose\BarCode\Model\AustralianPostParams',
         'aztec' => '\Aspose\BarCode\Model\AztecParams',
         'codabar' => '\Aspose\BarCode\Model\CodabarParams',
@@ -158,6 +159,7 @@ class GeneratorParams implements ArrayAccess
         'supplement_data' => null,
         'supplement_space' => 'double',
         'bar_width_reduction' => 'double',
+        'use_anti_alias' => null,
         'australian_post' => null,
         'aztec' => null,
         'codabar' => null,
@@ -240,6 +242,7 @@ class GeneratorParams implements ArrayAccess
         'supplement_data' => 'SupplementData',
         'supplement_space' => 'SupplementSpace',
         'bar_width_reduction' => 'BarWidthReduction',
+        'use_anti_alias' => 'UseAntiAlias',
         'australian_post' => 'AustralianPost',
         'aztec' => 'Aztec',
         'codabar' => 'Codabar',
@@ -301,6 +304,7 @@ class GeneratorParams implements ArrayAccess
         'supplement_data' => 'setSupplementData',
         'supplement_space' => 'setSupplementSpace',
         'bar_width_reduction' => 'setBarWidthReduction',
+        'use_anti_alias' => 'setUseAntiAlias',
         'australian_post' => 'setAustralianPost',
         'aztec' => 'setAztec',
         'codabar' => 'setCodabar',
@@ -362,6 +366,7 @@ class GeneratorParams implements ArrayAccess
         'supplement_data' => 'getSupplementData',
         'supplement_space' => 'getSupplementSpace',
         'bar_width_reduction' => 'getBarWidthReduction',
+        'use_anti_alias' => 'getUseAntiAlias',
         'australian_post' => 'getAustralianPost',
         'aztec' => 'getAztec',
         'codabar' => 'getCodabar',
@@ -477,6 +482,7 @@ class GeneratorParams implements ArrayAccess
         $this->container['supplement_data'] = isset($data['supplement_data']) ? $data['supplement_data'] : null;
         $this->container['supplement_space'] = isset($data['supplement_space']) ? $data['supplement_space'] : null;
         $this->container['bar_width_reduction'] = isset($data['bar_width_reduction']) ? $data['bar_width_reduction'] : null;
+        $this->container['use_anti_alias'] = isset($data['use_anti_alias']) ? $data['use_anti_alias'] : null;
         $this->container['australian_post'] = isset($data['australian_post']) ? $data['australian_post'] : null;
         $this->container['aztec'] = isset($data['aztec']) ? $data['aztec'] : null;
         $this->container['codabar'] = isset($data['codabar']) ? $data['codabar'] : null;
@@ -520,6 +526,7 @@ class GeneratorParams implements ArrayAccess
      */
     public function valid()
     {
+
         if ($this->container['type_of_barcode'] === null) {
             return false;
         }
@@ -1438,6 +1445,30 @@ class GeneratorParams implements ArrayAccess
     public function setBarWidthReduction($bar_width_reduction)
     {
         $this->container['bar_width_reduction'] = $bar_width_reduction;
+
+        return $this;
+    }
+
+    /**
+     * Gets use_anti_alias
+     *
+     * @return bool
+     */
+    public function getUseAntiAlias()
+    {
+        return $this->container['use_anti_alias'];
+    }
+
+    /**
+     * Sets use_anti_alias
+     *
+     * @param bool $use_anti_alias Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.
+     *
+     * @return $this
+     */
+    public function setUseAntiAlias($use_anti_alias)
+    {
+        $this->container['use_anti_alias'] = $use_anti_alias;
 
         return $this;
     }

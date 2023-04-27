@@ -72,4 +72,5 @@ class PresetType
     /// Enum value MaxBarCodes
     /// </summary>
     public const MaxBarCodes =  "MaxBarCodes";
+
 }

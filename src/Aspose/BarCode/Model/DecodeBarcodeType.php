@@ -437,4 +437,5 @@ class DecodeBarcodeType
     /// Enum value HIBCQRPAS
     /// </summary>
     public const HIBCQRPAS =  "HIBCQRPAS";
+
 }

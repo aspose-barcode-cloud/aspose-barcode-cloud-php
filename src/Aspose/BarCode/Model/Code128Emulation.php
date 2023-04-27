@@ -62,4 +62,5 @@ class Code128Emulation
     /// Enum value Code905
     /// </summary>
     public const Code905 =  "Code905";
+
 }

@@ -220,6 +220,7 @@ class BarcodeResponse implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

@@ -72,4 +72,5 @@ class QREncodeMode
     /// Enum value ExtendedCodetext
     /// </summary>
     public const ExtendedCodetext =  "ExtendedCodetext";
+
 }

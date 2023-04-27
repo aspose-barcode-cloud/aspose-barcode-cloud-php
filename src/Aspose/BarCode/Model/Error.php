@@ -220,6 +220,7 @@ class Error implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

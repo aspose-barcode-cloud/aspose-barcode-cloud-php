@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **supplement_data** | **string** | Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional] 
 **supplement_space** | **double** | Space between main the BarCode and supplement BarCode. | [optional] 
 **bar_width_reduction** | **double** | Bars reduction value that is used to compensate ink spread while printing. | [optional] 
+**use_anti_alias** | **bool** | Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing. | [optional] 
 **australian_post** | [**\Aspose\BarCode\Model\AustralianPostParams**](AustralianPostParams.md) | AustralianPost params. | [optional] 
 **aztec** | [**\Aspose\BarCode\Model\AztecParams**](AztecParams.md) | Aztec params. | [optional] 
 **codabar** | [**\Aspose\BarCode\Model\CodabarParams**](CodabarParams.md) | Codabar params. | [optional] 

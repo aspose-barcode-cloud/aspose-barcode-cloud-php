@@ -220,6 +220,7 @@ class GeneratorParamsList implements ArrayAccess
      */
     public function valid()
     {
+
         if ($this->container['x_step'] === null) {
             return false;
         }

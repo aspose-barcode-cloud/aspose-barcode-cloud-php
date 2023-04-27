@@ -57,4 +57,5 @@ class CodeLocation
     /// Enum value None
     /// </summary>
     public const None =  "None";
+
 }

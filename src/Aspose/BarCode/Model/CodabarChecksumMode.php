@@ -52,4 +52,5 @@ class CodabarChecksumMode
     /// Enum value Mod16
     /// </summary>
     public const Mod16 =  "Mod16";
+
 }

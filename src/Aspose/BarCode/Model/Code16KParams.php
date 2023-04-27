@@ -214,6 +214,7 @@ class Code16KParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

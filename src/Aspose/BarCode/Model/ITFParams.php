@@ -214,6 +214,7 @@ class ITFParams implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 

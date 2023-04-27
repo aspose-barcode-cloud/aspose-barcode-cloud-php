@@ -76,9 +76,10 @@ class GetBarcodeGenerateRequest
      * @param string $supplement_data Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN.
      * @param double $supplement_space Space between main the BarCode and supplement BarCode.
      * @param double $bar_width_reduction Bars reduction value that is used to compensate ink spread while printing.
+     * @param bool $use_anti_alias Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.
      * @param string $format Result image format.
      */
-    public function __construct($type, $text, $two_d_display_text = null, $text_location = null, $text_alignment = null, $text_color = null, $font_size_mode = null, $no_wrap = null, $resolution = null, $resolution_x = null, $resolution_y = null, $dimension_x = null, $text_space = null, $units = null, $size_mode = null, $bar_height = null, $image_height = null, $image_width = null, $rotation_angle = null, $back_color = null, $bar_color = null, $border_color = null, $border_width = null, $border_dash_style = null, $border_visible = null, $enable_checksum = null, $enable_escape = null, $filled_bars = null, $always_show_checksum = null, $wide_narrow_ratio = null, $validate_text = null, $supplement_data = null, $supplement_space = null, $bar_width_reduction = null, $format = null)
+    public function __construct($type, $text, $two_d_display_text = null, $text_location = null, $text_alignment = null, $text_color = null, $font_size_mode = null, $no_wrap = null, $resolution = null, $resolution_x = null, $resolution_y = null, $dimension_x = null, $text_space = null, $units = null, $size_mode = null, $bar_height = null, $image_height = null, $image_width = null, $rotation_angle = null, $back_color = null, $bar_color = null, $border_color = null, $border_width = null, $border_dash_style = null, $border_visible = null, $enable_checksum = null, $enable_escape = null, $filled_bars = null, $always_show_checksum = null, $wide_narrow_ratio = null, $validate_text = null, $supplement_data = null, $supplement_space = null, $bar_width_reduction = null, $use_anti_alias = null, $format = null)
     {
         $this->type = $type;
         $this->text = $text;
@@ -114,6 +115,7 @@ class GetBarcodeGenerateRequest
         $this->supplement_data = $supplement_data;
         $this->supplement_space = $supplement_space;
         $this->bar_width_reduction = $bar_width_reduction;
+        $this->use_anti_alias = $use_anti_alias;
         $this->format = $format;
     }
 
@@ -286,6 +288,11 @@ class GetBarcodeGenerateRequest
      * Bars reduction value that is used to compensate ink spread while printing.
      */
     public $bar_width_reduction;
+
+    /**
+     * Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.
+     */
+    public $use_anti_alias;
 
     /**
      * Result image format.

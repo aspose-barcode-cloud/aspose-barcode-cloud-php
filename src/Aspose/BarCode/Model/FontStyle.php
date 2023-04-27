@@ -67,4 +67,5 @@ class FontStyle
     /// Enum value Strikeout
     /// </summary>
     public const Strikeout =  "Strikeout";
+
 }
