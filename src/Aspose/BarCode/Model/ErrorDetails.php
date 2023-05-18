@@ -211,7 +211,6 @@ class ErrorDetails implements ArrayAccess
      */
     public function valid()
     {
-
         if ($this->container['date'] === null) {
             return false;
         }

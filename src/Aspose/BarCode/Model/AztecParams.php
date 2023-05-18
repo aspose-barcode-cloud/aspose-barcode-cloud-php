@@ -220,7 +220,6 @@ class AztecParams implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 

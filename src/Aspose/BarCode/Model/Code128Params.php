@@ -3,7 +3,7 @@
 declare(strict_types=1);
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DataBarParams.php">
+ * <copyright company="Aspose" file="Code128Params.php">
  *   Copyright (c) 2023 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -38,11 +38,11 @@ use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * DataBarParams
+ * Code128Params
  *
- * @description Databar parameters.
+ * @description Code128 params.
  */
-class DataBarParams implements ArrayAccess
+class Code128Params implements ArrayAccess
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class DataBarParams implements ArrayAccess
      *
      * @var string
      */
-    protected static string $swaggerModelName = "DataBarParams";
+    protected static string $swaggerModelName = "Code128Params";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +59,7 @@ class DataBarParams implements ArrayAccess
      * @var string[]
      */
     protected static array $swaggerTypes = [
-        'aspect_ratio' => 'double',
-        'columns' => 'int',
-        'rows' => 'int',
-        'is2_d_composite_component' => 'bool',
-        'is_allow_only_gs1_encoding' => 'bool'
+        'encode_mode' => '\Aspose\BarCode\Model\Code128EncodeMode'
     ];
 
     /**
@@ -72,11 +68,7 @@ class DataBarParams implements ArrayAccess
      * @var (string|null)[]
      */
     protected static array $swaggerFormats = [
-        'aspect_ratio' => 'double',
-        'columns' => 'int32',
-        'rows' => 'int32',
-        'is2_d_composite_component' => null,
-        'is_allow_only_gs1_encoding' => null
+        'encode_mode' => null
     ];
 
     /**
@@ -106,11 +98,7 @@ class DataBarParams implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'aspect_ratio' => 'AspectRatio',
-        'columns' => 'Columns',
-        'rows' => 'Rows',
-        'is2_d_composite_component' => 'Is2DCompositeComponent',
-        'is_allow_only_gs1_encoding' => 'IsAllowOnlyGS1Encoding'
+        'encode_mode' => 'EncodeMode'
     ];
 
     /**
@@ -119,11 +107,7 @@ class DataBarParams implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'aspect_ratio' => 'setAspectRatio',
-        'columns' => 'setColumns',
-        'rows' => 'setRows',
-        'is2_d_composite_component' => 'setIs2DCompositeComponent',
-        'is_allow_only_gs1_encoding' => 'setIsAllowOnlyGs1Encoding'
+        'encode_mode' => 'setEncodeMode'
     ];
 
     /**
@@ -132,11 +116,7 @@ class DataBarParams implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'aspect_ratio' => 'getAspectRatio',
-        'columns' => 'getColumns',
-        'rows' => 'getRows',
-        'is2_d_composite_component' => 'getIs2DCompositeComponent',
-        'is_allow_only_gs1_encoding' => 'getIsAllowOnlyGs1Encoding'
+        'encode_mode' => 'getEncodeMode'
     ];
 
     /**
@@ -199,11 +179,7 @@ class DataBarParams implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['aspect_ratio'] = isset($data['aspect_ratio']) ? $data['aspect_ratio'] : null;
-        $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
-        $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
-        $this->container['is2_d_composite_component'] = isset($data['is2_d_composite_component']) ? $data['is2_d_composite_component'] : null;
-        $this->container['is_allow_only_gs1_encoding'] = isset($data['is_allow_only_gs1_encoding']) ? $data['is_allow_only_gs1_encoding'] : null;
+        $this->container['encode_mode'] = isset($data['encode_mode']) ? $data['encode_mode'] : null;
     }
 
     /**
@@ -231,121 +207,25 @@ class DataBarParams implements ArrayAccess
 
 
     /**
-     * Gets aspect_ratio
+     * Gets encode_mode
      *
-     * @return double
+     * @return \Aspose\BarCode\Model\Code128EncodeMode
      */
-    public function getAspectRatio()
+    public function getEncodeMode()
     {
-        return $this->container['aspect_ratio'];
+        return $this->container['encode_mode'];
     }
 
     /**
-     * Sets aspect_ratio
+     * Sets encode_mode
      *
-     * @param double $aspect_ratio Height/Width ratio of 2D BarCode module. Used for DataBar stacked.
+     * @param \Aspose\BarCode\Model\Code128EncodeMode $encode_mode Encoding mode for Code128 barcodes. Code 128 specification Default value: Code128EncodeMode.Auto.
      *
      * @return $this
      */
-    public function setAspectRatio($aspect_ratio)
+    public function setEncodeMode($encode_mode)
     {
-        $this->container['aspect_ratio'] = $aspect_ratio;
-
-        return $this;
-    }
-
-    /**
-     * Gets columns
-     *
-     * @return int
-     */
-    public function getColumns()
-    {
-        return $this->container['columns'];
-    }
-
-    /**
-     * Sets columns
-     *
-     * @param int $columns Columns count.
-     *
-     * @return $this
-     */
-    public function setColumns($columns)
-    {
-        $this->container['columns'] = $columns;
-
-        return $this;
-    }
-
-    /**
-     * Gets rows
-     *
-     * @return int
-     */
-    public function getRows()
-    {
-        return $this->container['rows'];
-    }
-
-    /**
-     * Sets rows
-     *
-     * @param int $rows Rows count.
-     *
-     * @return $this
-     */
-    public function setRows($rows)
-    {
-        $this->container['rows'] = $rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets is2_d_composite_component
-     *
-     * @return bool
-     */
-    public function getIs2DCompositeComponent()
-    {
-        return $this->container['is2_d_composite_component'];
-    }
-
-    /**
-     * Sets is2_d_composite_component
-     *
-     * @param bool $is2_d_composite_component Enables flag of 2D composite component with DataBar barcode
-     *
-     * @return $this
-     */
-    public function setIs2DCompositeComponent($is2_d_composite_component)
-    {
-        $this->container['is2_d_composite_component'] = $is2_d_composite_component;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_allow_only_gs1_encoding
-     *
-     * @return bool
-     */
-    public function getIsAllowOnlyGs1Encoding()
-    {
-        return $this->container['is_allow_only_gs1_encoding'];
-    }
-
-    /**
-     * Sets is_allow_only_gs1_encoding
-     *
-     * @param bool $is_allow_only_gs1_encoding If this flag is set, it allows only GS1 encoding standard for Databar barcode types
-     *
-     * @return $this
-     */
-    public function setIsAllowOnlyGs1Encoding($is_allow_only_gs1_encoding)
-    {
-        $this->container['is_allow_only_gs1_encoding'] = $is_allow_only_gs1_encoding;
+        $this->container['encode_mode'] = $encode_mode;
 
         return $this;
     }
