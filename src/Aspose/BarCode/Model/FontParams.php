@@ -214,7 +214,6 @@ class FontParams implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 

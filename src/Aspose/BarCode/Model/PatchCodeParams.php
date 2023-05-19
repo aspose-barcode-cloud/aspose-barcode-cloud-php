@@ -208,7 +208,6 @@ class PatchCodeParams implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 

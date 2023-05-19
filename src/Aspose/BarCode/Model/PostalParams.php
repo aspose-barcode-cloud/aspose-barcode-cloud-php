@@ -202,7 +202,6 @@ class PostalParams implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 

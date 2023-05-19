@@ -214,7 +214,6 @@ class DiscUsage implements ArrayAccess
      */
     public function valid()
     {
-
         if ($this->container['used_size'] === null) {
             return false;
         }

@@ -217,7 +217,6 @@ class ResultImageInfo implements ArrayAccess
      */
     public function valid()
     {
-
         if ($this->container['file_size'] === null) {
             return false;
         }

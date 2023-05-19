@@ -214,7 +214,6 @@ class StructuredAppend implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 

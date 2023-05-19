@@ -112,7 +112,8 @@ class GeneratorParams implements ArrayAccess
         'pdf417' => '\Aspose\BarCode\Model\Pdf417Params',
         'postal' => '\Aspose\BarCode\Model\PostalParams',
         'qr' => '\Aspose\BarCode\Model\QrParams',
-        'patch_code' => '\Aspose\BarCode\Model\PatchCodeParams'
+        'patch_code' => '\Aspose\BarCode\Model\PatchCodeParams',
+        'code128' => '\Aspose\BarCode\Model\Code128Params'
     ];
 
     /**
@@ -174,7 +175,8 @@ class GeneratorParams implements ArrayAccess
         'pdf417' => null,
         'postal' => null,
         'qr' => null,
-        'patch_code' => null
+        'patch_code' => null,
+        'code128' => null
     ];
 
     /**
@@ -257,7 +259,8 @@ class GeneratorParams implements ArrayAccess
         'pdf417' => 'Pdf417',
         'postal' => 'Postal',
         'qr' => 'QR',
-        'patch_code' => 'PatchCode'
+        'patch_code' => 'PatchCode',
+        'code128' => 'Code128'
     ];
 
     /**
@@ -319,7 +322,8 @@ class GeneratorParams implements ArrayAccess
         'pdf417' => 'setPdf417',
         'postal' => 'setPostal',
         'qr' => 'setQr',
-        'patch_code' => 'setPatchCode'
+        'patch_code' => 'setPatchCode',
+        'code128' => 'setCode128'
     ];
 
     /**
@@ -381,7 +385,8 @@ class GeneratorParams implements ArrayAccess
         'pdf417' => 'getPdf417',
         'postal' => 'getPostal',
         'qr' => 'getQr',
-        'patch_code' => 'getPatchCode'
+        'patch_code' => 'getPatchCode',
+        'code128' => 'getCode128'
     ];
 
     /**
@@ -498,6 +503,7 @@ class GeneratorParams implements ArrayAccess
         $this->container['postal'] = isset($data['postal']) ? $data['postal'] : null;
         $this->container['qr'] = isset($data['qr']) ? $data['qr'] : null;
         $this->container['patch_code'] = isset($data['patch_code']) ? $data['patch_code'] : null;
+        $this->container['code128'] = isset($data['code128']) ? $data['code128'] : null;
     }
 
     /**
@@ -526,7 +532,6 @@ class GeneratorParams implements ArrayAccess
      */
     public function valid()
     {
-
         if ($this->container['type_of_barcode'] === null) {
             return false;
         }
@@ -1829,6 +1834,30 @@ class GeneratorParams implements ArrayAccess
     public function setPatchCode($patch_code)
     {
         $this->container['patch_code'] = $patch_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets code128
+     *
+     * @return \Aspose\BarCode\Model\Code128Params
+     */
+    public function getCode128()
+    {
+        return $this->container['code128'];
+    }
+
+    /**
+     * Sets code128
+     *
+     * @param \Aspose\BarCode\Model\Code128Params $code128 Code128 params.
+     *
+     * @return $this
+     */
+    public function setCode128($code128)
+    {
+        $this->container['code128'] = $code128;
 
         return $this;
     }

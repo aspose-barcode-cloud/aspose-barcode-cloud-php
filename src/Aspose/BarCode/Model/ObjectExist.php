@@ -214,7 +214,6 @@ class ObjectExist implements ArrayAccess
      */
     public function valid()
     {
-
         if ($this->container['exists'] === null) {
             return false;
         }

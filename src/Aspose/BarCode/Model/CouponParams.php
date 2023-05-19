@@ -202,7 +202,6 @@ class CouponParams implements ArrayAccess
      */
     public function valid()
     {
-
         return true;
     }
 

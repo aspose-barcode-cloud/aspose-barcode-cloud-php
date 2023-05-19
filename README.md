@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 23.4.0
+- Package version: 23.5.0
 - Supported PHP versions: ">=7.4 || >=8.0"
 
 ## Demo applications
@@ -129,6 +129,8 @@ Class | Method | HTTP request | Description
 - [CodabarSymbol](docs/Model/CodabarSymbol.md)
 - [CodablockParams](docs/Model/CodablockParams.md)
 - [Code128Emulation](docs/Model/Code128Emulation.md)
+- [Code128EncodeMode](docs/Model/Code128EncodeMode.md)
+- [Code128Params](docs/Model/Code128Params.md)
 - [Code16KParams](docs/Model/Code16KParams.md)
 - [CodeLocation](docs/Model/CodeLocation.md)
 - [CouponParams](docs/Model/CouponParams.md)
