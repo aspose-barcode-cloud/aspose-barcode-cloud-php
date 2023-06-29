@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 23.5.0
+- Package version: 23.6.0
 - Supported PHP versions: ">=7.4 || >=8.0"
 
 ## Demo applications
@@ -156,6 +156,10 @@ Class | Method | HTTP request | Description
 - [FontStyle](docs/Model/FontStyle.md)
 - [GeneratorParams](docs/Model/GeneratorParams.md)
 - [GeneratorParamsList](docs/Model/GeneratorParamsList.md)
+- [HanXinEncodeMode](docs/Model/HanXinEncodeMode.md)
+- [HanXinErrorLevel](docs/Model/HanXinErrorLevel.md)
+- [HanXinParams](docs/Model/HanXinParams.md)
+- [HanXinVersion](docs/Model/HanXinVersion.md)
 - [ITF14BorderType](docs/Model/ITF14BorderType.md)
 - [ITFParams](docs/Model/ITFParams.md)
 - [MacroCharacter](docs/Model/MacroCharacter.md)

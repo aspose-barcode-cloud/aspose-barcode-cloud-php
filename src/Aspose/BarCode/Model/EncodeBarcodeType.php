@@ -383,4 +383,14 @@ class EncodeBarcodeType
     /// </summary>
     public const GS1DotCode =  "GS1DotCode";
 
+    /// <summary>
+    /// Enum value HanXin
+    /// </summary>
+    public const HanXin =  "HanXin";
+
+    /// <summary>
+    /// Enum value GS1HanXin
+    /// </summary>
+    public const GS1HanXin =  "GS1HanXin";
+
 }

@@ -58,6 +58,7 @@ Name | Type | Description | Notes
 **qr** | [**\Aspose\BarCode\Model\QrParams**](QrParams.md) | QR params. | [optional] 
 **patch_code** | [**\Aspose\BarCode\Model\PatchCodeParams**](PatchCodeParams.md) | PatchCode params. | [optional] 
 **code128** | [**\Aspose\BarCode\Model\Code128Params**](Code128Params.md) | Code128 params. | [optional] 
+**han_xin** | [**\Aspose\BarCode\Model\HanXinParams**](HanXinParams.md) | HanXin params. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -113,7 +113,8 @@ class GeneratorParams implements ArrayAccess
         'postal' => '\Aspose\BarCode\Model\PostalParams',
         'qr' => '\Aspose\BarCode\Model\QrParams',
         'patch_code' => '\Aspose\BarCode\Model\PatchCodeParams',
-        'code128' => '\Aspose\BarCode\Model\Code128Params'
+        'code128' => '\Aspose\BarCode\Model\Code128Params',
+        'han_xin' => '\Aspose\BarCode\Model\HanXinParams'
     ];
 
     /**
@@ -176,7 +177,8 @@ class GeneratorParams implements ArrayAccess
         'postal' => null,
         'qr' => null,
         'patch_code' => null,
-        'code128' => null
+        'code128' => null,
+        'han_xin' => null
     ];
 
     /**
@@ -260,7 +262,8 @@ class GeneratorParams implements ArrayAccess
         'postal' => 'Postal',
         'qr' => 'QR',
         'patch_code' => 'PatchCode',
-        'code128' => 'Code128'
+        'code128' => 'Code128',
+        'han_xin' => 'HanXin'
     ];
 
     /**
@@ -323,7 +326,8 @@ class GeneratorParams implements ArrayAccess
         'postal' => 'setPostal',
         'qr' => 'setQr',
         'patch_code' => 'setPatchCode',
-        'code128' => 'setCode128'
+        'code128' => 'setCode128',
+        'han_xin' => 'setHanXin'
     ];
 
     /**
@@ -386,7 +390,8 @@ class GeneratorParams implements ArrayAccess
         'postal' => 'getPostal',
         'qr' => 'getQr',
         'patch_code' => 'getPatchCode',
-        'code128' => 'getCode128'
+        'code128' => 'getCode128',
+        'han_xin' => 'getHanXin'
     ];
 
     /**
@@ -504,6 +509,7 @@ class GeneratorParams implements ArrayAccess
         $this->container['qr'] = isset($data['qr']) ? $data['qr'] : null;
         $this->container['patch_code'] = isset($data['patch_code']) ? $data['patch_code'] : null;
         $this->container['code128'] = isset($data['code128']) ? $data['code128'] : null;
+        $this->container['han_xin'] = isset($data['han_xin']) ? $data['han_xin'] : null;
     }
 
     /**
@@ -1858,6 +1864,30 @@ class GeneratorParams implements ArrayAccess
     public function setCode128($code128)
     {
         $this->container['code128'] = $code128;
+
+        return $this;
+    }
+
+    /**
+     * Gets han_xin
+     *
+     * @return \Aspose\BarCode\Model\HanXinParams
+     */
+    public function getHanXin()
+    {
+        return $this->container['han_xin'];
+    }
+
+    /**
+     * Sets han_xin
+     *
+     * @param \Aspose\BarCode\Model\HanXinParams $han_xin HanXin params.
+     *
+     * @return $this
+     */
+    public function setHanXin($han_xin)
+    {
+        $this->container['han_xin'] = $han_xin;
 
         return $this;
     }
