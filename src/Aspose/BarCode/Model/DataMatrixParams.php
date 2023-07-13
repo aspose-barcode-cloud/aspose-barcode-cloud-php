@@ -303,7 +303,7 @@ class DataMatrixParams implements ArrayAccess
     /**
      * Sets columns
      *
-     * @param int $columns Columns count.
+     * @param int $columns DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Columns count.
      *
      * @return $this
      */
@@ -375,7 +375,7 @@ class DataMatrixParams implements ArrayAccess
     /**
      * Sets rows
      *
-     * @param int $rows Rows count.
+     * @param int $rows DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Rows count.
      *
      * @return $this
      */

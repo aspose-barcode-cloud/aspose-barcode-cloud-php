@@ -39,7 +39,7 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * DataMatrixEncodeMode
  *
- * @description
+ * @description DataMatrix encoder&#39;s encoding mode, default to Auto
  */
 class DataMatrixEncodeMode
 {
