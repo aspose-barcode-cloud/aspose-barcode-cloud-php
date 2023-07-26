@@ -5,12 +5,9 @@ import re
 
 COMMENT_SECTION_START_RE = re.compile(r"^\s+/\*\*$")  # /**
 DEPRECATED_RE = re.compile(  # * @param type $name DEPRECATED: Message
-    r"^\s*\*\s+@param\s+(?P<type>\S+)\s+(?P<property_name>\S+)\s+"
-    r"DEPRECATED:\s+(?P<message>.+)$"
+    r"^\s*\*\s+@param\s+(?P<type>\S+)\s+(?P<property_name>\S+)\s+DEPRECATED:\s+(?P<message>.+)$"
 )
-SETTER_FUNCTION_RE = re.compile(
-    r"^\s*public\s+function\s+set\S+"
-)  # public function setSomething(value)
+SETTER_FUNCTION_RE = re.compile(r"^\s*public\s+function\s+set\S+")  # public function setSomething(value)
 FUNCTION_BODY_STARTED_RE = re.compile(r"^(?P<indent>\s*){$")  # {
 
 
@@ -34,11 +31,7 @@ def main(input_file):
                 deprecation_message = deprecated_match.groupdict()["message"].strip()
                 property_name = deprecated_match.groupdict()["property_name"]
 
-            if (
-                comment_section_started
-                and deprecation_message
-                and SETTER_FUNCTION_RE.match(line)
-            ):
+            if comment_section_started and deprecation_message and SETTER_FUNCTION_RE.match(line):
                 setter_function_declaration = True
 
             match_with_indent = FUNCTION_BODY_STARTED_RE.match(line)
@@ -48,9 +41,7 @@ def main(input_file):
                     result.write(line + "\n")
 
                     indent = match_with_indent.groupdict()["indent"]
-                    escaped_message = "".join(
-                        r"\'" if c == "'" else c for c in deprecation_message
-                    )
+                    escaped_message = "".join(r"\'" if c == "'" else c for c in deprecation_message)
                     result.write(
                         f"{indent}{(' ' * 4)}"
                         f"trigger_error('Property {property_name} is deprecated. {escaped_message}'"
