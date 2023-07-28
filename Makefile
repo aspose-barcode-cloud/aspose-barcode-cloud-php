@@ -21,3 +21,7 @@ init:
 update:
 	composer update
 	composer validate
+
+.PHONY: after-gen
+after-gen: format
+	./scripts/add-deprecation-warnings.bash

@@ -309,6 +309,7 @@ class DataMatrixParams implements ArrayAccess
      */
     public function setColumns($columns)
     {
+        trigger_error('Property $columns is deprecated. Will be replaced with \'DataMatrix.Version\' in the next release  Columns count.', E_USER_DEPRECATED);
         $this->container['columns'] = $columns;
 
         return $this;
@@ -381,6 +382,7 @@ class DataMatrixParams implements ArrayAccess
      */
     public function setRows($rows)
     {
+        trigger_error('Property $rows is deprecated. Will be replaced with \'DataMatrix.Version\' in the next release  Rows count.', E_USER_DEPRECATED);
         $this->container['rows'] = $rows;
 
         return $this;

@@ -807,6 +807,7 @@ class GeneratorParams implements ArrayAccess
      */
     public function setResolutionX($resolution_x)
     {
+        trigger_error('Property $resolution_x is deprecated. Use \'Resolution\' instead.', E_USER_DEPRECATED);
         $this->container['resolution_x'] = $resolution_x;
 
         return $this;
@@ -831,6 +832,7 @@ class GeneratorParams implements ArrayAccess
      */
     public function setResolutionY($resolution_y)
     {
+        trigger_error('Property $resolution_y is deprecated. Use \'Resolution\' instead.', E_USER_DEPRECATED);
         $this->container['resolution_y'] = $resolution_y;
 
         return $this;
