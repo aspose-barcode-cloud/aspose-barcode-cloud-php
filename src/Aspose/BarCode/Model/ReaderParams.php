@@ -86,6 +86,7 @@ class ReaderParams implements ArrayAccess
         'allow_white_spots_removing' => 'bool',
         'check_more1_d_variants' => 'bool',
         'fast_scan_only' => 'bool',
+        'allow_additional_restorations' => 'bool',
         'region_likelihood_threshold_percent' => 'double',
         'scan_window_sizes' => 'int[]',
         'similarity' => 'double',
@@ -128,6 +129,7 @@ class ReaderParams implements ArrayAccess
         'allow_white_spots_removing' => null,
         'check_more1_d_variants' => null,
         'fast_scan_only' => null,
+        'allow_additional_restorations' => null,
         'region_likelihood_threshold_percent' => 'double',
         'scan_window_sizes' => 'int32',
         'similarity' => 'double',
@@ -191,6 +193,7 @@ class ReaderParams implements ArrayAccess
         'allow_white_spots_removing' => 'AllowWhiteSpotsRemoving',
         'check_more1_d_variants' => 'CheckMore1DVariants',
         'fast_scan_only' => 'FastScanOnly',
+        'allow_additional_restorations' => 'AllowAdditionalRestorations',
         'region_likelihood_threshold_percent' => 'RegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'ScanWindowSizes',
         'similarity' => 'Similarity',
@@ -233,6 +236,7 @@ class ReaderParams implements ArrayAccess
         'allow_white_spots_removing' => 'setAllowWhiteSpotsRemoving',
         'check_more1_d_variants' => 'setCheckMore1DVariants',
         'fast_scan_only' => 'setFastScanOnly',
+        'allow_additional_restorations' => 'setAllowAdditionalRestorations',
         'region_likelihood_threshold_percent' => 'setRegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'setScanWindowSizes',
         'similarity' => 'setSimilarity',
@@ -275,6 +279,7 @@ class ReaderParams implements ArrayAccess
         'allow_white_spots_removing' => 'getAllowWhiteSpotsRemoving',
         'check_more1_d_variants' => 'getCheckMore1DVariants',
         'fast_scan_only' => 'getFastScanOnly',
+        'allow_additional_restorations' => 'getAllowAdditionalRestorations',
         'region_likelihood_threshold_percent' => 'getRegionLikelihoodThresholdPercent',
         'scan_window_sizes' => 'getScanWindowSizes',
         'similarity' => 'getSimilarity',
@@ -371,6 +376,7 @@ class ReaderParams implements ArrayAccess
         $this->container['allow_white_spots_removing'] = isset($data['allow_white_spots_removing']) ? $data['allow_white_spots_removing'] : null;
         $this->container['check_more1_d_variants'] = isset($data['check_more1_d_variants']) ? $data['check_more1_d_variants'] : null;
         $this->container['fast_scan_only'] = isset($data['fast_scan_only']) ? $data['fast_scan_only'] : null;
+        $this->container['allow_additional_restorations'] = isset($data['allow_additional_restorations']) ? $data['allow_additional_restorations'] : null;
         $this->container['region_likelihood_threshold_percent'] = isset($data['region_likelihood_threshold_percent']) ? $data['region_likelihood_threshold_percent'] : null;
         $this->container['scan_window_sizes'] = isset($data['scan_window_sizes']) ? $data['scan_window_sizes'] : null;
         $this->container['similarity'] = isset($data['similarity']) ? $data['similarity'] : null;
@@ -1048,6 +1054,30 @@ class ReaderParams implements ArrayAccess
     public function setFastScanOnly($fast_scan_only)
     {
         $this->container['fast_scan_only'] = $fast_scan_only;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_additional_restorations
+     *
+     * @return bool
+     */
+    public function getAllowAdditionalRestorations()
+    {
+        return $this->container['allow_additional_restorations'];
+    }
+
+    /**
+     * Sets allow_additional_restorations
+     *
+     * @param bool $allow_additional_restorations Allows engine using additional image restorations to recognize corrupted barcodes. At this time, it is used only in MicroPdf417 barcode type. Default value: False.
+     *
+     * @return $this
+     */
+    public function setAllowAdditionalRestorations($allow_additional_restorations)
+    {
+        $this->container['allow_additional_restorations'] = $allow_additional_restorations;
 
         return $this;
     }

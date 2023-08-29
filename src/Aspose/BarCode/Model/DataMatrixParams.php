@@ -65,7 +65,8 @@ class DataMatrixParams implements ArrayAccess
         'data_matrix_ecc' => '\Aspose\BarCode\Model\DataMatrixEccType',
         'data_matrix_encode_mode' => '\Aspose\BarCode\Model\DataMatrixEncodeMode',
         'rows' => 'int',
-        'macro_characters' => '\Aspose\BarCode\Model\MacroCharacter'
+        'macro_characters' => '\Aspose\BarCode\Model\MacroCharacter',
+        'version' => '\Aspose\BarCode\Model\DataMatrixVersion'
     ];
 
     /**
@@ -80,7 +81,8 @@ class DataMatrixParams implements ArrayAccess
         'data_matrix_ecc' => null,
         'data_matrix_encode_mode' => null,
         'rows' => 'int32',
-        'macro_characters' => null
+        'macro_characters' => null,
+        'version' => null
     ];
 
     /**
@@ -116,7 +118,8 @@ class DataMatrixParams implements ArrayAccess
         'data_matrix_ecc' => 'DataMatrixEcc',
         'data_matrix_encode_mode' => 'DataMatrixEncodeMode',
         'rows' => 'Rows',
-        'macro_characters' => 'MacroCharacters'
+        'macro_characters' => 'MacroCharacters',
+        'version' => 'Version'
     ];
 
     /**
@@ -131,7 +134,8 @@ class DataMatrixParams implements ArrayAccess
         'data_matrix_ecc' => 'setDataMatrixEcc',
         'data_matrix_encode_mode' => 'setDataMatrixEncodeMode',
         'rows' => 'setRows',
-        'macro_characters' => 'setMacroCharacters'
+        'macro_characters' => 'setMacroCharacters',
+        'version' => 'setVersion'
     ];
 
     /**
@@ -146,7 +150,8 @@ class DataMatrixParams implements ArrayAccess
         'data_matrix_ecc' => 'getDataMatrixEcc',
         'data_matrix_encode_mode' => 'getDataMatrixEncodeMode',
         'rows' => 'getRows',
-        'macro_characters' => 'getMacroCharacters'
+        'macro_characters' => 'getMacroCharacters',
+        'version' => 'getVersion'
     ];
 
     /**
@@ -216,6 +221,7 @@ class DataMatrixParams implements ArrayAccess
         $this->container['data_matrix_encode_mode'] = isset($data['data_matrix_encode_mode']) ? $data['data_matrix_encode_mode'] : null;
         $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
         $this->container['macro_characters'] = isset($data['macro_characters']) ? $data['macro_characters'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
     }
 
     /**
@@ -408,6 +414,30 @@ class DataMatrixParams implements ArrayAccess
     public function setMacroCharacters($macro_characters)
     {
         $this->container['macro_characters'] = $macro_characters;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return \Aspose\BarCode\Model\DataMatrixVersion
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param \Aspose\BarCode\Model\DataMatrixVersion $version Sets a Datamatrix symbol size. Default value: DataMatrixVersion.Auto.
+     *
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }

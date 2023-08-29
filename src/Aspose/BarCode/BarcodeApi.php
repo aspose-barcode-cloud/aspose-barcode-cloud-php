@@ -1160,6 +1160,16 @@ class BarcodeApi
             }
         }
         // query params
+        if (isset($request->allow_additional_restorations)) {
+            $localName = lcfirst('AllowAdditionalRestorations');
+            $localValue = is_bool($request->allow_additional_restorations) ? ($request->allow_additional_restorations ? 'true' : 'false') : $request->allow_additional_restorations;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->region_likelihood_threshold_percent)) {
             $localName = lcfirst('RegionLikelihoodThresholdPercent');
             $localValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
@@ -1750,6 +1760,16 @@ class BarcodeApi
         if (isset($request->fast_scan_only)) {
             $localName = lcfirst('FastScanOnly');
             $localValue = is_bool($request->fast_scan_only) ? ($request->fast_scan_only ? 'true' : 'false') : $request->fast_scan_only;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (isset($request->allow_additional_restorations)) {
+            $localName = lcfirst('AllowAdditionalRestorations');
+            $localValue = is_bool($request->allow_additional_restorations) ? ($request->allow_additional_restorations ? 'true' : 'false') : $request->allow_additional_restorations;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
