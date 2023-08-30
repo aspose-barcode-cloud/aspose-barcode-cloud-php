@@ -1,8 +1,12 @@
 # AztecSymbolMode
 
-## Properties
-Name | Type | Description | Notes
----- | ---- | ----------- | -----
+
+## Allowable values
+
+* **AUTO**
+* COMPACT
+* FULL_RANGE
+* RUNE
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

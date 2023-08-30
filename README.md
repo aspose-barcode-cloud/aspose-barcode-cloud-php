@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 23.7.1
+- Package version: 23.8.0
 - Supported PHP versions: ">=7.4 || >=8.0"
 
 ## Demo applications
@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
 - [DataMatrixEccType](docs/Model/DataMatrixEccType.md)
 - [DataMatrixEncodeMode](docs/Model/DataMatrixEncodeMode.md)
 - [DataMatrixParams](docs/Model/DataMatrixParams.md)
+- [DataMatrixVersion](docs/Model/DataMatrixVersion.md)
 - [DecodeBarcodeType](docs/Model/DecodeBarcodeType.md)
 - [DiscUsage](docs/Model/DiscUsage.md)
 - [DotCodeEncodeMode](docs/Model/DotCodeEncodeMode.md)
