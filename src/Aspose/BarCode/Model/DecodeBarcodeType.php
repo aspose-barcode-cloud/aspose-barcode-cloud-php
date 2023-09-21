@@ -448,4 +448,14 @@ class DecodeBarcodeType
     /// </summary>
     public const GS1HanXin =  "GS1HanXin";
 
+    /// <summary>
+    /// Enum value GS1Aztec
+    /// </summary>
+    public const GS1Aztec =  "GS1Aztec";
+
+    /// <summary>
+    /// Enum value GS1CompositeBar
+    /// </summary>
+    public const GS1CompositeBar =  "GS1CompositeBar";
+
 }

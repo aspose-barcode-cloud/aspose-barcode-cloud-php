@@ -84,6 +84,8 @@ See DecodeType
 * HIBCQRPAS
 * HAN_XIN
 * GS1_HAN_XIN
+* GS1_AZTEC
+* GS1_COMPOSITE_BAR
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
