@@ -285,12 +285,13 @@ class QrParams implements ArrayAccess
     /**
      * Sets text_encoding
      *
-     * @param string $text_encoding Encoding of codetext.
+     * @param string $text_encoding DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext.
      *
      * @return $this
      */
     public function setTextEncoding($text_encoding)
     {
+        trigger_error('Property $text_encoding is deprecated. This property is obsolete and will be removed in future releases. Unicode symbols detection and encoding will be processed in Auto mode with Extended Channel Interpretation charset designator. Using of own encodings requires manual CodeText encoding into byte[] array.  Sets the encoding of codetext.', E_USER_DEPRECATED);
         $this->container['text_encoding'] = $text_encoding;
 
         return $this;

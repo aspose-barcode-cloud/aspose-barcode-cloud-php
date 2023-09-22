@@ -393,4 +393,9 @@ class EncodeBarcodeType
     /// </summary>
     public const GS1HanXin =  "GS1HanXin";
 
+    /// <summary>
+    /// Enum value GS1Aztec
+    /// </summary>
+    public const GS1Aztec =  "GS1Aztec";
+
 }

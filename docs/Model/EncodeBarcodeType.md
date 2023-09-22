@@ -73,6 +73,7 @@ See EncodeTypes
 * GS1_DOT_CODE
 * HAN_XIN
 * GS1_HAN_XIN
+* GS1_AZTEC
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
