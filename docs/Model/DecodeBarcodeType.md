@@ -86,6 +86,7 @@ See DecodeType
 * GS1_HAN_XIN
 * GS1_AZTEC
 * GS1_COMPOSITE_BAR
+* GS1_MICRO_PDF417
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

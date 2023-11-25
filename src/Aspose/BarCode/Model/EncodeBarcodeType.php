@@ -398,4 +398,9 @@ class EncodeBarcodeType
     /// </summary>
     public const GS1Aztec =  "GS1Aztec";
 
+    /// <summary>
+    /// Enum value GS1MicroPdf417
+    /// </summary>
+    public const GS1MicroPdf417 =  "GS1MicroPdf417";
+
 }

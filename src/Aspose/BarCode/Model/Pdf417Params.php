@@ -79,7 +79,10 @@ class Pdf417Params implements ArrayAccess
         'macro_addressee' => 'string',
         'macro_eci_encoding' => '\Aspose\BarCode\Model\ECIEncodings',
         'code128_emulation' => '\Aspose\BarCode\Model\Code128Emulation',
-        'pdf417_macro_terminator' => '\Aspose\BarCode\Model\Pdf417MacroTerminator'
+        'is_code128_emulation' => 'bool',
+        'pdf417_macro_terminator' => '\Aspose\BarCode\Model\Pdf417MacroTerminator',
+        'is_linked' => 'bool',
+        'macro_characters' => '\Aspose\BarCode\Model\MacroCharacter'
     ];
 
     /**
@@ -108,7 +111,10 @@ class Pdf417Params implements ArrayAccess
         'macro_addressee' => null,
         'macro_eci_encoding' => null,
         'code128_emulation' => null,
-        'pdf417_macro_terminator' => null
+        'is_code128_emulation' => null,
+        'pdf417_macro_terminator' => null,
+        'is_linked' => null,
+        'macro_characters' => null
     ];
 
     /**
@@ -158,7 +164,10 @@ class Pdf417Params implements ArrayAccess
         'macro_addressee' => 'MacroAddressee',
         'macro_eci_encoding' => 'MacroECIEncoding',
         'code128_emulation' => 'Code128Emulation',
-        'pdf417_macro_terminator' => 'Pdf417MacroTerminator'
+        'is_code128_emulation' => 'IsCode128Emulation',
+        'pdf417_macro_terminator' => 'Pdf417MacroTerminator',
+        'is_linked' => 'IsLinked',
+        'macro_characters' => 'MacroCharacters'
     ];
 
     /**
@@ -187,7 +196,10 @@ class Pdf417Params implements ArrayAccess
         'macro_addressee' => 'setMacroAddressee',
         'macro_eci_encoding' => 'setMacroEciEncoding',
         'code128_emulation' => 'setCode128Emulation',
-        'pdf417_macro_terminator' => 'setPdf417MacroTerminator'
+        'is_code128_emulation' => 'setIsCode128Emulation',
+        'pdf417_macro_terminator' => 'setPdf417MacroTerminator',
+        'is_linked' => 'setIsLinked',
+        'macro_characters' => 'setMacroCharacters'
     ];
 
     /**
@@ -216,7 +228,10 @@ class Pdf417Params implements ArrayAccess
         'macro_addressee' => 'getMacroAddressee',
         'macro_eci_encoding' => 'getMacroEciEncoding',
         'code128_emulation' => 'getCode128Emulation',
-        'pdf417_macro_terminator' => 'getPdf417MacroTerminator'
+        'is_code128_emulation' => 'getIsCode128Emulation',
+        'pdf417_macro_terminator' => 'getPdf417MacroTerminator',
+        'is_linked' => 'getIsLinked',
+        'macro_characters' => 'getMacroCharacters'
     ];
 
     /**
@@ -299,7 +314,10 @@ class Pdf417Params implements ArrayAccess
         $this->container['macro_addressee'] = isset($data['macro_addressee']) ? $data['macro_addressee'] : null;
         $this->container['macro_eci_encoding'] = isset($data['macro_eci_encoding']) ? $data['macro_eci_encoding'] : null;
         $this->container['code128_emulation'] = isset($data['code128_emulation']) ? $data['code128_emulation'] : null;
+        $this->container['is_code128_emulation'] = isset($data['is_code128_emulation']) ? $data['is_code128_emulation'] : null;
         $this->container['pdf417_macro_terminator'] = isset($data['pdf417_macro_terminator']) ? $data['pdf417_macro_terminator'] : null;
+        $this->container['is_linked'] = isset($data['is_linked']) ? $data['is_linked'] : null;
+        $this->container['macro_characters'] = isset($data['macro_characters']) ? $data['macro_characters'] : null;
     }
 
     /**
@@ -796,13 +814,38 @@ class Pdf417Params implements ArrayAccess
     /**
      * Sets code128_emulation
      *
-     * @param \Aspose\BarCode\Model\Code128Emulation $code128_emulation Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
+     * @param \Aspose\BarCode\Model\Code128Emulation $code128_emulation DEPRECATED: This property is obsolete and will be removed in future releases. See samples of using new parameters on https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/ Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
      *
      * @return $this
      */
     public function setCode128Emulation($code128_emulation)
     {
+        trigger_error('Property $code128_emulation is deprecated. This property is obsolete and will be removed in future releases. See samples of using new parameters on https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/ Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.', E_USER_DEPRECATED);
         $this->container['code128_emulation'] = $code128_emulation;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_code128_emulation
+     *
+     * @return bool
+     */
+    public function getIsCode128Emulation()
+    {
+        return $this->container['is_code128_emulation'];
+    }
+
+    /**
+     * Sets is_code128_emulation
+     *
+     * @param bool $is_code128_emulation Can be used only with MicroPdf417 and encodes Code 128 emulation modes. Can encode FNC1 in second position modes 908 and 909, also can encode 910 and 911 which just indicate that recognized MicroPdf417 can be interpret as Code 128.
+     *
+     * @return $this
+     */
+    public function setIsCode128Emulation($is_code128_emulation)
+    {
+        $this->container['is_code128_emulation'] = $is_code128_emulation;
 
         return $this;
     }
@@ -827,6 +870,54 @@ class Pdf417Params implements ArrayAccess
     public function setPdf417MacroTerminator($pdf417_macro_terminator)
     {
         $this->container['pdf417_macro_terminator'] = $pdf417_macro_terminator;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_linked
+     *
+     * @return bool
+     */
+    public function getIsLinked()
+    {
+        return $this->container['is_linked'];
+    }
+
+    /**
+     * Sets is_linked
+     *
+     * @param bool $is_linked Defines linked modes with GS1MicroPdf417, MicroPdf417 and Pdf417 barcodes. With GS1MicroPdf417 symbology encodes 906, 907, 912, 913, 914, 915 “Linked” UCC/EAN-128 modes. With MicroPdf417 and Pdf417 symbologies encodes 918 linkage flag to associated linear component other than an EAN.UCC.
+     *
+     * @return $this
+     */
+    public function setIsLinked($is_linked)
+    {
+        $this->container['is_linked'] = $is_linked;
+
+        return $this;
+    }
+
+    /**
+     * Gets macro_characters
+     *
+     * @return \Aspose\BarCode\Model\MacroCharacter
+     */
+    public function getMacroCharacters()
+    {
+        return $this->container['macro_characters'];
+    }
+
+    /**
+     * Sets macro_characters
+     *
+     * @param \Aspose\BarCode\Model\MacroCharacter $macro_characters Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with MicroPdf417 and encodes 916 and 917 MicroPdf417 modes. Default value: MacroCharacters.None.
+     *
+     * @return $this
+     */
+    public function setMacroCharacters($macro_characters)
+    {
+        $this->container['macro_characters'] = $macro_characters;
 
         return $this;
     }
