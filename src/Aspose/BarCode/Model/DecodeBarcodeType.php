@@ -458,4 +458,9 @@ class DecodeBarcodeType
     /// </summary>
     public const GS1CompositeBar =  "GS1CompositeBar";
 
+    /// <summary>
+    /// Enum value GS1MicroPdf417
+    /// </summary>
+    public const GS1MicroPdf417 =  "GS1MicroPdf417";
+
 }
