@@ -4,7 +4,7 @@ declare(strict_types=1);
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DecodeBarcodeType.php">
- *   Copyright (c) 2023 Aspose Pty Ltd
+ *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -462,5 +462,10 @@ class DecodeBarcodeType
     /// Enum value GS1MicroPdf417
     /// </summary>
     public const GS1MicroPdf417 =  "GS1MicroPdf417";
+
+    /// <summary>
+    /// Enum value mostCommonlyUsed
+    /// </summary>
+    public const mostCommonlyUsed =  "mostCommonlyUsed";
 
 }

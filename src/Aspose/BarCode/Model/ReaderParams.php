@@ -4,7 +4,7 @@ declare(strict_types=1);
 /**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ReaderParams.php">
- *   Copyright (c) 2023 Aspose Pty Ltd
+ *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,6 +60,7 @@ class ReaderParams implements ArrayAccess
      */
     protected static array $swaggerTypes = [
         'type' => '\Aspose\BarCode\Model\DecodeBarcodeType',
+        'types' => '\Aspose\BarCode\Model\DecodeBarcodeType[]',
         'checksum_validation' => '\Aspose\BarCode\Model\ChecksumValidation',
         'detect_encoding' => 'bool',
         'preset' => '\Aspose\BarCode\Model\PresetType',
@@ -103,6 +104,7 @@ class ReaderParams implements ArrayAccess
      */
     protected static array $swaggerFormats = [
         'type' => null,
+        'types' => null,
         'checksum_validation' => null,
         'detect_encoding' => null,
         'preset' => null,
@@ -167,6 +169,7 @@ class ReaderParams implements ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'Type',
+        'types' => 'Types',
         'checksum_validation' => 'ChecksumValidation',
         'detect_encoding' => 'DetectEncoding',
         'preset' => 'Preset',
@@ -210,6 +213,7 @@ class ReaderParams implements ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
+        'types' => 'setTypes',
         'checksum_validation' => 'setChecksumValidation',
         'detect_encoding' => 'setDetectEncoding',
         'preset' => 'setPreset',
@@ -253,6 +257,7 @@ class ReaderParams implements ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
+        'types' => 'getTypes',
         'checksum_validation' => 'getChecksumValidation',
         'detect_encoding' => 'getDetectEncoding',
         'preset' => 'getPreset',
@@ -350,6 +355,7 @@ class ReaderParams implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['types'] = isset($data['types']) ? $data['types'] : null;
         $this->container['checksum_validation'] = isset($data['checksum_validation']) ? $data['checksum_validation'] : null;
         $this->container['detect_encoding'] = isset($data['detect_encoding']) ? $data['detect_encoding'] : null;
         $this->container['preset'] = isset($data['preset']) ? $data['preset'] : null;
@@ -430,6 +436,30 @@ class ReaderParams implements ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets types
+     *
+     * @return \Aspose\BarCode\Model\DecodeBarcodeType[]
+     */
+    public function getTypes()
+    {
+        return $this->container['types'];
+    }
+
+    /**
+     * Sets types
+     *
+     * @param \Aspose\BarCode\Model\DecodeBarcodeType[] $types Multiple barcode types to read.
+     *
+     * @return $this
+     */
+    public function setTypes($types)
+    {
+        $this->container['types'] = $types;
 
         return $this;
     }
