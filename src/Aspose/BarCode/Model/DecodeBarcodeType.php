@@ -463,4 +463,9 @@ class DecodeBarcodeType
     /// </summary>
     public const GS1MicroPdf417 =  "GS1MicroPdf417";
 
+    /// <summary>
+    /// Enum value mostCommonlyUsed
+    /// </summary>
+    public const mostCommonlyUsed =  "mostCommonlyUsed";
+
 }

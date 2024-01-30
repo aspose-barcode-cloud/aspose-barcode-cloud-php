@@ -900,6 +900,19 @@ class BarcodeApi
             }
         }
         // query params
+        if (is_array($request->types)) {
+            $request->types = ObjectSerializer::serializeCollection($request->types, 'multi', true);
+        }
+        if (isset($request->types)) {
+            $localName = lcfirst('Types');
+            $localValue = is_bool($request->types) ? ($request->types ? 'true' : 'false') : $request->types;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if (isset($request->checksum_validation)) {
             $localName = lcfirst('ChecksumValidation');
             $localValue = is_bool($request->checksum_validation) ? ($request->checksum_validation ? 'true' : 'false') : $request->checksum_validation;
@@ -1500,6 +1513,19 @@ class BarcodeApi
         if (isset($request->type)) {
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if (is_array($request->types)) {
+            $request->types = ObjectSerializer::serializeCollection($request->types, 'multi', true);
+        }
+        if (isset($request->types)) {
+            $localName = lcfirst('Types');
+            $localValue = is_bool($request->types) ? ($request->types ? 'true' : 'false') : $request->types;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

@@ -43,6 +43,7 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * Initializes a new instance of the PostBarcodeRecognizeFromUrlOrContentRequest class.
      *
      * @param string $type The type of barcode to read.
+     * @param \Aspose\BarCode\Model\DecodeBarcodeType[] $types Multiple barcode types to read.
      * @param string $checksum_validation Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
      * @param bool $detect_encoding A flag which force engine to detect codetext encoding for Unicode.
      * @param string $preset Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality.
@@ -80,9 +81,10 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * @param string $url The image file url.
      * @param \SplFileObject $image Image data
      */
-    public function __construct($type = null, $checksum_validation = null, $detect_encoding = null, $preset = null, $rect_x = null, $rect_y = null, $rect_width = null, $rect_height = null, $strip_fnc = null, $timeout = null, $median_smoothing_window_size = null, $allow_median_smoothing = null, $allow_complex_background = null, $allow_datamatrix_industrial_barcodes = null, $allow_decreased_image = null, $allow_detect_scan_gap = null, $allow_incorrect_barcodes = null, $allow_invert_image = null, $allow_micro_white_spots_removing = null, $allow_one_d_fast_barcodes_detector = null, $allow_one_d_wiped_bars_restoration = null, $allow_qr_micro_qr_restoration = null, $allow_regular_image = null, $allow_salt_and_pepper_filtering = null, $allow_white_spots_removing = null, $check_more1_d_variants = null, $fast_scan_only = null, $allow_additional_restorations = null, $region_likelihood_threshold_percent = null, $scan_window_sizes = null, $similarity = null, $skip_diagonal_search = null, $read_tiny_barcodes = null, $australian_post_encoding_table = null, $ignore_ending_filling_patterns_for_c_table = null, $url = null, $image = null)
+    public function __construct($type = null, $types = null, $checksum_validation = null, $detect_encoding = null, $preset = null, $rect_x = null, $rect_y = null, $rect_width = null, $rect_height = null, $strip_fnc = null, $timeout = null, $median_smoothing_window_size = null, $allow_median_smoothing = null, $allow_complex_background = null, $allow_datamatrix_industrial_barcodes = null, $allow_decreased_image = null, $allow_detect_scan_gap = null, $allow_incorrect_barcodes = null, $allow_invert_image = null, $allow_micro_white_spots_removing = null, $allow_one_d_fast_barcodes_detector = null, $allow_one_d_wiped_bars_restoration = null, $allow_qr_micro_qr_restoration = null, $allow_regular_image = null, $allow_salt_and_pepper_filtering = null, $allow_white_spots_removing = null, $check_more1_d_variants = null, $fast_scan_only = null, $allow_additional_restorations = null, $region_likelihood_threshold_percent = null, $scan_window_sizes = null, $similarity = null, $skip_diagonal_search = null, $read_tiny_barcodes = null, $australian_post_encoding_table = null, $ignore_ending_filling_patterns_for_c_table = null, $url = null, $image = null)
     {
         $this->type = $type;
+        $this->types = $types;
         $this->checksum_validation = $checksum_validation;
         $this->detect_encoding = $detect_encoding;
         $this->preset = $preset;
@@ -125,6 +127,11 @@ class PostBarcodeRecognizeFromUrlOrContentRequest
      * The type of barcode to read.
      */
     public $type;
+
+    /**
+     * Multiple barcode types to read.
+     */
+    public $types;
 
     /**
      * Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies
