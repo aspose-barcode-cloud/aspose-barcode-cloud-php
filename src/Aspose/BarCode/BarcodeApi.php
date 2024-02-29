@@ -285,368 +285,330 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // query params
         if (isset($request->type)) {
-            $localName = lcfirst('Type');
-            $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Type');
+            $queryParamValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text)) {
-            $localName = lcfirst('Text');
-            $localValue = is_bool($request->text) ? ($request->text ? 'true' : 'false') : $request->text;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Text');
+            $queryParamValue = is_bool($request->text) ? ($request->text ? 'true' : 'false') : $request->text;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->two_d_display_text)) {
-            $localName = lcfirst('TwoDDisplayText');
-            $localValue = is_bool($request->two_d_display_text) ? ($request->two_d_display_text ? 'true' : 'false') : $request->two_d_display_text;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TwoDDisplayText');
+            $queryParamValue = is_bool($request->two_d_display_text) ? ($request->two_d_display_text ? 'true' : 'false') : $request->two_d_display_text;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_location)) {
-            $localName = lcfirst('TextLocation');
-            $localValue = is_bool($request->text_location) ? ($request->text_location ? 'true' : 'false') : $request->text_location;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextLocation');
+            $queryParamValue = is_bool($request->text_location) ? ($request->text_location ? 'true' : 'false') : $request->text_location;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_alignment)) {
-            $localName = lcfirst('TextAlignment');
-            $localValue = is_bool($request->text_alignment) ? ($request->text_alignment ? 'true' : 'false') : $request->text_alignment;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextAlignment');
+            $queryParamValue = is_bool($request->text_alignment) ? ($request->text_alignment ? 'true' : 'false') : $request->text_alignment;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_color)) {
-            $localName = lcfirst('TextColor');
-            $localValue = is_bool($request->text_color) ? ($request->text_color ? 'true' : 'false') : $request->text_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextColor');
+            $queryParamValue = is_bool($request->text_color) ? ($request->text_color ? 'true' : 'false') : $request->text_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->font_size_mode)) {
-            $localName = lcfirst('FontSizeMode');
-            $localValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('FontSizeMode');
+            $queryParamValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->no_wrap)) {
-            $localName = lcfirst('NoWrap');
-            $localValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('NoWrap');
+            $queryParamValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->resolution)) {
-            $localName = lcfirst('Resolution');
-            $localValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Resolution');
+            $queryParamValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->resolution_x)) {
-            $localName = lcfirst('ResolutionX');
-            $localValue = is_bool($request->resolution_x) ? ($request->resolution_x ? 'true' : 'false') : $request->resolution_x;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ResolutionX');
+            $queryParamValue = is_bool($request->resolution_x) ? ($request->resolution_x ? 'true' : 'false') : $request->resolution_x;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->resolution_y)) {
-            $localName = lcfirst('ResolutionY');
-            $localValue = is_bool($request->resolution_y) ? ($request->resolution_y ? 'true' : 'false') : $request->resolution_y;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ResolutionY');
+            $queryParamValue = is_bool($request->resolution_y) ? ($request->resolution_y ? 'true' : 'false') : $request->resolution_y;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->dimension_x)) {
-            $localName = lcfirst('DimensionX');
-            $localValue = is_bool($request->dimension_x) ? ($request->dimension_x ? 'true' : 'false') : $request->dimension_x;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('DimensionX');
+            $queryParamValue = is_bool($request->dimension_x) ? ($request->dimension_x ? 'true' : 'false') : $request->dimension_x;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_space)) {
-            $localName = lcfirst('TextSpace');
-            $localValue = is_bool($request->text_space) ? ($request->text_space ? 'true' : 'false') : $request->text_space;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextSpace');
+            $queryParamValue = is_bool($request->text_space) ? ($request->text_space ? 'true' : 'false') : $request->text_space;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->units)) {
-            $localName = lcfirst('Units');
-            $localValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Units');
+            $queryParamValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->size_mode)) {
-            $localName = lcfirst('SizeMode');
-            $localValue = is_bool($request->size_mode) ? ($request->size_mode ? 'true' : 'false') : $request->size_mode;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SizeMode');
+            $queryParamValue = is_bool($request->size_mode) ? ($request->size_mode ? 'true' : 'false') : $request->size_mode;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->bar_height)) {
-            $localName = lcfirst('BarHeight');
-            $localValue = is_bool($request->bar_height) ? ($request->bar_height ? 'true' : 'false') : $request->bar_height;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BarHeight');
+            $queryParamValue = is_bool($request->bar_height) ? ($request->bar_height ? 'true' : 'false') : $request->bar_height;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->image_height)) {
-            $localName = lcfirst('ImageHeight');
-            $localValue = is_bool($request->image_height) ? ($request->image_height ? 'true' : 'false') : $request->image_height;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ImageHeight');
+            $queryParamValue = is_bool($request->image_height) ? ($request->image_height ? 'true' : 'false') : $request->image_height;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->image_width)) {
-            $localName = lcfirst('ImageWidth');
-            $localValue = is_bool($request->image_width) ? ($request->image_width ? 'true' : 'false') : $request->image_width;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ImageWidth');
+            $queryParamValue = is_bool($request->image_width) ? ($request->image_width ? 'true' : 'false') : $request->image_width;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rotation_angle)) {
-            $localName = lcfirst('RotationAngle');
-            $localValue = is_bool($request->rotation_angle) ? ($request->rotation_angle ? 'true' : 'false') : $request->rotation_angle;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RotationAngle');
+            $queryParamValue = is_bool($request->rotation_angle) ? ($request->rotation_angle ? 'true' : 'false') : $request->rotation_angle;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->back_color)) {
-            $localName = lcfirst('BackColor');
-            $localValue = is_bool($request->back_color) ? ($request->back_color ? 'true' : 'false') : $request->back_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BackColor');
+            $queryParamValue = is_bool($request->back_color) ? ($request->back_color ? 'true' : 'false') : $request->back_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->bar_color)) {
-            $localName = lcfirst('BarColor');
-            $localValue = is_bool($request->bar_color) ? ($request->bar_color ? 'true' : 'false') : $request->bar_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BarColor');
+            $queryParamValue = is_bool($request->bar_color) ? ($request->bar_color ? 'true' : 'false') : $request->bar_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_color)) {
-            $localName = lcfirst('BorderColor');
-            $localValue = is_bool($request->border_color) ? ($request->border_color ? 'true' : 'false') : $request->border_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderColor');
+            $queryParamValue = is_bool($request->border_color) ? ($request->border_color ? 'true' : 'false') : $request->border_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_width)) {
-            $localName = lcfirst('BorderWidth');
-            $localValue = is_bool($request->border_width) ? ($request->border_width ? 'true' : 'false') : $request->border_width;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderWidth');
+            $queryParamValue = is_bool($request->border_width) ? ($request->border_width ? 'true' : 'false') : $request->border_width;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_dash_style)) {
-            $localName = lcfirst('BorderDashStyle');
-            $localValue = is_bool($request->border_dash_style) ? ($request->border_dash_style ? 'true' : 'false') : $request->border_dash_style;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderDashStyle');
+            $queryParamValue = is_bool($request->border_dash_style) ? ($request->border_dash_style ? 'true' : 'false') : $request->border_dash_style;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_visible)) {
-            $localName = lcfirst('BorderVisible');
-            $localValue = is_bool($request->border_visible) ? ($request->border_visible ? 'true' : 'false') : $request->border_visible;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderVisible');
+            $queryParamValue = is_bool($request->border_visible) ? ($request->border_visible ? 'true' : 'false') : $request->border_visible;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->enable_checksum)) {
-            $localName = lcfirst('EnableChecksum');
-            $localValue = is_bool($request->enable_checksum) ? ($request->enable_checksum ? 'true' : 'false') : $request->enable_checksum;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('EnableChecksum');
+            $queryParamValue = is_bool($request->enable_checksum) ? ($request->enable_checksum ? 'true' : 'false') : $request->enable_checksum;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->enable_escape)) {
-            $localName = lcfirst('EnableEscape');
-            $localValue = is_bool($request->enable_escape) ? ($request->enable_escape ? 'true' : 'false') : $request->enable_escape;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('EnableEscape');
+            $queryParamValue = is_bool($request->enable_escape) ? ($request->enable_escape ? 'true' : 'false') : $request->enable_escape;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->filled_bars)) {
-            $localName = lcfirst('FilledBars');
-            $localValue = is_bool($request->filled_bars) ? ($request->filled_bars ? 'true' : 'false') : $request->filled_bars;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('FilledBars');
+            $queryParamValue = is_bool($request->filled_bars) ? ($request->filled_bars ? 'true' : 'false') : $request->filled_bars;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->always_show_checksum)) {
-            $localName = lcfirst('AlwaysShowChecksum');
-            $localValue = is_bool($request->always_show_checksum) ? ($request->always_show_checksum ? 'true' : 'false') : $request->always_show_checksum;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AlwaysShowChecksum');
+            $queryParamValue = is_bool($request->always_show_checksum) ? ($request->always_show_checksum ? 'true' : 'false') : $request->always_show_checksum;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->wide_narrow_ratio)) {
-            $localName = lcfirst('WideNarrowRatio');
-            $localValue = is_bool($request->wide_narrow_ratio) ? ($request->wide_narrow_ratio ? 'true' : 'false') : $request->wide_narrow_ratio;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('WideNarrowRatio');
+            $queryParamValue = is_bool($request->wide_narrow_ratio) ? ($request->wide_narrow_ratio ? 'true' : 'false') : $request->wide_narrow_ratio;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->validate_text)) {
-            $localName = lcfirst('ValidateText');
-            $localValue = is_bool($request->validate_text) ? ($request->validate_text ? 'true' : 'false') : $request->validate_text;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ValidateText');
+            $queryParamValue = is_bool($request->validate_text) ? ($request->validate_text ? 'true' : 'false') : $request->validate_text;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->supplement_data)) {
-            $localName = lcfirst('SupplementData');
-            $localValue = is_bool($request->supplement_data) ? ($request->supplement_data ? 'true' : 'false') : $request->supplement_data;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SupplementData');
+            $queryParamValue = is_bool($request->supplement_data) ? ($request->supplement_data ? 'true' : 'false') : $request->supplement_data;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->supplement_space)) {
-            $localName = lcfirst('SupplementSpace');
-            $localValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SupplementSpace');
+            $queryParamValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->bar_width_reduction)) {
-            $localName = lcfirst('BarWidthReduction');
-            $localValue = is_bool($request->bar_width_reduction) ? ($request->bar_width_reduction ? 'true' : 'false') : $request->bar_width_reduction;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BarWidthReduction');
+            $queryParamValue = is_bool($request->bar_width_reduction) ? ($request->bar_width_reduction ? 'true' : 'false') : $request->bar_width_reduction;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->use_anti_alias)) {
-            $localName = lcfirst('UseAntiAlias');
-            $localValue = is_bool($request->use_anti_alias) ? ($request->use_anti_alias ? 'true' : 'false') : $request->use_anti_alias;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('UseAntiAlias');
+            $queryParamValue = is_bool($request->use_anti_alias) ? ($request->use_anti_alias ? 'true' : 'false') : $request->use_anti_alias;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->format)) {
-            $localName = lcfirst('format');
-            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('format');
+            $queryParamValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
@@ -883,399 +845,342 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-        // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
-
-        // query params
         if (isset($request->type)) {
-            $localName = lcfirst('Type');
-            $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Type');
+            $queryParamValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (is_array($request->types)) {
-            $request->types = ObjectSerializer::serializeCollection($request->types, 'multi', true);
+            $queryParamName = lcfirst('Types');
+            $queryParams[$queryParamName] = $request->types;
         }
-        if (isset($request->types)) {
-            $localName = lcfirst('Types');
-            $localValue = is_bool($request->types) ? ($request->types ? 'true' : 'false') : $request->types;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if (isset($request->checksum_validation)) {
-            $localName = lcfirst('ChecksumValidation');
-            $localValue = is_bool($request->checksum_validation) ? ($request->checksum_validation ? 'true' : 'false') : $request->checksum_validation;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ChecksumValidation');
+            $queryParamValue = is_bool($request->checksum_validation) ? ($request->checksum_validation ? 'true' : 'false') : $request->checksum_validation;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->detect_encoding)) {
-            $localName = lcfirst('DetectEncoding');
-            $localValue = is_bool($request->detect_encoding) ? ($request->detect_encoding ? 'true' : 'false') : $request->detect_encoding;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('DetectEncoding');
+            $queryParamValue = is_bool($request->detect_encoding) ? ($request->detect_encoding ? 'true' : 'false') : $request->detect_encoding;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->preset)) {
-            $localName = lcfirst('Preset');
-            $localValue = is_bool($request->preset) ? ($request->preset ? 'true' : 'false') : $request->preset;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Preset');
+            $queryParamValue = is_bool($request->preset) ? ($request->preset ? 'true' : 'false') : $request->preset;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_x)) {
-            $localName = lcfirst('RectX');
-            $localValue = is_bool($request->rect_x) ? ($request->rect_x ? 'true' : 'false') : $request->rect_x;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectX');
+            $queryParamValue = is_bool($request->rect_x) ? ($request->rect_x ? 'true' : 'false') : $request->rect_x;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_y)) {
-            $localName = lcfirst('RectY');
-            $localValue = is_bool($request->rect_y) ? ($request->rect_y ? 'true' : 'false') : $request->rect_y;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectY');
+            $queryParamValue = is_bool($request->rect_y) ? ($request->rect_y ? 'true' : 'false') : $request->rect_y;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_width)) {
-            $localName = lcfirst('RectWidth');
-            $localValue = is_bool($request->rect_width) ? ($request->rect_width ? 'true' : 'false') : $request->rect_width;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectWidth');
+            $queryParamValue = is_bool($request->rect_width) ? ($request->rect_width ? 'true' : 'false') : $request->rect_width;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_height)) {
-            $localName = lcfirst('RectHeight');
-            $localValue = is_bool($request->rect_height) ? ($request->rect_height ? 'true' : 'false') : $request->rect_height;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectHeight');
+            $queryParamValue = is_bool($request->rect_height) ? ($request->rect_height ? 'true' : 'false') : $request->rect_height;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->strip_fnc)) {
-            $localName = lcfirst('StripFNC');
-            $localValue = is_bool($request->strip_fnc) ? ($request->strip_fnc ? 'true' : 'false') : $request->strip_fnc;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('StripFNC');
+            $queryParamValue = is_bool($request->strip_fnc) ? ($request->strip_fnc ? 'true' : 'false') : $request->strip_fnc;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->timeout)) {
-            $localName = lcfirst('Timeout');
-            $localValue = is_bool($request->timeout) ? ($request->timeout ? 'true' : 'false') : $request->timeout;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Timeout');
+            $queryParamValue = is_bool($request->timeout) ? ($request->timeout ? 'true' : 'false') : $request->timeout;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->median_smoothing_window_size)) {
-            $localName = lcfirst('MedianSmoothingWindowSize');
-            $localValue = is_bool($request->median_smoothing_window_size) ? ($request->median_smoothing_window_size ? 'true' : 'false') : $request->median_smoothing_window_size;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('MedianSmoothingWindowSize');
+            $queryParamValue = is_bool($request->median_smoothing_window_size) ? ($request->median_smoothing_window_size ? 'true' : 'false') : $request->median_smoothing_window_size;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_median_smoothing)) {
-            $localName = lcfirst('AllowMedianSmoothing');
-            $localValue = is_bool($request->allow_median_smoothing) ? ($request->allow_median_smoothing ? 'true' : 'false') : $request->allow_median_smoothing;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowMedianSmoothing');
+            $queryParamValue = is_bool($request->allow_median_smoothing) ? ($request->allow_median_smoothing ? 'true' : 'false') : $request->allow_median_smoothing;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_complex_background)) {
-            $localName = lcfirst('AllowComplexBackground');
-            $localValue = is_bool($request->allow_complex_background) ? ($request->allow_complex_background ? 'true' : 'false') : $request->allow_complex_background;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowComplexBackground');
+            $queryParamValue = is_bool($request->allow_complex_background) ? ($request->allow_complex_background ? 'true' : 'false') : $request->allow_complex_background;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_datamatrix_industrial_barcodes)) {
-            $localName = lcfirst('AllowDatamatrixIndustrialBarcodes');
-            $localValue = is_bool($request->allow_datamatrix_industrial_barcodes) ? ($request->allow_datamatrix_industrial_barcodes ? 'true' : 'false') : $request->allow_datamatrix_industrial_barcodes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowDatamatrixIndustrialBarcodes');
+            $queryParamValue = is_bool($request->allow_datamatrix_industrial_barcodes) ? ($request->allow_datamatrix_industrial_barcodes ? 'true' : 'false') : $request->allow_datamatrix_industrial_barcodes;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_decreased_image)) {
-            $localName = lcfirst('AllowDecreasedImage');
-            $localValue = is_bool($request->allow_decreased_image) ? ($request->allow_decreased_image ? 'true' : 'false') : $request->allow_decreased_image;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowDecreasedImage');
+            $queryParamValue = is_bool($request->allow_decreased_image) ? ($request->allow_decreased_image ? 'true' : 'false') : $request->allow_decreased_image;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_detect_scan_gap)) {
-            $localName = lcfirst('AllowDetectScanGap');
-            $localValue = is_bool($request->allow_detect_scan_gap) ? ($request->allow_detect_scan_gap ? 'true' : 'false') : $request->allow_detect_scan_gap;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowDetectScanGap');
+            $queryParamValue = is_bool($request->allow_detect_scan_gap) ? ($request->allow_detect_scan_gap ? 'true' : 'false') : $request->allow_detect_scan_gap;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_incorrect_barcodes)) {
-            $localName = lcfirst('AllowIncorrectBarcodes');
-            $localValue = is_bool($request->allow_incorrect_barcodes) ? ($request->allow_incorrect_barcodes ? 'true' : 'false') : $request->allow_incorrect_barcodes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowIncorrectBarcodes');
+            $queryParamValue = is_bool($request->allow_incorrect_barcodes) ? ($request->allow_incorrect_barcodes ? 'true' : 'false') : $request->allow_incorrect_barcodes;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_invert_image)) {
-            $localName = lcfirst('AllowInvertImage');
-            $localValue = is_bool($request->allow_invert_image) ? ($request->allow_invert_image ? 'true' : 'false') : $request->allow_invert_image;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowInvertImage');
+            $queryParamValue = is_bool($request->allow_invert_image) ? ($request->allow_invert_image ? 'true' : 'false') : $request->allow_invert_image;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_micro_white_spots_removing)) {
-            $localName = lcfirst('AllowMicroWhiteSpotsRemoving');
-            $localValue = is_bool($request->allow_micro_white_spots_removing) ? ($request->allow_micro_white_spots_removing ? 'true' : 'false') : $request->allow_micro_white_spots_removing;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowMicroWhiteSpotsRemoving');
+            $queryParamValue = is_bool($request->allow_micro_white_spots_removing) ? ($request->allow_micro_white_spots_removing ? 'true' : 'false') : $request->allow_micro_white_spots_removing;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_one_d_fast_barcodes_detector)) {
-            $localName = lcfirst('AllowOneDFastBarcodesDetector');
-            $localValue = is_bool($request->allow_one_d_fast_barcodes_detector) ? ($request->allow_one_d_fast_barcodes_detector ? 'true' : 'false') : $request->allow_one_d_fast_barcodes_detector;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowOneDFastBarcodesDetector');
+            $queryParamValue = is_bool($request->allow_one_d_fast_barcodes_detector) ? ($request->allow_one_d_fast_barcodes_detector ? 'true' : 'false') : $request->allow_one_d_fast_barcodes_detector;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_one_d_wiped_bars_restoration)) {
-            $localName = lcfirst('AllowOneDWipedBarsRestoration');
-            $localValue = is_bool($request->allow_one_d_wiped_bars_restoration) ? ($request->allow_one_d_wiped_bars_restoration ? 'true' : 'false') : $request->allow_one_d_wiped_bars_restoration;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowOneDWipedBarsRestoration');
+            $queryParamValue = is_bool($request->allow_one_d_wiped_bars_restoration) ? ($request->allow_one_d_wiped_bars_restoration ? 'true' : 'false') : $request->allow_one_d_wiped_bars_restoration;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_qr_micro_qr_restoration)) {
-            $localName = lcfirst('AllowQRMicroQrRestoration');
-            $localValue = is_bool($request->allow_qr_micro_qr_restoration) ? ($request->allow_qr_micro_qr_restoration ? 'true' : 'false') : $request->allow_qr_micro_qr_restoration;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowQRMicroQrRestoration');
+            $queryParamValue = is_bool($request->allow_qr_micro_qr_restoration) ? ($request->allow_qr_micro_qr_restoration ? 'true' : 'false') : $request->allow_qr_micro_qr_restoration;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_regular_image)) {
-            $localName = lcfirst('AllowRegularImage');
-            $localValue = is_bool($request->allow_regular_image) ? ($request->allow_regular_image ? 'true' : 'false') : $request->allow_regular_image;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowRegularImage');
+            $queryParamValue = is_bool($request->allow_regular_image) ? ($request->allow_regular_image ? 'true' : 'false') : $request->allow_regular_image;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_salt_and_pepper_filtering)) {
-            $localName = lcfirst('AllowSaltAndPepperFiltering');
-            $localValue = is_bool($request->allow_salt_and_pepper_filtering) ? ($request->allow_salt_and_pepper_filtering ? 'true' : 'false') : $request->allow_salt_and_pepper_filtering;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowSaltAndPepperFiltering');
+            $queryParamValue = is_bool($request->allow_salt_and_pepper_filtering) ? ($request->allow_salt_and_pepper_filtering ? 'true' : 'false') : $request->allow_salt_and_pepper_filtering;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_white_spots_removing)) {
-            $localName = lcfirst('AllowWhiteSpotsRemoving');
-            $localValue = is_bool($request->allow_white_spots_removing) ? ($request->allow_white_spots_removing ? 'true' : 'false') : $request->allow_white_spots_removing;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowWhiteSpotsRemoving');
+            $queryParamValue = is_bool($request->allow_white_spots_removing) ? ($request->allow_white_spots_removing ? 'true' : 'false') : $request->allow_white_spots_removing;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->check_more1_d_variants)) {
-            $localName = lcfirst('CheckMore1DVariants');
-            $localValue = is_bool($request->check_more1_d_variants) ? ($request->check_more1_d_variants ? 'true' : 'false') : $request->check_more1_d_variants;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('CheckMore1DVariants');
+            $queryParamValue = is_bool($request->check_more1_d_variants) ? ($request->check_more1_d_variants ? 'true' : 'false') : $request->check_more1_d_variants;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->fast_scan_only)) {
-            $localName = lcfirst('FastScanOnly');
-            $localValue = is_bool($request->fast_scan_only) ? ($request->fast_scan_only ? 'true' : 'false') : $request->fast_scan_only;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('FastScanOnly');
+            $queryParamValue = is_bool($request->fast_scan_only) ? ($request->fast_scan_only ? 'true' : 'false') : $request->fast_scan_only;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_additional_restorations)) {
-            $localName = lcfirst('AllowAdditionalRestorations');
-            $localValue = is_bool($request->allow_additional_restorations) ? ($request->allow_additional_restorations ? 'true' : 'false') : $request->allow_additional_restorations;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowAdditionalRestorations');
+            $queryParamValue = is_bool($request->allow_additional_restorations) ? ($request->allow_additional_restorations ? 'true' : 'false') : $request->allow_additional_restorations;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->region_likelihood_threshold_percent)) {
-            $localName = lcfirst('RegionLikelihoodThresholdPercent');
-            $localValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RegionLikelihoodThresholdPercent');
+            $queryParamValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (is_array($request->scan_window_sizes)) {
-            $request->scan_window_sizes = ObjectSerializer::serializeCollection($request->scan_window_sizes, 'multi', true);
+            $queryParamName = lcfirst('ScanWindowSizes');
+            $queryParams[$queryParamName] = $request->scan_window_sizes;
         }
-        if (isset($request->scan_window_sizes)) {
-            $localName = lcfirst('ScanWindowSizes');
-            $localValue = is_bool($request->scan_window_sizes) ? ($request->scan_window_sizes ? 'true' : 'false') : $request->scan_window_sizes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if (isset($request->similarity)) {
-            $localName = lcfirst('Similarity');
-            $localValue = is_bool($request->similarity) ? ($request->similarity ? 'true' : 'false') : $request->similarity;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Similarity');
+            $queryParamValue = is_bool($request->similarity) ? ($request->similarity ? 'true' : 'false') : $request->similarity;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->skip_diagonal_search)) {
-            $localName = lcfirst('SkipDiagonalSearch');
-            $localValue = is_bool($request->skip_diagonal_search) ? ($request->skip_diagonal_search ? 'true' : 'false') : $request->skip_diagonal_search;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SkipDiagonalSearch');
+            $queryParamValue = is_bool($request->skip_diagonal_search) ? ($request->skip_diagonal_search ? 'true' : 'false') : $request->skip_diagonal_search;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->read_tiny_barcodes)) {
-            $localName = lcfirst('ReadTinyBarcodes');
-            $localValue = is_bool($request->read_tiny_barcodes) ? ($request->read_tiny_barcodes ? 'true' : 'false') : $request->read_tiny_barcodes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ReadTinyBarcodes');
+            $queryParamValue = is_bool($request->read_tiny_barcodes) ? ($request->read_tiny_barcodes ? 'true' : 'false') : $request->read_tiny_barcodes;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->australian_post_encoding_table)) {
-            $localName = lcfirst('AustralianPostEncodingTable');
-            $localValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AustralianPostEncodingTable');
+            $queryParamValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->ignore_ending_filling_patterns_for_c_table)) {
-            $localName = lcfirst('IgnoreEndingFillingPatternsForCTable');
-            $localValue = is_bool($request->ignore_ending_filling_patterns_for_c_table) ? ($request->ignore_ending_filling_patterns_for_c_table ? 'true' : 'false') : $request->ignore_ending_filling_patterns_for_c_table;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('IgnoreEndingFillingPatternsForCTable');
+            $queryParamValue = is_bool($request->ignore_ending_filling_patterns_for_c_table) ? ($request->ignore_ending_filling_patterns_for_c_table ? 'true' : 'false') : $request->ignore_ending_filling_patterns_for_c_table;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->storage)) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('storage');
+            $queryParamValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->folder)) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('folder');
+            $queryParamValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
@@ -1508,384 +1413,329 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // query params
         if (isset($request->type)) {
-            $localName = lcfirst('Type');
-            $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Type');
+            $queryParamValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (is_array($request->types)) {
-            $request->types = ObjectSerializer::serializeCollection($request->types, 'multi', true);
+            $queryParamName = lcfirst('Types');
+            $queryParams[$queryParamName] = $request->types;
         }
-        if (isset($request->types)) {
-            $localName = lcfirst('Types');
-            $localValue = is_bool($request->types) ? ($request->types ? 'true' : 'false') : $request->types;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if (isset($request->checksum_validation)) {
-            $localName = lcfirst('ChecksumValidation');
-            $localValue = is_bool($request->checksum_validation) ? ($request->checksum_validation ? 'true' : 'false') : $request->checksum_validation;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ChecksumValidation');
+            $queryParamValue = is_bool($request->checksum_validation) ? ($request->checksum_validation ? 'true' : 'false') : $request->checksum_validation;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->detect_encoding)) {
-            $localName = lcfirst('DetectEncoding');
-            $localValue = is_bool($request->detect_encoding) ? ($request->detect_encoding ? 'true' : 'false') : $request->detect_encoding;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('DetectEncoding');
+            $queryParamValue = is_bool($request->detect_encoding) ? ($request->detect_encoding ? 'true' : 'false') : $request->detect_encoding;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->preset)) {
-            $localName = lcfirst('Preset');
-            $localValue = is_bool($request->preset) ? ($request->preset ? 'true' : 'false') : $request->preset;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Preset');
+            $queryParamValue = is_bool($request->preset) ? ($request->preset ? 'true' : 'false') : $request->preset;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_x)) {
-            $localName = lcfirst('RectX');
-            $localValue = is_bool($request->rect_x) ? ($request->rect_x ? 'true' : 'false') : $request->rect_x;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectX');
+            $queryParamValue = is_bool($request->rect_x) ? ($request->rect_x ? 'true' : 'false') : $request->rect_x;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_y)) {
-            $localName = lcfirst('RectY');
-            $localValue = is_bool($request->rect_y) ? ($request->rect_y ? 'true' : 'false') : $request->rect_y;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectY');
+            $queryParamValue = is_bool($request->rect_y) ? ($request->rect_y ? 'true' : 'false') : $request->rect_y;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_width)) {
-            $localName = lcfirst('RectWidth');
-            $localValue = is_bool($request->rect_width) ? ($request->rect_width ? 'true' : 'false') : $request->rect_width;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectWidth');
+            $queryParamValue = is_bool($request->rect_width) ? ($request->rect_width ? 'true' : 'false') : $request->rect_width;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rect_height)) {
-            $localName = lcfirst('RectHeight');
-            $localValue = is_bool($request->rect_height) ? ($request->rect_height ? 'true' : 'false') : $request->rect_height;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RectHeight');
+            $queryParamValue = is_bool($request->rect_height) ? ($request->rect_height ? 'true' : 'false') : $request->rect_height;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->strip_fnc)) {
-            $localName = lcfirst('StripFNC');
-            $localValue = is_bool($request->strip_fnc) ? ($request->strip_fnc ? 'true' : 'false') : $request->strip_fnc;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('StripFNC');
+            $queryParamValue = is_bool($request->strip_fnc) ? ($request->strip_fnc ? 'true' : 'false') : $request->strip_fnc;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->timeout)) {
-            $localName = lcfirst('Timeout');
-            $localValue = is_bool($request->timeout) ? ($request->timeout ? 'true' : 'false') : $request->timeout;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Timeout');
+            $queryParamValue = is_bool($request->timeout) ? ($request->timeout ? 'true' : 'false') : $request->timeout;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->median_smoothing_window_size)) {
-            $localName = lcfirst('MedianSmoothingWindowSize');
-            $localValue = is_bool($request->median_smoothing_window_size) ? ($request->median_smoothing_window_size ? 'true' : 'false') : $request->median_smoothing_window_size;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('MedianSmoothingWindowSize');
+            $queryParamValue = is_bool($request->median_smoothing_window_size) ? ($request->median_smoothing_window_size ? 'true' : 'false') : $request->median_smoothing_window_size;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_median_smoothing)) {
-            $localName = lcfirst('AllowMedianSmoothing');
-            $localValue = is_bool($request->allow_median_smoothing) ? ($request->allow_median_smoothing ? 'true' : 'false') : $request->allow_median_smoothing;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowMedianSmoothing');
+            $queryParamValue = is_bool($request->allow_median_smoothing) ? ($request->allow_median_smoothing ? 'true' : 'false') : $request->allow_median_smoothing;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_complex_background)) {
-            $localName = lcfirst('AllowComplexBackground');
-            $localValue = is_bool($request->allow_complex_background) ? ($request->allow_complex_background ? 'true' : 'false') : $request->allow_complex_background;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowComplexBackground');
+            $queryParamValue = is_bool($request->allow_complex_background) ? ($request->allow_complex_background ? 'true' : 'false') : $request->allow_complex_background;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_datamatrix_industrial_barcodes)) {
-            $localName = lcfirst('AllowDatamatrixIndustrialBarcodes');
-            $localValue = is_bool($request->allow_datamatrix_industrial_barcodes) ? ($request->allow_datamatrix_industrial_barcodes ? 'true' : 'false') : $request->allow_datamatrix_industrial_barcodes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowDatamatrixIndustrialBarcodes');
+            $queryParamValue = is_bool($request->allow_datamatrix_industrial_barcodes) ? ($request->allow_datamatrix_industrial_barcodes ? 'true' : 'false') : $request->allow_datamatrix_industrial_barcodes;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_decreased_image)) {
-            $localName = lcfirst('AllowDecreasedImage');
-            $localValue = is_bool($request->allow_decreased_image) ? ($request->allow_decreased_image ? 'true' : 'false') : $request->allow_decreased_image;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowDecreasedImage');
+            $queryParamValue = is_bool($request->allow_decreased_image) ? ($request->allow_decreased_image ? 'true' : 'false') : $request->allow_decreased_image;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_detect_scan_gap)) {
-            $localName = lcfirst('AllowDetectScanGap');
-            $localValue = is_bool($request->allow_detect_scan_gap) ? ($request->allow_detect_scan_gap ? 'true' : 'false') : $request->allow_detect_scan_gap;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowDetectScanGap');
+            $queryParamValue = is_bool($request->allow_detect_scan_gap) ? ($request->allow_detect_scan_gap ? 'true' : 'false') : $request->allow_detect_scan_gap;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_incorrect_barcodes)) {
-            $localName = lcfirst('AllowIncorrectBarcodes');
-            $localValue = is_bool($request->allow_incorrect_barcodes) ? ($request->allow_incorrect_barcodes ? 'true' : 'false') : $request->allow_incorrect_barcodes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowIncorrectBarcodes');
+            $queryParamValue = is_bool($request->allow_incorrect_barcodes) ? ($request->allow_incorrect_barcodes ? 'true' : 'false') : $request->allow_incorrect_barcodes;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_invert_image)) {
-            $localName = lcfirst('AllowInvertImage');
-            $localValue = is_bool($request->allow_invert_image) ? ($request->allow_invert_image ? 'true' : 'false') : $request->allow_invert_image;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowInvertImage');
+            $queryParamValue = is_bool($request->allow_invert_image) ? ($request->allow_invert_image ? 'true' : 'false') : $request->allow_invert_image;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_micro_white_spots_removing)) {
-            $localName = lcfirst('AllowMicroWhiteSpotsRemoving');
-            $localValue = is_bool($request->allow_micro_white_spots_removing) ? ($request->allow_micro_white_spots_removing ? 'true' : 'false') : $request->allow_micro_white_spots_removing;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowMicroWhiteSpotsRemoving');
+            $queryParamValue = is_bool($request->allow_micro_white_spots_removing) ? ($request->allow_micro_white_spots_removing ? 'true' : 'false') : $request->allow_micro_white_spots_removing;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_one_d_fast_barcodes_detector)) {
-            $localName = lcfirst('AllowOneDFastBarcodesDetector');
-            $localValue = is_bool($request->allow_one_d_fast_barcodes_detector) ? ($request->allow_one_d_fast_barcodes_detector ? 'true' : 'false') : $request->allow_one_d_fast_barcodes_detector;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowOneDFastBarcodesDetector');
+            $queryParamValue = is_bool($request->allow_one_d_fast_barcodes_detector) ? ($request->allow_one_d_fast_barcodes_detector ? 'true' : 'false') : $request->allow_one_d_fast_barcodes_detector;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_one_d_wiped_bars_restoration)) {
-            $localName = lcfirst('AllowOneDWipedBarsRestoration');
-            $localValue = is_bool($request->allow_one_d_wiped_bars_restoration) ? ($request->allow_one_d_wiped_bars_restoration ? 'true' : 'false') : $request->allow_one_d_wiped_bars_restoration;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowOneDWipedBarsRestoration');
+            $queryParamValue = is_bool($request->allow_one_d_wiped_bars_restoration) ? ($request->allow_one_d_wiped_bars_restoration ? 'true' : 'false') : $request->allow_one_d_wiped_bars_restoration;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_qr_micro_qr_restoration)) {
-            $localName = lcfirst('AllowQRMicroQrRestoration');
-            $localValue = is_bool($request->allow_qr_micro_qr_restoration) ? ($request->allow_qr_micro_qr_restoration ? 'true' : 'false') : $request->allow_qr_micro_qr_restoration;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowQRMicroQrRestoration');
+            $queryParamValue = is_bool($request->allow_qr_micro_qr_restoration) ? ($request->allow_qr_micro_qr_restoration ? 'true' : 'false') : $request->allow_qr_micro_qr_restoration;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_regular_image)) {
-            $localName = lcfirst('AllowRegularImage');
-            $localValue = is_bool($request->allow_regular_image) ? ($request->allow_regular_image ? 'true' : 'false') : $request->allow_regular_image;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowRegularImage');
+            $queryParamValue = is_bool($request->allow_regular_image) ? ($request->allow_regular_image ? 'true' : 'false') : $request->allow_regular_image;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_salt_and_pepper_filtering)) {
-            $localName = lcfirst('AllowSaltAndPepperFiltering');
-            $localValue = is_bool($request->allow_salt_and_pepper_filtering) ? ($request->allow_salt_and_pepper_filtering ? 'true' : 'false') : $request->allow_salt_and_pepper_filtering;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowSaltAndPepperFiltering');
+            $queryParamValue = is_bool($request->allow_salt_and_pepper_filtering) ? ($request->allow_salt_and_pepper_filtering ? 'true' : 'false') : $request->allow_salt_and_pepper_filtering;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_white_spots_removing)) {
-            $localName = lcfirst('AllowWhiteSpotsRemoving');
-            $localValue = is_bool($request->allow_white_spots_removing) ? ($request->allow_white_spots_removing ? 'true' : 'false') : $request->allow_white_spots_removing;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowWhiteSpotsRemoving');
+            $queryParamValue = is_bool($request->allow_white_spots_removing) ? ($request->allow_white_spots_removing ? 'true' : 'false') : $request->allow_white_spots_removing;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->check_more1_d_variants)) {
-            $localName = lcfirst('CheckMore1DVariants');
-            $localValue = is_bool($request->check_more1_d_variants) ? ($request->check_more1_d_variants ? 'true' : 'false') : $request->check_more1_d_variants;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('CheckMore1DVariants');
+            $queryParamValue = is_bool($request->check_more1_d_variants) ? ($request->check_more1_d_variants ? 'true' : 'false') : $request->check_more1_d_variants;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->fast_scan_only)) {
-            $localName = lcfirst('FastScanOnly');
-            $localValue = is_bool($request->fast_scan_only) ? ($request->fast_scan_only ? 'true' : 'false') : $request->fast_scan_only;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('FastScanOnly');
+            $queryParamValue = is_bool($request->fast_scan_only) ? ($request->fast_scan_only ? 'true' : 'false') : $request->fast_scan_only;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->allow_additional_restorations)) {
-            $localName = lcfirst('AllowAdditionalRestorations');
-            $localValue = is_bool($request->allow_additional_restorations) ? ($request->allow_additional_restorations ? 'true' : 'false') : $request->allow_additional_restorations;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AllowAdditionalRestorations');
+            $queryParamValue = is_bool($request->allow_additional_restorations) ? ($request->allow_additional_restorations ? 'true' : 'false') : $request->allow_additional_restorations;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->region_likelihood_threshold_percent)) {
-            $localName = lcfirst('RegionLikelihoodThresholdPercent');
-            $localValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RegionLikelihoodThresholdPercent');
+            $queryParamValue = is_bool($request->region_likelihood_threshold_percent) ? ($request->region_likelihood_threshold_percent ? 'true' : 'false') : $request->region_likelihood_threshold_percent;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (is_array($request->scan_window_sizes)) {
-            $request->scan_window_sizes = ObjectSerializer::serializeCollection($request->scan_window_sizes, 'multi', true);
+            $queryParamName = lcfirst('ScanWindowSizes');
+            $queryParams[$queryParamName] = $request->scan_window_sizes;
         }
-        if (isset($request->scan_window_sizes)) {
-            $localName = lcfirst('ScanWindowSizes');
-            $localValue = is_bool($request->scan_window_sizes) ? ($request->scan_window_sizes ? 'true' : 'false') : $request->scan_window_sizes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
         if (isset($request->similarity)) {
-            $localName = lcfirst('Similarity');
-            $localValue = is_bool($request->similarity) ? ($request->similarity ? 'true' : 'false') : $request->similarity;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Similarity');
+            $queryParamValue = is_bool($request->similarity) ? ($request->similarity ? 'true' : 'false') : $request->similarity;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->skip_diagonal_search)) {
-            $localName = lcfirst('SkipDiagonalSearch');
-            $localValue = is_bool($request->skip_diagonal_search) ? ($request->skip_diagonal_search ? 'true' : 'false') : $request->skip_diagonal_search;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SkipDiagonalSearch');
+            $queryParamValue = is_bool($request->skip_diagonal_search) ? ($request->skip_diagonal_search ? 'true' : 'false') : $request->skip_diagonal_search;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->read_tiny_barcodes)) {
-            $localName = lcfirst('ReadTinyBarcodes');
-            $localValue = is_bool($request->read_tiny_barcodes) ? ($request->read_tiny_barcodes ? 'true' : 'false') : $request->read_tiny_barcodes;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ReadTinyBarcodes');
+            $queryParamValue = is_bool($request->read_tiny_barcodes) ? ($request->read_tiny_barcodes ? 'true' : 'false') : $request->read_tiny_barcodes;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->australian_post_encoding_table)) {
-            $localName = lcfirst('AustralianPostEncodingTable');
-            $localValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AustralianPostEncodingTable');
+            $queryParamValue = is_bool($request->australian_post_encoding_table) ? ($request->australian_post_encoding_table ? 'true' : 'false') : $request->australian_post_encoding_table;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->ignore_ending_filling_patterns_for_c_table)) {
-            $localName = lcfirst('IgnoreEndingFillingPatternsForCTable');
-            $localValue = is_bool($request->ignore_ending_filling_patterns_for_c_table) ? ($request->ignore_ending_filling_patterns_for_c_table ? 'true' : 'false') : $request->ignore_ending_filling_patterns_for_c_table;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('IgnoreEndingFillingPatternsForCTable');
+            $queryParamValue = is_bool($request->ignore_ending_filling_patterns_for_c_table) ? ($request->ignore_ending_filling_patterns_for_c_table ? 'true' : 'false') : $request->ignore_ending_filling_patterns_for_c_table;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->url)) {
-            $localName = lcfirst('url');
-            $localValue = is_bool($request->url) ? ($request->url ? 'true' : 'false') : $request->url;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('url');
+            $queryParamValue = is_bool($request->url) ? ($request->url ? 'true' : 'false') : $request->url;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
@@ -2148,18 +1998,15 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-        // query params
         if (isset($request->format)) {
-            $localName = lcfirst('format');
-            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('format');
+            $queryParamValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
@@ -2421,393 +2268,352 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-        // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
-
-        // query params
         if (isset($request->type)) {
-            $localName = lcfirst('Type');
-            $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Type');
+            $queryParamValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text)) {
-            $localName = lcfirst('Text');
-            $localValue = is_bool($request->text) ? ($request->text ? 'true' : 'false') : $request->text;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Text');
+            $queryParamValue = is_bool($request->text) ? ($request->text ? 'true' : 'false') : $request->text;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->two_d_display_text)) {
-            $localName = lcfirst('TwoDDisplayText');
-            $localValue = is_bool($request->two_d_display_text) ? ($request->two_d_display_text ? 'true' : 'false') : $request->two_d_display_text;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TwoDDisplayText');
+            $queryParamValue = is_bool($request->two_d_display_text) ? ($request->two_d_display_text ? 'true' : 'false') : $request->two_d_display_text;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_location)) {
-            $localName = lcfirst('TextLocation');
-            $localValue = is_bool($request->text_location) ? ($request->text_location ? 'true' : 'false') : $request->text_location;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextLocation');
+            $queryParamValue = is_bool($request->text_location) ? ($request->text_location ? 'true' : 'false') : $request->text_location;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_alignment)) {
-            $localName = lcfirst('TextAlignment');
-            $localValue = is_bool($request->text_alignment) ? ($request->text_alignment ? 'true' : 'false') : $request->text_alignment;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextAlignment');
+            $queryParamValue = is_bool($request->text_alignment) ? ($request->text_alignment ? 'true' : 'false') : $request->text_alignment;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_color)) {
-            $localName = lcfirst('TextColor');
-            $localValue = is_bool($request->text_color) ? ($request->text_color ? 'true' : 'false') : $request->text_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextColor');
+            $queryParamValue = is_bool($request->text_color) ? ($request->text_color ? 'true' : 'false') : $request->text_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->font_size_mode)) {
-            $localName = lcfirst('FontSizeMode');
-            $localValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('FontSizeMode');
+            $queryParamValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->no_wrap)) {
-            $localName = lcfirst('NoWrap');
-            $localValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('NoWrap');
+            $queryParamValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->resolution)) {
-            $localName = lcfirst('Resolution');
-            $localValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Resolution');
+            $queryParamValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->resolution_x)) {
-            $localName = lcfirst('ResolutionX');
-            $localValue = is_bool($request->resolution_x) ? ($request->resolution_x ? 'true' : 'false') : $request->resolution_x;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ResolutionX');
+            $queryParamValue = is_bool($request->resolution_x) ? ($request->resolution_x ? 'true' : 'false') : $request->resolution_x;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->resolution_y)) {
-            $localName = lcfirst('ResolutionY');
-            $localValue = is_bool($request->resolution_y) ? ($request->resolution_y ? 'true' : 'false') : $request->resolution_y;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ResolutionY');
+            $queryParamValue = is_bool($request->resolution_y) ? ($request->resolution_y ? 'true' : 'false') : $request->resolution_y;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->dimension_x)) {
-            $localName = lcfirst('DimensionX');
-            $localValue = is_bool($request->dimension_x) ? ($request->dimension_x ? 'true' : 'false') : $request->dimension_x;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('DimensionX');
+            $queryParamValue = is_bool($request->dimension_x) ? ($request->dimension_x ? 'true' : 'false') : $request->dimension_x;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->text_space)) {
-            $localName = lcfirst('TextSpace');
-            $localValue = is_bool($request->text_space) ? ($request->text_space ? 'true' : 'false') : $request->text_space;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('TextSpace');
+            $queryParamValue = is_bool($request->text_space) ? ($request->text_space ? 'true' : 'false') : $request->text_space;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->units)) {
-            $localName = lcfirst('Units');
-            $localValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('Units');
+            $queryParamValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->size_mode)) {
-            $localName = lcfirst('SizeMode');
-            $localValue = is_bool($request->size_mode) ? ($request->size_mode ? 'true' : 'false') : $request->size_mode;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SizeMode');
+            $queryParamValue = is_bool($request->size_mode) ? ($request->size_mode ? 'true' : 'false') : $request->size_mode;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->bar_height)) {
-            $localName = lcfirst('BarHeight');
-            $localValue = is_bool($request->bar_height) ? ($request->bar_height ? 'true' : 'false') : $request->bar_height;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BarHeight');
+            $queryParamValue = is_bool($request->bar_height) ? ($request->bar_height ? 'true' : 'false') : $request->bar_height;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->image_height)) {
-            $localName = lcfirst('ImageHeight');
-            $localValue = is_bool($request->image_height) ? ($request->image_height ? 'true' : 'false') : $request->image_height;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ImageHeight');
+            $queryParamValue = is_bool($request->image_height) ? ($request->image_height ? 'true' : 'false') : $request->image_height;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->image_width)) {
-            $localName = lcfirst('ImageWidth');
-            $localValue = is_bool($request->image_width) ? ($request->image_width ? 'true' : 'false') : $request->image_width;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ImageWidth');
+            $queryParamValue = is_bool($request->image_width) ? ($request->image_width ? 'true' : 'false') : $request->image_width;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->rotation_angle)) {
-            $localName = lcfirst('RotationAngle');
-            $localValue = is_bool($request->rotation_angle) ? ($request->rotation_angle ? 'true' : 'false') : $request->rotation_angle;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('RotationAngle');
+            $queryParamValue = is_bool($request->rotation_angle) ? ($request->rotation_angle ? 'true' : 'false') : $request->rotation_angle;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->back_color)) {
-            $localName = lcfirst('BackColor');
-            $localValue = is_bool($request->back_color) ? ($request->back_color ? 'true' : 'false') : $request->back_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BackColor');
+            $queryParamValue = is_bool($request->back_color) ? ($request->back_color ? 'true' : 'false') : $request->back_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->bar_color)) {
-            $localName = lcfirst('BarColor');
-            $localValue = is_bool($request->bar_color) ? ($request->bar_color ? 'true' : 'false') : $request->bar_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BarColor');
+            $queryParamValue = is_bool($request->bar_color) ? ($request->bar_color ? 'true' : 'false') : $request->bar_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_color)) {
-            $localName = lcfirst('BorderColor');
-            $localValue = is_bool($request->border_color) ? ($request->border_color ? 'true' : 'false') : $request->border_color;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderColor');
+            $queryParamValue = is_bool($request->border_color) ? ($request->border_color ? 'true' : 'false') : $request->border_color;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_width)) {
-            $localName = lcfirst('BorderWidth');
-            $localValue = is_bool($request->border_width) ? ($request->border_width ? 'true' : 'false') : $request->border_width;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderWidth');
+            $queryParamValue = is_bool($request->border_width) ? ($request->border_width ? 'true' : 'false') : $request->border_width;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_dash_style)) {
-            $localName = lcfirst('BorderDashStyle');
-            $localValue = is_bool($request->border_dash_style) ? ($request->border_dash_style ? 'true' : 'false') : $request->border_dash_style;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderDashStyle');
+            $queryParamValue = is_bool($request->border_dash_style) ? ($request->border_dash_style ? 'true' : 'false') : $request->border_dash_style;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->border_visible)) {
-            $localName = lcfirst('BorderVisible');
-            $localValue = is_bool($request->border_visible) ? ($request->border_visible ? 'true' : 'false') : $request->border_visible;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BorderVisible');
+            $queryParamValue = is_bool($request->border_visible) ? ($request->border_visible ? 'true' : 'false') : $request->border_visible;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->enable_checksum)) {
-            $localName = lcfirst('EnableChecksum');
-            $localValue = is_bool($request->enable_checksum) ? ($request->enable_checksum ? 'true' : 'false') : $request->enable_checksum;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('EnableChecksum');
+            $queryParamValue = is_bool($request->enable_checksum) ? ($request->enable_checksum ? 'true' : 'false') : $request->enable_checksum;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->enable_escape)) {
-            $localName = lcfirst('EnableEscape');
-            $localValue = is_bool($request->enable_escape) ? ($request->enable_escape ? 'true' : 'false') : $request->enable_escape;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('EnableEscape');
+            $queryParamValue = is_bool($request->enable_escape) ? ($request->enable_escape ? 'true' : 'false') : $request->enable_escape;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->filled_bars)) {
-            $localName = lcfirst('FilledBars');
-            $localValue = is_bool($request->filled_bars) ? ($request->filled_bars ? 'true' : 'false') : $request->filled_bars;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('FilledBars');
+            $queryParamValue = is_bool($request->filled_bars) ? ($request->filled_bars ? 'true' : 'false') : $request->filled_bars;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->always_show_checksum)) {
-            $localName = lcfirst('AlwaysShowChecksum');
-            $localValue = is_bool($request->always_show_checksum) ? ($request->always_show_checksum ? 'true' : 'false') : $request->always_show_checksum;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('AlwaysShowChecksum');
+            $queryParamValue = is_bool($request->always_show_checksum) ? ($request->always_show_checksum ? 'true' : 'false') : $request->always_show_checksum;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->wide_narrow_ratio)) {
-            $localName = lcfirst('WideNarrowRatio');
-            $localValue = is_bool($request->wide_narrow_ratio) ? ($request->wide_narrow_ratio ? 'true' : 'false') : $request->wide_narrow_ratio;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('WideNarrowRatio');
+            $queryParamValue = is_bool($request->wide_narrow_ratio) ? ($request->wide_narrow_ratio ? 'true' : 'false') : $request->wide_narrow_ratio;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->validate_text)) {
-            $localName = lcfirst('ValidateText');
-            $localValue = is_bool($request->validate_text) ? ($request->validate_text ? 'true' : 'false') : $request->validate_text;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('ValidateText');
+            $queryParamValue = is_bool($request->validate_text) ? ($request->validate_text ? 'true' : 'false') : $request->validate_text;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->supplement_data)) {
-            $localName = lcfirst('SupplementData');
-            $localValue = is_bool($request->supplement_data) ? ($request->supplement_data ? 'true' : 'false') : $request->supplement_data;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SupplementData');
+            $queryParamValue = is_bool($request->supplement_data) ? ($request->supplement_data ? 'true' : 'false') : $request->supplement_data;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->supplement_space)) {
-            $localName = lcfirst('SupplementSpace');
-            $localValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('SupplementSpace');
+            $queryParamValue = is_bool($request->supplement_space) ? ($request->supplement_space ? 'true' : 'false') : $request->supplement_space;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->bar_width_reduction)) {
-            $localName = lcfirst('BarWidthReduction');
-            $localValue = is_bool($request->bar_width_reduction) ? ($request->bar_width_reduction ? 'true' : 'false') : $request->bar_width_reduction;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('BarWidthReduction');
+            $queryParamValue = is_bool($request->bar_width_reduction) ? ($request->bar_width_reduction ? 'true' : 'false') : $request->bar_width_reduction;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->use_anti_alias)) {
-            $localName = lcfirst('UseAntiAlias');
-            $localValue = is_bool($request->use_anti_alias) ? ($request->use_anti_alias ? 'true' : 'false') : $request->use_anti_alias;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('UseAntiAlias');
+            $queryParamValue = is_bool($request->use_anti_alias) ? ($request->use_anti_alias ? 'true' : 'false') : $request->use_anti_alias;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->storage)) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('storage');
+            $queryParamValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->folder)) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('folder');
+            $queryParamValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->format)) {
-            $localName = lcfirst('format');
-            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('format');
+            $queryParamValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
@@ -3048,43 +2854,37 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-        // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
-
-        // query params
         if (isset($request->type)) {
-            $localName = lcfirst('type');
-            $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('type');
+            $queryParamValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->storage)) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('storage');
+            $queryParamValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->folder)) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('folder');
+            $queryParamValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
@@ -3342,43 +3142,37 @@ class BarcodeApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-        // path params
         if (isset($request->name)) {
             $localName = lcfirst('name');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
-
-        // query params
         if (isset($request->format)) {
-            $localName = lcfirst('format');
-            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('format');
+            $queryParamValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->folder)) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('folder');
+            $queryParamValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        // query params
         if (isset($request->storage)) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $queryParamName = lcfirst('storage');
+            $queryParamValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
+                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
@@ -3498,7 +3292,7 @@ class BarcodeApi
     {
         // parse the url
         $UrlToSign = trim($url, '/');
-        $urlQuery = http_build_query($queryParams);
+        $urlQuery = preg_replace('/%5B[0-9]+%5D=/', '=', http_build_query($queryParams));
 
         $urlPartToSign = $this->config->getBasePath() . '/' . parse_url($UrlToSign, PHP_URL_HOST) . parse_url($UrlToSign, PHP_URL_PATH) . '?' . $urlQuery;
 

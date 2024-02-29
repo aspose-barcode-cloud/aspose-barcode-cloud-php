@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Aspose\BarCode\BarcodeApi;
+use Aspose\BarCode\Model\DecodeBarcodeType;
 use Aspose\BarCode\Model\PresetType;
 use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 use Aspose\BarCode\Requests\PostBarcodeRecognizeFromUrlOrContentRequest;
@@ -33,6 +34,7 @@ final class EndToEndTest extends TestCase
         $recognizeRequest = new PostBarCodeRecognizeFromUrlorContentRequest();
         $recognizeRequest->image = $genResponse;
         $recognizeRequest->preset = PresetType::HighPerformance;
+        $recognizeRequest->types = [DecodeBarcodeType::QR, DecodeBarcodeType::DataMatrix];
 
         $recognizeResponse = $api->PostBarCodeRecognizeFromUrlorContent($recognizeRequest);
         $this->assertNotEmpty($recognizeResponse);

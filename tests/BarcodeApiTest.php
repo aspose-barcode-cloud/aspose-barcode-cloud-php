@@ -117,6 +117,8 @@ class BarcodeApiTest extends TestCase
 
         $request = new GetBarcodeRecognizeRequest($uploaded->getUploaded()[0]);
         $request->folder = self::$tempFolderPath;
+        $request->preset = PresetType::HighPerformance;
+        $request->types = [DecodeBarcodeType::Pdf417, DecodeBarcodeType::QR];
 
         $response = self::$api->GetBarcoderecognize($request);
 
@@ -137,6 +139,7 @@ class BarcodeApiTest extends TestCase
         $request = new PostBarCodeRecognizeFromUrlorContentRequest();
         $request->image = new SplFileObject('./testdata/pdf417Sample.png');
         $request->preset = PresetType::HighPerformance;
+        $request->types = [DecodeBarcodeType::Pdf417, DecodeBarcodeType::QR];
 
         $response = self::$api->PostBarCodeRecognizeFromUrlorContent($request);
 
@@ -151,7 +154,6 @@ class BarcodeApiTest extends TestCase
     {
         $request = new PostBarCodeRecognizeFromUrlorContentRequest();
         $request->image = new SplFileObject('./testdata/pdf417Sample.png');
-        $request->preset = PresetType::HighPerformance;
         $request->timeout = 1;
 
         try {
@@ -237,7 +239,7 @@ class BarcodeApiTest extends TestCase
         $request = new PutBarcodeRecognizeFromBodyRequest(
             $uploaded->getUploaded()[0],
             new ReaderParams([
-                'type' => DecodeBarcodeType::Pdf417,
+                'types' => [DecodeBarcodeType::Pdf417, DecodeBarcodeType::QR],
                 'preset' => PresetType::HighPerformance,
             ])
         );

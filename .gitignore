@@ -6,4 +6,5 @@ Configuration*.json
 
 /.php-cs-fixer.cache
 /.phpunit.cache
+/.phpunit.result.cache
 phpunit.log
