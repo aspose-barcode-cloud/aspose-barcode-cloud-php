@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 3.0
-- Package version: 24.2.0
+- Package version: 24.3.0
 - Supported PHP versions: ">=7.4 || >=8.0"
 
 ## Demo applications
@@ -58,6 +58,7 @@ $config->setClientSecret('Client Secret from https://dashboard.aspose.cloud/appl
 
 $request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
 $request->format = 'png';
+$request->text_location = 'None';
 
 $api = new BarcodeApi(null, $config);
 $response = $api->GetBarCodeGenerate($request);
