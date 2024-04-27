@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 *BarcodeApi* | [**putBarcodeGenerateFile**](docs/Api/BarcodeApi.md#putbarcodegeneratefile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
 *BarcodeApi* | [**putBarcodeRecognizeFromBody**](docs/Api/BarcodeApi.md#putbarcoderecognizefrombody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.
 *BarcodeApi* | [**putGenerateMultiple**](docs/Api/BarcodeApi.md#putgeneratemultiple) | **PUT** /barcode/{name}/generateMultiple | Generate image with multiple barcodes and put new file on server
+*BarcodeApi* | [**scanBarcode**](docs/Api/BarcodeApi.md#scanbarcode) | **POST** /barcode/scan | Quickly scan a barcode from an image.
 *FileApi* | [**copyFile**](docs/Api/FileApi.md#copyfile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
 *FileApi* | [**deleteFile**](docs/Api/FileApi.md#deletefile) | **DELETE** /barcode/storage/file/{path} | Delete file
 *FileApi* | [**downloadFile**](docs/Api/FileApi.md#downloadfile) | **GET** /barcode/storage/file/{path} | Download file

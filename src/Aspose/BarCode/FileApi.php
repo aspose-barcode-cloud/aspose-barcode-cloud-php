@@ -1249,7 +1249,7 @@ class FileApi
         $handle = fopen($filename, 'rb');
         $fsize = filesize($filename);
         $contents = fread($handle, $fsize);
-        $formParams['file'] = $contents;
+        $formParams['File'][] = $contents;
         // body params
         $_tempBody = null;
 
@@ -1267,12 +1267,14 @@ class FileApi
         // for model (json/xml)
         if ($multipart) {
             $multipartContents = [];
-            foreach ($formParams as $formParamName => $formParamValue) {
-                $multipartContents[] = [
-                    'name' => $formParamName,
-                    'contents' => $formParamValue,
-                    'filename' => $filename
-                ];
+            foreach ($formParams as $formParamName => $formParamValues) {
+                foreach ($formParamValues as $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue,
+                        'filename' => $filename
+                    ];
+                }
             }
             // for HTTP post (form)
             $httpBody = new MultipartStream($multipartContents);
@@ -1282,7 +1284,7 @@ class FileApi
 
         } else {
             // for HTTP post (form)
-            $httpBody = $formParams['file'];
+            $httpBody = $formParams['File'][0];
         }
 
         if (!$this->config->getAccessToken()) {

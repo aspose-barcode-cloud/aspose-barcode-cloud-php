@@ -195,7 +195,7 @@ class AustralianPostParams implements ArrayAccess
     /**
      * Sets encoding_table
      *
-     * @param \Aspose\BarCode\Model\CustomerInformationInterpretingType $encoding_table Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\"
+     * @param \Aspose\BarCode\Model\CustomerInformationInterpretingType $encoding_table Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other
      *
      * @return $this
      */
