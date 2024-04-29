@@ -20,6 +20,7 @@ use Aspose\BarCode\Requests\PutBarcodeGenerateFileRequest;
 use Aspose\BarCode\Requests\PutBarcodeRecognizeFromBodyRequest;
 use Aspose\BarCode\Requests\PutGenerateMultipleRequest;
 use Aspose\BarCode\Requests\UploadFileRequest;
+use Aspose\BarCode\Requests\ScanBarcodeRequest;
 use PHPUnit\Framework\TestCase;
 
 require_once 'TestConfiguration.php';
@@ -287,5 +288,29 @@ class BarcodeApiTest extends TestCase
         $this->assertGreaterThan(0, $response->getFileSize());
         $this->assertGreaterThan(0, $response->getImageWidth());
         $this->assertGreaterThan(0, $response->getImageHeight());
+    }
+
+
+    /**
+     * Test case for scan
+     *
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
+     */
+    public function testScan()
+    {
+        $image_file = new SplFileObject('./testdata/QR_and_Code128.png');
+        $request = new ScanBarcodeRequest($image_file);
+        $request->decode_types = [DecodeBarcodeType::Pdf417, DecodeBarcodeType::QR];
+
+        $response = self::$api->scanBarcode($request);
+
+        $barcodes = $response->getBarcodes();
+        $this->assertCount(2, $barcodes);
+
+        $this->assertEquals(DecodeBarcodeType::Code128, $barcodes[1]->getType());
+        $this->assertEquals('Hello world!', $barcodes[1]->getBarcodeValue());
+
+        $this->assertEquals(DecodeBarcodeType::QR, $barcodes[0]->getType());
+        $this->assertEquals('Hello world!', $barcodes[0]->getBarcodeValue());
     }
 }

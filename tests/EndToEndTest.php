@@ -7,6 +7,7 @@ use Aspose\BarCode\Model\DecodeBarcodeType;
 use Aspose\BarCode\Model\PresetType;
 use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 use Aspose\BarCode\Requests\PostBarcodeRecognizeFromUrlOrContentRequest;
+use Aspose\BarCode\Requests\ScanBarcodeRequest;
 use PHPUnit\Framework\TestCase;
 
 require_once 'TestConfiguration.php';
@@ -29,17 +30,15 @@ final class EndToEndTest extends TestCase
         $imageSize = $genResponse->getSize();
         $this->assertGreaterThan(0, $imageSize);
 
-        // Recognize
+        // Scan
 
-        $recognizeRequest = new PostBarCodeRecognizeFromUrlorContentRequest();
-        $recognizeRequest->image = $genResponse;
-        $recognizeRequest->preset = PresetType::HighPerformance;
-        $recognizeRequest->types = [DecodeBarcodeType::QR, DecodeBarcodeType::DataMatrix];
+        $scanRequest = new ScanBarcodeRequest($genResponse);
+        $scanRequest->decode_types = [DecodeBarcodeType::QR, DecodeBarcodeType::DataMatrix];
 
-        $recognizeResponse = $api->PostBarCodeRecognizeFromUrlorContent($recognizeRequest);
-        $this->assertNotEmpty($recognizeResponse);
+        $scanResponse = $api->ScanBarcode($scanRequest);
+        $this->assertNotEmpty($scanResponse);
 
-        $this->assertEquals('QR', $recognizeResponse->getBarcodes()[0]->getType());
-        $this->assertEquals('PHP SDK Test', $recognizeResponse->getBarcodes()[0]->getBarcodeValue());
+        $this->assertEquals('QR', $scanResponse->getBarcodes()[0]->getType());
+        $this->assertEquals('PHP SDK Test', $scanResponse->getBarcodes()[0]->getBarcodeValue());
     }
 }
