@@ -15,8 +15,8 @@ final class ConfigurationTest extends TestCase
         $config = new Configuration();
         $config->setClientId('client id');
         $config->setClientSecret('client secret');
-        $config->setHost('https://api-qa.aspose.cloud');
-        $config->setAuthUrl('https://api-qa.aspose.cloud/connect/token');
+        $config->setHost('http://localhost:47972');
+        $config->setAuthUrl('http://localhost:47972/connect/token');
         $config->setAccessToken('access token');
 
         $json = json_encode($config, JSON_PRETTY_PRINT);
@@ -27,8 +27,8 @@ final class ConfigurationTest extends TestCase
             '{
     "ClientId": "client id",
     "ClientSecret": "client secret",
-    "Host": "https:\\/\\/api-qa.aspose.cloud",
-    "AuthUrl": "https:\\/\\/api-qa.aspose.cloud\\/connect\\/token",
+    "Host": "https:\\/\\/localhost:47972",
+    "AuthUrl": "https:\\/\\/localhost:47972\\/connect\\/token",
     "AccessToken": "access token",
     "Debug": false
 }',
@@ -41,8 +41,8 @@ final class ConfigurationTest extends TestCase
         $config = new Configuration();
         $config->setClientId('client id');
         $config->setClientSecret('client secret');
-        $config->setHost('https://api-qa.aspose.cloud');
-        $config->setAuthUrl('https://api-qa.aspose.cloud/connect/token');
+        $config->setHost('http://localhost:47972');
+        $config->setAuthUrl('http://localhost:47972/connect/token');
         $config->setAccessToken('access token');
         $json = json_encode($config, JSON_PRETTY_PRINT);
 
