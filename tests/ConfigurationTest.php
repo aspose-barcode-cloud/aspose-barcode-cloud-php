@@ -27,8 +27,8 @@ final class ConfigurationTest extends TestCase
             '{
     "ClientId": "client id",
     "ClientSecret": "client secret",
-    "Host": "https:\\/\\/localhost:47972",
-    "AuthUrl": "https:\\/\\/localhost:47972\\/connect\\/token",
+    "Host": "http:\\/\\/localhost:47972",
+    "AuthUrl": "http:\\/\\/localhost:47972\\/connect\\/token",
     "AccessToken": "access token",
     "Debug": false
 }',
