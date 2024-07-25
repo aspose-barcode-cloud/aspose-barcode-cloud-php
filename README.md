@@ -47,14 +47,23 @@ require __DIR__ . '/vendor/autoload.php';
 ### Sample usage
 
 ```php
+<?php
+
+declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\BarcodeApi;
 use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
 use Aspose\BarCode\Model\{EncodeBarcodeType, CodeLocation};
 
 $config = new Configuration();
-$config->setClientId('Client Id from https://dashboard.aspose.cloud/applications');
+$config->setClientId('ClientId from https://dashboard.aspose.cloud/applications');
 $config->setClientSecret('Client Secret from https://dashboard.aspose.cloud/applications');
+if (getenv("TEST_CONFIGURATION_ACCESS_TOKEN")) {
+    $config->setAccessToken(getenv("TEST_CONFIGURATION_ACCESS_TOKEN"));
+}
 
 $request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
 $request->format = 'png';
@@ -68,6 +77,7 @@ $size = $response->getSize();
 header("Content-Type: $type");
 header("Content-Length: $size");
 echo $response->fread($size);
+
 ```
 
 ## Licensing
@@ -193,4 +203,5 @@ Class | Method | HTTP request | Description
 - [StructuredAppend](docs/Model/StructuredAppend.md)
 - [TextAlignment](docs/Model/TextAlignment.md)
 - [FileVersion](docs/Model/FileVersion.md)
+
 

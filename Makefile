@@ -22,6 +22,10 @@ update:
 	composer update
 	composer validate
 
+.PHONY: insert-example
+insert-example:
+	./scripts/insert-example.bash
+
 .PHONY: after-gen
-after-gen: format
+after-gen: format insert-example
 	./scripts/add-deprecation-warnings.bash
