@@ -1,6 +1,4 @@
 # TextAlignment
-
-
 ## Allowable values
 
 * **LEFT**

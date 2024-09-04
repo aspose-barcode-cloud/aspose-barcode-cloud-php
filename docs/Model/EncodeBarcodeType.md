@@ -1,14 +1,13 @@
 # EncodeBarcodeType
 
-See EncodeTypes
+See Aspose.BarCode.Generation.EncodeTypes
 ## Allowable values
 
 * **CODABAR**
 * CODE11
-* CODE39_STANDARD
-* CODE39_EXTENDED
-* CODE93_STANDARD
-* CODE93_EXTENDED
+* CODE39
+* CODE39_FULL_ASCII
+* CODE93
 * CODE128
 * GS1_CODE128
 * EAN8
@@ -75,6 +74,8 @@ See EncodeTypes
 * GS1_HAN_XIN
 * GS1_AZTEC
 * GS1_MICRO_PDF417
+* RECT_MICRO_QR
+* MICRO_QR
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

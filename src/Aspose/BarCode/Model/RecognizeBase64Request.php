@@ -8,11 +8,11 @@ use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * BarcodeResponseList
+ * RecognizeBase64Request
  *
- * @description Represents information about barcode list.
+ * @description Barcode recognize request
  */
-class BarcodeResponseList implements ArrayAccess
+class RecognizeBase64Request implements ArrayAccess
 {
     public const DISCRIMINATOR = null;
 
@@ -21,7 +21,7 @@ class BarcodeResponseList implements ArrayAccess
      *
      * @var string
      */
-    protected static string $swaggerModelName = "BarcodeResponseList";
+    protected static string $swaggerModelName = "RecognizeBase64Request";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -29,7 +29,10 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static array $swaggerTypes = [
-        'barcodes' => '\Aspose\BarCode\Model\BarcodeResponse[]'
+        'barcode_types' => '\Aspose\BarCode\Model\DecodeBarcodeType[]',
+        'recognition_mode' => '\Aspose\BarCode\Model\RecognitionMode',
+        'image_kind' => '\Aspose\BarCode\Model\RecognitionImageKind',
+        'file_base64' => 'string'
     ];
 
     /**
@@ -38,7 +41,10 @@ class BarcodeResponseList implements ArrayAccess
      * @var (string|null)[]
      */
     protected static array $swaggerFormats = [
-        'barcodes' => null
+        'barcode_types' => null,
+        'recognition_mode' => null,
+        'image_kind' => null,
+        'file_base64' => null
     ];
 
     /**
@@ -68,7 +74,10 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcodes' => 'barcodes'
+        'barcode_types' => 'barcodeTypes',
+        'recognition_mode' => 'recognitionMode',
+        'image_kind' => 'imageKind',
+        'file_base64' => 'fileBase64'
     ];
 
     /**
@@ -77,7 +86,10 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcodes' => 'setBarcodes'
+        'barcode_types' => 'setBarcodeTypes',
+        'recognition_mode' => 'setRecognitionMode',
+        'image_kind' => 'setImageKind',
+        'file_base64' => 'setFileBase64'
     ];
 
     /**
@@ -86,7 +98,10 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcodes' => 'getBarcodes'
+        'barcode_types' => 'getBarcodeTypes',
+        'recognition_mode' => 'getRecognitionMode',
+        'image_kind' => 'getImageKind',
+        'file_base64' => 'getFileBase64'
     ];
 
     /**
@@ -149,7 +164,10 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcodes'] = isset($data['barcodes']) ? $data['barcodes'] : null;
+        $this->container['barcode_types'] = isset($data['barcode_types']) ? $data['barcode_types'] : null;
+        $this->container['recognition_mode'] = isset($data['recognition_mode']) ? $data['recognition_mode'] : null;
+        $this->container['image_kind'] = isset($data['image_kind']) ? $data['image_kind'] : null;
+        $this->container['file_base64'] = isset($data['file_base64']) ? $data['file_base64'] : null;
     }
 
     /**
@@ -161,9 +179,20 @@ class BarcodeResponseList implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['barcodes'] === null) {
-            $invalidProperties[] = "'barcodes' can't be null";
+        if ($this->container['barcode_types'] === null) {
+            $invalidProperties[] = "'barcode_types' can't be null";
         }
+        if ($this->container['file_base64'] === null) {
+            $invalidProperties[] = "'file_base64' can't be null";
+        }
+        if ((strlen($this->container['file_base64']) > 28730982)) {
+            $invalidProperties[] = "invalid value for 'file_base64', the character length must be smaller than or equal to 28730982.";
+        }
+
+        if ((strlen($this->container['file_base64']) < 1)) {
+            $invalidProperties[] = "invalid value for 'file_base64', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -175,7 +204,16 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['barcodes'] === null) {
+        if ($this->container['barcode_types'] === null) {
+            return false;
+        }
+        if ($this->container['file_base64'] === null) {
+            return false;
+        }
+        if (strlen($this->container['file_base64']) > 28730982) {
+            return false;
+        }
+        if (strlen($this->container['file_base64']) < 1) {
             return false;
         }
         return true;
@@ -183,25 +221,104 @@ class BarcodeResponseList implements ArrayAccess
 
 
     /**
-     * Gets barcodes
+     * Gets barcode_types
      *
-     * @return \Aspose\BarCode\Model\BarcodeResponse[]
+     * @return \Aspose\BarCode\Model\DecodeBarcodeType[]
      */
-    public function getBarcodes()
+    public function getBarcodeTypes()
     {
-        return $this->container['barcodes'];
+        return $this->container['barcode_types'];
     }
 
     /**
-     * Sets barcodes
+     * Sets barcode_types
      *
-     * @param \Aspose\BarCode\Model\BarcodeResponse[] $barcodes List of barcodes which are present in image.
+     * @param \Aspose\BarCode\Model\DecodeBarcodeType[] $barcode_types Array of decode types to find on barcode
      *
      * @return $this
      */
-    public function setBarcodes($barcodes)
+    public function setBarcodeTypes($barcode_types)
     {
-        $this->container['barcodes'] = $barcodes;
+        $this->container['barcode_types'] = $barcode_types;
+
+        return $this;
+    }
+
+    /**
+     * Gets recognition_mode
+     *
+     * @return \Aspose\BarCode\Model\RecognitionMode
+     */
+    public function getRecognitionMode()
+    {
+        return $this->container['recognition_mode'];
+    }
+
+    /**
+     * Sets recognition_mode
+     *
+     * @param \Aspose\BarCode\Model\RecognitionMode $recognition_mode recognition_mode
+     *
+     * @return $this
+     */
+    public function setRecognitionMode($recognition_mode)
+    {
+        $this->container['recognition_mode'] = $recognition_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets image_kind
+     *
+     * @return \Aspose\BarCode\Model\RecognitionImageKind
+     */
+    public function getImageKind()
+    {
+        return $this->container['image_kind'];
+    }
+
+    /**
+     * Sets image_kind
+     *
+     * @param \Aspose\BarCode\Model\RecognitionImageKind $image_kind image_kind
+     *
+     * @return $this
+     */
+    public function setImageKind($image_kind)
+    {
+        $this->container['image_kind'] = $image_kind;
+
+        return $this;
+    }
+
+    /**
+     * Gets file_base64
+     *
+     * @return string
+     */
+    public function getFileBase64()
+    {
+        return $this->container['file_base64'];
+    }
+
+    /**
+     * Sets file_base64
+     *
+     * @param string $file_base64 Barcode image bytes encoded as base-64.
+     *
+     * @return $this
+     */
+    public function setFileBase64($file_base64)
+    {
+        if ((strlen($file_base64) > 28730982)) {
+            throw new \InvalidArgumentException('invalid length for $file_base64 when calling RecognizeBase64Request., must be smaller than or equal to 28730982.');
+        }
+        if ((strlen($file_base64) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $file_base64 when calling RecognizeBase64Request., must be bigger than or equal to 1.');
+        }
+
+        $this->container['file_base64'] = $file_base64;
 
         return $this;
     }

@@ -7,10 +7,10 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * AvailableGraphicsUnit
+ * EncodeDataType
  *
- * @description Subset of Aspose.Drawing.GraphicsUnit.
+ * @description Types of data can be encoded to barcode
  */
-class AvailableGraphicsUnit
+class EncodeDataType
 {
 }

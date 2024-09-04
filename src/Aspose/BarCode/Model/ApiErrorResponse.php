@@ -10,6 +10,7 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * ApiErrorResponse
  *
+ * @description ApiError Response
  */
 class ApiErrorResponse implements ArrayAccess
 {
@@ -69,8 +70,8 @@ class ApiErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'RequestId',
-        'error' => 'Error'
+        'request_id' => 'requestId',
+        'error' => 'error'
     ];
 
     /**
@@ -194,7 +195,7 @@ class ApiErrorResponse implements ArrayAccess
     /**
      * Sets request_id
      *
-     * @param string $request_id request_id
+     * @param string $request_id Gets or sets request Id.
      *
      * @return $this
      */

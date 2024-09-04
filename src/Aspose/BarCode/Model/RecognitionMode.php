@@ -7,10 +7,10 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * AvailableGraphicsUnit
+ * RecognitionMode
  *
- * @description Subset of Aspose.Drawing.GraphicsUnit.
+ * @description Recognition mode.
  */
-class AvailableGraphicsUnit
+class RecognitionMode
 {
 }

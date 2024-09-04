@@ -8,11 +8,11 @@ use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * BarcodeResponseList
+ * ScanBase64Request
  *
- * @description Represents information about barcode list.
+ * @description Scan barcode request.
  */
-class BarcodeResponseList implements ArrayAccess
+class ScanBase64Request implements ArrayAccess
 {
     public const DISCRIMINATOR = null;
 
@@ -21,7 +21,7 @@ class BarcodeResponseList implements ArrayAccess
      *
      * @var string
      */
-    protected static string $swaggerModelName = "BarcodeResponseList";
+    protected static string $swaggerModelName = "ScanBase64Request";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -29,7 +29,7 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static array $swaggerTypes = [
-        'barcodes' => '\Aspose\BarCode\Model\BarcodeResponse[]'
+        'file_base64' => 'string'
     ];
 
     /**
@@ -38,7 +38,7 @@ class BarcodeResponseList implements ArrayAccess
      * @var (string|null)[]
      */
     protected static array $swaggerFormats = [
-        'barcodes' => null
+        'file_base64' => null
     ];
 
     /**
@@ -68,7 +68,7 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcodes' => 'barcodes'
+        'file_base64' => 'fileBase64'
     ];
 
     /**
@@ -77,7 +77,7 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcodes' => 'setBarcodes'
+        'file_base64' => 'setFileBase64'
     ];
 
     /**
@@ -86,7 +86,7 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcodes' => 'getBarcodes'
+        'file_base64' => 'getFileBase64'
     ];
 
     /**
@@ -149,7 +149,7 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcodes'] = isset($data['barcodes']) ? $data['barcodes'] : null;
+        $this->container['file_base64'] = isset($data['file_base64']) ? $data['file_base64'] : null;
     }
 
     /**
@@ -161,9 +161,13 @@ class BarcodeResponseList implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['barcodes'] === null) {
-            $invalidProperties[] = "'barcodes' can't be null";
+        if ($this->container['file_base64'] === null) {
+            $invalidProperties[] = "'file_base64' can't be null";
         }
+        if ((strlen($this->container['file_base64']) < 1)) {
+            $invalidProperties[] = "invalid value for 'file_base64', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -175,7 +179,10 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['barcodes'] === null) {
+        if ($this->container['file_base64'] === null) {
+            return false;
+        }
+        if (strlen($this->container['file_base64']) < 1) {
             return false;
         }
         return true;
@@ -183,25 +190,30 @@ class BarcodeResponseList implements ArrayAccess
 
 
     /**
-     * Gets barcodes
+     * Gets file_base64
      *
-     * @return \Aspose\BarCode\Model\BarcodeResponse[]
+     * @return string
      */
-    public function getBarcodes()
+    public function getFileBase64()
     {
-        return $this->container['barcodes'];
+        return $this->container['file_base64'];
     }
 
     /**
-     * Sets barcodes
+     * Sets file_base64
      *
-     * @param \Aspose\BarCode\Model\BarcodeResponse[] $barcodes List of barcodes which are present in image.
+     * @param string $file_base64 Barcode image bytes encoded as base-64.
      *
      * @return $this
      */
-    public function setBarcodes($barcodes)
+    public function setFileBase64($file_base64)
     {
-        $this->container['barcodes'] = $barcodes;
+
+        if ((strlen($file_base64) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $file_base64 when calling ScanBase64Request., must be bigger than or equal to 1.');
+        }
+
+        $this->container['file_base64'] = $file_base64;
 
         return $this;
     }

@@ -8,11 +8,10 @@ use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * BarcodeResponseList
+ * EncodeData
  *
- * @description Represents information about barcode list.
  */
-class BarcodeResponseList implements ArrayAccess
+class EncodeData implements ArrayAccess
 {
     public const DISCRIMINATOR = null;
 
@@ -21,7 +20,7 @@ class BarcodeResponseList implements ArrayAccess
      *
      * @var string
      */
-    protected static string $swaggerModelName = "BarcodeResponseList";
+    protected static string $swaggerModelName = "EncodeData";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -29,7 +28,8 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static array $swaggerTypes = [
-        'barcodes' => '\Aspose\BarCode\Model\BarcodeResponse[]'
+        'data_type' => '\Aspose\BarCode\Model\EncodeDataType',
+        'data' => 'string'
     ];
 
     /**
@@ -38,7 +38,8 @@ class BarcodeResponseList implements ArrayAccess
      * @var (string|null)[]
      */
     protected static array $swaggerFormats = [
-        'barcodes' => null
+        'data_type' => null,
+        'data' => null
     ];
 
     /**
@@ -68,7 +69,8 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcodes' => 'barcodes'
+        'data_type' => 'dataType',
+        'data' => 'data'
     ];
 
     /**
@@ -77,7 +79,8 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcodes' => 'setBarcodes'
+        'data_type' => 'setDataType',
+        'data' => 'setData'
     ];
 
     /**
@@ -86,7 +89,8 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcodes' => 'getBarcodes'
+        'data_type' => 'getDataType',
+        'data' => 'getData'
     ];
 
     /**
@@ -149,7 +153,8 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcodes'] = isset($data['barcodes']) ? $data['barcodes'] : null;
+        $this->container['data_type'] = isset($data['data_type']) ? $data['data_type'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -161,9 +166,16 @@ class BarcodeResponseList implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['barcodes'] === null) {
-            $invalidProperties[] = "'barcodes' can't be null";
+        if ($this->container['data_type'] === null) {
+            $invalidProperties[] = "'data_type' can't be null";
         }
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
+        if ((strlen($this->container['data']) < 1)) {
+            $invalidProperties[] = "invalid value for 'data', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -175,7 +187,13 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['barcodes'] === null) {
+        if ($this->container['data_type'] === null) {
+            return false;
+        }
+        if ($this->container['data'] === null) {
+            return false;
+        }
+        if (strlen($this->container['data']) < 1) {
             return false;
         }
         return true;
@@ -183,25 +201,54 @@ class BarcodeResponseList implements ArrayAccess
 
 
     /**
-     * Gets barcodes
+     * Gets data_type
      *
-     * @return \Aspose\BarCode\Model\BarcodeResponse[]
+     * @return \Aspose\BarCode\Model\EncodeDataType
      */
-    public function getBarcodes()
+    public function getDataType()
     {
-        return $this->container['barcodes'];
+        return $this->container['data_type'];
     }
 
     /**
-     * Sets barcodes
+     * Sets data_type
      *
-     * @param \Aspose\BarCode\Model\BarcodeResponse[] $barcodes List of barcodes which are present in image.
+     * @param \Aspose\BarCode\Model\EncodeDataType $data_type data_type
      *
      * @return $this
      */
-    public function setBarcodes($barcodes)
+    public function setDataType($data_type)
     {
-        $this->container['barcodes'] = $barcodes;
+        $this->container['data_type'] = $data_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return string
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param string $data String represents data to encode
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+
+        if ((strlen($data) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $data when calling EncodeData., must be bigger than or equal to 1.');
+        }
+
+        $this->container['data'] = $data;
 
         return $this;
     }

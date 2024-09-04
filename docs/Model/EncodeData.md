@@ -1,12 +1,10 @@
-# RegionPoint
-
-Wrapper around Drawing.Point for proper specification.
+# EncodeData
 
 ## Properties
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**x** | **int** | X-coordinate | [optional] 
-**y** | **int** | Y-coordinate | [optional] 
+**data_type** | [**\Aspose\BarCode\Model\EncodeDataType**](EncodeDataType.md) |  | 
+**data** | **string** | String represents data to encode | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

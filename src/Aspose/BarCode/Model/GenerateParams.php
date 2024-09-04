@@ -8,11 +8,11 @@ use ArrayAccess;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * BarcodeResponseList
+ * GenerateParams
  *
- * @description Represents information about barcode list.
+ * @description Barcode generation parameters
  */
-class BarcodeResponseList implements ArrayAccess
+class GenerateParams implements ArrayAccess
 {
     public const DISCRIMINATOR = null;
 
@@ -21,7 +21,7 @@ class BarcodeResponseList implements ArrayAccess
      *
      * @var string
      */
-    protected static string $swaggerModelName = "BarcodeResponseList";
+    protected static string $swaggerModelName = "GenerateParams";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -29,7 +29,9 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static array $swaggerTypes = [
-        'barcodes' => '\Aspose\BarCode\Model\BarcodeResponse[]'
+        'barcode_type' => '\Aspose\BarCode\Model\EncodeBarcodeType',
+        'encode_data' => '\Aspose\BarCode\Model\EncodeData',
+        'barcode_image_params' => '\Aspose\BarCode\Model\BarcodeImageParams'
     ];
 
     /**
@@ -38,7 +40,9 @@ class BarcodeResponseList implements ArrayAccess
      * @var (string|null)[]
      */
     protected static array $swaggerFormats = [
-        'barcodes' => null
+        'barcode_type' => null,
+        'encode_data' => null,
+        'barcode_image_params' => null
     ];
 
     /**
@@ -68,7 +72,9 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcodes' => 'barcodes'
+        'barcode_type' => 'barcodeType',
+        'encode_data' => 'encodeData',
+        'barcode_image_params' => 'barcodeImageParams'
     ];
 
     /**
@@ -77,7 +83,9 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcodes' => 'setBarcodes'
+        'barcode_type' => 'setBarcodeType',
+        'encode_data' => 'setEncodeData',
+        'barcode_image_params' => 'setBarcodeImageParams'
     ];
 
     /**
@@ -86,7 +94,9 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcodes' => 'getBarcodes'
+        'barcode_type' => 'getBarcodeType',
+        'encode_data' => 'getEncodeData',
+        'barcode_image_params' => 'getBarcodeImageParams'
     ];
 
     /**
@@ -149,7 +159,9 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcodes'] = isset($data['barcodes']) ? $data['barcodes'] : null;
+        $this->container['barcode_type'] = isset($data['barcode_type']) ? $data['barcode_type'] : null;
+        $this->container['encode_data'] = isset($data['encode_data']) ? $data['encode_data'] : null;
+        $this->container['barcode_image_params'] = isset($data['barcode_image_params']) ? $data['barcode_image_params'] : null;
     }
 
     /**
@@ -161,8 +173,11 @@ class BarcodeResponseList implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['barcodes'] === null) {
-            $invalidProperties[] = "'barcodes' can't be null";
+        if ($this->container['barcode_type'] === null) {
+            $invalidProperties[] = "'barcode_type' can't be null";
+        }
+        if ($this->container['encode_data'] === null) {
+            $invalidProperties[] = "'encode_data' can't be null";
         }
         return $invalidProperties;
     }
@@ -175,7 +190,10 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['barcodes'] === null) {
+        if ($this->container['barcode_type'] === null) {
+            return false;
+        }
+        if ($this->container['encode_data'] === null) {
             return false;
         }
         return true;
@@ -183,25 +201,73 @@ class BarcodeResponseList implements ArrayAccess
 
 
     /**
-     * Gets barcodes
+     * Gets barcode_type
      *
-     * @return \Aspose\BarCode\Model\BarcodeResponse[]
+     * @return \Aspose\BarCode\Model\EncodeBarcodeType
      */
-    public function getBarcodes()
+    public function getBarcodeType()
     {
-        return $this->container['barcodes'];
+        return $this->container['barcode_type'];
     }
 
     /**
-     * Sets barcodes
+     * Sets barcode_type
      *
-     * @param \Aspose\BarCode\Model\BarcodeResponse[] $barcodes List of barcodes which are present in image.
+     * @param \Aspose\BarCode\Model\EncodeBarcodeType $barcode_type barcode_type
      *
      * @return $this
      */
-    public function setBarcodes($barcodes)
+    public function setBarcodeType($barcode_type)
     {
-        $this->container['barcodes'] = $barcodes;
+        $this->container['barcode_type'] = $barcode_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets encode_data
+     *
+     * @return \Aspose\BarCode\Model\EncodeData
+     */
+    public function getEncodeData()
+    {
+        return $this->container['encode_data'];
+    }
+
+    /**
+     * Sets encode_data
+     *
+     * @param \Aspose\BarCode\Model\EncodeData $encode_data encode_data
+     *
+     * @return $this
+     */
+    public function setEncodeData($encode_data)
+    {
+        $this->container['encode_data'] = $encode_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets barcode_image_params
+     *
+     * @return \Aspose\BarCode\Model\BarcodeImageParams
+     */
+    public function getBarcodeImageParams()
+    {
+        return $this->container['barcode_image_params'];
+    }
+
+    /**
+     * Sets barcode_image_params
+     *
+     * @param \Aspose\BarCode\Model\BarcodeImageParams $barcode_image_params barcode_image_params
+     *
+     * @return $this
+     */
+    public function setBarcodeImageParams($barcode_image_params)
+    {
+        $this->container['barcode_image_params'] = $barcode_image_params;
 
         return $this;
     }
