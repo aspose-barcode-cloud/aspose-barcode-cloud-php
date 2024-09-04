@@ -1,6 +1,4 @@
 # CodeLocation
-
-
 ## Allowable values
 
 * **BELOW**

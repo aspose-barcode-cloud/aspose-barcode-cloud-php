@@ -68,7 +68,7 @@ class BarcodeResponseList implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcodes' => 'Barcodes'
+        'barcodes' => 'barcodes'
     ];
 
     /**
@@ -161,6 +161,9 @@ class BarcodeResponseList implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['barcodes'] === null) {
+            $invalidProperties[] = "'barcodes' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -172,6 +175,9 @@ class BarcodeResponseList implements ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['barcodes'] === null) {
+            return false;
+        }
         return true;
     }
 

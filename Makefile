@@ -12,6 +12,7 @@ lint:
 .PHONY: test
 test:
 	composer test
+	./scripts/run_snippets.sh
 
 .PHONY: init
 init:

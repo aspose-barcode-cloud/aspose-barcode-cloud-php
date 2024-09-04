@@ -10,6 +10,7 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * ApiError
  *
+ * @description Api Error.
  */
 class ApiError implements ArrayAccess
 {
@@ -75,11 +76,11 @@ class ApiError implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'Code',
-        'message' => 'Message',
-        'description' => 'Description',
-        'date_time' => 'DateTime',
-        'inner_error' => 'InnerError'
+        'code' => 'code',
+        'message' => 'message',
+        'description' => 'description',
+        'date_time' => 'dateTime',
+        'inner_error' => 'innerError'
     ];
 
     /**
@@ -184,6 +185,12 @@ class ApiError implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
+        if ($this->container['message'] === null) {
+            $invalidProperties[] = "'message' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -195,6 +202,12 @@ class ApiError implements ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['code'] === null) {
+            return false;
+        }
+        if ($this->container['message'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -212,7 +225,7 @@ class ApiError implements ArrayAccess
     /**
      * Sets code
      *
-     * @param string $code code
+     * @param string $code Gets or sets api error code.
      *
      * @return $this
      */
@@ -236,7 +249,7 @@ class ApiError implements ArrayAccess
     /**
      * Sets message
      *
-     * @param string $message message
+     * @param string $message Gets or sets error message.
      *
      * @return $this
      */
@@ -260,7 +273,7 @@ class ApiError implements ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Gets or sets error description.
      *
      * @return $this
      */
@@ -284,7 +297,7 @@ class ApiError implements ArrayAccess
     /**
      * Sets date_time
      *
-     * @param \DateTime $date_time date_time
+     * @param \DateTime $date_time Gets or sets server datetime.
      *
      * @return $this
      */
