@@ -13,4 +13,24 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class AvailableGraphicsUnit
 {
+    /// <summary>
+    /// Enum value Pixel
+    /// </summary>
+    public const Pixel =  "Pixel";
+
+    /// <summary>
+    /// Enum value Point
+    /// </summary>
+    public const Point =  "Point";
+
+    /// <summary>
+    /// Enum value Inch
+    /// </summary>
+    public const Inch =  "Inch";
+
+    /// <summary>
+    /// Enum value Millimeter
+    /// </summary>
+    public const Millimeter =  "Millimeter";
+
 }

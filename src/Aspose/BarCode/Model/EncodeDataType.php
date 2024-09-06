@@ -13,4 +13,19 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class EncodeDataType
 {
+    /// <summary>
+    /// Enum value StringData
+    /// </summary>
+    public const StringData =  "StringData";
+
+    /// <summary>
+    /// Enum value Base64Bytes
+    /// </summary>
+    public const Base64Bytes =  "Base64Bytes";
+
+    /// <summary>
+    /// Enum value HexBytes
+    /// </summary>
+    public const HexBytes =  "HexBytes";
+
 }

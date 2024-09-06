@@ -567,10 +567,11 @@ class ScanApi
             $multipartContents = [];
             foreach ($formParams as $formParamName => $formParamValues) {
                 foreach ($formParamValues as $formParamValue) {
+                    $multipartFileName = str_contains($formParamName, 'file') ? $filename : '';
                     $multipartContents[] = [
                         'name' => $formParamName,
                         'contents' => $formParamValue,
-                        'filename' => $filename
+                        'filename' => $multipartFileName
                     ];
                 }
             }
@@ -581,8 +582,8 @@ class ScanApi
             $httpBody = \GuzzleHttp\json_encode($formParams);
 
         } else {
-            // for HTTP post (form)
-            $httpBody = $formParams['file'][0];
+
+            $httpBody = ObjectSerializer::buildQuery($formParams);
         }
 
         if (!$this->config->getAccessToken()) {
@@ -912,7 +913,8 @@ class ScanApi
     private function _writeHeadersAndBody($logInfo, $headers, $body)
     {
         foreach ($headers as $name => $value) {
-            $logInfo .= $name . ': ' . $value . '\n';
+            $strValue = is_array($value) ? implode($value) : $value;
+            $logInfo .= $name . ': ' . $strValue . '\n';
         }
 
         return $logInfo .= 'Body: ' . $body . '\n';

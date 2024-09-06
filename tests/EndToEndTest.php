@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-use Aspose\BarCode\BarcodeApi;
+use Aspose\BarCode\GenerateApi;
+use Aspose\BarCode\ScanApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
-use Aspose\BarCode\Model\PresetType;
-use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
-use Aspose\BarCode\Requests\PostBarcodeRecognizeFromUrlOrContentRequest;
-use Aspose\BarCode\Requests\ScanBarcodeRequest;
+use Aspose\BarCode\Model\EncodeBarcodeType;
+use Aspose\BarCode\Model\EncodeDataType;
+use Aspose\BarCode\Model\AvailableBarCodeImageFormat;
+use Aspose\BarCode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
+use Aspose\BarCode\Requests\BarcodeScanFormPostRequest;
 use PHPUnit\Framework\TestCase;
 
 require_once 'TestConfiguration.php';
@@ -18,24 +20,20 @@ final class EndToEndTest extends TestCase
     public function testGenerateAndRecognize(): void
     {
         $config = TestConfiguration::fromFileOrEnv();
-        $api = new BarcodeApi(null, $config);
+        $genApi = new GenerateApi(null, $config);
+        $scanApi = new ScanApi(null, $config);
 
         // Generate
+        $genRequest = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, EncodeDataType::StringData, 'PHP SDK Test');
+        $genRequest->image_format = AvailableBarCodeImageFormat::Png;
 
-        $genRequest = new GetBarCodeGenerateRequest('QR', 'PHP SDK Test');
-        $genRequest->format = 'png';
-
-        $genResponse = $api->GetBarCodeGenerate($genRequest);
-
-        $imageSize = $genResponse->getSize();
-        $this->assertGreaterThan(0, $imageSize);
+        $genResponse = $genApi->barcodeGenerateBarcodeTypeGet($genRequest);
 
         // Scan
 
-        $scanRequest = new ScanBarcodeRequest($genResponse);
-        $scanRequest->decode_types = [DecodeBarcodeType::QR, DecodeBarcodeType::DataMatrix];
+        $scanRequest = new BarcodeScanFormPostRequest($genResponse);
 
-        $scanResponse = $api->ScanBarcode($scanRequest);
+        $scanResponse = $scanApi->barcodeScanFormPost($scanRequest);
         $this->assertNotEmpty($scanResponse);
 
         $this->assertEquals('QR', $scanResponse->getBarcodes()[0]->getType());

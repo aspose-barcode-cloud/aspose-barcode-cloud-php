@@ -997,10 +997,11 @@ class GenerateApi
             $multipartContents = [];
             foreach ($formParams as $formParamName => $formParamValues) {
                 foreach ($formParamValues as $formParamValue) {
+                    $multipartFileName = '';
                     $multipartContents[] = [
                         'name' => $formParamName,
                         'contents' => $formParamValue,
-                        'filename' => $filename
+                        'filename' => $multipartFileName
                     ];
                 }
             }
@@ -1010,6 +1011,9 @@ class GenerateApi
         } elseif ($headers['Content-Type'] === 'application/json') {
             $httpBody = \GuzzleHttp\json_encode($formParams);
 
+        } else {
+
+            $httpBody = ObjectSerializer::buildQuery($formParams);
         }
 
         if (!$this->config->getAccessToken()) {
@@ -1086,7 +1090,8 @@ class GenerateApi
     private function _writeHeadersAndBody($logInfo, $headers, $body)
     {
         foreach ($headers as $name => $value) {
-            $logInfo .= $name . ': ' . $value . '\n';
+            $strValue = is_array($value) ? implode($value) : $value;
+            $logInfo .= $name . ': ' . $strValue . '\n';
         }
 
         return $logInfo .= 'Body: ' . $body . '\n';

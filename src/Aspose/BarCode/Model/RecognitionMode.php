@@ -13,4 +13,19 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class RecognitionMode
 {
+    /// <summary>
+    /// Enum value Fast
+    /// </summary>
+    public const Fast =  "Fast";
+
+    /// <summary>
+    /// Enum value Normal
+    /// </summary>
+    public const Normal =  "Normal";
+
+    /// <summary>
+    /// Enum value Excellent
+    /// </summary>
+    public const Excellent =  "Excellent";
+
 }

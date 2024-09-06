@@ -13,4 +13,29 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class AvailableBarCodeImageFormat
 {
+    /// <summary>
+    /// Enum value Gif
+    /// </summary>
+    public const Gif =  "Gif";
+
+    /// <summary>
+    /// Enum value Jpeg
+    /// </summary>
+    public const Jpeg =  "Jpeg";
+
+    /// <summary>
+    /// Enum value Png
+    /// </summary>
+    public const Png =  "Png";
+
+    /// <summary>
+    /// Enum value Tiff
+    /// </summary>
+    public const Tiff =  "Tiff";
+
+    /// <summary>
+    /// Enum value Svg
+    /// </summary>
+    public const Svg =  "Svg";
+
 }

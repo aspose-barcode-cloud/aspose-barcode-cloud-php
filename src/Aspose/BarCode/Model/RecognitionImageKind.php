@@ -13,4 +13,19 @@ use Aspose\BarCode\ObjectSerializer;
  */
 class RecognitionImageKind
 {
+    /// <summary>
+    /// Enum value Photo
+    /// </summary>
+    public const Photo =  "Photo";
+
+    /// <summary>
+    /// Enum value ScannedDocument
+    /// </summary>
+    public const ScannedDocument =  "ScannedDocument";
+
+    /// <summary>
+    /// Enum value ClearImage
+    /// </summary>
+    public const ClearImage =  "ClearImage";
+
 }
