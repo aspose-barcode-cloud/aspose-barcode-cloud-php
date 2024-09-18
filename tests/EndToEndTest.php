@@ -24,7 +24,7 @@ final class EndToEndTest extends TestCase
         $scanApi = new ScanApi(null, $config);
 
         // Generate
-        $genRequest = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, EncodeDataType::StringData, 'PHP SDK Test');
+        $genRequest = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
         $genRequest->image_format = AvailableBarCodeImageFormat::Png;
 
         $genResponse = $genApi->barcodeGenerateBarcodeTypeGet($genRequest);

@@ -274,10 +274,6 @@ class GenerateApi
         if (!isset($request->barcode_type)) {
             throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling barcodeGenerateBarcodeTypeGet');
         }
-        // verify the required parameter 'data_type' is set
-        if (!isset($request->data_type)) {
-            throw new InvalidArgumentException('Missing the required parameter $data_type when calling barcodeGenerateBarcodeTypeGet');
-        }
         // verify the required parameter 'data' is set
         if (!isset($request->data)) {
             throw new InvalidArgumentException('Missing the required parameter $data when calling barcodeGenerateBarcodeTypeGet');
@@ -903,10 +899,6 @@ class GenerateApi
         // verify the required parameter 'barcode_type' is set
         if (!isset($request->barcode_type)) {
             throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling barcodeGenerateFormPost');
-        }
-        // verify the required parameter 'data_type' is set
-        if (!isset($request->data_type)) {
-            throw new InvalidArgumentException('Missing the required parameter $data_type when calling barcodeGenerateFormPost');
         }
         // verify the required parameter 'data' is set
         if (!isset($request->data)) {

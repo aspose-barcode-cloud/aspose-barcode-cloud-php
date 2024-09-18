@@ -20,15 +20,15 @@ class BarcodeScanGetRequest
     /**
      * Initializes a new instance of the BarcodeScanGetRequest class.
      *
-     * @param string $url Url to barcode image
+     * @param string $file_url Url to barcode image
      */
-    public function __construct($url)
+    public function __construct($file_url)
     {
-        $this->url = $url;
+        $this->file_url = $file_url;
     }
 
     /**
      * Url to barcode image
      */
-    public $url;
+    public $file_url;
 }

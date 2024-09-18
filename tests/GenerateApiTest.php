@@ -77,7 +77,7 @@ class GenerateApiTest extends TestCase
      */
     public function testBarcodeGenerateBarcodeTypeGet()
     {
-        $request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, EncodeDataType::StringData, 'PHP SDK Test');
+        $request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
         $request->image_format = AvailableBarCodeImageFormat::Png;
 
         $response = self::$api->barcodeGenerateBarcodeTypeGet($request);
@@ -95,7 +95,7 @@ class GenerateApiTest extends TestCase
     {
         $params = new GenerateParams();
         $params->setBarcodeType(EncodeBarcodeType::QR);
-        $params->setEncodeData(new EncodeData(["data_type" => EncodeDataType::StringData, "data" => "PHP Test"]));
+        $params->setEncodeData(new EncodeData(["data" => "PHP Test"]));
         $params->setBarcodeImageParams(new BarcodeImageParams(["image_format" => AvailableBarCodeImageFormat::Jpeg]));
         $request = new BarcodeGenerateBodyPostRequest($params);
 
@@ -113,7 +113,6 @@ class GenerateApiTest extends TestCase
     {
         $request = new BarcodeGenerateFormPostRequest(
             EncodeBarcodeType::Code128,
-            EncodeDataType::StringData,
             'PHP SDK Test'
         );
 

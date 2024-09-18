@@ -21,8 +21,8 @@ class BarcodeGenerateFormPostRequest
      * Initializes a new instance of the BarcodeGenerateFormPostRequest class.
      *
      * @param \Aspose\BarCode\Model\EncodeBarcodeType $barcode_type
-     * @param \Aspose\BarCode\Model\EncodeDataType $data_type
      * @param string $data String represents data to encode
+     * @param \Aspose\BarCode\Model\EncodeDataType $data_type
      * @param \Aspose\BarCode\Model\AvailableBarCodeImageFormat $image_format
      * @param string $two_d_display_text Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
      * @param \Aspose\BarCode\Model\CodeLocation $text_location
@@ -35,11 +35,11 @@ class BarcodeGenerateFormPostRequest
      * @param float $image_width Width of the barcode image in given units. Default units: pixel.
      * @param int $rotation_angle BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0.
      */
-    public function __construct($barcode_type, $data_type, $data, $image_format = null, $two_d_display_text = null, $text_location = null, $text_alignment = null, $foreground_color = null, $background_color = null, $units = null, $resolution = null, $image_height = null, $image_width = null, $rotation_angle = null)
+    public function __construct($barcode_type, $data, $data_type = null, $image_format = null, $two_d_display_text = null, $text_location = null, $text_alignment = null, $foreground_color = null, $background_color = null, $units = null, $resolution = null, $image_height = null, $image_width = null, $rotation_angle = null)
     {
         $this->barcode_type = $barcode_type;
-        $this->data_type = $data_type;
         $this->data = $data;
+        $this->data_type = $data_type;
         $this->image_format = $image_format;
         $this->two_d_display_text = $two_d_display_text;
         $this->text_location = $text_location;
@@ -59,14 +59,14 @@ class BarcodeGenerateFormPostRequest
     public $barcode_type;
 
     /**
-     * Gets or sets data_type
-     */
-    public $data_type;
-
-    /**
      * String represents data to encode
      */
     public $data;
+
+    /**
+     * Gets or sets data_type
+     */
+    public $data_type;
 
     /**
      * Gets or sets image_format

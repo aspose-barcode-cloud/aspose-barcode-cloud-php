@@ -16,7 +16,7 @@ if (getenv("TEST_CONFIGURATION_ACCESS_TOKEN")) {
     $config->setAccessToken(getenv("TEST_CONFIGURATION_ACCESS_TOKEN"));
 }
 
-$request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, EncodeDataType::StringData, 'PHP SDK Test');
+$request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
 $request->image_format = AvailableBarCodeImageFormat::Png;
 $request->text_location = CodeLocation::None;
 

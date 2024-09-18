@@ -10,6 +10,7 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * EncodeData
  *
+ * @description Data to encode in barcode
  */
 class EncodeData implements ArrayAccess
 {
@@ -166,9 +167,6 @@ class EncodeData implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['data_type'] === null) {
-            $invalidProperties[] = "'data_type' can't be null";
-        }
         if ($this->container['data'] === null) {
             $invalidProperties[] = "'data' can't be null";
         }
@@ -187,9 +185,6 @@ class EncodeData implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['data_type'] === null) {
-            return false;
-        }
         if ($this->container['data'] === null) {
             return false;
         }

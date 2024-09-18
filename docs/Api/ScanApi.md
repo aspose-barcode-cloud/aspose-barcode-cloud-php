@@ -120,7 +120,7 @@ No authorization required
 ## `barcodeScanGet()`
 
 ```php
-barcodeScanGet($url): \Aspose\BarCode\Model\BarcodeResponseList
+barcodeScanGet($file_url): \Aspose\BarCode\Model\BarcodeResponseList
 ```
 
 Scan barcode from file on server using GET requests with parameter in query string.
@@ -138,10 +138,10 @@ $apiInstance = new Aspose\BarCode\Api\ScanApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$url = 'url_example'; // string | Url to barcode image
+$file_url = 'file_url_example'; // string | Url to barcode image
 
 try {
-    $result = $apiInstance->barcodeScanGet($url);
+    $result = $apiInstance->barcodeScanGet($file_url);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScanApi->barcodeScanGet: ', $e->getMessage(), PHP_EOL;
@@ -152,7 +152,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **url** | **string**| Url to barcode image | |
+| **file_url** | **string**| Url to barcode image | |
 
 ### Return type
 

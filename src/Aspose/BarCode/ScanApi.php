@@ -800,9 +800,9 @@ class ScanApi
      */
     protected function BarcodeScanGetRequest(Requests\BarcodeScanGetRequest $request)
     {
-        // verify the required parameter 'url' is set
-        if (!isset($request->url)) {
-            throw new InvalidArgumentException('Missing the required parameter $url when calling barcodeScanGet');
+        // verify the required parameter 'file_url' is set
+        if (!isset($request->file_url)) {
+            throw new InvalidArgumentException('Missing the required parameter $file_url when calling barcodeScanGet');
         }
 
         $resourcePath = '/barcode/scan';
@@ -811,9 +811,9 @@ class ScanApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-        if (isset($request->url)) {
-            $queryParamName = lcfirst('url');
-            $queryParamValue = is_bool($request->url) ? ($request->url ? 'true' : 'false') : $request->url;
+        if (isset($request->file_url)) {
+            $queryParamName = lcfirst('fileUrl');
+            $queryParamValue = is_bool($request->file_url) ? ($request->file_url ? 'true' : 'false') : $request->file_url;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {

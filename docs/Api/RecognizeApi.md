@@ -12,7 +12,7 @@ All URIs are relative to https://barcode.qa.aspose.cloud/v4.0, except if the ope
 ## `barcodeRecognizeBarcodeTypeGet()`
 
 ```php
-barcodeRecognizeBarcodeTypeGet($barcode_type, $url, $recognition_mode, $image_kind): \Aspose\BarCode\Model\BarcodeResponseList
+barcodeRecognizeBarcodeTypeGet($barcode_type, $file_url, $recognition_mode, $image_kind): \Aspose\BarCode\Model\BarcodeResponseList
 ```
 
 Recognize barcode from file on server using GET requests with parameters in route and query string.
@@ -31,12 +31,12 @@ $apiInstance = new Aspose\BarCode\Api\RecognizeApi(
     new GuzzleHttp\Client()
 );
 $barcode_type = new \Aspose\BarCode\Model\DecodeBarcodeType(); // DecodeBarcodeType | Type of barcode to recognize
-$url = 'url_example'; // string | Url to barcode image
+$file_url = 'file_url_example'; // string | Url to barcode image
 $recognition_mode = new \Aspose\BarCode\Model\RecognitionMode(); // RecognitionMode | Recognition mode
 $image_kind = new \Aspose\BarCode\Model\RecognitionImageKind(); // RecognitionImageKind | Image kind
 
 try {
-    $result = $apiInstance->barcodeRecognizeBarcodeTypeGet($barcode_type, $url, $recognition_mode, $image_kind);
+    $result = $apiInstance->barcodeRecognizeBarcodeTypeGet($barcode_type, $file_url, $recognition_mode, $image_kind);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RecognizeApi->barcodeRecognizeBarcodeTypeGet: ', $e->getMessage(), PHP_EOL;
@@ -48,7 +48,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **barcode_type** | [**DecodeBarcodeType**](../Model/.md)| Type of barcode to recognize | |
-| **url** | **string**| Url to barcode image | |
+| **file_url** | **string**| Url to barcode image | |
 | **recognition_mode** | [**RecognitionMode**](../Model/.md)| Recognition mode | [optional] |
 | **image_kind** | [**RecognitionImageKind**](../Model/.md)| Image kind | [optional] |
 

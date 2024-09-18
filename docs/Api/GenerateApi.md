@@ -12,7 +12,7 @@ All URIs are relative to https://barcode.qa.aspose.cloud/v4.0, except if the ope
 ## `barcodeGenerateBarcodeTypeGet()`
 
 ```php
-barcodeGenerateBarcodeTypeGet($barcode_type, $data_type, $data, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle): \SplFileObject
+barcodeGenerateBarcodeTypeGet($barcode_type, $data, $data_type, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle): \SplFileObject
 ```
 
 Generate barcode using GET request with parameters in route and query string.
@@ -31,8 +31,8 @@ $apiInstance = new Aspose\BarCode\Api\GenerateApi(
     new GuzzleHttp\Client()
 );
 $barcode_type = new \Aspose\BarCode\Model\EncodeBarcodeType(); // EncodeBarcodeType | Type of barcode to generate.
-$data_type = new \Aspose\BarCode\Model\EncodeDataType(); // EncodeDataType | Type of data to encode.
 $data = 'data_example'; // string | String represents data to encode
+$data_type = new \Aspose\BarCode\Model\EncodeDataType(); // EncodeDataType | Type of data to encode.  Default value:  EncodeDataType.StringData.
 $image_format = new \Aspose\BarCode\Model\AvailableBarCodeImageFormat(); // AvailableBarCodeImageFormat | Barcode output image format.  Default value: png
 $two_d_display_text = 'two_d_display_text_example'; // string | Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 $text_location = new \Aspose\BarCode\Model\CodeLocation(); // CodeLocation | Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
@@ -46,7 +46,7 @@ $image_width = 3.4; // float | Width of the barcode image in given units. Defaul
 $rotation_angle = 56; // int | BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0.
 
 try {
-    $result = $apiInstance->barcodeGenerateBarcodeTypeGet($barcode_type, $data_type, $data, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle);
+    $result = $apiInstance->barcodeGenerateBarcodeTypeGet($barcode_type, $data, $data_type, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GenerateApi->barcodeGenerateBarcodeTypeGet: ', $e->getMessage(), PHP_EOL;
@@ -58,8 +58,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **barcode_type** | [**EncodeBarcodeType**](../Model/.md)| Type of barcode to generate. | |
-| **data_type** | [**EncodeDataType**](../Model/.md)| Type of data to encode. | |
 | **data** | **string**| String represents data to encode | |
+| **data_type** | [**EncodeDataType**](../Model/.md)| Type of data to encode.  Default value:  EncodeDataType.StringData. | [optional] |
 | **image_format** | [**AvailableBarCodeImageFormat**](../Model/.md)| Barcode output image format.  Default value: png | [optional] |
 | **two_d_display_text** | **string**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] |
 | **text_location** | [**CodeLocation**](../Model/.md)| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below. | [optional] |
@@ -146,7 +146,7 @@ No authorization required
 ## `barcodeGenerateFormPost()`
 
 ```php
-barcodeGenerateFormPost($barcode_type, $data_type, $data, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle): \SplFileObject
+barcodeGenerateFormPost($barcode_type, $data, $data_type, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle): \SplFileObject
 ```
 
 Generate barcode using POST request with parameters in url ecncoded form.
@@ -165,8 +165,8 @@ $apiInstance = new Aspose\BarCode\Api\GenerateApi(
     new GuzzleHttp\Client()
 );
 $barcode_type = new \Aspose\BarCode\Model\EncodeBarcodeType(); // \Aspose\BarCode\Model\EncodeBarcodeType
-$data_type = new \Aspose\BarCode\Model\EncodeDataType(); // \Aspose\BarCode\Model\EncodeDataType
 $data = 'data_example'; // string | String represents data to encode
+$data_type = new \Aspose\BarCode\Model\EncodeDataType(); // \Aspose\BarCode\Model\EncodeDataType
 $image_format = new \Aspose\BarCode\Model\AvailableBarCodeImageFormat(); // \Aspose\BarCode\Model\AvailableBarCodeImageFormat
 $two_d_display_text = 'two_d_display_text_example'; // string | Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
 $text_location = new \Aspose\BarCode\Model\CodeLocation(); // \Aspose\BarCode\Model\CodeLocation
@@ -180,7 +180,7 @@ $image_width = 3.4; // float | Width of the barcode image in given units. Defaul
 $rotation_angle = 56; // int | BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0.
 
 try {
-    $result = $apiInstance->barcodeGenerateFormPost($barcode_type, $data_type, $data, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle);
+    $result = $apiInstance->barcodeGenerateFormPost($barcode_type, $data, $data_type, $image_format, $two_d_display_text, $text_location, $text_alignment, $foreground_color, $background_color, $units, $resolution, $image_height, $image_width, $rotation_angle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GenerateApi->barcodeGenerateFormPost: ', $e->getMessage(), PHP_EOL;
@@ -192,8 +192,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **barcode_type** | [**\Aspose\BarCode\Model\EncodeBarcodeType**](../Model/EncodeBarcodeType.md)|  | |
-| **data_type** | [**\Aspose\BarCode\Model\EncodeDataType**](../Model/EncodeDataType.md)|  | |
 | **data** | **string**| String represents data to encode | |
+| **data_type** | [**\Aspose\BarCode\Model\EncodeDataType**](../Model/EncodeDataType.md)|  | [optional] |
 | **image_format** | [**\Aspose\BarCode\Model\AvailableBarCodeImageFormat**](../Model/AvailableBarCodeImageFormat.md)|  | [optional] |
 | **two_d_display_text** | **string**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional] |
 | **text_location** | [**\Aspose\BarCode\Model\CodeLocation**](../Model/CodeLocation.md)|  | [optional] |
