@@ -130,7 +130,7 @@ class ScanApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
             }
 
             $statusCode = $response->getStatusCode();
@@ -387,7 +387,7 @@ class ScanApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
             }
 
             $statusCode = $response->getStatusCode();
@@ -660,7 +660,7 @@ class ScanApi
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
             }
 
             $statusCode = $response->getStatusCode();
