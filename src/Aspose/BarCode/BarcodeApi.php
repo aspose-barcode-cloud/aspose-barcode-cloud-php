@@ -335,15 +335,6 @@ class BarcodeApi
                 $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        if (isset($request->font_size_mode)) {
-            $queryParamName = lcfirst('FontSizeMode');
-            $queryParamValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
-            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
-                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
-            } else {
-                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
-            }
-        }
         if (isset($request->no_wrap)) {
             $queryParamName = lcfirst('NoWrap');
             $queryParamValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
@@ -2324,15 +2315,6 @@ class BarcodeApi
                 $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        if (isset($request->font_size_mode)) {
-            $queryParamName = lcfirst('FontSizeMode');
-            $queryParamValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
-            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
-                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
-            } else {
-                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
-            }
-        }
         if (isset($request->no_wrap)) {
             $queryParamName = lcfirst('NoWrap');
             $queryParamValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
@@ -3435,7 +3417,7 @@ class BarcodeApi
         $contents = fread($handle, $fsize);
         $formParams['imageFile'][] = $contents;
 
-        foreach($request->decode_types as $item) {
+        foreach ($request->decode_types as $item) {
             $formParams['decodeTypes'][] = ObjectSerializer::toFormValue($item);
         }
 

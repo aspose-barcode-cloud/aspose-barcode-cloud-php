@@ -273,7 +273,7 @@ class CaptionParams implements ArrayAccess
     /**
      * Sets color
      *
-     * @param string $color Text color.
+     * @param string $color Text color.   Default value: black   Use named colors like: red, green, blue   Or HTML colors like: #FF0000, #00FF00, #0000FF
      *
      * @return $this
      */
