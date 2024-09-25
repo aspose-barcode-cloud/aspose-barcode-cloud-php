@@ -3424,6 +3424,10 @@ class BarcodeApi
         if (isset($request->timeout)) {
             $formParams['timeout'][] = ObjectSerializer::toFormValue($request->timeout);
         }
+
+        if (isset($request->checksum_validation)) {
+            $formParams['checksumValidation'][] = ObjectSerializer::toFormValue($request->checksum_validation);
+        }
         // body params
         $_tempBody = null;
 
