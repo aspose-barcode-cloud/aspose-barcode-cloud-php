@@ -1732,6 +1732,7 @@ class BarcodeApi
         $handle = fopen($filename, 'rb');
         $fsize = filesize($filename);
         $contents = fread($handle, $fsize);
+        $fileField = 'image';
         $formParams['image'][] = $contents;
         // body params
         $_tempBody = null;
@@ -1751,11 +1752,25 @@ class BarcodeApi
         if ($multipart) {
             $multipartContents = [];
             foreach ($formParams as $formParamName => $formParamValues) {
-                foreach ($formParamValues as $formParamValue) {
+                if (is_array($formParamValues)) {
+                    foreach ($formParamValues as $formParamValue) {
+                        if ($formParamName === $fileField) {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                                'filename' => $filename
+                            ];
+                        } else {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                            ];
+                        }
+                    }
+                } else {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
+                        'contents' => $formParamValues,
                     ];
                 }
             }
@@ -3415,18 +3430,19 @@ class BarcodeApi
         $handle = fopen($filename, 'rb');
         $fsize = filesize($filename);
         $contents = fread($handle, $fsize);
+        $fileField = 'imageFile';
         $formParams['imageFile'][] = $contents;
 
-        foreach ($request->decode_types as $item) {
+        foreach($request->decode_types as $item) {
             $formParams['decodeTypes'][] = ObjectSerializer::toFormValue($item);
         }
 
         if (isset($request->timeout)) {
-            $formParams['timeout'][] = ObjectSerializer::toFormValue($request->timeout);
+            $formParams['timeout'] = ObjectSerializer::toFormValue($request->timeout);
         }
 
         if (isset($request->checksum_validation)) {
-            $formParams['checksumValidation'][] = ObjectSerializer::toFormValue($request->checksum_validation);
+            $formParams['checksumValidation'] = ObjectSerializer::toFormValue($request->checksum_validation);
         }
         // body params
         $_tempBody = null;
@@ -3446,11 +3462,25 @@ class BarcodeApi
         if ($multipart) {
             $multipartContents = [];
             foreach ($formParams as $formParamName => $formParamValues) {
-                foreach ($formParamValues as $formParamValue) {
+                if (is_array($formParamValues)) {
+                    foreach ($formParamValues as $formParamValue) {
+                        if ($formParamName === $fileField) {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                                'filename' => $filename
+                            ];
+                        } else {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                            ];
+                        }
+                    }
+                } else {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
+                        'contents' => $formParamValues,
                     ];
                 }
             }
