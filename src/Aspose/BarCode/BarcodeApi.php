@@ -3433,7 +3433,7 @@ class BarcodeApi
         $fileField = 'imageFile';
         $formParams['imageFile'][] = $contents;
 
-        foreach($request->decode_types as $item) {
+        foreach ($request->decode_types as $item) {
             $formParams['decodeTypes'][] = ObjectSerializer::toFormValue($item);
         }
 
