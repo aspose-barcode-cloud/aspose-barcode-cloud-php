@@ -335,15 +335,6 @@ class BarcodeApi
                 $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        if (isset($request->font_size_mode)) {
-            $queryParamName = lcfirst('FontSizeMode');
-            $queryParamValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
-            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
-                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
-            } else {
-                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
-            }
-        }
         if (isset($request->no_wrap)) {
             $queryParamName = lcfirst('NoWrap');
             $queryParamValue = is_bool($request->no_wrap) ? ($request->no_wrap ? 'true' : 'false') : $request->no_wrap;
@@ -1741,6 +1732,7 @@ class BarcodeApi
         $handle = fopen($filename, 'rb');
         $fsize = filesize($filename);
         $contents = fread($handle, $fsize);
+        $fileField = 'image';
         $formParams['image'][] = $contents;
         // body params
         $_tempBody = null;
@@ -1760,11 +1752,25 @@ class BarcodeApi
         if ($multipart) {
             $multipartContents = [];
             foreach ($formParams as $formParamName => $formParamValues) {
-                foreach ($formParamValues as $formParamValue) {
+                if (is_array($formParamValues)) {
+                    foreach ($formParamValues as $formParamValue) {
+                        if ($formParamName === $fileField) {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                                'filename' => $filename
+                            ];
+                        } else {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                            ];
+                        }
+                    }
+                } else {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
+                        'contents' => $formParamValues,
                     ];
                 }
             }
@@ -2318,15 +2324,6 @@ class BarcodeApi
         if (isset($request->text_color)) {
             $queryParamName = lcfirst('TextColor');
             $queryParamValue = is_bool($request->text_color) ? ($request->text_color ? 'true' : 'false') : $request->text_color;
-            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
-                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
-            } else {
-                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
-            }
-        }
-        if (isset($request->font_size_mode)) {
-            $queryParamName = lcfirst('FontSizeMode');
-            $queryParamValue = is_bool($request->font_size_mode) ? ($request->font_size_mode ? 'true' : 'false') : $request->font_size_mode;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
             } else {
@@ -3433,14 +3430,19 @@ class BarcodeApi
         $handle = fopen($filename, 'rb');
         $fsize = filesize($filename);
         $contents = fread($handle, $fsize);
+        $fileField = 'imageFile';
         $formParams['imageFile'][] = $contents;
 
-        foreach($request->decode_types as $item) {
+        foreach ($request->decode_types as $item) {
             $formParams['decodeTypes'][] = ObjectSerializer::toFormValue($item);
         }
 
         if (isset($request->timeout)) {
-            $formParams['timeout'][] = ObjectSerializer::toFormValue($request->timeout);
+            $formParams['timeout'] = ObjectSerializer::toFormValue($request->timeout);
+        }
+
+        if (isset($request->checksum_validation)) {
+            $formParams['checksumValidation'] = ObjectSerializer::toFormValue($request->checksum_validation);
         }
         // body params
         $_tempBody = null;
@@ -3460,11 +3462,25 @@ class BarcodeApi
         if ($multipart) {
             $multipartContents = [];
             foreach ($formParams as $formParamName => $formParamValues) {
-                foreach ($formParamValues as $formParamValue) {
+                if (is_array($formParamValues)) {
+                    foreach ($formParamValues as $formParamValue) {
+                        if ($formParamName === $fileField) {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                                'filename' => $filename
+                            ];
+                        } else {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                            ];
+                        }
+                    }
+                } else {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
+                        'contents' => $formParamValues,
                     ];
                 }
             }

@@ -651,7 +651,7 @@ class GeneratorParams implements ArrayAccess
     /**
      * Sets text_color
      *
-     * @param string $text_color Specify the displaying CodeText's Color. Default value: Color.Black.
+     * @param string $text_color Specify the displaying CodeText's Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      *
      * @return $this
      */
@@ -1085,7 +1085,7 @@ class GeneratorParams implements ArrayAccess
     /**
      * Sets back_color
      *
-     * @param string $back_color Background color of the barcode image. Default value: Color.White.
+     * @param string $back_color Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      *
      * @return $this
      */
@@ -1109,7 +1109,7 @@ class GeneratorParams implements ArrayAccess
     /**
      * Sets bar_color
      *
-     * @param string $bar_color Bars color. Default value: Color.Black.
+     * @param string $bar_color Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      *
      * @return $this
      */
@@ -1133,7 +1133,7 @@ class GeneratorParams implements ArrayAccess
     /**
      * Sets border_color
      *
-     * @param string $border_color Border color. Default value: Color.Black.
+     * @param string $border_color Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      *
      * @return $this
      */
@@ -1829,7 +1829,7 @@ class GeneratorParams implements ArrayAccess
     /**
      * Sets code128
      *
-     * @param \Aspose\BarCode\Model\Code128Params $code128 Code128 params.
+     * @param \Aspose\BarCode\Model\Code128Params $code128 Code128 parameters
      *
      * @return $this
      */

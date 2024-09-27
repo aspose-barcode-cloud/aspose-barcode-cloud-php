@@ -26,8 +26,7 @@ class PutBarcodeGenerateFileRequest
      * @param string $two_d_display_text Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
      * @param string $text_location Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: CodeLocation.Below.
      * @param string $text_alignment Text alignment.
-     * @param string $text_color Specify the displaying CodeText's Color. Default value: Color.Black.
-     * @param string $font_size_mode Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
+     * @param string $text_color Specify the displaying CodeText's Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      * @param bool $no_wrap Specify word wraps (line breaks) within text. Default value: false.
      * @param double $resolution Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
      * @param double $resolution_x DEPRECATED: Use 'Resolution' instead.
@@ -40,9 +39,9 @@ class PutBarcodeGenerateFileRequest
      * @param double $image_height Height of the barcode image in given units. Default units: pixel.
      * @param double $image_width Width of the barcode image in given units. Default units: pixel.
      * @param double $rotation_angle BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0.
-     * @param string $back_color Background color of the barcode image. Default value: Color.White.
-     * @param string $bar_color Bars color. Default value: Color.Black.
-     * @param string $border_color Border color. Default value: Color.Black.
+     * @param string $back_color Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
+     * @param string $bar_color Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
+     * @param string $border_color Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      * @param double $border_width Border width. Default value: 0. Ignored if Visible is set to false.
      * @param string $border_dash_style Border dash style. Default value: BorderDashStyle.Solid.
      * @param bool $border_visible Border visibility. If false than parameter Width is always ignored (0). Default value: false.
@@ -60,7 +59,7 @@ class PutBarcodeGenerateFileRequest
      * @param string $folder Image's folder.
      * @param string $format The image format.
      */
-    public function __construct($name, $type, $text, $two_d_display_text = null, $text_location = null, $text_alignment = null, $text_color = null, $font_size_mode = null, $no_wrap = null, $resolution = null, $resolution_x = null, $resolution_y = null, $dimension_x = null, $text_space = null, $units = null, $size_mode = null, $bar_height = null, $image_height = null, $image_width = null, $rotation_angle = null, $back_color = null, $bar_color = null, $border_color = null, $border_width = null, $border_dash_style = null, $border_visible = null, $enable_checksum = null, $enable_escape = null, $filled_bars = null, $always_show_checksum = null, $wide_narrow_ratio = null, $validate_text = null, $supplement_data = null, $supplement_space = null, $bar_width_reduction = null, $use_anti_alias = null, $storage = null, $folder = null, $format = null)
+    public function __construct($name, $type, $text, $two_d_display_text = null, $text_location = null, $text_alignment = null, $text_color = null, $no_wrap = null, $resolution = null, $resolution_x = null, $resolution_y = null, $dimension_x = null, $text_space = null, $units = null, $size_mode = null, $bar_height = null, $image_height = null, $image_width = null, $rotation_angle = null, $back_color = null, $bar_color = null, $border_color = null, $border_width = null, $border_dash_style = null, $border_visible = null, $enable_checksum = null, $enable_escape = null, $filled_bars = null, $always_show_checksum = null, $wide_narrow_ratio = null, $validate_text = null, $supplement_data = null, $supplement_space = null, $bar_width_reduction = null, $use_anti_alias = null, $storage = null, $folder = null, $format = null)
     {
         $this->name = $name;
         $this->type = $type;
@@ -69,7 +68,6 @@ class PutBarcodeGenerateFileRequest
         $this->text_location = $text_location;
         $this->text_alignment = $text_alignment;
         $this->text_color = $text_color;
-        $this->font_size_mode = $font_size_mode;
         $this->no_wrap = $no_wrap;
         $this->resolution = $resolution;
         $this->resolution_x = $resolution_x;
@@ -134,14 +132,9 @@ class PutBarcodeGenerateFileRequest
     public $text_alignment;
 
     /**
-     * Specify the displaying CodeText's Color. Default value: Color.Black.
+     * Specify the displaying CodeText's Color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      */
     public $text_color;
-
-    /**
-     * Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated automatically based on xDimension value. It is recommended to use FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value: FontSizeMode.Auto.
-     */
-    public $font_size_mode;
 
     /**
      * Specify word wraps (line breaks) within text. Default value: false.
@@ -204,17 +197,17 @@ class PutBarcodeGenerateFileRequest
     public $rotation_angle;
 
     /**
-     * Background color of the barcode image. Default value: Color.White.
+     * Background color of the barcode image. Default value: white. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      */
     public $back_color;
 
     /**
-     * Bars color. Default value: Color.Black.
+     * Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      */
     public $bar_color;
 
     /**
-     * Border color. Default value: Color.Black.
+     * Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      */
     public $border_color;
 

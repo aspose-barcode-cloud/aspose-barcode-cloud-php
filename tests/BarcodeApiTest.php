@@ -300,7 +300,7 @@ class BarcodeApiTest extends TestCase
     {
         $image_file = new SplFileObject('./testdata/QR_and_Code128.png');
         $request = new ScanBarcodeRequest($image_file);
-        $request->decode_types = [DecodeBarcodeType::Pdf417, DecodeBarcodeType::QR];
+        $request->decode_types = [DecodeBarcodeType::Code128, DecodeBarcodeType::QR];
 
         $response = self::$api->scanBarcode($request);
 

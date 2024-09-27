@@ -1249,6 +1249,7 @@ class FileApi
         $handle = fopen($filename, 'rb');
         $fsize = filesize($filename);
         $contents = fread($handle, $fsize);
+        $fileField = 'File';
         $formParams['File'][] = $contents;
         // body params
         $_tempBody = null;
@@ -1268,11 +1269,25 @@ class FileApi
         if ($multipart) {
             $multipartContents = [];
             foreach ($formParams as $formParamName => $formParamValues) {
-                foreach ($formParamValues as $formParamValue) {
+                if (is_array($formParamValues)) {
+                    foreach ($formParamValues as $formParamValue) {
+                        if ($formParamName === $fileField) {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                                'filename' => $filename
+                            ];
+                        } else {
+                            $multipartContents[] = [
+                                'name' => $formParamName,
+                                'contents' => $formParamValue,
+                            ];
+                        }
+                    }
+                } else {
                     $multipartContents[] = [
                         'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $filename
+                        'contents' => $formParamValues,
                     ];
                 }
             }
