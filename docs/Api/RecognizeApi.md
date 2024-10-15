@@ -145,7 +145,7 @@ $apiInstance = new Aspose\BarCode\Api\RecognizeApi(
     new GuzzleHttp\Client()
 );
 $barcode_type = new \Aspose\BarCode\Model\DecodeBarcodeType(); // \Aspose\BarCode\Model\DecodeBarcodeType
-$file = "/path/to/file.txt"; // \SplFileObject
+$file = "/path/to/file.txt"; // \SplFileObject | Barcode image file
 $recognition_mode = new \Aspose\BarCode\Model\RecognitionMode(); // \Aspose\BarCode\Model\RecognitionMode
 $image_kind = new \Aspose\BarCode\Model\RecognitionImageKind(); // \Aspose\BarCode\Model\RecognitionImageKind
 
@@ -162,7 +162,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **barcode_type** | [**\Aspose\BarCode\Model\DecodeBarcodeType**](../Model/DecodeBarcodeType.md)|  | |
-| **file** | **\SplFileObject****\SplFileObject**|  | |
+| **file** | **\SplFileObject****\SplFileObject**| Barcode image file | |
 | **recognition_mode** | [**\Aspose\BarCode\Model\RecognitionMode**](../Model/RecognitionMode.md)|  | [optional] |
 | **image_kind** | [**\Aspose\BarCode\Model\RecognitionImageKind**](../Model/RecognitionImageKind.md)|  | [optional] |
 

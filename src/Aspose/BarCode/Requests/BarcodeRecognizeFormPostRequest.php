@@ -21,7 +21,7 @@ class BarcodeRecognizeFormPostRequest
      * Initializes a new instance of the BarcodeRecognizeFormPostRequest class.
      *
      * @param \Aspose\BarCode\Model\DecodeBarcodeType $barcode_type
-     * @param \SplFileObject $file
+     * @param \SplFileObject $file Barcode image file
      * @param \Aspose\BarCode\Model\RecognitionMode $recognition_mode
      * @param \Aspose\BarCode\Model\RecognitionImageKind $image_kind
      */
@@ -39,7 +39,7 @@ class BarcodeRecognizeFormPostRequest
     public $barcode_type;
 
     /**
-     * Gets or sets file
+     * Barcode image file
      */
     public $file;
 

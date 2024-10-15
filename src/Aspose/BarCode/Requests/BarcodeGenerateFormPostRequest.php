@@ -27,8 +27,8 @@ class BarcodeGenerateFormPostRequest
      * @param string $two_d_display_text Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
      * @param \Aspose\BarCode\Model\CodeLocation $text_location
      * @param \Aspose\BarCode\Model\TextAlignment $text_alignment
-     * @param string $foreground_color Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.Black.
-     * @param string $background_color Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.White.
+     * @param string $foreground_color Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black.
+     * @param string $background_color Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White.
      * @param \Aspose\BarCode\Model\AvailableGraphicsUnit $units
      * @param float $resolution Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.
      * @param float $image_height Height of the barcode image in given units. Default units: pixel.
@@ -89,12 +89,12 @@ class BarcodeGenerateFormPostRequest
     public $text_alignment;
 
     /**
-     * Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.Black.
+     * Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black.
      */
     public $foreground_color;
 
     /**
-     * Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: Color.AliceBlue or #FF000000  Default value: Color.White.
+     * Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White.
      */
     public $background_color;
 

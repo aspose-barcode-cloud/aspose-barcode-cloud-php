@@ -824,12 +824,12 @@ class RecognizeApi
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
+        $multipart = true;
         // form params
         if (isset($request->barcode_type)) {
             $formParams['barcodeType'][] = ObjectSerializer::toFormValue($request->barcode_type);
         }
 
-        $multipart = true;
         $filename = ObjectSerializer::toFormValue($request->file);
         $handle = fopen($filename, 'rb');
         $fsize = filesize($filename);
@@ -858,28 +858,21 @@ class RecognizeApi
         }
 
         // for model (json/xml)
-        if ($multipart) {
-            $multipartContents = [];
-            foreach ($formParams as $formParamName => $formParamValues) {
-                foreach ($formParamValues as $formParamValue) {
-                    $multipartFileName = str_contains($formParamName, 'file') ? $filename : '';
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $multipartFileName
-                    ];
-                }
+
+        $multipartContents = [];
+        foreach ($formParams as $formParamName => $formParamValues) {
+            foreach ($formParamValues as $formParamValue) {
+                $multipartFileName = str_contains($formParamName, 'file') ? $filename : '';
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue,
+                    'filename' => $multipartFileName
+                ];
             }
-            // for HTTP post (form)
-            $httpBody = new MultipartStream($multipartContents);
-
-        } elseif ($headers['Content-Type'] === 'application/json') {
-            $httpBody = \GuzzleHttp\json_encode($formParams);
-
-        } else {
-
-            $httpBody = ObjectSerializer::buildQuery($formParams);
         }
+        // for HTTP post (form)
+        $httpBody = new MultipartStream($multipartContents);
+
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();

@@ -914,6 +914,7 @@ class GenerateApi
 
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
+        $multipart = true;
         // form params
         if (isset($request->barcode_type)) {
             $formParams['barcodeType'][] = ObjectSerializer::toFormValue($request->barcode_type);
@@ -980,33 +981,26 @@ class GenerateApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['image/png', 'image/bmp', 'image/gif', 'image/jpeg', 'image/svg+xml', 'image/tiff', 'application/json', 'application/xml'],
-                ['application/x-www-form-urlencoded']
+                ['multipart/form-data']
             );
         }
 
         // for model (json/xml)
-        if ($multipart) {
-            $multipartContents = [];
-            foreach ($formParams as $formParamName => $formParamValues) {
-                foreach ($formParamValues as $formParamValue) {
-                    $multipartFileName = '';
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue,
-                        'filename' => $multipartFileName
-                    ];
-                }
+
+        $multipartContents = [];
+        foreach ($formParams as $formParamName => $formParamValues) {
+            foreach ($formParamValues as $formParamValue) {
+                $multipartFileName = '';
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue,
+                    'filename' => $multipartFileName
+                ];
             }
-            // for HTTP post (form)
-            $httpBody = new MultipartStream($multipartContents);
-
-        } elseif ($headers['Content-Type'] === 'application/json') {
-            $httpBody = \GuzzleHttp\json_encode($formParams);
-
-        } else {
-
-            $httpBody = ObjectSerializer::buildQuery($formParams);
         }
+        // for HTTP post (form)
+        $httpBody = new MultipartStream($multipartContents);
+
 
         if (!$this->config->getAccessToken()) {
             $this->_requestToken();

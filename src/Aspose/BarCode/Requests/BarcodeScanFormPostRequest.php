@@ -20,7 +20,7 @@ class BarcodeScanFormPostRequest
     /**
      * Initializes a new instance of the BarcodeScanFormPostRequest class.
      *
-     * @param \SplFileObject $file
+     * @param \SplFileObject $file Barcode image file
      */
     public function __construct($file)
     {
@@ -28,7 +28,7 @@ class BarcodeScanFormPostRequest
     }
 
     /**
-     * Gets or sets file
+     * Barcode image file
      */
     public $file;
 }

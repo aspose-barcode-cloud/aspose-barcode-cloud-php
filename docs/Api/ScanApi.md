@@ -84,7 +84,7 @@ $apiInstance = new Aspose\BarCode\Api\ScanApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$file = "/path/to/file.txt"; // \SplFileObject
+$file = "/path/to/file.txt"; // \SplFileObject | Barcode image file
 
 try {
     $result = $apiInstance->barcodeScanFormPost($file);
@@ -98,7 +98,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **file** | **\SplFileObject****\SplFileObject**|  | |
+| **file** | **\SplFileObject****\SplFileObject**| Barcode image file | |
 
 ### Return type
 
