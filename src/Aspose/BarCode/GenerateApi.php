@@ -290,7 +290,7 @@ class GenerateApi
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->barcode_type), $resourcePath);
         }
         if (isset($request->data_type)) {
-            $queryParamName = lcfirst('DataType');
+            $queryParamName = lcfirst('dataType');
             $queryParamValue = is_bool($request->data_type) ? ($request->data_type ? 'true' : 'false') : $request->data_type;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -299,7 +299,7 @@ class GenerateApi
             }
         }
         if (isset($request->data)) {
-            $queryParamName = lcfirst('Data');
+            $queryParamName = lcfirst('data');
             $queryParamValue = is_bool($request->data) ? ($request->data ? 'true' : 'false') : $request->data;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -308,7 +308,7 @@ class GenerateApi
             }
         }
         if (isset($request->image_format)) {
-            $queryParamName = lcfirst('ImageFormat');
+            $queryParamName = lcfirst('imageFormat');
             $queryParamValue = is_bool($request->image_format) ? ($request->image_format ? 'true' : 'false') : $request->image_format;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -316,17 +316,8 @@ class GenerateApi
                 $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        if (isset($request->two_d_display_text)) {
-            $queryParamName = lcfirst('TwoDDisplayText');
-            $queryParamValue = is_bool($request->two_d_display_text) ? ($request->two_d_display_text ? 'true' : 'false') : $request->two_d_display_text;
-            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
-                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
-            } else {
-                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
-            }
-        }
         if (isset($request->text_location)) {
-            $queryParamName = lcfirst('TextLocation');
+            $queryParamName = lcfirst('textLocation');
             $queryParamValue = is_bool($request->text_location) ? ($request->text_location ? 'true' : 'false') : $request->text_location;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -334,17 +325,8 @@ class GenerateApi
                 $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
             }
         }
-        if (isset($request->text_alignment)) {
-            $queryParamName = lcfirst('TextAlignment');
-            $queryParamValue = is_bool($request->text_alignment) ? ($request->text_alignment ? 'true' : 'false') : $request->text_alignment;
-            if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
-                $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
-            } else {
-                $queryParams[$queryParamName] = ObjectSerializer::toQueryValue($queryParamValue);
-            }
-        }
         if (isset($request->foreground_color)) {
-            $queryParamName = lcfirst('ForegroundColor');
+            $queryParamName = lcfirst('foregroundColor');
             $queryParamValue = is_bool($request->foreground_color) ? ($request->foreground_color ? 'true' : 'false') : $request->foreground_color;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -353,7 +335,7 @@ class GenerateApi
             }
         }
         if (isset($request->background_color)) {
-            $queryParamName = lcfirst('BackgroundColor');
+            $queryParamName = lcfirst('backgroundColor');
             $queryParamValue = is_bool($request->background_color) ? ($request->background_color ? 'true' : 'false') : $request->background_color;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -362,7 +344,7 @@ class GenerateApi
             }
         }
         if (isset($request->units)) {
-            $queryParamName = lcfirst('Units');
+            $queryParamName = lcfirst('units');
             $queryParamValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -371,7 +353,7 @@ class GenerateApi
             }
         }
         if (isset($request->resolution)) {
-            $queryParamName = lcfirst('Resolution');
+            $queryParamName = lcfirst('resolution');
             $queryParamValue = is_bool($request->resolution) ? ($request->resolution ? 'true' : 'false') : $request->resolution;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -380,7 +362,7 @@ class GenerateApi
             }
         }
         if (isset($request->image_height)) {
-            $queryParamName = lcfirst('ImageHeight');
+            $queryParamName = lcfirst('imageHeight');
             $queryParamValue = is_bool($request->image_height) ? ($request->image_height ? 'true' : 'false') : $request->image_height;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -389,7 +371,7 @@ class GenerateApi
             }
         }
         if (isset($request->image_width)) {
-            $queryParamName = lcfirst('ImageWidth');
+            $queryParamName = lcfirst('imageWidth');
             $queryParamValue = is_bool($request->image_width) ? ($request->image_width ? 'true' : 'false') : $request->image_width;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -398,7 +380,7 @@ class GenerateApi
             }
         }
         if (isset($request->rotation_angle)) {
-            $queryParamName = lcfirst('RotationAngle');
+            $queryParamName = lcfirst('rotationAngle');
             $queryParamValue = is_bool($request->rotation_angle) ? ($request->rotation_angle ? 'true' : 'false') : $request->rotation_angle;
             if (strpos($resourcePath, '{' . $queryParamName . '}') !== false) {
                 $resourcePath = str_replace('{' . $queryParamName . '}', ObjectSerializer::toPathValue($queryParamValue), $resourcePath);
@@ -714,42 +696,42 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateFormPost
+     * Operation barcodeGenerateMultipartPost
      *
-     * Generate barcode using POST request with parameters in url ecncoded form.
+     * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateFormPostRequest $request is a request object for operation
+     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return \SplFileObject
      */
-    public function barcodeGenerateFormPost(Requests\BarcodeGenerateFormPostRequest $request)
+    public function barcodeGenerateMultipartPost(Requests\BarcodeGenerateMultipartPostRequest $request)
     {
         try {
-            list($response) = $this->barcodeGenerateFormPostWithHttpInfo($request);
+            list($response) = $this->barcodeGenerateMultipartPostWithHttpInfo($request);
             return $response;
         } catch (RepeatRequestException $e) {
-            list($response) = $this->barcodeGenerateFormPostWithHttpInfo($request);
+            list($response) = $this->barcodeGenerateMultipartPostWithHttpInfo($request);
             return $response;
         }
     }
 
     /**
-     * Operation barcodeGenerateFormPostWithHttpInfo
+     * Operation barcodeGenerateMultipartPostWithHttpInfo
      *
-     * Generate barcode using POST request with parameters in url ecncoded form.
+     * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateFormPostRequest $request is a request object for operation
+     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function barcodeGenerateFormPostWithHttpInfo(Requests\BarcodeGenerateFormPostRequest $request)
+    public function barcodeGenerateMultipartPostWithHttpInfo(Requests\BarcodeGenerateMultipartPostRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateFormPostRequest($request);
+        $request = $this->BarcodeGenerateMultipartPostRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -809,18 +791,18 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateFormPostAsync
+     * Operation barcodeGenerateMultipartPostAsync
      *
-     * Generate barcode using POST request with parameters in url ecncoded form.
+     * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateFormPostRequest $request is a request object for operation
+     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateFormPostAsync(Requests\BarcodeGenerateFormPostRequest $request)
+    public function barcodeGenerateMultipartPostAsync(Requests\BarcodeGenerateMultipartPostRequest $request)
     {
-        return $this->barcodeGenerateFormPostAsyncWithHttpInfo($request)
+        return $this->barcodeGenerateMultipartPostAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -829,19 +811,19 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateFormPostAsyncWithHttpInfo
+     * Operation barcodeGenerateMultipartPostAsyncWithHttpInfo
      *
-     * Generate barcode using POST request with parameters in url ecncoded form.
+     * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateFormPostRequest $request is a request object for operation
+     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateFormPostAsyncWithHttpInfo(Requests\BarcodeGenerateFormPostRequest $request)
+    public function barcodeGenerateMultipartPostAsyncWithHttpInfo(Requests\BarcodeGenerateMultipartPostRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateFormPostRequest($request);
+        $request = $this->BarcodeGenerateMultipartPostRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -887,25 +869,25 @@ class GenerateApi
     }
 
     /**
-     * Create request for operation 'barcodeGenerateFormPost'
+     * Create request for operation 'barcodeGenerateMultipartPost'
      *
-     * @param Requests\BarcodeGenerateFormPostRequest $request is a request object for operation
+     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function BarcodeGenerateFormPostRequest(Requests\BarcodeGenerateFormPostRequest $request)
+    protected function BarcodeGenerateMultipartPostRequest(Requests\BarcodeGenerateMultipartPostRequest $request)
     {
         // verify the required parameter 'barcode_type' is set
         if (!isset($request->barcode_type)) {
-            throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling barcodeGenerateFormPost');
+            throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling barcodeGenerateMultipartPost');
         }
         // verify the required parameter 'data' is set
         if (!isset($request->data)) {
-            throw new InvalidArgumentException('Missing the required parameter $data when calling barcodeGenerateFormPost');
+            throw new InvalidArgumentException('Missing the required parameter $data when calling barcodeGenerateMultipartPost');
         }
 
-        $resourcePath = '/barcode/generate-form';
+        $resourcePath = '/barcode/generate-multipart';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -921,55 +903,47 @@ class GenerateApi
         }
 
         if (isset($request->data_type)) {
-            $formParams['DataType'][] = ObjectSerializer::toFormValue($request->data_type);
+            $formParams['dataType'][] = ObjectSerializer::toFormValue($request->data_type);
         }
 
         if (isset($request->data)) {
-            $formParams['Data'][] = ObjectSerializer::toFormValue($request->data);
+            $formParams['data'][] = ObjectSerializer::toFormValue($request->data);
         }
 
         if (isset($request->image_format)) {
-            $formParams['ImageFormat'][] = ObjectSerializer::toFormValue($request->image_format);
-        }
-
-        if (isset($request->two_d_display_text)) {
-            $formParams['TwoDDisplayText'][] = ObjectSerializer::toFormValue($request->two_d_display_text);
+            $formParams['imageFormat'][] = ObjectSerializer::toFormValue($request->image_format);
         }
 
         if (isset($request->text_location)) {
-            $formParams['TextLocation'][] = ObjectSerializer::toFormValue($request->text_location);
-        }
-
-        if (isset($request->text_alignment)) {
-            $formParams['TextAlignment'][] = ObjectSerializer::toFormValue($request->text_alignment);
+            $formParams['textLocation'][] = ObjectSerializer::toFormValue($request->text_location);
         }
 
         if (isset($request->foreground_color)) {
-            $formParams['ForegroundColor'][] = ObjectSerializer::toFormValue($request->foreground_color);
+            $formParams['foregroundColor'][] = ObjectSerializer::toFormValue($request->foreground_color);
         }
 
         if (isset($request->background_color)) {
-            $formParams['BackgroundColor'][] = ObjectSerializer::toFormValue($request->background_color);
+            $formParams['backgroundColor'][] = ObjectSerializer::toFormValue($request->background_color);
         }
 
         if (isset($request->units)) {
-            $formParams['Units'][] = ObjectSerializer::toFormValue($request->units);
+            $formParams['units'][] = ObjectSerializer::toFormValue($request->units);
         }
 
         if (isset($request->resolution)) {
-            $formParams['Resolution'][] = ObjectSerializer::toFormValue($request->resolution);
+            $formParams['resolution'][] = ObjectSerializer::toFormValue($request->resolution);
         }
 
         if (isset($request->image_height)) {
-            $formParams['ImageHeight'][] = ObjectSerializer::toFormValue($request->image_height);
+            $formParams['imageHeight'][] = ObjectSerializer::toFormValue($request->image_height);
         }
 
         if (isset($request->image_width)) {
-            $formParams['ImageWidth'][] = ObjectSerializer::toFormValue($request->image_width);
+            $formParams['imageWidth'][] = ObjectSerializer::toFormValue($request->image_width);
         }
 
         if (isset($request->rotation_angle)) {
-            $formParams['RotationAngle'][] = ObjectSerializer::toFormValue($request->rotation_angle);
+            $formParams['rotationAngle'][] = ObjectSerializer::toFormValue($request->rotation_angle);
         }
         // body params
         $_tempBody = null;

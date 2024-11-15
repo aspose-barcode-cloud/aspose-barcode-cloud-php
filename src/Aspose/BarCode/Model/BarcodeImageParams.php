@@ -29,13 +29,11 @@ class BarcodeImageParams implements ArrayAccess
      * @var string[]
      */
     protected static array $swaggerTypes = [
-        'image_format' => '\Aspose\BarCode\Model\AvailableBarCodeImageFormat',
-        'two_d_display_text' => 'string',
+        'image_format' => '\Aspose\BarCode\Model\BarcodeImageFormat',
         'text_location' => '\Aspose\BarCode\Model\CodeLocation',
-        'text_alignment' => '\Aspose\BarCode\Model\TextAlignment',
         'foreground_color' => 'string',
         'background_color' => 'string',
-        'units' => '\Aspose\BarCode\Model\AvailableGraphicsUnit',
+        'units' => '\Aspose\BarCode\Model\GraphicsUnit',
         'resolution' => 'float',
         'image_height' => 'float',
         'image_width' => 'float',
@@ -49,9 +47,7 @@ class BarcodeImageParams implements ArrayAccess
      */
     protected static array $swaggerFormats = [
         'image_format' => null,
-        'two_d_display_text' => null,
         'text_location' => null,
-        'text_alignment' => null,
         'foreground_color' => null,
         'background_color' => null,
         'units' => null,
@@ -89,9 +85,7 @@ class BarcodeImageParams implements ArrayAccess
      */
     protected static $attributeMap = [
         'image_format' => 'imageFormat',
-        'two_d_display_text' => 'twoDDisplayText',
         'text_location' => 'textLocation',
-        'text_alignment' => 'textAlignment',
         'foreground_color' => 'foregroundColor',
         'background_color' => 'backgroundColor',
         'units' => 'units',
@@ -108,9 +102,7 @@ class BarcodeImageParams implements ArrayAccess
      */
     protected static $setters = [
         'image_format' => 'setImageFormat',
-        'two_d_display_text' => 'setTwoDDisplayText',
         'text_location' => 'setTextLocation',
-        'text_alignment' => 'setTextAlignment',
         'foreground_color' => 'setForegroundColor',
         'background_color' => 'setBackgroundColor',
         'units' => 'setUnits',
@@ -127,9 +119,7 @@ class BarcodeImageParams implements ArrayAccess
      */
     protected static $getters = [
         'image_format' => 'getImageFormat',
-        'two_d_display_text' => 'getTwoDDisplayText',
         'text_location' => 'getTextLocation',
-        'text_alignment' => 'getTextAlignment',
         'foreground_color' => 'getForegroundColor',
         'background_color' => 'getBackgroundColor',
         'units' => 'getUnits',
@@ -200,9 +190,7 @@ class BarcodeImageParams implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['image_format'] = isset($data['image_format']) ? $data['image_format'] : null;
-        $this->container['two_d_display_text'] = isset($data['two_d_display_text']) ? $data['two_d_display_text'] : null;
         $this->container['text_location'] = isset($data['text_location']) ? $data['text_location'] : null;
-        $this->container['text_alignment'] = isset($data['text_alignment']) ? $data['text_alignment'] : null;
         $this->container['foreground_color'] = isset($data['foreground_color']) ? $data['foreground_color'] : null;
         $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
         $this->container['units'] = isset($data['units']) ? $data['units'] : null;
@@ -239,7 +227,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Gets image_format
      *
-     * @return \Aspose\BarCode\Model\AvailableBarCodeImageFormat
+     * @return \Aspose\BarCode\Model\BarcodeImageFormat
      */
     public function getImageFormat()
     {
@@ -249,37 +237,13 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Sets image_format
      *
-     * @param \Aspose\BarCode\Model\AvailableBarCodeImageFormat $image_format image_format
+     * @param \Aspose\BarCode\Model\BarcodeImageFormat $image_format image_format
      *
      * @return $this
      */
     public function setImageFormat($image_format)
     {
         $this->container['image_format'] = $image_format;
-
-        return $this;
-    }
-
-    /**
-     * Gets two_d_display_text
-     *
-     * @return string
-     */
-    public function getTwoDDisplayText()
-    {
-        return $this->container['two_d_display_text'];
-    }
-
-    /**
-     * Sets two_d_display_text
-     *
-     * @param string $two_d_display_text Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode
-     *
-     * @return $this
-     */
-    public function setTwoDDisplayText($two_d_display_text)
-    {
-        $this->container['two_d_display_text'] = $two_d_display_text;
 
         return $this;
     }
@@ -309,30 +273,6 @@ class BarcodeImageParams implements ArrayAccess
     }
 
     /**
-     * Gets text_alignment
-     *
-     * @return \Aspose\BarCode\Model\TextAlignment
-     */
-    public function getTextAlignment()
-    {
-        return $this->container['text_alignment'];
-    }
-
-    /**
-     * Sets text_alignment
-     *
-     * @param \Aspose\BarCode\Model\TextAlignment $text_alignment text_alignment
-     *
-     * @return $this
-     */
-    public function setTextAlignment($text_alignment)
-    {
-        $this->container['text_alignment'] = $text_alignment;
-
-        return $this;
-    }
-
-    /**
      * Gets foreground_color
      *
      * @return string
@@ -345,7 +285,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Sets foreground_color
      *
-     * @param string $foreground_color Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black.
+     * @param string $foreground_color Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black.
      *
      * @return $this
      */
@@ -369,7 +309,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Sets background_color
      *
-     * @param string $background_color Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White.
+     * @param string $background_color Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White.
      *
      * @return $this
      */
@@ -383,7 +323,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Gets units
      *
-     * @return \Aspose\BarCode\Model\AvailableGraphicsUnit
+     * @return \Aspose\BarCode\Model\GraphicsUnit
      */
     public function getUnits()
     {
@@ -393,7 +333,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Sets units
      *
-     * @param \Aspose\BarCode\Model\AvailableGraphicsUnit $units units
+     * @param \Aspose\BarCode\Model\GraphicsUnit $units units
      *
      * @return $this
      */
@@ -417,7 +357,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Sets resolution
      *
-     * @param float $resolution Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.
+     * @param float $resolution Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot.
      *
      * @return $this
      */
@@ -441,7 +381,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Sets image_height
      *
-     * @param float $image_height Height of the barcode image in given units. Default units: pixel.
+     * @param float $image_height Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
      *
      * @return $this
      */
@@ -465,7 +405,7 @@ class BarcodeImageParams implements ArrayAccess
     /**
      * Sets image_width
      *
-     * @param float $image_width Width of the barcode image in given units. Default units: pixel.
+     * @param float $image_width Width of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
      *
      * @return $this
      */

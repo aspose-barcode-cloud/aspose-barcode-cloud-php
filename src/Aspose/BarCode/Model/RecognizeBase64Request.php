@@ -32,7 +32,7 @@ class RecognizeBase64Request implements ArrayAccess
         'barcode_types' => '\Aspose\BarCode\Model\DecodeBarcodeType[]',
         'file_base64' => 'string',
         'recognition_mode' => '\Aspose\BarCode\Model\RecognitionMode',
-        'image_kind' => '\Aspose\BarCode\Model\RecognitionImageKind'
+        'recognition_image_kind' => '\Aspose\BarCode\Model\RecognitionImageKind'
     ];
 
     /**
@@ -44,7 +44,7 @@ class RecognizeBase64Request implements ArrayAccess
         'barcode_types' => null,
         'file_base64' => null,
         'recognition_mode' => null,
-        'image_kind' => null
+        'recognition_image_kind' => null
     ];
 
     /**
@@ -77,7 +77,7 @@ class RecognizeBase64Request implements ArrayAccess
         'barcode_types' => 'barcodeTypes',
         'file_base64' => 'fileBase64',
         'recognition_mode' => 'recognitionMode',
-        'image_kind' => 'imageKind'
+        'recognition_image_kind' => 'recognitionImageKind'
     ];
 
     /**
@@ -89,7 +89,7 @@ class RecognizeBase64Request implements ArrayAccess
         'barcode_types' => 'setBarcodeTypes',
         'file_base64' => 'setFileBase64',
         'recognition_mode' => 'setRecognitionMode',
-        'image_kind' => 'setImageKind'
+        'recognition_image_kind' => 'setRecognitionImageKind'
     ];
 
     /**
@@ -101,7 +101,7 @@ class RecognizeBase64Request implements ArrayAccess
         'barcode_types' => 'getBarcodeTypes',
         'file_base64' => 'getFileBase64',
         'recognition_mode' => 'getRecognitionMode',
-        'image_kind' => 'getImageKind'
+        'recognition_image_kind' => 'getRecognitionImageKind'
     ];
 
     /**
@@ -167,7 +167,7 @@ class RecognizeBase64Request implements ArrayAccess
         $this->container['barcode_types'] = isset($data['barcode_types']) ? $data['barcode_types'] : null;
         $this->container['file_base64'] = isset($data['file_base64']) ? $data['file_base64'] : null;
         $this->container['recognition_mode'] = isset($data['recognition_mode']) ? $data['recognition_mode'] : null;
-        $this->container['image_kind'] = isset($data['image_kind']) ? $data['image_kind'] : null;
+        $this->container['recognition_image_kind'] = isset($data['recognition_image_kind']) ? $data['recognition_image_kind'] : null;
     }
 
     /**
@@ -300,25 +300,25 @@ class RecognizeBase64Request implements ArrayAccess
     }
 
     /**
-     * Gets image_kind
+     * Gets recognition_image_kind
      *
      * @return \Aspose\BarCode\Model\RecognitionImageKind
      */
-    public function getImageKind()
+    public function getRecognitionImageKind()
     {
-        return $this->container['image_kind'];
+        return $this->container['recognition_image_kind'];
     }
 
     /**
-     * Sets image_kind
+     * Sets recognition_image_kind
      *
-     * @param \Aspose\BarCode\Model\RecognitionImageKind $image_kind image_kind
+     * @param \Aspose\BarCode\Model\RecognitionImageKind $recognition_image_kind recognition_image_kind
      *
      * @return $this
      */
-    public function setImageKind($image_kind)
+    public function setRecognitionImageKind($recognition_image_kind)
     {
-        $this->container['image_kind'] = $image_kind;
+        $this->container['recognition_image_kind'] = $recognition_image_kind;
 
         return $this;
     }

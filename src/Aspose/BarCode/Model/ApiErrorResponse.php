@@ -167,6 +167,12 @@ class ApiErrorResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['request_id'] === null) {
+            $invalidProperties[] = "'request_id' can't be null";
+        }
+        if ($this->container['error'] === null) {
+            $invalidProperties[] = "'error' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -178,6 +184,12 @@ class ApiErrorResponse implements ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['request_id'] === null) {
+            return false;
+        }
+        if ($this->container['error'] === null) {
+            return false;
+        }
         return true;
     }
 

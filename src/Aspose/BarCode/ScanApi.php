@@ -345,272 +345,6 @@ class ScanApi
     }
 
     /**
-     * Operation barcodeScanFormPost
-     *
-     * Scan barcode from file in request body using POST requests with parameter in multipart form.
-     *
-     * @param Requests\BarcodeScanFormPostRequest $request is a request object for operation
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     * @return \Aspose\BarCode\Model\BarcodeResponseList
-     */
-    public function barcodeScanFormPost(Requests\BarcodeScanFormPostRequest $request)
-    {
-        try {
-            list($response) = $this->barcodeScanFormPostWithHttpInfo($request);
-            return $response;
-        } catch (RepeatRequestException $e) {
-            list($response) = $this->barcodeScanFormPostWithHttpInfo($request);
-            return $response;
-        }
-    }
-
-    /**
-     * Operation barcodeScanFormPostWithHttpInfo
-     *
-     * Scan barcode from file in request body using POST requests with parameter in multipart form.
-     *
-     * @param Requests\BarcodeScanFormPostRequest $request is a request object for operation
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     * @return array of \Aspose\BarCode\Model\BarcodeResponseList, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function barcodeScanFormPostWithHttpInfo(Requests\BarcodeScanFormPostRequest $request)
-    {
-        $returnType = '\Aspose\BarCode\Model\BarcodeResponseList';
-        $request = $this->BarcodeScanFormPostRequest($request);
-
-        try {
-            $options = $this->_createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                if ($statusCode === 401) {
-                    $this->_requestToken();
-                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
-                }
-
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\BarcodeResponseList', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\ApiErrorResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\ApiErrorResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation barcodeScanFormPostAsync
-     *
-     * Scan barcode from file in request body using POST requests with parameter in multipart form.
-     *
-     * @param Requests\BarcodeScanFormPostRequest $request is a request object for operation
-     *
-     * @throws InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function barcodeScanFormPostAsync(Requests\BarcodeScanFormPostRequest $request)
-    {
-        return $this->barcodeScanFormPostAsyncWithHttpInfo($request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation barcodeScanFormPostAsyncWithHttpInfo
-     *
-     * Scan barcode from file in request body using POST requests with parameter in multipart form.
-     *
-     * @param Requests\BarcodeScanFormPostRequest $request is a request object for operation
-     *
-     * @throws InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function barcodeScanFormPostAsyncWithHttpInfo(Requests\BarcodeScanFormPostRequest $request)
-    {
-        $returnType = '\Aspose\BarCode\Model\BarcodeResponseList';
-        $request = $this->BarcodeScanFormPostRequest($request);
-
-        return $this->client
-            ->sendAsync($request, $this->_createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-
-                    if ($exception instanceof RepeatRequestException) {
-                        //$this->_refreshToken();
-                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
-                    }
-
-                    throw new ApiException(
-                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'barcodeScanFormPost'
-     *
-     * @param Requests\BarcodeScanFormPostRequest $request is a request object for operation
-     *
-     * @throws InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function BarcodeScanFormPostRequest(Requests\BarcodeScanFormPostRequest $request)
-    {
-        // verify the required parameter 'file' is set
-        if (!isset($request->file)) {
-            throw new InvalidArgumentException('Missing the required parameter $file when calling barcodeScanFormPost');
-        }
-
-        $resourcePath = '/barcode/scan-form';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
-        $multipart = true;
-        // form params
-        $filename = ObjectSerializer::toFormValue($request->file);
-        $handle = fopen($filename, 'rb');
-        $fsize = filesize($filename);
-        $contents = fread($handle, $fsize);
-        $formParams['file'][] = $contents;
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/xml']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/xml'],
-                ['multipart/form-data']
-            );
-        }
-
-        // for model (json/xml)
-
-        $multipartContents = [];
-        foreach ($formParams as $formParamName => $formParamValues) {
-            foreach ($formParamValues as $formParamValue) {
-                $multipartFileName = str_contains($formParamName, 'file') ? $filename : '';
-                $multipartContents[] = [
-                    'name' => $formParamName,
-                    'contents' => $formParamValue,
-                    'filename' => $multipartFileName
-                ];
-            }
-        }
-        // for HTTP post (form)
-        $httpBody = new MultipartStream($multipartContents);
-
-
-        if (!$this->config->getAccessToken()) {
-            $this->_requestToken();
-        }
-        $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
-        }
-
-        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $req = new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath,
-            $headers,
-            $httpBody
-        );
-        if ($this->config->getDebug()) {
-            $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
-    }
-
-    /**
      * Operation barcodeScanGet
      *
      * Scan barcode from file on server using GET requests with parameter in query string.
@@ -858,6 +592,272 @@ class ScanApi
         );
         if ($this->config->getDebug()) {
             $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+
+        return $req;
+    }
+
+    /**
+     * Operation barcodeScanMultipartPost
+     *
+     * Scan barcode from file in request body using POST requests with parameter in multipart form.
+     *
+     * @param Requests\BarcodeScanMultipartPostRequest $request is a request object for operation
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return \Aspose\BarCode\Model\BarcodeResponseList
+     */
+    public function barcodeScanMultipartPost(Requests\BarcodeScanMultipartPostRequest $request)
+    {
+        try {
+            list($response) = $this->barcodeScanMultipartPostWithHttpInfo($request);
+            return $response;
+        } catch (RepeatRequestException $e) {
+            list($response) = $this->barcodeScanMultipartPostWithHttpInfo($request);
+            return $response;
+        }
+    }
+
+    /**
+     * Operation barcodeScanMultipartPostWithHttpInfo
+     *
+     * Scan barcode from file in request body using POST requests with parameter in multipart form.
+     *
+     * @param Requests\BarcodeScanMultipartPostRequest $request is a request object for operation
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return array of \Aspose\BarCode\Model\BarcodeResponseList, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function barcodeScanMultipartPostWithHttpInfo(Requests\BarcodeScanMultipartPostRequest $request)
+    {
+        $returnType = '\Aspose\BarCode\Model\BarcodeResponseList';
+        $request = $this->BarcodeScanMultipartPostRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
+                }
+
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\BarcodeResponseList', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\ApiErrorResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\BarCode\Model\ApiErrorResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation barcodeScanMultipartPostAsync
+     *
+     * Scan barcode from file in request body using POST requests with parameter in multipart form.
+     *
+     * @param Requests\BarcodeScanMultipartPostRequest $request is a request object for operation
+     *
+     * @throws InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function barcodeScanMultipartPostAsync(Requests\BarcodeScanMultipartPostRequest $request)
+    {
+        return $this->barcodeScanMultipartPostAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation barcodeScanMultipartPostAsyncWithHttpInfo
+     *
+     * Scan barcode from file in request body using POST requests with parameter in multipart form.
+     *
+     * @param Requests\BarcodeScanMultipartPostRequest $request is a request object for operation
+     *
+     * @throws InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function barcodeScanMultipartPostAsyncWithHttpInfo(Requests\BarcodeScanMultipartPostRequest $request)
+    {
+        $returnType = '\Aspose\BarCode\Model\BarcodeResponseList';
+        $request = $this->BarcodeScanMultipartPostRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        //$this->_refreshToken();
+                        throw new RepeatRequestException('Request must be retried', $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'barcodeScanMultipartPost'
+     *
+     * @param Requests\BarcodeScanMultipartPostRequest $request is a request object for operation
+     *
+     * @throws InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function BarcodeScanMultipartPostRequest(Requests\BarcodeScanMultipartPostRequest $request)
+    {
+        // verify the required parameter 'file' is set
+        if (!isset($request->file)) {
+            throw new InvalidArgumentException('Missing the required parameter $file when calling barcodeScanMultipartPost');
+        }
+
+        $resourcePath = '/barcode/scan-multipart';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        $multipart = true;
+        // form params
+        $filename = ObjectSerializer::toFormValue($request->file);
+        $handle = fopen($filename, 'rb');
+        $fsize = filesize($filename);
+        $contents = fread($handle, $fsize);
+        $formParams['file'][] = $contents;
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'application/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'application/xml'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+
+        $multipartContents = [];
+        foreach ($formParams as $formParamName => $formParamValues) {
+            foreach ($formParamValues as $formParamValue) {
+                $multipartFileName = str_contains($formParamName, 'file') ? $filename : '';
+                $multipartContents[] = [
+                    'name' => $formParamName,
+                    'contents' => $formParamValue,
+                    'filename' => $multipartFileName
+                ];
+            }
+        }
+        // for HTTP post (form)
+        $httpBody = new MultipartStream($multipartContents);
+
+
+        if (!$this->config->getAccessToken()) {
+            $this->_requestToken();
+        }
+        $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $req = new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
         }
 
         return $req;

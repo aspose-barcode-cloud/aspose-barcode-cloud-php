@@ -5,8 +5,8 @@ declare(strict_types=1);
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
-use Aspose\BarCode\Requests\BarcodeRecognizeBarcodeTypeGetRequest;
-use Aspose\BarCode\Requests\BarcodeRecognizeFormPostRequest;
+use Aspose\BarCode\Requests\BarcodeRecognizeGetRequest;
+use Aspose\BarCode\Requests\BarcodeRecognizeMultipartPostRequest;
 use Aspose\BarCode\Requests\BarcodeRecognizeBodyPostRequest;
 use Aspose\BarCode\Model\RecognizeBase64Request;
 use Aspose\BarCode\Model\RecognitionImageKind;
@@ -44,11 +44,11 @@ final class RecognizeApiTest extends TestCase
     }
 
 
-    public function testBarcodeRecognizeBarcodeTypeGet()
+    public function testBarcodeRecognizeGet()
     {
 
-        $response = self::$api->barcodeRecognizeBarcodeTypeGet(
-            new BarcodeRecognizeBarcodeTypeGetRequest(
+        $response = self::$api->barcodeRecognizeGet(
+            new BarcodeRecognizeGetRequest(
                 DecodeBarcodeType::QR,
                 "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png",
                 RecognitionMode::Fast,
@@ -86,12 +86,12 @@ final class RecognizeApiTest extends TestCase
         $this->assertGreaterThan(0, $barcode->getRegion()[0]->getY());
     }
 
-    public function testBarcodeRecognizeFormPost()
+    public function testBarcodeRecognizeMultipartPost()
     {
 
         $file = new SplFileObject(self::$testDataFolderPath . 'QR_and_Code128.png', 'rb');
-        $response = self::$api->barcodeRecognizeFormPost(
-            new BarcodeRecognizeFormPostRequest(DecodeBarcodeType::Code128, $file)
+        $response = self::$api->barcodeRecognizeMultipartPost(
+            new BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType::Code128, $file)
         );
 
         $this->assertCount(1, $response->getBarcodes());

@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeRecognizeFormPostRequest.php">
+ * <copyright company="Aspose" file="BarcodeRecognizeMultipartPostRequest.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,24 +13,24 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeRecognizeFormPost" operation.
+ * Request model for "barcodeRecognizeMultipartPost" operation.
  */
-class BarcodeRecognizeFormPostRequest
+class BarcodeRecognizeMultipartPostRequest
 {
     /**
-     * Initializes a new instance of the BarcodeRecognizeFormPostRequest class.
+     * Initializes a new instance of the BarcodeRecognizeMultipartPostRequest class.
      *
      * @param \Aspose\BarCode\Model\DecodeBarcodeType $barcode_type
      * @param \SplFileObject $file Barcode image file
      * @param \Aspose\BarCode\Model\RecognitionMode $recognition_mode
-     * @param \Aspose\BarCode\Model\RecognitionImageKind $image_kind
+     * @param \Aspose\BarCode\Model\RecognitionImageKind $recognition_image_kind
      */
-    public function __construct($barcode_type, $file, $recognition_mode = null, $image_kind = null)
+    public function __construct($barcode_type, $file, $recognition_mode = null, $recognition_image_kind = null)
     {
         $this->barcode_type = $barcode_type;
         $this->file = $file;
         $this->recognition_mode = $recognition_mode;
-        $this->image_kind = $image_kind;
+        $this->recognition_image_kind = $recognition_image_kind;
     }
 
     /**
@@ -49,7 +49,7 @@ class BarcodeRecognizeFormPostRequest
     public $recognition_mode;
 
     /**
-     * Gets or sets image_kind
+     * Gets or sets recognition_image_kind
      */
-    public $image_kind;
+    public $recognition_image_kind;
 }

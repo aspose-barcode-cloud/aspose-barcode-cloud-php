@@ -6,7 +6,7 @@ use Aspose\BarCode\Configuration;
 use Aspose\BarCode\ScanApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
 use Aspose\BarCode\Requests\BarcodeScanGetRequest;
-use Aspose\BarCode\Requests\BarcodeScanFormPostRequest;
+use Aspose\BarCode\Requests\BarcodeScanMultipartPostRequest;
 use Aspose\BarCode\Requests\BarcodeScanBodyPostRequest;
 use Aspose\BarCode\Model\ScanBase64Request;
 use PHPUnit\Framework\TestCase;
@@ -41,12 +41,12 @@ final class ScanApiTest extends TestCase
     }
 
 
-    public function testBarcodeScanFormPost(): void
+    public function testBarcodeScanMultipartPost(): void
     {
         $file = new SplFileObject(self::$testDataFolderPath . 'pdf417Sample.png');
-        $scanRequest = new BarcodeScanFormPostRequest($file);
+        $scanRequest = new BarcodeScanMultipartPostRequest($file);
 
-        $scanResponse = self::$api->barcodeScanFormPost($scanRequest);
+        $scanResponse = self::$api->barcodeScanMultipartPost($scanRequest);
         $this->assertNotEmpty($scanResponse);
 
         $this->assertEquals(DecodeBarcodeType::Pdf417, $scanResponse->getBarcodes()[0]->getType());

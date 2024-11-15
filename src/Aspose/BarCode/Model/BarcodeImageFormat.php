@@ -7,11 +7,11 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * AvailableBarCodeImageFormat
+ * BarcodeImageFormat
  *
  * @description Specifies the file format of the image.
  */
-class AvailableBarCodeImageFormat
+class BarcodeImageFormat
 {
     /// <summary>
     /// Enum value Gif

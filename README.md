@@ -56,7 +56,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
 use Aspose\BarCode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
-use Aspose\BarCode\Model\{EncodeBarcodeType, EncodeDataType, CodeLocation, AvailableBarCodeImageFormat};
+use Aspose\BarCode\Model\{EncodeBarcodeType, EncodeDataType, CodeLocation, BarcodeImageFormat};
 
 $config = new Configuration();
 $config->setClientId('ClientId from https://dashboard.aspose.cloud/applications');
@@ -66,7 +66,7 @@ if (getenv("TEST_CONFIGURATION_ACCESS_TOKEN")) {
 }
 
 $request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
-$request->image_format = AvailableBarCodeImageFormat::Png;
+$request->image_format = BarcodeImageFormat::Png;
 $request->text_location = CodeLocation::None;
 
 $api = new GenerateApi(null, $config);
@@ -101,20 +101,19 @@ Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
 *GenerateApi* | [**barcodeGenerateBarcodeTypeGet**](docs/Api/GenerateApi.md#barcodegeneratebarcodetypeget) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
 *GenerateApi* | [**barcodeGenerateBodyPost**](docs/Api/GenerateApi.md#barcodegeneratebodypost) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-*GenerateApi* | [**barcodeGenerateFormPost**](docs/Api/GenerateApi.md#barcodegenerateformpost) | **POST** /barcode/generate-form | Generate barcode using POST request with parameters in url ecncoded form.
-*RecognizeApi* | [**barcodeRecognizeBarcodeTypeGet**](docs/Api/RecognizeApi.md#barcoderecognizebarcodetypeget) | **GET** /barcode/recognize/{barcodeType} | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*GenerateApi* | [**barcodeGenerateMultipartPost**](docs/Api/GenerateApi.md#barcodegeneratemultipartpost) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
 *RecognizeApi* | [**barcodeRecognizeBodyPost**](docs/Api/RecognizeApi.md#barcoderecognizebodypost) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-*RecognizeApi* | [**barcodeRecognizeFormPost**](docs/Api/RecognizeApi.md#barcoderecognizeformpost) | **POST** /barcode/recognize-form | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*RecognizeApi* | [**barcodeRecognizeGet**](docs/Api/RecognizeApi.md#barcoderecognizeget) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**barcodeRecognizeMultipartPost**](docs/Api/RecognizeApi.md#barcoderecognizemultipartpost) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
 *ScanApi* | [**barcodeScanBodyPost**](docs/Api/ScanApi.md#barcodescanbodypost) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-*ScanApi* | [**barcodeScanFormPost**](docs/Api/ScanApi.md#barcodescanformpost) | **POST** /barcode/scan-form | Scan barcode from file in request body using POST requests with parameter in multipart form.
 *ScanApi* | [**barcodeScanGet**](docs/Api/ScanApi.md#barcodescanget) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*ScanApi* | [**barcodeScanMultipartPost**](docs/Api/ScanApi.md#barcodescanmultipartpost) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 ## Documentation For Models
 
 - [ApiError](docs/Model/ApiError.md)
 - [ApiErrorResponse](docs/Model/ApiErrorResponse.md)
-- [AvailableBarCodeImageFormat](docs/Model/AvailableBarCodeImageFormat.md)
-- [AvailableGraphicsUnit](docs/Model/AvailableGraphicsUnit.md)
+- [BarcodeImageFormat](docs/Model/BarcodeImageFormat.md)
 - [BarcodeImageParams](docs/Model/BarcodeImageParams.md)
 - [BarcodeResponse](docs/Model/BarcodeResponse.md)
 - [BarcodeResponseList](docs/Model/BarcodeResponseList.md)
@@ -124,11 +123,11 @@ Class | Method | HTTP request | Description
 - [EncodeData](docs/Model/EncodeData.md)
 - [EncodeDataType](docs/Model/EncodeDataType.md)
 - [GenerateParams](docs/Model/GenerateParams.md)
+- [GraphicsUnit](docs/Model/GraphicsUnit.md)
 - [RecognitionImageKind](docs/Model/RecognitionImageKind.md)
 - [RecognitionMode](docs/Model/RecognitionMode.md)
 - [RecognizeBase64Request](docs/Model/RecognizeBase64Request.md)
 - [RegionPoint](docs/Model/RegionPoint.md)
 - [ScanBase64Request](docs/Model/ScanBase64Request.md)
-- [TextAlignment](docs/Model/TextAlignment.md)
 
 

@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeGenerateBarcodeTypeGetRequest.php">
+ * <copyright company="Aspose" file="BarcodeGenerateMultipartPostRequest.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,21 +13,21 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeGenerateBarcodeTypeGet" operation.
+ * Request model for "barcodeGenerateMultipartPost" operation.
  */
-class BarcodeGenerateBarcodeTypeGetRequest
+class BarcodeGenerateMultipartPostRequest
 {
     /**
-     * Initializes a new instance of the BarcodeGenerateBarcodeTypeGetRequest class.
+     * Initializes a new instance of the BarcodeGenerateMultipartPostRequest class.
      *
-     * @param \Aspose\BarCode\Model\EncodeBarcodeType $barcode_type Type of barcode to generate.
+     * @param \Aspose\BarCode\Model\EncodeBarcodeType $barcode_type
      * @param string $data String represents data to encode
-     * @param \Aspose\BarCode\Model\EncodeDataType $data_type Type of data to encode.  Default value:  EncodeDataType.StringData.
-     * @param \Aspose\BarCode\Model\BarcodeImageFormat $image_format Barcode output image format.  Default value: png
-     * @param \Aspose\BarCode\Model\CodeLocation $text_location Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
+     * @param \Aspose\BarCode\Model\EncodeDataType $data_type
+     * @param \Aspose\BarCode\Model\BarcodeImageFormat $image_format
+     * @param \Aspose\BarCode\Model\CodeLocation $text_location
      * @param string $foreground_color Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black.
      * @param string $background_color Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White.
-     * @param \Aspose\BarCode\Model\GraphicsUnit $units Common Units for all measuring in query. Default units: pixel.
+     * @param \Aspose\BarCode\Model\GraphicsUnit $units
      * @param float $resolution Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot.
      * @param float $image_height Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
      * @param float $image_width Width of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
@@ -50,7 +50,7 @@ class BarcodeGenerateBarcodeTypeGetRequest
     }
 
     /**
-     * Type of barcode to generate.
+     * Gets or sets barcode_type
      */
     public $barcode_type;
 
@@ -60,17 +60,17 @@ class BarcodeGenerateBarcodeTypeGetRequest
     public $data;
 
     /**
-     * Type of data to encode.  Default value:  EncodeDataType.StringData.
+     * Gets or sets data_type
      */
     public $data_type;
 
     /**
-     * Barcode output image format.  Default value: png
+     * Gets or sets image_format
      */
     public $image_format;
 
     /**
-     * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
+     * Gets or sets text_location
      */
     public $text_location;
 
@@ -85,7 +85,7 @@ class BarcodeGenerateBarcodeTypeGetRequest
     public $background_color;
 
     /**
-     * Common Units for all measuring in query. Default units: pixel.
+     * Gets or sets units
      */
     public $units;
 

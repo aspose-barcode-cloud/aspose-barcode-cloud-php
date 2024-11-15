@@ -7,11 +7,11 @@ namespace Aspose\BarCode\Model;
 use Aspose\BarCode\ObjectSerializer;
 
 /**
- * AvailableGraphicsUnit
+ * GraphicsUnit
  *
  * @description Subset of Aspose.Drawing.GraphicsUnit.
  */
-class AvailableGraphicsUnit
+class GraphicsUnit
 {
     /// <summary>
     /// Enum value Pixel

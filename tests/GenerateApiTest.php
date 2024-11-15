@@ -9,11 +9,11 @@ use Aspose\BarCode\Model\EncodeBarcodeType;
 use Aspose\BarCode\Model\EncodeDataType;
 use Aspose\BarCode\Model\EncodeData;
 use Aspose\BarCode\Model\BarcodeImageParams;
-use Aspose\BarCode\Model\AvailableBarCodeImageFormat;
+use Aspose\BarCode\Model\BarcodeImageFormat;
 use Aspose\BarCode\Model\GenerateParams;
 use Aspose\BarCode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
 use Aspose\BarCode\Requests\BarcodeGenerateBodyPostRequest;
-use Aspose\BarCode\Requests\BarcodeGenerateFormPostRequest;
+use Aspose\BarCode\Requests\BarcodeGenerateMultipartPostRequest;
 use PHPUnit\Framework\TestCase;
 
 require_once 'TestConfiguration.php';
@@ -78,7 +78,7 @@ class GenerateApiTest extends TestCase
     public function testBarcodeGenerateBarcodeTypeGet()
     {
         $request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
-        $request->image_format = AvailableBarCodeImageFormat::Png;
+        $request->image_format = BarcodeImageFormat::Png;
 
         $response = self::$api->barcodeGenerateBarcodeTypeGet($request);
 
@@ -96,7 +96,7 @@ class GenerateApiTest extends TestCase
         $params = new GenerateParams();
         $params->setBarcodeType(EncodeBarcodeType::QR);
         $params->setEncodeData(new EncodeData(["data" => "PHP Test"]));
-        $params->setBarcodeImageParams(new BarcodeImageParams(["image_format" => AvailableBarCodeImageFormat::Jpeg]));
+        $params->setBarcodeImageParams(new BarcodeImageParams(["image_format" => BarcodeImageFormat::Jpeg]));
         $request = new BarcodeGenerateBodyPostRequest($params);
 
         $response = self::$api->barcodeGenerateBodyPost($request);
@@ -106,18 +106,18 @@ class GenerateApiTest extends TestCase
 
 
     /**
-     * Test case for barcodeGenerateFormPost
+     * Test case for barcodeGenerateMultipartPost
      *
      */
-    public function testbarcodeGenerateFormPost()
+    public function testbarcodeGenerateMultipartPost()
     {
-        $request = new BarcodeGenerateFormPostRequest(
+        $request = new BarcodeGenerateMultipartPostRequest(
             EncodeBarcodeType::Code128,
             'PHP SDK Test'
         );
 
 
-        $response = self::$api->barcodeGenerateFormPost($request);
+        $response = self::$api->barcodeGenerateMultipartPost($request);
 
 
         $this->assertGreaterThan(0, $response->getSize());
