@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
@@ -27,16 +27,16 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = realpath(dirname(__FILE__)) . '/aztec.png';
+    $fileName = __DIR__ . '/../testdata/Aztec.png';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
     $request = new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType::Aztec, "Aspose.BarCode.Cloud");
-    $request->setImageHeight(200);
-    $request->setImageWidth(200);
-    $request->setResolution(150);
-    $request->setUnits('Point');
-
+    $request->image_height = 200;
+    $request->image_width = 200;
+    $request->resolution = 150;
+    $request->units = 'Point';
+   
     $generated = $generateApi->barcodeGenerateMultipartPost($request);
 
     file_put_contents($fileName, $generated->fread($generated->getSize()));

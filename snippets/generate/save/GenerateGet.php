@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
-use Aspose\BarCode\Model\{BarcodeImageFormat};
+use Aspose\BarCode\Model\{BarcodeImageFormat, EncodeBarcodeType};
 use Aspose\BarCode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
 
 function makeConfiguration(): Configuration
@@ -26,12 +26,12 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = realpath(dirname(__FILE__)) . '/Code128.jpeg';
+    $fileName = __DIR__ . '/../testdata/Code128.jpeg';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
     $request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::Code128, "Aspose.BarCode.Cloud");
-    $request->setImageFormat(BarcodeImageFormat::Png);
+    $request->image_format = BarcodeImageFormat::Png;
 
     $generated = $generateApi->barcodeGenerateBarcodeTypeGet($request);
 

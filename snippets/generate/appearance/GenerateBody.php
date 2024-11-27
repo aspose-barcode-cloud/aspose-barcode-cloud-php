@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
@@ -26,7 +26,7 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = realpath(dirname(__FILE__)) . '/Code39.jpeg';
+    $fileName = __DIR__ . "/../testdata/Code39.jpeg";
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 

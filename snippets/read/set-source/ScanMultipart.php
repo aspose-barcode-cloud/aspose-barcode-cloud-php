@@ -4,7 +4,7 @@ use Aspose\BarCode\Configuration;
 use Aspose\BarCode\ScanApi;
 use Aspose\BarCode\Requests\BarcodeScanMultipartPostRequest;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 function makeConfiguration()
 {
@@ -25,12 +25,12 @@ function main()
 {
     $scanApi = new ScanApi(null, makeConfiguration());
 
-    $fileName = realpath(__DIR__ . '/../../../testdata/qr.png');
-    $fileStream = fopen($fileName, 'r');
-    $request = new BarcodeScanMultipartPostRequest($fileStream);
+    $fileName = __DIR__ . '/../testdata/Qr.png';
+    $file = new SplFileObject($fileName, 'rb');
+    $request = new BarcodeScanMultipartPostRequest($file);
     
     $result = $scanApi->barcodeScanMultipartPost($request);
-    fclose($fileStream);
+    $file = null;
 
     echo sprintf("File '%s' recognized, result: '%s'\n", $fileName, $result->getBarcodes()[0]->getBarcodeValue());
 }

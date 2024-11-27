@@ -5,7 +5,7 @@ use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
 use Aspose\BarCode\Requests\BarcodeRecognizeGetRequest;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 function makeConfiguration()
 {

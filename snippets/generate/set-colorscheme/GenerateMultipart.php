@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
-use Aspose\BarCode\Model\{BarcodeImageFormat};
+use Aspose\BarCode\Model\{BarcodeImageFormat, EncodeBarcodeType};
 use Aspose\BarCode\Requests\BarcodeGenerateMultipartPostRequest;
 
 function makeConfiguration(): Configuration
@@ -26,18 +26,18 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = realpath(dirname(__FILE__)) . '/Code39.png';
+    $fileName = __DIR__ . '/../testdata/Code39.png';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
     $request = new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType::Code39, "Aspose");
-    $request->setForegroundColor("Green");
-    $request->setBackgroundColor("Yellow");
-    $request->setImageFormat(BarcodeImageFormat::Gif);
+    $request->foreground_color = "Green";
+    $request->background_color = "Yellow";
+    $request->image_format = BarcodeImageFormat::Gif;
 
-    $barcodeStream = $generateApi->barcodeGenerateMultipartPost($request);
+    $generated = $generateApi->barcodeGenerateMultipartPost($request);
 
-    file_put_contents($fileName, stream_get_contents($barcodeStream));
+    file_put_contents($fileName,  $generated->fread($generated->getSize()));
 
     echo "File '{$fileName}' generated.\n";
 }

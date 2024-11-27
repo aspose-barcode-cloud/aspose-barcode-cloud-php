@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
@@ -26,7 +26,7 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = realpath(dirname(__FILE__)) . '/../Pdf417.png';
+    $fileName = __DIR__ . '/../testdata/../Pdf417.png';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
     
@@ -47,7 +47,7 @@ function main(): void
     $request = new BarcodeGenerateBodyPostRequest($generateParams);
     $generated = $generateApi->barcodeGenerateBodyPost($request);
 
-    file_put_contents($fileName, stream_get_contents($generated));
+    file_put_contents($fileName,  $generated->fread($generated->getSize()));
 
     echo "File '{$fileName}' generated.\n";
 }

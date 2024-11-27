@@ -5,7 +5,7 @@ use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\{DecodeBarcodeType, RecognitionImageKind};
 use Aspose\BarCode\Requests\BarcodeRecognizeMultipartPostRequest;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 function makeConfiguration()
 {
@@ -26,10 +26,10 @@ function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
-    $fileName = realpath(__DIR__ . '/../..//..//..//..//Pdf417.png');
-    $fileStream = fopen($fileName, 'rb');
-    $request = new BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType::MostCommonlyUsed, $fileStream);
-    $request->setImageKind(RecognitionImageKind::ClearImage);
+    $fileName = __DIR__ . '/../testdata/Pdf417.png';
+   $file = new SplFileObject($fileName, 'rb');
+    $request = new BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType::MostCommonlyUsed, $file);
+    $request->image_kind = RecognitionImageKind::ClearImage;
 
     $result = $recognizeApi->barcodeRecognizeMultipartPost($request);
 

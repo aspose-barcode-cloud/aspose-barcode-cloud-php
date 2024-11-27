@@ -8,3 +8,4 @@ Configuration*.json
 /.phpunit.cache
 /.phpunit.result.cache
 phpunit.log
+/snippets_test

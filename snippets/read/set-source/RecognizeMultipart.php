@@ -5,7 +5,7 @@ use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
 use Aspose\BarCode\Requests\BarcodeRecognizeMultipartPostRequest;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 function makeConfiguration()
 {
@@ -26,12 +26,12 @@ function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
-    $fileName = realpath(__DIR__ . '/../../../../qr.png');
-    $fileStream = fopen($fileName, 'rb');
+    $fileName = __DIR__ . '/../testdata/Qr.png';
+   $file = new SplFileObject($fileName, 'rb');
 
     $request = new BarcodeRecognizeMultipartPostRequest(
         DecodeBarcodeType::QR,
-        $fileStream
+        $file
     );
 
     $result = $recognizeApi->barcodeRecognizeMultipartPost($request);
@@ -42,7 +42,7 @@ function main()
         $result->getBarcodes()[0]->getBarcodeValue()
     );
 
-    fclose($fileStream);
+    $file = null;
 }
 
 main();

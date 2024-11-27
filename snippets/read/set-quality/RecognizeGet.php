@@ -5,7 +5,7 @@ use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\{DecodeBarcodeType, RecognitionMode, RecognitionImageKind};
 use Aspose\BarCode\Requests\BarcodeRecognizeGetRequest;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 function makeConfiguration()
 {
@@ -27,8 +27,8 @@ function main()
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
     $request = new BarcodeRecognizeGetRequest(DecodeBarcodeType::QR, "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png");
-    $request->setRecognitionMode(RecognitionMode::Fast);
-    $request->setImageKind(RecognitionImageKind::Photo);
+    $request->recognition_mode = RecognitionMode::Fast;
+    $request->image_kind = RecognitionImageKind::Photo;
 
     $result = $recognizeApi->barcodeRecognizeGet($request);
 

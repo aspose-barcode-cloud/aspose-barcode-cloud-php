@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
@@ -27,7 +27,7 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = realpath(dirname(__FILE__)) . '/Pdf417.svg';
+    $fileName = __DIR__ . '/../testdata/Pdf417.svg';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
@@ -35,12 +35,12 @@ function main(): void
         EncodeBarcodeType::Pdf417,
         "Aspose.BarCode.Cloud"
     );
-    $request->setTextLocation("Above");
-    $request->setImageFormat(BarcodeImageFormat::Svg);
+    $request->text_location = "Above";
+    $request->image_format = BarcodeImageFormat::Svg;
 
     $barcodeStream = $generateApi->barcodeGenerateMultipartPost($request);
 
-    file_put_contents($fileName, stream_get_contents($barcodeStream->fread($barcodeStream->getSize())));
+    file_put_contents($fileName, $barcodeStream->fread($barcodeStream->getSize()));
 
     echo "File '{$fileName}' generated.\n";
 }

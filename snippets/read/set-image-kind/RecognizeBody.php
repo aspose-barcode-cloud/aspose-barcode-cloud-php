@@ -5,7 +5,7 @@ use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\{DecodeBarcodeType, RecognizeBase64Request, RecognitionImageKind};
 use Aspose\BarCode\Requests\BarcodeRecognizeBodyPostRequest;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 function makeConfiguration()
 {
@@ -26,7 +26,7 @@ function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
-    $fileName = realpath(__DIR__ . '/testdata/QR_and_Code128.png');
+    $fileName = __DIR__ . '/../testdata/QR_and_Code128.png';
     $imageBytes = file_get_contents($fileName);
     $imageBase64 = base64_encode($imageBytes);
 

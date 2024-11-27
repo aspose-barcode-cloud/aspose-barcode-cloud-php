@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
@@ -26,21 +26,20 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = realpath(dirname(__FILE__)) . '/qr.png';
+    $fileName = __DIR__ . "/../testdata/Qr.png";
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
     $request = new BarcodeGenerateBarcodeTypeGetRequest(
         EncodeBarcodeType::QR,
-        'Aspose.BarCode.Cloud'
-    );
-    $request->setImageFormat(BarcodeImageFormat::Png);
-    $request->setForegroundColor('Black');
-    $request->setBackgroundColor('White');
-    $request->setTextLocation(CodeLocation::Below);
-    $request->setResolution(300);
-    $request->setImageHeight(200);
-    $request->setImageWidth(200);
+        'Aspose.BarCode.Cloud');
+    $request->image_format = BarcodeImageFormat::Png;
+    $request->foreground_color = 'Black';
+    $request->background_color = 'White';
+    $request->text_location = CodeLocation::Below;
+    $request->resolution = 300;
+    $request->image_height = 200;
+    $request->image_width = 200;
 
     $generated = $generateApi->barcodeGenerateBarcodeTypeGet($request);
 
