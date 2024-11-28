@@ -14,7 +14,7 @@ pushd ${RUN_DIR}
 ln -sv -F ../src/ .
 popd
 
-for file in $(find "${SNIPPETS_DIR}/read" -name "*.php"); do
+for file in $(find "${SNIPPETS_DIR}" -name "*.php"); do
     ${SCRIPT_DIR}/run_snippet.sh "$file" $RUN_DIR $SCRIPT_DIR $CONFIG_FILE_PATH || { echo "Error processing $file"; exit 1; }
 done
 
