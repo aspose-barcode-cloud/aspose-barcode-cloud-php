@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeRecognizeGetRequest.php">
+ * <copyright company="Aspose" file="RecognizeRequestWrapper.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,12 +13,12 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeRecognizeGet" operation.
+ * Request model for "recognize" operation.
  */
-class BarcodeRecognizeGetRequest
+class RecognizeRequestWrapper
 {
     /**
-     * Initializes a new instance of the BarcodeRecognizeGetRequest class.
+     * Initializes a new instance of the RecognizeRequestWrapper class.
      *
      * @param \Aspose\BarCode\Model\DecodeBarcodeType $barcode_type Type of barcode to recognize
      * @param string $file_url Url to barcode image

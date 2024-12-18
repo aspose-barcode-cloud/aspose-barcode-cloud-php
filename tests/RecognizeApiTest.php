@@ -5,9 +5,9 @@ declare(strict_types=1);
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
-use Aspose\BarCode\Requests\BarcodeRecognizeGetRequest;
-use Aspose\BarCode\Requests\BarcodeRecognizeMultipartPostRequest;
-use Aspose\BarCode\Requests\BarcodeRecognizeBodyPostRequest;
+use Aspose\BarCode\Requests\RecognizeRequestWrapper;
+use Aspose\BarCode\Requests\RecognizeMultipartRequestWrapper;
+use Aspose\BarCode\Requests\RecognizeBase64RequestWrapper;
 use Aspose\BarCode\Model\RecognizeBase64Request;
 use Aspose\BarCode\Model\RecognitionImageKind;
 use Aspose\BarCode\Model\RecognitionMode;
@@ -47,8 +47,8 @@ final class RecognizeApiTest extends TestCase
     public function testBarcodeRecognizeGet()
     {
 
-        $response = self::$api->barcodeRecognizeGet(
-            new BarcodeRecognizeGetRequest(
+        $response = self::$api->recognize(
+            new RecognizeRequestWrapper(
                 DecodeBarcodeType::QR,
                 "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png",
                 RecognitionMode::Fast,
@@ -68,8 +68,8 @@ final class RecognizeApiTest extends TestCase
         $imageBytes = file_get_contents(self::$testDataFolderPath . 'pdf417Sample.png');
         $encodedString = base64_encode($imageBytes);
 
-        $response = self::$api->barcodeRecognizeBodyPost(
-            new BarcodeRecognizeBodyPostRequest(
+        $response = self::$api->recognizeBase64(
+            new RecognizeBase64RequestWrapper(
                 new RecognizeBase64Request([
                     'barcode_types' => [DecodeBarcodeType::Pdf417],
                     'file_base64' => $encodedString,
@@ -90,8 +90,8 @@ final class RecognizeApiTest extends TestCase
     {
 
         $file = new SplFileObject(self::$testDataFolderPath . 'QR_and_Code128.png', 'rb');
-        $response = self::$api->barcodeRecognizeMultipartPost(
-            new BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType::Code128, $file)
+        $response = self::$api->recognizeMultipart(
+            new RecognizeMultipartRequestWrapper(DecodeBarcodeType::Code128, $file)
         );
 
         $this->assertCount(1, $response->getBarcodes());

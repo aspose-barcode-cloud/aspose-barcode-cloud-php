@@ -2,7 +2,7 @@
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\ScanApi;
-use Aspose\BarCode\Requests\BarcodeScanMultipartPostRequest;
+use Aspose\BarCode\Requests\ScanMultipartRequestWrapper;
 
 require_once 'vendor/autoload.php';
 
@@ -27,9 +27,9 @@ function main()
 
     $fileName = __DIR__ . '/../testdata/Qr.png';
     $file = new SplFileObject($fileName, 'rb');
-    $request = new BarcodeScanMultipartPostRequest($file);
+    $request = new ScanMultipartRequestWrapper($file);
     
-    $result = $scanApi->barcodeScanMultipartPost($request);
+    $result = $scanApi->scanMultipart($request);
     $file = null;
 
     echo sprintf("File '%s' recognized, result: '%s'\n", $fileName, $result->getBarcodes()[0]->getBarcodeValue());

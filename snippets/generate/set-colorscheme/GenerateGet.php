@@ -12,7 +12,7 @@ use Aspose\BarCode\Model\EncodeBarcodeType;
 use Aspose\BarCode\Model\GenerateParams;
 use Aspose\BarCode\Model\EncodeData;
 use Aspose\BarCode\Model\EncodeDataType;
-use Aspose\BarCode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
+use Aspose\BarCode\Requests\GenerateRequestWrapper;
 
 function makeConfiguration(): Configuration
 {
@@ -35,7 +35,7 @@ function main(): void
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
-    $request = new BarcodeGenerateBarcodeTypeGetRequest(
+    $request = new GenerateRequestWrapper(
         EncodeBarcodeType::QR,
         "https://products.aspose.cloud/barcode/family/"
     );
@@ -43,7 +43,7 @@ function main(): void
     $request->background_color = "LightGray";
     $request->image_format = BarcodeImageFormat::Png;
 
-    $generated = $generateApi->barcodeGenerateBarcodeTypeGet($request);
+    $generated = $generateApi->generate($request);
 
     file_put_contents($fileName, $generated->fread($generated->getSize()));
 

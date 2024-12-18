@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
 use Aspose\BarCode\Model\{GenerateParams, EncodeBarcodeType, EncodeData, EncodeDataType, BarcodeImageParams};
-use Aspose\BarCode\Requests\BarcodeGenerateBodyPostRequest;
+use Aspose\BarCode\Requests\GenerateBodyRequestWrapper;
 
 function makeConfiguration(): Configuration
 {
@@ -44,8 +44,8 @@ function main(): void
         ])
     ]);
 
-    $request = new BarcodeGenerateBodyPostRequest($generateParams);
-    $generated = $generateApi->barcodeGenerateBodyPost($request);
+    $request = new GenerateBodyRequestWrapper($generateParams);
+    $generated = $generateApi->generateBody($request);
 
     file_put_contents($fileName,  $generated->fread($generated->getSize()));
 

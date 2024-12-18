@@ -6,7 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
-use Aspose\BarCode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
+use Aspose\BarCode\Requests\GenerateRequestWrapper;
 use Aspose\BarCode\Model\{EncodeBarcodeType, EncodeDataType, CodeLocation, BarcodeImageFormat};
 
 $config = new Configuration();
@@ -16,12 +16,12 @@ if (getenv("TEST_CONFIGURATION_ACCESS_TOKEN")) {
     $config->setAccessToken(getenv("TEST_CONFIGURATION_ACCESS_TOKEN"));
 }
 
-$request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
+$request = new GenerateRequestWrapper(EncodeBarcodeType::QR, 'PHP SDK Test');
 $request->image_format = BarcodeImageFormat::Png;
 $request->text_location = CodeLocation::None;
 
 $api = new GenerateApi(null, $config);
-$response = $api->barcodeGenerateBarcodeTypeGet($request);
+$response = $api->generate($request);
 
 $type = 'image/png';
 $size = $response->getSize();

@@ -2,7 +2,7 @@
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\ScanApi;
-use Aspose\BarCode\Requests\BarcodeScanGetRequest;
+use Aspose\BarCode\Requests\ScanRequestWrapper;
 
 require_once 'vendor/autoload.php';
 
@@ -25,8 +25,8 @@ function main()
 {
     $scanApi = new ScanApi(null, makeConfiguration());
 
-    $request = new BarcodeScanGetRequest("https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png");
-    $result = $scanApi->barcodeScanGet($request);
+    $request = new ScanRequestWrapper("https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png");
+    $result = $scanApi->scan($request);
 
     echo sprintf(
         "File '%s' recognized, result: '%s'\n",

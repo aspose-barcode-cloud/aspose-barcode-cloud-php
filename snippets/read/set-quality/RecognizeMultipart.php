@@ -3,7 +3,7 @@
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\{DecodeBarcodeType, BarcodeResponseList, RecognitionMode, RecognitionImageKind};
-use Aspose\BarCode\Requests\BarcodeRecognizeMultipartPostRequest;
+use Aspose\BarCode\Requests\RecognizeMultipartRequestWrapper;
 
 require_once 'vendor/autoload.php';
 
@@ -29,11 +29,11 @@ function main()
     $fileName = __DIR__ . '/../testdata/Aztec.png';
    $file = new SplFileObject($fileName, 'rb');
     
-    $request = new BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType::Aztec, $file);
+    $request = new RecognizeMultipartRequestWrapper(DecodeBarcodeType::Aztec, $file);
     $request->recognition_mode = RecognitionMode::Normal;
     $request->image_kind = RecognitionImageKind::ScannedDocument;
 
-    $result = $recognizeApi->barcodeRecognizeMultipartPost($request);
+    $result = $recognizeApi->recognizeMultipart($request);
     
     echo sprintf(
         "File '%s' recognized, result: '%s'\n",

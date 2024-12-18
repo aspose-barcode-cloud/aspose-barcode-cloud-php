@@ -88,42 +88,42 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateBarcodeTypeGet
+     * Operation generate
      *
      * Generate barcode using GET request with parameters in route and query string.
      *
-     * @param Requests\BarcodeGenerateBarcodeTypeGetRequest $request is a request object for operation
+     * @param Requests\GenerateRequestWrapper $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return \SplFileObject
      */
-    public function barcodeGenerateBarcodeTypeGet(Requests\BarcodeGenerateBarcodeTypeGetRequest $request)
+    public function generate(Requests\GenerateRequestWrapper $request)
     {
         try {
-            list($response) = $this->barcodeGenerateBarcodeTypeGetWithHttpInfo($request);
+            list($response) = $this->generateWithHttpInfo($request);
             return $response;
         } catch (RepeatRequestException $e) {
-            list($response) = $this->barcodeGenerateBarcodeTypeGetWithHttpInfo($request);
+            list($response) = $this->generateWithHttpInfo($request);
             return $response;
         }
     }
 
     /**
-     * Operation barcodeGenerateBarcodeTypeGetWithHttpInfo
+     * Operation generateWithHttpInfo
      *
      * Generate barcode using GET request with parameters in route and query string.
      *
-     * @param Requests\BarcodeGenerateBarcodeTypeGetRequest $request is a request object for operation
+     * @param Requests\GenerateRequestWrapper $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function barcodeGenerateBarcodeTypeGetWithHttpInfo(Requests\BarcodeGenerateBarcodeTypeGetRequest $request)
+    public function generateWithHttpInfo(Requests\GenerateRequestWrapper $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateBarcodeTypeGetRequest($request);
+        $request = $this->GenerateRequestWrapper($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -183,18 +183,18 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateBarcodeTypeGetAsync
+     * Operation generateAsync
      *
      * Generate barcode using GET request with parameters in route and query string.
      *
-     * @param Requests\BarcodeGenerateBarcodeTypeGetRequest $request is a request object for operation
+     * @param Requests\GenerateRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateBarcodeTypeGetAsync(Requests\BarcodeGenerateBarcodeTypeGetRequest $request)
+    public function generateAsync(Requests\GenerateRequestWrapper $request)
     {
-        return $this->barcodeGenerateBarcodeTypeGetAsyncWithHttpInfo($request)
+        return $this->generateAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -203,19 +203,19 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateBarcodeTypeGetAsyncWithHttpInfo
+     * Operation generateAsyncWithHttpInfo
      *
      * Generate barcode using GET request with parameters in route and query string.
      *
-     * @param Requests\BarcodeGenerateBarcodeTypeGetRequest $request is a request object for operation
+     * @param Requests\GenerateRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateBarcodeTypeGetAsyncWithHttpInfo(Requests\BarcodeGenerateBarcodeTypeGetRequest $request)
+    public function generateAsyncWithHttpInfo(Requests\GenerateRequestWrapper $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateBarcodeTypeGetRequest($request);
+        $request = $this->GenerateRequestWrapper($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -261,23 +261,30 @@ class GenerateApi
     }
 
     /**
-     * Create request for operation 'barcodeGenerateBarcodeTypeGet'
+     * Create request for operation 'generate'
      *
-     * @param Requests\BarcodeGenerateBarcodeTypeGetRequest $request is a request object for operation
+     * @param Requests\GenerateRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function BarcodeGenerateBarcodeTypeGetRequest(Requests\BarcodeGenerateBarcodeTypeGetRequest $request)
+    protected function GenerateRequestWrapper(Requests\GenerateRequestWrapper $request)
     {
         // verify the required parameter 'barcode_type' is set
         if (!isset($request->barcode_type)) {
-            throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling barcodeGenerateBarcodeTypeGet');
+            throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling generate');
         }
         // verify the required parameter 'data' is set
         if (!isset($request->data)) {
-            throw new InvalidArgumentException('Missing the required parameter $data when calling barcodeGenerateBarcodeTypeGet');
+            throw new InvalidArgumentException('Missing the required parameter $data when calling generate');
         }
+        if (isset($request->resolution) && $request->resolution > 100000) {
+            throw new InvalidArgumentException("invalid value for resolution when calling GenerateApi.generate, must be smaller than or equal to 100000.");
+        }
+        if (isset($request->resolution) && $request->resolution < 1) {
+            throw new InvalidArgumentException("invalid value for resolution when calling GenerateApi.generate, must be bigger than or equal to 1.");
+        }
+
 
         $resourcePath = '/barcode/generate/{barcodeType}';
         $formParams = [];
@@ -439,42 +446,42 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateBodyPost
+     * Operation generateBody
      *
      * Generate barcode using POST request with parameters in body in json or xml format.
      *
-     * @param Requests\BarcodeGenerateBodyPostRequest $request is a request object for operation
+     * @param Requests\GenerateBodyRequestWrapper $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return \SplFileObject
      */
-    public function barcodeGenerateBodyPost(Requests\BarcodeGenerateBodyPostRequest $request)
+    public function generateBody(Requests\GenerateBodyRequestWrapper $request)
     {
         try {
-            list($response) = $this->barcodeGenerateBodyPostWithHttpInfo($request);
+            list($response) = $this->generateBodyWithHttpInfo($request);
             return $response;
         } catch (RepeatRequestException $e) {
-            list($response) = $this->barcodeGenerateBodyPostWithHttpInfo($request);
+            list($response) = $this->generateBodyWithHttpInfo($request);
             return $response;
         }
     }
 
     /**
-     * Operation barcodeGenerateBodyPostWithHttpInfo
+     * Operation generateBodyWithHttpInfo
      *
      * Generate barcode using POST request with parameters in body in json or xml format.
      *
-     * @param Requests\BarcodeGenerateBodyPostRequest $request is a request object for operation
+     * @param Requests\GenerateBodyRequestWrapper $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function barcodeGenerateBodyPostWithHttpInfo(Requests\BarcodeGenerateBodyPostRequest $request)
+    public function generateBodyWithHttpInfo(Requests\GenerateBodyRequestWrapper $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateBodyPostRequest($request);
+        $request = $this->GenerateBodyRequestWrapper($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -534,18 +541,18 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateBodyPostAsync
+     * Operation generateBodyAsync
      *
      * Generate barcode using POST request with parameters in body in json or xml format.
      *
-     * @param Requests\BarcodeGenerateBodyPostRequest $request is a request object for operation
+     * @param Requests\GenerateBodyRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateBodyPostAsync(Requests\BarcodeGenerateBodyPostRequest $request)
+    public function generateBodyAsync(Requests\GenerateBodyRequestWrapper $request)
     {
-        return $this->barcodeGenerateBodyPostAsyncWithHttpInfo($request)
+        return $this->generateBodyAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -554,19 +561,19 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateBodyPostAsyncWithHttpInfo
+     * Operation generateBodyAsyncWithHttpInfo
      *
      * Generate barcode using POST request with parameters in body in json or xml format.
      *
-     * @param Requests\BarcodeGenerateBodyPostRequest $request is a request object for operation
+     * @param Requests\GenerateBodyRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateBodyPostAsyncWithHttpInfo(Requests\BarcodeGenerateBodyPostRequest $request)
+    public function generateBodyAsyncWithHttpInfo(Requests\GenerateBodyRequestWrapper $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateBodyPostRequest($request);
+        $request = $this->GenerateBodyRequestWrapper($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -612,18 +619,18 @@ class GenerateApi
     }
 
     /**
-     * Create request for operation 'barcodeGenerateBodyPost'
+     * Create request for operation 'generateBody'
      *
-     * @param Requests\BarcodeGenerateBodyPostRequest $request is a request object for operation
+     * @param Requests\GenerateBodyRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function BarcodeGenerateBodyPostRequest(Requests\BarcodeGenerateBodyPostRequest $request)
+    protected function GenerateBodyRequestWrapper(Requests\GenerateBodyRequestWrapper $request)
     {
         // verify the required parameter 'generate_params' is set
         if (!isset($request->generate_params)) {
-            throw new InvalidArgumentException('Missing the required parameter $generate_params when calling barcodeGenerateBodyPost');
+            throw new InvalidArgumentException('Missing the required parameter $generate_params when calling generateBody');
         }
 
         $resourcePath = '/barcode/generate-body';
@@ -696,42 +703,42 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateMultipartPost
+     * Operation generateMultipart
      *
      * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
+     * @param Requests\GenerateMultipartRequestWrapper $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return \SplFileObject
      */
-    public function barcodeGenerateMultipartPost(Requests\BarcodeGenerateMultipartPostRequest $request)
+    public function generateMultipart(Requests\GenerateMultipartRequestWrapper $request)
     {
         try {
-            list($response) = $this->barcodeGenerateMultipartPostWithHttpInfo($request);
+            list($response) = $this->generateMultipartWithHttpInfo($request);
             return $response;
         } catch (RepeatRequestException $e) {
-            list($response) = $this->barcodeGenerateMultipartPostWithHttpInfo($request);
+            list($response) = $this->generateMultipartWithHttpInfo($request);
             return $response;
         }
     }
 
     /**
-     * Operation barcodeGenerateMultipartPostWithHttpInfo
+     * Operation generateMultipartWithHttpInfo
      *
      * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
+     * @param Requests\GenerateMultipartRequestWrapper $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function barcodeGenerateMultipartPostWithHttpInfo(Requests\BarcodeGenerateMultipartPostRequest $request)
+    public function generateMultipartWithHttpInfo(Requests\GenerateMultipartRequestWrapper $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateMultipartPostRequest($request);
+        $request = $this->GenerateMultipartRequestWrapper($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -791,18 +798,18 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateMultipartPostAsync
+     * Operation generateMultipartAsync
      *
      * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
+     * @param Requests\GenerateMultipartRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateMultipartPostAsync(Requests\BarcodeGenerateMultipartPostRequest $request)
+    public function generateMultipartAsync(Requests\GenerateMultipartRequestWrapper $request)
     {
-        return $this->barcodeGenerateMultipartPostAsyncWithHttpInfo($request)
+        return $this->generateMultipartAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -811,19 +818,19 @@ class GenerateApi
     }
 
     /**
-     * Operation barcodeGenerateMultipartPostAsyncWithHttpInfo
+     * Operation generateMultipartAsyncWithHttpInfo
      *
      * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
+     * @param Requests\GenerateMultipartRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function barcodeGenerateMultipartPostAsyncWithHttpInfo(Requests\BarcodeGenerateMultipartPostRequest $request)
+    public function generateMultipartAsyncWithHttpInfo(Requests\GenerateMultipartRequestWrapper $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->BarcodeGenerateMultipartPostRequest($request);
+        $request = $this->GenerateMultipartRequestWrapper($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -869,23 +876,30 @@ class GenerateApi
     }
 
     /**
-     * Create request for operation 'barcodeGenerateMultipartPost'
+     * Create request for operation 'generateMultipart'
      *
-     * @param Requests\BarcodeGenerateMultipartPostRequest $request is a request object for operation
+     * @param Requests\GenerateMultipartRequestWrapper $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function BarcodeGenerateMultipartPostRequest(Requests\BarcodeGenerateMultipartPostRequest $request)
+    protected function GenerateMultipartRequestWrapper(Requests\GenerateMultipartRequestWrapper $request)
     {
         // verify the required parameter 'barcode_type' is set
         if (!isset($request->barcode_type)) {
-            throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling barcodeGenerateMultipartPost');
+            throw new InvalidArgumentException('Missing the required parameter $barcode_type when calling generateMultipart');
         }
         // verify the required parameter 'data' is set
         if (!isset($request->data)) {
-            throw new InvalidArgumentException('Missing the required parameter $data when calling barcodeGenerateMultipartPost');
+            throw new InvalidArgumentException('Missing the required parameter $data when calling generateMultipart');
         }
+        if (isset($request->resolution) && $request->resolution > 100000) {
+            throw new InvalidArgumentException("invalid value for resolution when calling GenerateApi.generateMultipart, must be smaller than or equal to 100000.");
+        }
+        if (isset($request->resolution) && $request->resolution < 1) {
+            throw new InvalidArgumentException("invalid value for resolution when calling GenerateApi.generateMultipart, must be bigger than or equal to 1.");
+        }
+
 
         $resourcePath = '/barcode/generate-multipart';
         $formParams = [];

@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
 use Aspose\BarCode\Model\{BarcodeImageFormat, EncodeBarcodeType};
-use Aspose\BarCode\Requests\BarcodeGenerateMultipartPostRequest;
+use Aspose\BarCode\Requests\GenerateMultipartRequestWrapper;
 
 function makeConfiguration(): Configuration
 {
@@ -30,12 +30,12 @@ function main(): void
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
-    $request = new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType::Code39, "Aspose");
+    $request = new GenerateMultipartRequestWrapper(EncodeBarcodeType::Code39, "Aspose");
     $request->foreground_color = "Green";
     $request->background_color = "Yellow";
     $request->image_format = BarcodeImageFormat::Gif;
 
-    $generated = $generateApi->barcodeGenerateMultipartPost($request);
+    $generated = $generateApi->generateMultipart($request);
 
     file_put_contents($fileName,  $generated->fread($generated->getSize()));
 

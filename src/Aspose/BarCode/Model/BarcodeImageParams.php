@@ -191,8 +191,8 @@ class BarcodeImageParams implements ArrayAccess
     {
         $this->container['image_format'] = isset($data['image_format']) ? $data['image_format'] : null;
         $this->container['text_location'] = isset($data['text_location']) ? $data['text_location'] : null;
-        $this->container['foreground_color'] = isset($data['foreground_color']) ? $data['foreground_color'] : null;
-        $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
+        $this->container['foreground_color'] = isset($data['foreground_color']) ? $data['foreground_color'] : 'Black';
+        $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : 'White';
         $this->container['units'] = isset($data['units']) ? $data['units'] : null;
         $this->container['resolution'] = isset($data['resolution']) ? $data['resolution'] : null;
         $this->container['image_height'] = isset($data['image_height']) ? $data['image_height'] : null;
@@ -209,6 +209,14 @@ class BarcodeImageParams implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['resolution']) && ($this->container['resolution'] > 100000)) {
+            $invalidProperties[] = "invalid value for 'resolution', must be smaller than or equal to 100000.";
+        }
+
+        if (!is_null($this->container['resolution']) && ($this->container['resolution'] < 1)) {
+            $invalidProperties[] = "invalid value for 'resolution', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -220,6 +228,12 @@ class BarcodeImageParams implements ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['resolution'] > 100000) {
+            return false;
+        }
+        if ($this->container['resolution'] < 1) {
+            return false;
+        }
         return true;
     }
 
@@ -363,6 +377,14 @@ class BarcodeImageParams implements ArrayAccess
      */
     public function setResolution($resolution)
     {
+
+        if (!is_null($resolution) && ($resolution > 100000)) {
+            throw new \InvalidArgumentException('invalid value for $resolution when calling BarcodeImageParams., must be smaller than or equal to 100000.');
+        }
+        if (!is_null($resolution) && ($resolution < 1)) {
+            throw new \InvalidArgumentException('invalid value for $resolution when calling BarcodeImageParams., must be bigger than or equal to 1.');
+        }
+
         $this->container['resolution'] = $resolution;
 
         return $this;

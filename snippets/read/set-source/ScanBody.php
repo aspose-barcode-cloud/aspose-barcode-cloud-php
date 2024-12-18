@@ -3,7 +3,7 @@
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\ScanApi;
 use Aspose\BarCode\Model\ScanBase64Request;
-use Aspose\BarCode\Requests\BarcodeScanBodyPostRequest;
+use Aspose\BarCode\Requests\ScanBase64RequestWrapper;
 
 require_once 'vendor/autoload.php';
 
@@ -34,9 +34,9 @@ function main()
         'file_base64' => $imageBase64
     ]);
 
-    $request = new BarcodeScanBodyPostRequest($base64Request);
+    $request = new ScanBase64RequestWrapper($base64Request);
 
-    $result = $scanApi->barcodeScanBodyPost($request);
+    $result = $scanApi->scanBase64($request);
 
     echo sprintf(
         "File '%s' recognized, result: '%s'\n",

@@ -3,7 +3,7 @@
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\{DecodeBarcodeType, RecognizeBase64Request, RecognitionMode};
-use Aspose\BarCode\Requests\BarcodeRecognizeBodyPostRequest;
+use Aspose\BarCode\Requests\RecognizeBase64RequestWrapper;
 
 require_once 'vendor/autoload.php';
 
@@ -36,9 +36,9 @@ function main()
         'barcode_types' => [DecodeBarcodeType::Code128]
     ]);
 
-    $request = new BarcodeRecognizeBodyPostRequest($base64Request);
+    $request = new RecognizeBase64RequestWrapper($base64Request);
 
-    $result = $recognizeApi->barcodeRecognizeBodyPost($request);
+    $result = $recognizeApi->recognizeBase64($request);
 
     echo sprintf(
         "File '%s' recognized, result: '%s'\n",

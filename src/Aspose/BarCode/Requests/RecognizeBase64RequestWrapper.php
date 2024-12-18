@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeRecognizeBodyPostRequest.php">
+ * <copyright company="Aspose" file="RecognizeBase64RequestWrapper.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,12 +13,12 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeRecognizeBodyPost" operation.
+ * Request model for "recognizeBase64" operation.
  */
-class BarcodeRecognizeBodyPostRequest
+class RecognizeBase64RequestWrapper
 {
     /**
-     * Initializes a new instance of the BarcodeRecognizeBodyPostRequest class.
+     * Initializes a new instance of the RecognizeBase64RequestWrapper class.
      *
      * @param \Aspose\BarCode\Model\RecognizeBase64Request $recognize_base64_request Barcode recognition request
      */

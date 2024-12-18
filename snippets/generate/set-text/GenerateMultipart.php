@@ -6,7 +6,7 @@ require 'vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
-use Aspose\BarCode\Requests\BarcodeGenerateMultipartPostRequest;
+use Aspose\BarCode\Requests\GenerateMultipartRequestWrapper;
 use Aspose\BarCode\Model\{EncodeBarcodeType, EncodeDataType};
 
 function makeConfiguration(): Configuration
@@ -30,10 +30,10 @@ function main(): void
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
-    $formRequest = new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType::Code128, "4173706F73652E426172436F64652E436C6F7564");
+    $formRequest = new GenerateMultipartRequestWrapper(EncodeBarcodeType::Code128, "4173706F73652E426172436F64652E436C6F7564");
     $formRequest->data_type = EncodeDataType::HexBytes;
 
-    $generated = $generateApi->barcodeGenerateMultipartPost($formRequest);
+    $generated = $generateApi->generateMultipart($formRequest);
 
     file_put_contents($fileName,  $generated->fread($generated->getSize()));
 

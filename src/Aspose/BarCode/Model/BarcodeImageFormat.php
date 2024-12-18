@@ -14,9 +14,9 @@ use Aspose\BarCode\ObjectSerializer;
 class BarcodeImageFormat
 {
     /// <summary>
-    /// Enum value Gif
+    /// Enum value Png
     /// </summary>
-    public const Gif =  "Gif";
+    public const Png =  "Png";
 
     /// <summary>
     /// Enum value Jpeg
@@ -24,9 +24,9 @@ class BarcodeImageFormat
     public const Jpeg =  "Jpeg";
 
     /// <summary>
-    /// Enum value Png
+    /// Enum value Svg
     /// </summary>
-    public const Png =  "Png";
+    public const Svg =  "Svg";
 
     /// <summary>
     /// Enum value Tiff
@@ -34,8 +34,8 @@ class BarcodeImageFormat
     public const Tiff =  "Tiff";
 
     /// <summary>
-    /// Enum value Svg
+    /// Enum value Gif
     /// </summary>
-    public const Svg =  "Svg";
+    public const Gif =  "Gif";
 
 }

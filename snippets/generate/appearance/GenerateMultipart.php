@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
 use Aspose\BarCode\Model\{BarcodeImageFormat};
-use Aspose\BarCode\Requests\BarcodeGenerateMultipartPostRequest;
+use Aspose\BarCode\Requests\GenerateMultipartRequestWrapper;
 use Aspose\BarCode\Model\EncodeBarcodeType;
 
 function makeConfiguration(): Configuration
@@ -31,14 +31,14 @@ function main(): void
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
-    $request = new BarcodeGenerateMultipartPostRequest(
+    $request = new GenerateMultipartRequestWrapper(
         EncodeBarcodeType::Pdf417,
         "Aspose.BarCode.Cloud"
     );
     $request->text_location = "Above";
     $request->image_format = BarcodeImageFormat::Svg;
 
-    $barcodeStream = $generateApi->barcodeGenerateMultipartPost($request);
+    $barcodeStream = $generateApi->generateMultipart($request);
 
     file_put_contents($fileName, $barcodeStream->fread($barcodeStream->getSize()));
 

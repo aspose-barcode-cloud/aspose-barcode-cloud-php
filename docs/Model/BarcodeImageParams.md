@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **image_format** | [**\Aspose\BarCode\Model\BarcodeImageFormat**](BarcodeImageFormat.md) |  | [optional] 
 **text_location** | [**\Aspose\BarCode\Model\CodeLocation**](CodeLocation.md) |  | [optional] 
-**foreground_color** | **string** | Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black. | [optional] 
-**background_color** | **string** | Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White. | [optional] 
+**foreground_color** | **string** | Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black. | [optional] [default to 'Black']
+**background_color** | **string** | Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White. | [optional] [default to 'White']
 **units** | [**\Aspose\BarCode\Model\GraphicsUnit**](GraphicsUnit.md) |  | [optional] 
 **resolution** | **float** | Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot. | [optional] 
 **image_height** | **float** | Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot. | [optional] 

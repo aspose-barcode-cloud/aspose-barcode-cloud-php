@@ -48,9 +48,9 @@ class Configuration implements JsonSerializable
      *
      * @var string
      */
-    protected $host = 'https://barcode.qa.aspose.cloud';
+    protected $host = 'https://api.aspose.cloud';
 
-    protected $authUrl = 'https://id-qa.aspose.cloud/connect/token';
+    protected $authUrl = 'https://id.aspose.cloud/connect/token';
 
     /**
      * Version of API to use, possible values are v1, v1.1, v2, v3

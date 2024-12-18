@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeScanGetRequest.php">
+ * <copyright company="Aspose" file="ScanMultipartRequestWrapper.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,22 +13,22 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeScanGet" operation.
+ * Request model for "scanMultipart" operation.
  */
-class BarcodeScanGetRequest
+class ScanMultipartRequestWrapper
 {
     /**
-     * Initializes a new instance of the BarcodeScanGetRequest class.
+     * Initializes a new instance of the ScanMultipartRequestWrapper class.
      *
-     * @param string $file_url Url to barcode image
+     * @param \SplFileObject $file Barcode image file
      */
-    public function __construct($file_url)
+    public function __construct($file)
     {
-        $this->file_url = $file_url;
+        $this->file = $file;
     }
 
     /**
-     * Url to barcode image
+     * Barcode image file
      */
-    public $file_url;
+    public $file;
 }

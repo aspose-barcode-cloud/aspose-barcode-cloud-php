@@ -3,7 +3,7 @@
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
-use Aspose\BarCode\Requests\BarcodeRecognizeMultipartPostRequest;
+use Aspose\BarCode\Requests\RecognizeMultipartRequestWrapper;
 
 require_once 'vendor/autoload.php';
 
@@ -29,12 +29,12 @@ function main()
     $fileName = __DIR__ . '/../testdata/Pdf417.png';
     $file = new SplFileObject($fileName, 'rb');
     
-    $request = new BarcodeRecognizeMultipartPostRequest(
+    $request = new RecognizeMultipartRequestWrapper(
         DecodeBarcodeType::Pdf417,
         $file
     );
 
-    $result = $recognizeApi->barcodeRecognizeMultipartPost($request);
+    $result = $recognizeApi->recognizeMultipart($request);
     $file = null;
 
     echo sprintf(

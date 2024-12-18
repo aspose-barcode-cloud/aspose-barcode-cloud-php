@@ -3,7 +3,7 @@
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\RecognizeApi;
 use Aspose\BarCode\Model\{DecodeBarcodeType, RecognitionMode, RecognitionImageKind};
-use Aspose\BarCode\Requests\BarcodeRecognizeGetRequest;
+use Aspose\BarCode\Requests\RecognizeRequestWrapper;
 
 require_once 'vendor/autoload.php';
 
@@ -26,11 +26,11 @@ function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
-    $request = new BarcodeRecognizeGetRequest(DecodeBarcodeType::QR, "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png");
+    $request = new RecognizeRequestWrapper(DecodeBarcodeType::QR, "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png");
     $request->recognition_mode = RecognitionMode::Fast;
     $request->image_kind = RecognitionImageKind::Photo;
 
-    $result = $recognizeApi->barcodeRecognizeGet($request);
+    $result = $recognizeApi->recognize($request);
 
     echo sprintf(
         "File '%s' recognized, result: '%s'\n",

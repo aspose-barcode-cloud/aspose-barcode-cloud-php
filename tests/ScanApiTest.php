@@ -5,9 +5,9 @@ declare(strict_types=1);
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\ScanApi;
 use Aspose\BarCode\Model\DecodeBarcodeType;
-use Aspose\BarCode\Requests\BarcodeScanGetRequest;
-use Aspose\BarCode\Requests\BarcodeScanMultipartPostRequest;
-use Aspose\BarCode\Requests\BarcodeScanBodyPostRequest;
+use Aspose\BarCode\Requests\ScanRequestWrapper;
+use Aspose\BarCode\Requests\ScanMultipartRequestWrapper;
+use Aspose\BarCode\Requests\ScanBase64RequestWrapper;
 use Aspose\BarCode\Model\ScanBase64Request;
 use PHPUnit\Framework\TestCase;
 
@@ -44,9 +44,9 @@ final class ScanApiTest extends TestCase
     public function testBarcodeScanMultipartPost(): void
     {
         $file = new SplFileObject(self::$testDataFolderPath . 'pdf417Sample.png');
-        $scanRequest = new BarcodeScanMultipartPostRequest($file);
+        $scanRequest = new ScanMultipartRequestWrapper($file);
 
-        $scanResponse = self::$api->barcodeScanMultipartPost($scanRequest);
+        $scanResponse = self::$api->scanMultipart($scanRequest);
         $this->assertNotEmpty($scanResponse);
 
         $this->assertEquals(DecodeBarcodeType::Pdf417, $scanResponse->getBarcodes()[0]->getType());
@@ -57,9 +57,9 @@ final class ScanApiTest extends TestCase
     {
         $file = new SplFileObject(self::$testDataFolderPath . 'QR_and_Code128.png');
         $scanBase64request = new ScanBase64Request(["file_base64" => base64_encode($file->fread($file->getSize()))]);
-        $scanRequest = new BarcodeScanBodyPostRequest($scanBase64request);
+        $scanRequest = new ScanBase64RequestWrapper($scanBase64request);
 
-        $scanResponse = self::$api->barcodeScanBodyPost($scanRequest);
+        $scanResponse = self::$api->scanBase64($scanRequest);
         $this->assertNotEmpty($scanResponse);
 
         $this->assertCount(2, $scanResponse->getBarcodes());
@@ -73,7 +73,7 @@ final class ScanApiTest extends TestCase
     public function testBarcodeScanGet()
     {
 
-        $response = self::$api->barcodeScanGet(new BarcodeScanGetRequest("https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
+        $response = self::$api->scan(new ScanRequestWrapper("https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
 
         $this->assertCount(1, $response->getBarcodes());
 

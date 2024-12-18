@@ -8,7 +8,7 @@ use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
 use Aspose\BarCode\Model\BarcodeImageParams;
 use Aspose\BarCode\Model\EncodeBarcodeType;
-use Aspose\BarCode\Requests\BarcodeGenerateMultipartPostRequest;
+use Aspose\BarCode\Requests\GenerateMultipartRequestWrapper;
 
 function makeConfiguration(): Configuration
 {
@@ -31,13 +31,13 @@ function main(): void
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
-    $request = new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType::Aztec, "Aspose.BarCode.Cloud");
+    $request = new GenerateMultipartRequestWrapper(EncodeBarcodeType::Aztec, "Aspose.BarCode.Cloud");
     $request->image_height = 200;
     $request->image_width = 200;
     $request->resolution = 150;
     $request->units = 'Point';
    
-    $generated = $generateApi->barcodeGenerateMultipartPost($request);
+    $generated = $generateApi->generateMultipart($request);
 
     file_put_contents($fileName, $generated->fread($generated->getSize()));
 

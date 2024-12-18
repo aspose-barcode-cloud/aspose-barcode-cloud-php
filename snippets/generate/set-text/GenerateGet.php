@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 use Aspose\BarCode\Configuration;
 use Aspose\BarCode\GenerateApi;
 use Aspose\BarCode\Model\{EncodeBarcodeType, EncodeData, EncodeDataType};
-use Aspose\BarCode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
+use Aspose\BarCode\Requests\GenerateRequestWrapper;
 
 function makeConfiguration(): Configuration
 {
@@ -30,10 +30,10 @@ function main(): void
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
-    $getRequest = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, "Aspose.BarCode.Cloud");
+    $getRequest = new GenerateRequestWrapper(EncodeBarcodeType::QR, "Aspose.BarCode.Cloud");
     $getRequest->data_type = EncodeDataType::StringData;
 
-    $generated = $generateApi->barcodeGenerateBarcodeTypeGet($getRequest);
+    $generated = $generateApi->generate($getRequest);
 
     file_put_contents($fileName, $generated->fread($generated->getSize()));
 

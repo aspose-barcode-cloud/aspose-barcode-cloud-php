@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeScanBodyPostRequest.php">
+ * <copyright company="Aspose" file="ScanBase64RequestWrapper.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,12 +13,12 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeScanBodyPost" operation.
+ * Request model for "scanBase64" operation.
  */
-class BarcodeScanBodyPostRequest
+class ScanBase64RequestWrapper
 {
     /**
-     * Initializes a new instance of the BarcodeScanBodyPostRequest class.
+     * Initializes a new instance of the ScanBase64RequestWrapper class.
      *
      * @param \Aspose\BarCode\Model\ScanBase64Request $scan_base64_request Barcode scan request
      */

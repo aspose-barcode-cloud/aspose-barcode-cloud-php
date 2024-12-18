@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use Aspose\Barcode\GenerateApi;
-use Aspose\Barcode\Model\EncodeBarcodeType;
-use Aspose\Barcode\Requests\BarcodeGenerateBarcodeTypeGetRequest;
+use Aspose\BarCode\GenerateApi;
+use Aspose\BarCode\Model\EncodeBarcodeType;
+use Aspose\BarCode\Requests\GenerateRequestWrapper;
 use Aspose\BarCode\ApiException;
 use Aspose\BarCode\Configuration;
 
@@ -40,17 +40,17 @@ class ExceptionTest extends TestCase
 
     public function testExceptionMessageParsed(): void
     {
-        $request = new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType::QR, "");
+        $request = new GenerateRequestWrapper(EncodeBarcodeType::QR, "");
 
         $thrown = false;
         try {
-            self::$api->barcodeGenerateBarcodeTypeGet($request);
+            self::$api->generate($request);
         } catch (ApiException $e) {
             $thrown = true;
             $this->assertEquals(400, $e->getCode());
             $this->assertNotNull($e->getResponseObject());
             $this->assertEquals(
-                "1. Field name: 'Data'. Errors: The Data field is required.",
+                "Error: Field name: 'Data' errors: The Data field is required.",
                 $e->getResponseObject()->getError()->getMessage()
             );
         }

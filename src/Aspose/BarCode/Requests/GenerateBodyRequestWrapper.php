@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeGenerateBodyPostRequest.php">
+ * <copyright company="Aspose" file="GenerateBodyRequestWrapper.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,12 +13,12 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeGenerateBodyPost" operation.
+ * Request model for "generateBody" operation.
  */
-class BarcodeGenerateBodyPostRequest
+class GenerateBodyRequestWrapper
 {
     /**
-     * Initializes a new instance of the BarcodeGenerateBodyPostRequest class.
+     * Initializes a new instance of the GenerateBodyRequestWrapper class.
      *
      * @param \Aspose\BarCode\Model\GenerateParams $generate_params Parameters of generation
      */

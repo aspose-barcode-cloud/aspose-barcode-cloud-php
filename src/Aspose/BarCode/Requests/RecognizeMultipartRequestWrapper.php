@@ -2,7 +2,7 @@
 
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeRecognizeMultipartPostRequest.php">
+ * <copyright company="Aspose" file="RecognizeMultipartRequestWrapper.php">
  *   Copyright (c) 2024 Aspose Pty Ltd
  * </copyright>
  * --------------------------------------------------------------------------------------------------------------------
@@ -13,12 +13,12 @@ declare(strict_types=1);
 namespace Aspose\BarCode\Requests;
 
 /**
- * Request model for "barcodeRecognizeMultipartPost" operation.
+ * Request model for "recognizeMultipart" operation.
  */
-class BarcodeRecognizeMultipartPostRequest
+class RecognizeMultipartRequestWrapper
 {
     /**
-     * Initializes a new instance of the BarcodeRecognizeMultipartPostRequest class.
+     * Initializes a new instance of the RecognizeMultipartRequestWrapper class.
      *
      * @param \Aspose\BarCode\Model\DecodeBarcodeType $barcode_type
      * @param \SplFileObject $file Barcode image file
