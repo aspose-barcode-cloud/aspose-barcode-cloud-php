@@ -7,7 +7,7 @@
 
 - API version: 3.0
 - Package version: 24.12.0
-- Supported PHP versions: ">=7.4 || >=8.0"
+- Supported PHP versions: ">=8.0"
 
 ## Demo applications
 
