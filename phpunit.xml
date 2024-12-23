@@ -11,4 +11,7 @@
       <directory suffix=".php">src</directory>
     </include>
   </source>
+  <logging>
+    <junit outputFile="phpunit-log.xml" logIncompleteSkipped="true" />
+  </logging>
 </phpunit>
