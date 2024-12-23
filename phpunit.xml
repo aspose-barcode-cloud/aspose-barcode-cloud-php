@@ -12,6 +12,6 @@
     </include>
   </source>
   <logging>
-    <junit outputFile="phpunit-log.xml" logIncompleteSkipped="true" />
+    <junit outputFile="phpunit-log.xml" />
   </logging>
 </phpunit>
