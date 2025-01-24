@@ -26,7 +26,7 @@ function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
-    $fileName = __DIR__ . '/../testdata/pdf417sample.png';
+    $fileName = __DIR__ . '/../testdata/pdf417Sample.png';
     $imageBytes = file_get_contents($fileName);
     $imageBase64 = base64_encode($imageBytes);
 
