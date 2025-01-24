@@ -61,4 +61,7 @@ jobs:
     - name: Run test suite
       env:
         TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
-      run: composer run-script test
+      run: |
+        composer run-script test
+        chmod +x scripts/*
+        ./scripts/run_snippets.sh

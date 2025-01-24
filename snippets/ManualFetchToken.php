@@ -7,6 +7,12 @@
     $clientId = 'Client Id from https://dashboard.aspose.cloud/applications';
     $clientSecret = 'Client Secret from https://dashboard.aspose.cloud/applications';
 
+    // Check the client_id is changed to not break GitHub CI pipeline
+    if (str_starts_with($clientId, "Client Id")) {
+        echo "clientId not configured. Skip this snippet test";
+        return;
+    }
+
     $url = 'https://id.aspose.cloud/connect/token';
 
     $data = [

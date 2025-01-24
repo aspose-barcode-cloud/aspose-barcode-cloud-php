@@ -14,7 +14,7 @@ function makeConfiguration(): Configuration
 {
     $config = new Configuration();
 
-    $envToken = getenv("TEST_CONFIGURATION_JWT_TOKEN");
+    $envToken = getenv("TEST_CONFIGURATION_ACCESS_TOKEN");
     if (empty($envToken)) {
         $config->setClientId("Client Id from https://dashboard.aspose.cloud/applications");
         $config->setClientSecret("Client Secret from https://dashboard.aspose.cloud/applications");
