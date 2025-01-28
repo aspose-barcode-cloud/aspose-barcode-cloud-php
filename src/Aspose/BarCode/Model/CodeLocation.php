@@ -9,7 +9,6 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * CodeLocation
  *
- * @description
  */
 class CodeLocation
 {

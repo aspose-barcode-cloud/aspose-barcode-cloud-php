@@ -20,7 +20,7 @@ class Configuration implements JsonSerializable
      *
      * @var string
      */
-    protected $clientVersion = '24.12.0';
+    protected $clientVersion = '25.1.0';
 
     /**
      * ClientId for API
@@ -50,14 +50,14 @@ class Configuration implements JsonSerializable
      */
     protected $host = 'https://api.aspose.cloud';
 
-    protected $authUrl = 'https://api.aspose.cloud/connect/token';
+    protected $authUrl = 'https://id.aspose.cloud/connect/token';
 
     /**
      * Version of API to use, possible values are v1, v1.1, v2, v3
      * default value is v1
      * @var string
      */
-    protected $base_path = '/v3.0';
+    protected $base_path = '/v4.0';
 
     /**
      * User agent of the HTTP request, set to 'php sdk' by default

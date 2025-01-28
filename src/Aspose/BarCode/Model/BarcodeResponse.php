@@ -74,10 +74,10 @@ class BarcodeResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'barcode_value' => 'BarcodeValue',
-        'type' => 'Type',
-        'region' => 'Region',
-        'checksum' => 'Checksum'
+        'barcode_value' => 'barcodeValue',
+        'type' => 'type',
+        'region' => 'region',
+        'checksum' => 'checksum'
     ];
 
     /**

@@ -70,8 +70,8 @@ class RegionPoint implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'x' => 'X',
-        'y' => 'Y'
+        'x' => 'x',
+        'y' => 'y'
     ];
 
     /**
@@ -167,12 +167,6 @@ class RegionPoint implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['x'] === null) {
-            $invalidProperties[] = "'x' can't be null";
-        }
-        if ($this->container['y'] === null) {
-            $invalidProperties[] = "'y' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -184,12 +178,6 @@ class RegionPoint implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['x'] === null) {
-            return false;
-        }
-        if ($this->container['y'] === null) {
-            return false;
-        }
         return true;
     }
 

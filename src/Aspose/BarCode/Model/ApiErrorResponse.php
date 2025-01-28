@@ -10,6 +10,7 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * ApiErrorResponse
  *
+ * @description ApiError Response
  */
 class ApiErrorResponse implements ArrayAccess
 {
@@ -69,8 +70,8 @@ class ApiErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'RequestId',
-        'error' => 'Error'
+        'request_id' => 'requestId',
+        'error' => 'error'
     ];
 
     /**
@@ -166,6 +167,12 @@ class ApiErrorResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['request_id'] === null) {
+            $invalidProperties[] = "'request_id' can't be null";
+        }
+        if ($this->container['error'] === null) {
+            $invalidProperties[] = "'error' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -177,6 +184,12 @@ class ApiErrorResponse implements ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['request_id'] === null) {
+            return false;
+        }
+        if ($this->container['error'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -194,7 +207,7 @@ class ApiErrorResponse implements ArrayAccess
     /**
      * Sets request_id
      *
-     * @param string $request_id request_id
+     * @param string $request_id Gets or sets request Id.
      *
      * @return $this
      */

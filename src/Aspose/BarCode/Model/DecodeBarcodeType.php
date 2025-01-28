@@ -9,14 +9,19 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * DecodeBarcodeType
  *
- * @description See DecodeType
+ * @description See Aspose.BarCode.Aspose.BarCode.BarCodeRecognition.DecodeType
  */
 class DecodeBarcodeType
 {
     /// <summary>
-    /// Enum value all
+    /// Enum value MostCommonlyUsed
     /// </summary>
-    public const all =  "all";
+    public const MostCommonlyUsed =  "MostCommonlyUsed";
+
+    /// <summary>
+    /// Enum value QR
+    /// </summary>
+    public const QR =  "QR";
 
     /// <summary>
     /// Enum value AustraliaPost
@@ -24,19 +29,24 @@ class DecodeBarcodeType
     public const AustraliaPost =  "AustraliaPost";
 
     /// <summary>
+    /// Enum value AustralianPosteParcel
+    /// </summary>
+    public const AustralianPosteParcel =  "AustralianPosteParcel";
+
+    /// <summary>
     /// Enum value Aztec
     /// </summary>
     public const Aztec =  "Aztec";
 
     /// <summary>
-    /// Enum value ISBN
-    /// </summary>
-    public const ISBN =  "ISBN";
-
-    /// <summary>
     /// Enum value Codabar
     /// </summary>
     public const Codabar =  "Codabar";
+
+    /// <summary>
+    /// Enum value CodablockF
+    /// </summary>
+    public const CodablockF =  "CodablockF";
 
     /// <summary>
     /// Enum value Code11
@@ -49,34 +59,79 @@ class DecodeBarcodeType
     public const Code128 =  "Code128";
 
     /// <summary>
-    /// Enum value GS1Code128
+    /// Enum value Code16K
     /// </summary>
-    public const GS1Code128 =  "GS1Code128";
+    public const Code16K =  "Code16K";
 
     /// <summary>
-    /// Enum value Code39Extended
+    /// Enum value Code32
     /// </summary>
-    public const Code39Extended =  "Code39Extended";
+    public const Code32 =  "Code32";
 
     /// <summary>
-    /// Enum value Code39Standard
+    /// Enum value Code39
     /// </summary>
-    public const Code39Standard =  "Code39Standard";
+    public const Code39 =  "Code39";
 
     /// <summary>
-    /// Enum value Code93Extended
+    /// Enum value Code39FullASCII
     /// </summary>
-    public const Code93Extended =  "Code93Extended";
+    public const Code39FullASCII =  "Code39FullASCII";
 
     /// <summary>
-    /// Enum value Code93Standard
+    /// Enum value Code93
     /// </summary>
-    public const Code93Standard =  "Code93Standard";
+    public const Code93 =  "Code93";
+
+    /// <summary>
+    /// Enum value CompactPdf417
+    /// </summary>
+    public const CompactPdf417 =  "CompactPdf417";
+
+    /// <summary>
+    /// Enum value DataLogic2of5
+    /// </summary>
+    public const DataLogic2of5 =  "DataLogic2of5";
 
     /// <summary>
     /// Enum value DataMatrix
     /// </summary>
     public const DataMatrix =  "DataMatrix";
+
+    /// <summary>
+    /// Enum value DatabarExpanded
+    /// </summary>
+    public const DatabarExpanded =  "DatabarExpanded";
+
+    /// <summary>
+    /// Enum value DatabarExpandedStacked
+    /// </summary>
+    public const DatabarExpandedStacked =  "DatabarExpandedStacked";
+
+    /// <summary>
+    /// Enum value DatabarLimited
+    /// </summary>
+    public const DatabarLimited =  "DatabarLimited";
+
+    /// <summary>
+    /// Enum value DatabarOmniDirectional
+    /// </summary>
+    public const DatabarOmniDirectional =  "DatabarOmniDirectional";
+
+    /// <summary>
+    /// Enum value DatabarStacked
+    /// </summary>
+    public const DatabarStacked =  "DatabarStacked";
+
+    /// <summary>
+    /// Enum value DatabarStackedOmniDirectional
+    /// </summary>
+    public const DatabarStackedOmniDirectional =  "DatabarStackedOmniDirectional";
+
+    /// <summary>
+    /// Enum value DatabarTruncated
+    /// </summary>
+    public const DatabarTruncated =  "DatabarTruncated";
 
     /// <summary>
     /// Enum value DeutschePostIdentcode
@@ -87,6 +142,16 @@ class DecodeBarcodeType
     /// Enum value DeutschePostLeitcode
     /// </summary>
     public const DeutschePostLeitcode =  "DeutschePostLeitcode";
+
+    /// <summary>
+    /// Enum value DotCode
+    /// </summary>
+    public const DotCode =  "DotCode";
+
+    /// <summary>
+    /// Enum value DutchKIX
+    /// </summary>
+    public const DutchKIX =  "DutchKIX";
 
     /// <summary>
     /// Enum value EAN13
@@ -104,19 +169,109 @@ class DecodeBarcodeType
     public const EAN8 =  "EAN8";
 
     /// <summary>
+    /// Enum value GS1Aztec
+    /// </summary>
+    public const GS1Aztec =  "GS1Aztec";
+
+    /// <summary>
+    /// Enum value GS1Code128
+    /// </summary>
+    public const GS1Code128 =  "GS1Code128";
+
+    /// <summary>
+    /// Enum value GS1CompositeBar
+    /// </summary>
+    public const GS1CompositeBar =  "GS1CompositeBar";
+
+    /// <summary>
+    /// Enum value GS1DataMatrix
+    /// </summary>
+    public const GS1DataMatrix =  "GS1DataMatrix";
+
+    /// <summary>
+    /// Enum value GS1DotCode
+    /// </summary>
+    public const GS1DotCode =  "GS1DotCode";
+
+    /// <summary>
+    /// Enum value GS1HanXin
+    /// </summary>
+    public const GS1HanXin =  "GS1HanXin";
+
+    /// <summary>
+    /// Enum value GS1MicroPdf417
+    /// </summary>
+    public const GS1MicroPdf417 =  "GS1MicroPdf417";
+
+    /// <summary>
+    /// Enum value GS1QR
+    /// </summary>
+    public const GS1QR =  "GS1QR";
+
+    /// <summary>
+    /// Enum value HanXin
+    /// </summary>
+    public const HanXin =  "HanXin";
+
+    /// <summary>
+    /// Enum value HIBCAztecLIC
+    /// </summary>
+    public const HIBCAztecLIC =  "HIBCAztecLIC";
+
+    /// <summary>
+    /// Enum value HIBCAztecPAS
+    /// </summary>
+    public const HIBCAztecPAS =  "HIBCAztecPAS";
+
+    /// <summary>
+    /// Enum value HIBCCode128LIC
+    /// </summary>
+    public const HIBCCode128LIC =  "HIBCCode128LIC";
+
+    /// <summary>
+    /// Enum value HIBCCode128PAS
+    /// </summary>
+    public const HIBCCode128PAS =  "HIBCCode128PAS";
+
+    /// <summary>
+    /// Enum value HIBCCode39LIC
+    /// </summary>
+    public const HIBCCode39LIC =  "HIBCCode39LIC";
+
+    /// <summary>
+    /// Enum value HIBCCode39PAS
+    /// </summary>
+    public const HIBCCode39PAS =  "HIBCCode39PAS";
+
+    /// <summary>
+    /// Enum value HIBCDataMatrixLIC
+    /// </summary>
+    public const HIBCDataMatrixLIC =  "HIBCDataMatrixLIC";
+
+    /// <summary>
+    /// Enum value HIBCDataMatrixPAS
+    /// </summary>
+    public const HIBCDataMatrixPAS =  "HIBCDataMatrixPAS";
+
+    /// <summary>
+    /// Enum value HIBCQRLIC
+    /// </summary>
+    public const HIBCQRLIC =  "HIBCQRLIC";
+
+    /// <summary>
+    /// Enum value HIBCQRPAS
+    /// </summary>
+    public const HIBCQRPAS =  "HIBCQRPAS";
+
+    /// <summary>
     /// Enum value IATA2of5
     /// </summary>
     public const IATA2of5 =  "IATA2of5";
 
     /// <summary>
-    /// Enum value Interleaved2of5
+    /// Enum value ISBN
     /// </summary>
-    public const Interleaved2of5 =  "Interleaved2of5";
-
-    /// <summary>
-    /// Enum value ISSN
-    /// </summary>
-    public const ISSN =  "ISSN";
+    public const ISBN =  "ISBN";
 
     /// <summary>
     /// Enum value ISMN
@@ -124,9 +279,9 @@ class DecodeBarcodeType
     public const ISMN =  "ISMN";
 
     /// <summary>
-    /// Enum value ItalianPost25
+    /// Enum value ISSN
     /// </summary>
-    public const ItalianPost25 =  "ItalianPost25";
+    public const ISSN =  "ISSN";
 
     /// <summary>
     /// Enum value ITF14
@@ -139,14 +294,49 @@ class DecodeBarcodeType
     public const ITF6 =  "ITF6";
 
     /// <summary>
+    /// Enum value Interleaved2of5
+    /// </summary>
+    public const Interleaved2of5 =  "Interleaved2of5";
+
+    /// <summary>
+    /// Enum value ItalianPost25
+    /// </summary>
+    public const ItalianPost25 =  "ItalianPost25";
+
+    /// <summary>
     /// Enum value MacroPdf417
     /// </summary>
     public const MacroPdf417 =  "MacroPdf417";
 
     /// <summary>
+    /// Enum value Mailmark
+    /// </summary>
+    public const Mailmark =  "Mailmark";
+
+    /// <summary>
     /// Enum value Matrix2of5
     /// </summary>
     public const Matrix2of5 =  "Matrix2of5";
+
+    /// <summary>
+    /// Enum value MaxiCode
+    /// </summary>
+    public const MaxiCode =  "MaxiCode";
+
+    /// <summary>
+    /// Enum value MicrE13B
+    /// </summary>
+    public const MicrE13B =  "MicrE13B";
+
+    /// <summary>
+    /// Enum value MicroPdf417
+    /// </summary>
+    public const MicroPdf417 =  "MicroPdf417";
+
+    /// <summary>
+    /// Enum value MicroQR
+    /// </summary>
+    public const MicroQR =  "MicroQR";
 
     /// <summary>
     /// Enum value MSI
@@ -174,9 +364,9 @@ class DecodeBarcodeType
     public const Pdf417 =  "Pdf417";
 
     /// <summary>
-    /// Enum value MicroPdf417
+    /// Enum value Pharmacode
     /// </summary>
-    public const MicroPdf417 =  "MicroPdf417";
+    public const Pharmacode =  "Pharmacode";
 
     /// <summary>
     /// Enum value Planet
@@ -194,14 +384,9 @@ class DecodeBarcodeType
     public const PZN =  "PZN";
 
     /// <summary>
-    /// Enum value QR
+    /// Enum value RectMicroQR
     /// </summary>
-    public const QR =  "QR";
-
-    /// <summary>
-    /// Enum value MicroQR
-    /// </summary>
-    public const MicroQR =  "MicroQR";
+    public const RectMicroQR =  "RectMicroQR";
 
     /// <summary>
     /// Enum value RM4SCC
@@ -229,6 +414,11 @@ class DecodeBarcodeType
     public const Supplement =  "Supplement";
 
     /// <summary>
+    /// Enum value SwissPostParcel
+    /// </summary>
+    public const SwissPostParcel =  "SwissPostParcel";
+
+    /// <summary>
     /// Enum value UPCA
     /// </summary>
     public const UPCA =  "UPCA";
@@ -242,200 +432,5 @@ class DecodeBarcodeType
     /// Enum value VIN
     /// </summary>
     public const VIN =  "VIN";
-
-    /// <summary>
-    /// Enum value Pharmacode
-    /// </summary>
-    public const Pharmacode =  "Pharmacode";
-
-    /// <summary>
-    /// Enum value GS1DataMatrix
-    /// </summary>
-    public const GS1DataMatrix =  "GS1DataMatrix";
-
-    /// <summary>
-    /// Enum value DatabarOmniDirectional
-    /// </summary>
-    public const DatabarOmniDirectional =  "DatabarOmniDirectional";
-
-    /// <summary>
-    /// Enum value DatabarTruncated
-    /// </summary>
-    public const DatabarTruncated =  "DatabarTruncated";
-
-    /// <summary>
-    /// Enum value DatabarLimited
-    /// </summary>
-    public const DatabarLimited =  "DatabarLimited";
-
-    /// <summary>
-    /// Enum value DatabarExpanded
-    /// </summary>
-    public const DatabarExpanded =  "DatabarExpanded";
-
-    /// <summary>
-    /// Enum value SwissPostParcel
-    /// </summary>
-    public const SwissPostParcel =  "SwissPostParcel";
-
-    /// <summary>
-    /// Enum value AustralianPosteParcel
-    /// </summary>
-    public const AustralianPosteParcel =  "AustralianPosteParcel";
-
-    /// <summary>
-    /// Enum value Code16K
-    /// </summary>
-    public const Code16K =  "Code16K";
-
-    /// <summary>
-    /// Enum value DatabarStackedOmniDirectional
-    /// </summary>
-    public const DatabarStackedOmniDirectional =  "DatabarStackedOmniDirectional";
-
-    /// <summary>
-    /// Enum value DatabarStacked
-    /// </summary>
-    public const DatabarStacked =  "DatabarStacked";
-
-    /// <summary>
-    /// Enum value DatabarExpandedStacked
-    /// </summary>
-    public const DatabarExpandedStacked =  "DatabarExpandedStacked";
-
-    /// <summary>
-    /// Enum value CompactPdf417
-    /// </summary>
-    public const CompactPdf417 =  "CompactPdf417";
-
-    /// <summary>
-    /// Enum value GS1QR
-    /// </summary>
-    public const GS1QR =  "GS1QR";
-
-    /// <summary>
-    /// Enum value MaxiCode
-    /// </summary>
-    public const MaxiCode =  "MaxiCode";
-
-    /// <summary>
-    /// Enum value MicrE13B
-    /// </summary>
-    public const MicrE13B =  "MicrE13B";
-
-    /// <summary>
-    /// Enum value Code32
-    /// </summary>
-    public const Code32 =  "Code32";
-
-    /// <summary>
-    /// Enum value DataLogic2of5
-    /// </summary>
-    public const DataLogic2of5 =  "DataLogic2of5";
-
-    /// <summary>
-    /// Enum value DotCode
-    /// </summary>
-    public const DotCode =  "DotCode";
-
-    /// <summary>
-    /// Enum value DutchKIX
-    /// </summary>
-    public const DutchKIX =  "DutchKIX";
-
-    /// <summary>
-    /// Enum value CodablockF
-    /// </summary>
-    public const CodablockF =  "CodablockF";
-
-    /// <summary>
-    /// Enum value Mailmark
-    /// </summary>
-    public const Mailmark =  "Mailmark";
-
-    /// <summary>
-    /// Enum value GS1DotCode
-    /// </summary>
-    public const GS1DotCode =  "GS1DotCode";
-
-    /// <summary>
-    /// Enum value HIBCCode39LIC
-    /// </summary>
-    public const HIBCCode39LIC =  "HIBCCode39LIC";
-
-    /// <summary>
-    /// Enum value HIBCCode128LIC
-    /// </summary>
-    public const HIBCCode128LIC =  "HIBCCode128LIC";
-
-    /// <summary>
-    /// Enum value HIBCAztecLIC
-    /// </summary>
-    public const HIBCAztecLIC =  "HIBCAztecLIC";
-
-    /// <summary>
-    /// Enum value HIBCDataMatrixLIC
-    /// </summary>
-    public const HIBCDataMatrixLIC =  "HIBCDataMatrixLIC";
-
-    /// <summary>
-    /// Enum value HIBCQRLIC
-    /// </summary>
-    public const HIBCQRLIC =  "HIBCQRLIC";
-
-    /// <summary>
-    /// Enum value HIBCCode39PAS
-    /// </summary>
-    public const HIBCCode39PAS =  "HIBCCode39PAS";
-
-    /// <summary>
-    /// Enum value HIBCCode128PAS
-    /// </summary>
-    public const HIBCCode128PAS =  "HIBCCode128PAS";
-
-    /// <summary>
-    /// Enum value HIBCAztecPAS
-    /// </summary>
-    public const HIBCAztecPAS =  "HIBCAztecPAS";
-
-    /// <summary>
-    /// Enum value HIBCDataMatrixPAS
-    /// </summary>
-    public const HIBCDataMatrixPAS =  "HIBCDataMatrixPAS";
-
-    /// <summary>
-    /// Enum value HIBCQRPAS
-    /// </summary>
-    public const HIBCQRPAS =  "HIBCQRPAS";
-
-    /// <summary>
-    /// Enum value HanXin
-    /// </summary>
-    public const HanXin =  "HanXin";
-
-    /// <summary>
-    /// Enum value GS1HanXin
-    /// </summary>
-    public const GS1HanXin =  "GS1HanXin";
-
-    /// <summary>
-    /// Enum value GS1Aztec
-    /// </summary>
-    public const GS1Aztec =  "GS1Aztec";
-
-    /// <summary>
-    /// Enum value GS1CompositeBar
-    /// </summary>
-    public const GS1CompositeBar =  "GS1CompositeBar";
-
-    /// <summary>
-    /// Enum value GS1MicroPdf417
-    /// </summary>
-    public const GS1MicroPdf417 =  "GS1MicroPdf417";
-
-    /// <summary>
-    /// Enum value mostCommonlyUsed
-    /// </summary>
-    public const mostCommonlyUsed =  "mostCommonlyUsed";
 
 }

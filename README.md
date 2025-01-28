@@ -5,9 +5,14 @@
 [![Packagist Version](https://img.shields.io/packagist/v/aspose/barcode-cloud-php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
-- API version: 3.0
-- Package version: 24.12.0
+- API version: 4.0
+- Package version: 25.1.0
 - Supported PHP versions: ">=7.4 || >=8.0"
+
+## SDK and API Version Compatibility:
+
+- SDK Version 25.1 and Later: Starting from SDK version 25.1, all subsequent versions are compatible with API Version v4.0.
+- SDK Version 24.12 and Earlier: These versions are compatible with API Version v3.0.
 
 ## Demo applications
 
@@ -54,9 +59,9 @@ declare(strict_types=1);
 require __DIR__ . '/vendor/autoload.php';
 
 use Aspose\BarCode\Configuration;
-use Aspose\BarCode\BarcodeApi;
-use Aspose\BarCode\Requests\GetBarcodeGenerateRequest;
-use Aspose\BarCode\Model\{EncodeBarcodeType, CodeLocation};
+use Aspose\BarCode\GenerateApi;
+use Aspose\BarCode\Requests\GenerateRequestWrapper;
+use Aspose\BarCode\Model\{EncodeBarcodeType, EncodeDataType, CodeLocation, BarcodeImageFormat};
 
 $config = new Configuration();
 $config->setClientId('ClientId from https://dashboard.aspose.cloud/applications');
@@ -65,12 +70,12 @@ if (getenv("TEST_CONFIGURATION_ACCESS_TOKEN")) {
     $config->setAccessToken(getenv("TEST_CONFIGURATION_ACCESS_TOKEN"));
 }
 
-$request = new GetBarcodeGenerateRequest(EncodeBarcodeType::QR, 'PHP SDK Test');
-$request->format = 'png';
+$request = new GenerateRequestWrapper(EncodeBarcodeType::QR, 'PHP SDK Test');
+$request->image_format = BarcodeImageFormat::Png;
 $request->text_location = CodeLocation::None;
 
-$api = new BarcodeApi(null, $config);
-$response = $api->GetBarCodeGenerate($request);
+$api = new GenerateApi(null, $config);
+$response = $api->generate($request);
 
 $type = 'image/png';
 $size = $response->getSize();
@@ -95,113 +100,39 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *<https://api.aspose.cloud/v3.0>*
+All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
-*BarcodeApi* | [**getBarcodeGenerate**](docs/Api/BarcodeApi.md#getbarcodegenerate) | **GET** /barcode/generate | Generate barcode.
-*BarcodeApi* | [**getBarcodeRecognize**](docs/Api/BarcodeApi.md#getbarcoderecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
-*BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](docs/Api/BarcodeApi.md#postbarcoderecognizefromurlorcontent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
-*BarcodeApi* | [**postGenerateMultiple**](docs/Api/BarcodeApi.md#postgeneratemultiple) | **POST** /barcode/generateMultiple | Generate multiple barcodes and return in response stream
-*BarcodeApi* | [**putBarcodeGenerateFile**](docs/Api/BarcodeApi.md#putbarcodegeneratefile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
-*BarcodeApi* | [**putBarcodeRecognizeFromBody**](docs/Api/BarcodeApi.md#putbarcoderecognizefrombody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.
-*BarcodeApi* | [**putGenerateMultiple**](docs/Api/BarcodeApi.md#putgeneratemultiple) | **PUT** /barcode/{name}/generateMultiple | Generate image with multiple barcodes and put new file on server
-*BarcodeApi* | [**scanBarcode**](docs/Api/BarcodeApi.md#scanbarcode) | **POST** /barcode/scan | Quickly scan a barcode from an image.
-*FileApi* | [**copyFile**](docs/Api/FileApi.md#copyfile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
-*FileApi* | [**deleteFile**](docs/Api/FileApi.md#deletefile) | **DELETE** /barcode/storage/file/{path} | Delete file
-*FileApi* | [**downloadFile**](docs/Api/FileApi.md#downloadfile) | **GET** /barcode/storage/file/{path} | Download file
-*FileApi* | [**moveFile**](docs/Api/FileApi.md#movefile) | **PUT** /barcode/storage/file/move/{srcPath} | Move file
-*FileApi* | [**uploadFile**](docs/Api/FileApi.md#uploadfile) | **PUT** /barcode/storage/file/{path} | Upload file
-*FolderApi* | [**copyFolder**](docs/Api/FolderApi.md#copyfolder) | **PUT** /barcode/storage/folder/copy/{srcPath} | Copy folder
-*FolderApi* | [**createFolder**](docs/Api/FolderApi.md#createfolder) | **PUT** /barcode/storage/folder/{path} | Create the folder
-*FolderApi* | [**deleteFolder**](docs/Api/FolderApi.md#deletefolder) | **DELETE** /barcode/storage/folder/{path} | Delete folder
-*FolderApi* | [**getFilesList**](docs/Api/FolderApi.md#getfileslist) | **GET** /barcode/storage/folder/{path} | Get all files and folders within a folder
-*FolderApi* | [**moveFolder**](docs/Api/FolderApi.md#movefolder) | **PUT** /barcode/storage/folder/move/{srcPath} | Move folder
-*StorageApi* | [**getDiscUsage**](docs/Api/StorageApi.md#getdiscusage) | **GET** /barcode/storage/disc | Get disc usage
-*StorageApi* | [**getFileVersions**](docs/Api/StorageApi.md#getfileversions) | **GET** /barcode/storage/version/{path} | Get file versions
-*StorageApi* | [**objectExists**](docs/Api/StorageApi.md#objectexists) | **GET** /barcode/storage/exist/{path} | Check if file or folder exists
-*StorageApi* | [**storageExists**](docs/Api/StorageApi.md#storageexists) | **GET** /barcode/storage/{storageName}/exist | Check if storage exists
+*GenerateApi* | [**generate**](docs/Api/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
+*GenerateApi* | [**generateBody**](docs/Api/GenerateApi.md#generatebody) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
+*GenerateApi* | [**generateMultipart**](docs/Api/GenerateApi.md#generatemultipart) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
+*RecognizeApi* | [**recognize**](docs/Api/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**recognizeBase64**](docs/Api/RecognizeApi.md#recognizebase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+*RecognizeApi* | [**recognizeMultipart**](docs/Api/RecognizeApi.md#recognizemultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*ScanApi* | [**scan**](docs/Api/ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*ScanApi* | [**scanBase64**](docs/Api/ScanApi.md#scanbase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+*ScanApi* | [**scanMultipart**](docs/Api/ScanApi.md#scanmultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 ## Documentation For Models
 
 - [ApiError](docs/Model/ApiError.md)
 - [ApiErrorResponse](docs/Model/ApiErrorResponse.md)
-- [AustralianPostParams](docs/Model/AustralianPostParams.md)
-- [AutoSizeMode](docs/Model/AutoSizeMode.md)
-- [AvailableGraphicsUnit](docs/Model/AvailableGraphicsUnit.md)
-- [AztecEncodeMode](docs/Model/AztecEncodeMode.md)
-- [AztecParams](docs/Model/AztecParams.md)
-- [AztecSymbolMode](docs/Model/AztecSymbolMode.md)
+- [BarcodeImageFormat](docs/Model/BarcodeImageFormat.md)
+- [BarcodeImageParams](docs/Model/BarcodeImageParams.md)
 - [BarcodeResponse](docs/Model/BarcodeResponse.md)
 - [BarcodeResponseList](docs/Model/BarcodeResponseList.md)
-- [BorderDashStyle](docs/Model/BorderDashStyle.md)
-- [CaptionParams](docs/Model/CaptionParams.md)
-- [ChecksumValidation](docs/Model/ChecksumValidation.md)
-- [CodabarChecksumMode](docs/Model/CodabarChecksumMode.md)
-- [CodabarParams](docs/Model/CodabarParams.md)
-- [CodabarSymbol](docs/Model/CodabarSymbol.md)
-- [CodablockParams](docs/Model/CodablockParams.md)
-- [Code128Emulation](docs/Model/Code128Emulation.md)
-- [Code128EncodeMode](docs/Model/Code128EncodeMode.md)
-- [Code128Params](docs/Model/Code128Params.md)
-- [Code16KParams](docs/Model/Code16KParams.md)
 - [CodeLocation](docs/Model/CodeLocation.md)
-- [CouponParams](docs/Model/CouponParams.md)
-- [CustomerInformationInterpretingType](docs/Model/CustomerInformationInterpretingType.md)
-- [DataBarParams](docs/Model/DataBarParams.md)
-- [DataMatrixEccType](docs/Model/DataMatrixEccType.md)
-- [DataMatrixEncodeMode](docs/Model/DataMatrixEncodeMode.md)
-- [DataMatrixParams](docs/Model/DataMatrixParams.md)
-- [DataMatrixVersion](docs/Model/DataMatrixVersion.md)
 - [DecodeBarcodeType](docs/Model/DecodeBarcodeType.md)
-- [DiscUsage](docs/Model/DiscUsage.md)
-- [DotCodeEncodeMode](docs/Model/DotCodeEncodeMode.md)
-- [DotCodeParams](docs/Model/DotCodeParams.md)
-- [ECIEncodings](docs/Model/ECIEncodings.md)
-- [EnableChecksum](docs/Model/EnableChecksum.md)
 - [EncodeBarcodeType](docs/Model/EncodeBarcodeType.md)
-- [Error](docs/Model/Error.md)
-- [ErrorDetails](docs/Model/ErrorDetails.md)
-- [FileVersions](docs/Model/FileVersions.md)
-- [FilesList](docs/Model/FilesList.md)
-- [FilesUploadResult](docs/Model/FilesUploadResult.md)
-- [FontMode](docs/Model/FontMode.md)
-- [FontParams](docs/Model/FontParams.md)
-- [FontStyle](docs/Model/FontStyle.md)
-- [GeneratorParams](docs/Model/GeneratorParams.md)
-- [GeneratorParamsList](docs/Model/GeneratorParamsList.md)
-- [HanXinEncodeMode](docs/Model/HanXinEncodeMode.md)
-- [HanXinErrorLevel](docs/Model/HanXinErrorLevel.md)
-- [HanXinParams](docs/Model/HanXinParams.md)
-- [HanXinVersion](docs/Model/HanXinVersion.md)
-- [ITF14BorderType](docs/Model/ITF14BorderType.md)
-- [ITFParams](docs/Model/ITFParams.md)
-- [MacroCharacter](docs/Model/MacroCharacter.md)
-- [MaxiCodeEncodeMode](docs/Model/MaxiCodeEncodeMode.md)
-- [MaxiCodeMode](docs/Model/MaxiCodeMode.md)
-- [MaxiCodeParams](docs/Model/MaxiCodeParams.md)
-- [ObjectExist](docs/Model/ObjectExist.md)
-- [Padding](docs/Model/Padding.md)
-- [PatchCodeParams](docs/Model/PatchCodeParams.md)
-- [PatchFormat](docs/Model/PatchFormat.md)
-- [Pdf417CompactionMode](docs/Model/Pdf417CompactionMode.md)
-- [Pdf417ErrorLevel](docs/Model/Pdf417ErrorLevel.md)
-- [Pdf417MacroTerminator](docs/Model/Pdf417MacroTerminator.md)
-- [Pdf417Params](docs/Model/Pdf417Params.md)
-- [PostalParams](docs/Model/PostalParams.md)
-- [PresetType](docs/Model/PresetType.md)
-- [QREncodeMode](docs/Model/QREncodeMode.md)
-- [QREncodeType](docs/Model/QREncodeType.md)
-- [QRErrorLevel](docs/Model/QRErrorLevel.md)
-- [QRVersion](docs/Model/QRVersion.md)
-- [QrParams](docs/Model/QrParams.md)
-- [ReaderParams](docs/Model/ReaderParams.md)
+- [EncodeData](docs/Model/EncodeData.md)
+- [EncodeDataType](docs/Model/EncodeDataType.md)
+- [GenerateParams](docs/Model/GenerateParams.md)
+- [GraphicsUnit](docs/Model/GraphicsUnit.md)
+- [RecognitionImageKind](docs/Model/RecognitionImageKind.md)
+- [RecognitionMode](docs/Model/RecognitionMode.md)
+- [RecognizeBase64Request](docs/Model/RecognizeBase64Request.md)
 - [RegionPoint](docs/Model/RegionPoint.md)
-- [ResultImageInfo](docs/Model/ResultImageInfo.md)
-- [StorageExist](docs/Model/StorageExist.md)
-- [StorageFile](docs/Model/StorageFile.md)
-- [StructuredAppend](docs/Model/StructuredAppend.md)
-- [TextAlignment](docs/Model/TextAlignment.md)
-- [FileVersion](docs/Model/FileVersion.md)
+- [ScanBase64Request](docs/Model/ScanBase64Request.md)
 
 
