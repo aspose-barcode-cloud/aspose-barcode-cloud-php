@@ -24,7 +24,7 @@ class GenerateRequestWrapper
      * @param string $data String represents data to encode
      * @param \Aspose\BarCode\Model\EncodeDataType $data_type Type of data to encode.  Default value: StringData.
      * @param \Aspose\BarCode\Model\BarcodeImageFormat $image_format Barcode output image format.  Default value: png
-     * @param \Aspose\BarCode\Model\CodeLocation $text_location Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
+     * @param \Aspose\BarCode\Model\CodeLocation $text_location Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D Barcodes.
      * @param string $foreground_color Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black.
      * @param string $background_color Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White.
      * @param \Aspose\BarCode\Model\GraphicsUnit $units Common Units for all measuring in query. Default units: pixel.
@@ -70,7 +70,7 @@ class GenerateRequestWrapper
     public $image_format;
 
     /**
-     * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
+     * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D Barcodes.
      */
     public $text_location;
 
