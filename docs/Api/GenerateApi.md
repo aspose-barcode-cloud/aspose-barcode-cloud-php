@@ -38,7 +38,7 @@ $barcode_type = new \Aspose\BarCode\Model\EncodeBarcodeType(); // EncodeBarcodeT
 $data = 'data_example'; // string | String represents data to encode
 $data_type = new \Aspose\BarCode\Model\EncodeDataType(); // EncodeDataType | Type of data to encode.  Default value: StringData.
 $image_format = new \Aspose\BarCode\Model\BarcodeImageFormat(); // BarcodeImageFormat | Barcode output image format.  Default value: png
-$text_location = new \Aspose\BarCode\Model\CodeLocation(); // CodeLocation | Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below.
+$text_location = new \Aspose\BarCode\Model\CodeLocation(); // CodeLocation | Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D Barcodes.
 $foreground_color = 'Black'; // string | Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black.
 $background_color = 'White'; // string | Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White.
 $units = new \Aspose\BarCode\Model\GraphicsUnit(); // GraphicsUnit | Common Units for all measuring in query. Default units: pixel.
@@ -63,7 +63,7 @@ try {
 | **data** | **string**| String represents data to encode | |
 | **data_type** | [**EncodeDataType**](../Model/.md)| Type of data to encode.  Default value: StringData. | [optional] |
 | **image_format** | [**BarcodeImageFormat**](../Model/.md)| Barcode output image format.  Default value: png | [optional] |
-| **text_location** | [**CodeLocation**](../Model/.md)| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below. | [optional] |
+| **text_location** | [**CodeLocation**](../Model/.md)| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D Barcodes. | [optional] |
 | **foreground_color** | **string**| Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black. | [optional] [default to &#39;Black&#39;] |
 | **background_color** | **string**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White. | [optional] [default to &#39;White&#39;] |
 | **units** | [**GraphicsUnit**](../Model/.md)| Common Units for all measuring in query. Default units: pixel. | [optional] |
