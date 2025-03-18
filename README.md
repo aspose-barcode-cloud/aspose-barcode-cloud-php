@@ -7,7 +7,7 @@
 
 - API version: 4.0
 - Package version: 25.3.0
-- Supported PHP versions: ">=7.4 || >=8.0"
+- Supported PHP versions: ">=8.0"
 
 ## SDK and API Version Compatibility:
 
