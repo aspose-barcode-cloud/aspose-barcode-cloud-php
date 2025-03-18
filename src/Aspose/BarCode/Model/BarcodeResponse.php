@@ -162,7 +162,7 @@ class BarcodeResponse implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;

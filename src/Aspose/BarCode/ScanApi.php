@@ -71,7 +71,7 @@ class ScanApi
      * @param Configuration|null $config configuration info
      * @param HeaderSelector|null $selector class for header selection
      */
-    public function __construct(ClientInterface $client = null, Configuration $config = null, HeaderSelector $selector = null)
+    public function __construct(?ClientInterface $client = null, ?Configuration $config = null, ?HeaderSelector $selector = null)
     {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();

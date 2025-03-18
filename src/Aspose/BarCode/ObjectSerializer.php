@@ -19,7 +19,7 @@ class ObjectSerializer
      *
      * @return string|object|array serialized form of $data
      */
-    public static function sanitizeForSerialization($data, string $format = null)
+    public static function sanitizeForSerialization($data, ?string $format = null)
     {
         if (is_scalar($data) || null === $data) {
             return $data;
@@ -171,7 +171,7 @@ class ObjectSerializer
      *
      * @return object|array|null a single or an array of $class instances
      */
-    public static function deserialize($data, string $class, array $httpHeaders = null)
+    public static function deserialize($data, string $class, ?array $httpHeaders = null)
     {
         if (null === $data) {
             return null;

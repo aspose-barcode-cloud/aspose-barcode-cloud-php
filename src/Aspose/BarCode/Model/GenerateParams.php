@@ -157,7 +157,7 @@ class GenerateParams implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['barcode_type'] = isset($data['barcode_type']) ? $data['barcode_type'] : null;
         $this->container['encode_data'] = isset($data['encode_data']) ? $data['encode_data'] : null;
