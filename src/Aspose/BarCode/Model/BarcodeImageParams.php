@@ -187,7 +187,7 @@ class BarcodeImageParams implements ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['image_format'] = isset($data['image_format']) ? $data['image_format'] : null;
         $this->container['text_location'] = isset($data['text_location']) ? $data['text_location'] : null;
