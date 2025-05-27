@@ -25,13 +25,13 @@ class GenerateMultipartRequestWrapper
      * @param \Aspose\BarCode\Model\EncodeDataType $data_type
      * @param \Aspose\BarCode\Model\BarcodeImageFormat $image_format
      * @param \Aspose\BarCode\Model\CodeLocation $text_location
-     * @param string $foreground_color Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black.
-     * @param string $background_color Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White.
+     * @param string $foreground_color Specify the displaying bars and content Color. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: Black.
+     * @param string $background_color Background color of the barcode image. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: White.
      * @param \Aspose\BarCode\Model\GraphicsUnit $units
-     * @param float $resolution Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot.
-     * @param float $image_height Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
-     * @param float $image_width Width of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
-     * @param int $rotation_angle BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0.
+     * @param float $resolution Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. Decimal separator is dot.
+     * @param float $image_height Height of the barcode image in given units. Default units: pixel. Decimal separator is dot.
+     * @param float $image_width Width of the barcode image in given units. Default units: pixel. Decimal separator is dot.
+     * @param int $rotation_angle BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0.
      */
     public function __construct($barcode_type, $data, $data_type = null, $image_format = null, $text_location = null, $foreground_color = null, $background_color = null, $units = null, $resolution = null, $image_height = null, $image_width = null, $rotation_angle = null)
     {
@@ -75,12 +75,12 @@ class GenerateMultipartRequestWrapper
     public $text_location;
 
     /**
-     * Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black.
+     * Specify the displaying bars and content Color. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: Black.
      */
     public $foreground_color;
 
     /**
-     * Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White.
+     * Background color of the barcode image. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: White.
      */
     public $background_color;
 
@@ -90,22 +90,22 @@ class GenerateMultipartRequestWrapper
     public $units;
 
     /**
-     * Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot.
+     * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. Decimal separator is dot.
      */
     public $resolution;
 
     /**
-     * Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
+     * Height of the barcode image in given units. Default units: pixel. Decimal separator is dot.
      */
     public $image_height;
 
     /**
-     * Width of the barcode image in given units. Default units: pixel.  Decimal separator is dot.
+     * Width of the barcode image in given units. Default units: pixel. Decimal separator is dot.
      */
     public $image_width;
 
     /**
-     * BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0.
+     * BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle = 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0.
      */
     public $rotation_angle;
 }
