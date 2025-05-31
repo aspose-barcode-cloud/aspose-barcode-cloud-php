@@ -20,7 +20,7 @@ class Configuration implements JsonSerializable
      *
      * @var string
      */
-    protected $clientVersion = '24.12.0';
+    protected $clientVersion = '24.13.0';
 
     /**
      * ClientId for API
