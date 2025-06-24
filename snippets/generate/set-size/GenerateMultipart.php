@@ -36,7 +36,7 @@ function main(): void
     $request->image_width = 200;
     $request->resolution = 150;
     $request->units = 'Point';
-   
+
     $generated = $generateApi->generateMultipart($request);
 
     file_put_contents($fileName, $generated->fread($generated->getSize()));

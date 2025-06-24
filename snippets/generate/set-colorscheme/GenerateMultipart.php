@@ -37,7 +37,7 @@ function main(): void
 
     $generated = $generateApi->generateMultipart($request);
 
-    file_put_contents($fileName,  $generated->fread($generated->getSize()));
+    file_put_contents($fileName, $generated->fread($generated->getSize()));
 
     echo "File '{$fileName}' generated.\n";
 }

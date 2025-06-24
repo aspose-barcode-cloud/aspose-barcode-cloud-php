@@ -32,7 +32,8 @@ function main(): void
 
     $request = new GenerateRequestWrapper(
         EncodeBarcodeType::QR,
-        'Aspose.BarCode.Cloud');
+        'Aspose.BarCode.Cloud'
+    );
     $request->image_format = BarcodeImageFormat::Png;
     $request->foreground_color = 'Black';
     $request->background_color = 'White';

@@ -28,7 +28,7 @@ function main()
     $fileName = __DIR__ . '/../testdata/Qr.png';
     $file = new SplFileObject($fileName, 'rb');
     $request = new ScanMultipartRequestWrapper($file);
-    
+
     $result = $scanApi->scanMultipart($request);
     $file = null;
 

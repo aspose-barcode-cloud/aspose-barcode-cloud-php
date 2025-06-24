@@ -27,14 +27,14 @@ function main()
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
     $fileName = __DIR__ . '/../testdata/aztec.png';
-   $file = new SplFileObject($fileName, 'rb');
-    
+    $file = new SplFileObject($fileName, 'rb');
+
     $request = new RecognizeMultipartRequestWrapper(DecodeBarcodeType::Aztec, $file);
     $request->recognition_mode = RecognitionMode::Normal;
     $request->image_kind = RecognitionImageKind::ScannedDocument;
 
     $result = $recognizeApi->recognizeMultipart($request);
-    
+
     echo sprintf(
         "File '%s' recognized, result: '%s'\n",
         $fileName,

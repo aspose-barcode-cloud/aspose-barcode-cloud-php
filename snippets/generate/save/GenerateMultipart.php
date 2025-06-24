@@ -29,7 +29,7 @@ function main(): void
     $fileName = __DIR__ . '/../testdata/Pdf417.png';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
-    
+
     $request = new GenerateMultipartRequestWrapper(EncodeBarcodeType::Pdf417, "Aspose.BarCode.Cloud");
 
     $generated = $generateApi->generateMultipart($request);

@@ -25,7 +25,7 @@ function makeConfiguration()
 function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
-    
+
     $request = new RecognizeRequestWrapper(DecodeBarcodeType::QR, "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png");
     $request->image_kind = RecognitionImageKind::Photo;
 
