@@ -27,7 +27,7 @@ function main()
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
     $fileName = __DIR__ . '/../testdata/Qr.png';
-   $file = new SplFileObject($fileName, 'rb');
+    $file = new SplFileObject($fileName, 'rb');
 
     $request = new RecognizeMultipartRequestWrapper(
         DecodeBarcodeType::QR,

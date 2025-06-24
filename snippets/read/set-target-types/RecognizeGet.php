@@ -25,12 +25,12 @@ function makeConfiguration()
 function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
-    
+
     $request = new RecognizeRequestWrapper(
-        DecodeBarcodeType::MostCommonlyUsed, 
+        DecodeBarcodeType::MostCommonlyUsed,
         "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"
     );
-    
+
     $result = $recognizeApi->recognize($request);
 
     echo sprintf(

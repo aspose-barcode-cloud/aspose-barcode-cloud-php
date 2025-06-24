@@ -35,7 +35,7 @@ function main(): void
     $request->image_width = 200;
     $request->resolution = 300;
     $request->units = 'Pixel';
-    
+
 
     $generated = $generateApi->generate($request);
 

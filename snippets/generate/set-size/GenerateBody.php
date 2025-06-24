@@ -29,7 +29,7 @@ function main(): void
     $fileName = __DIR__ . '/../testdata/../Pdf417.png';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
-    
+
     $generateParams = new GenerateParams([
         'barcode_type' => EncodeBarcodeType::Pdf417,
         'encode_data' => new EncodeData([
@@ -47,7 +47,7 @@ function main(): void
     $request = new GenerateBodyRequestWrapper($generateParams);
     $generated = $generateApi->generateBody($request);
 
-    file_put_contents($fileName,  $generated->fread($generated->getSize()));
+    file_put_contents($fileName, $generated->fread($generated->getSize()));
 
     echo "File '{$fileName}' generated.\n";
 }

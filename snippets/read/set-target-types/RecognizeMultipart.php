@@ -28,7 +28,7 @@ function main()
 
     $fileName = __DIR__ . '/../testdata/Pdf417.png';
     $file = new SplFileObject($fileName, 'rb');
-    
+
     $request = new RecognizeMultipartRequestWrapper(
         DecodeBarcodeType::Pdf417,
         $file
