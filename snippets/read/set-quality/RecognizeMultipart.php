@@ -26,7 +26,7 @@ function main()
 {
     $recognizeApi = new RecognizeApi(null, makeConfiguration());
 
-    $fileName = __DIR__ . '/../testdata/Aztec.png';
+    $fileName = __DIR__ . '/../testdata/aztec.png';
    $file = new SplFileObject($fileName, 'rb');
     
     $request = new RecognizeMultipartRequestWrapper(DecodeBarcodeType::Aztec, $file);

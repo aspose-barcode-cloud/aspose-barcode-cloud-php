@@ -27,7 +27,7 @@ function makeConfiguration(): Configuration
 
 function main(): void
 {
-    $fileName = __DIR__ . '/../testdata/Aztec.png';
+    $fileName = __DIR__ . '/../testdata/aztec.png';
 
     $generateApi = new GenerateApi(null, makeConfiguration());
 
