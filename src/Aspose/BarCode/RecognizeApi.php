@@ -90,7 +90,7 @@ class RecognizeApi
     /**
      * Operation recognize
      *
-     * Recognize barcode from file on server using GET requests with parameters in route and query string.
+     * Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
      *
      * @param Requests\RecognizeRequestWrapper $request is a request object for operation
      *
@@ -112,7 +112,7 @@ class RecognizeApi
     /**
      * Operation recognizeWithHttpInfo
      *
-     * Recognize barcode from file on server using GET requests with parameters in route and query string.
+     * Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
      *
      * @param Requests\RecognizeRequestWrapper $request is a request object for operation
      *
@@ -176,7 +176,7 @@ class RecognizeApi
     /**
      * Operation recognizeAsync
      *
-     * Recognize barcode from file on server using GET requests with parameters in route and query string.
+     * Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
      *
      * @param Requests\RecognizeRequestWrapper $request is a request object for operation
      *
@@ -196,7 +196,7 @@ class RecognizeApi
     /**
      * Operation recognizeAsyncWithHttpInfo
      *
-     * Recognize barcode from file on server using GET requests with parameters in route and query string.
+     * Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
      *
      * @param Requests\RecognizeRequestWrapper $request is a request object for operation
      *
