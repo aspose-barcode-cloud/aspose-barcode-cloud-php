@@ -4,7 +4,7 @@ All URIs are relative to https://api.aspose.cloud/v4.0, except if the operation 
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**scan()**](ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string. |
+| [**scan()**](ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server in the Internet using GET requests with parameter in query string. For scaning files from your hard drive use &#x60;scan-body&#x60; or &#x60;scan-multipart&#x60; endpoints instead. |
 | [**scanBase64()**](ScanApi.md#scanBase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format. |
 | [**scanMultipart()**](ScanApi.md#scanMultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form. |
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api.aspose.cloud/v4.0, except if the operation 
 scan($file_url): \Aspose\BarCode\Model\BarcodeResponseList
 ```
 
-Scan barcode from file on server using GET requests with parameter in query string.
+Scan barcode from file on server in the Internet using GET requests with parameter in query string. For scaning files from your hard drive use `scan-body` or `scan-multipart` endpoints instead.
 
 ### Example
 

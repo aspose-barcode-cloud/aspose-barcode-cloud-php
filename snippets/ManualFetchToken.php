@@ -34,8 +34,8 @@ $body = $response->getBody()->getContents();
 $statusCode = $response->getStatusCode();
 
 if ($statusCode >= 200 && $statusCode < 300) {
-    $bodyArray=json_decode($body, true);
-    $token=$bodyArray["access_token"];
+    $bodyArray = json_decode($body, true);
+    $token = $bodyArray["access_token"];
     echo "Token recieved successfully\n";
     // To veiw token uncomment next line
     // echo "$token";
