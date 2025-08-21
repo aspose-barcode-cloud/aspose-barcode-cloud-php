@@ -6,7 +6,7 @@
 [![Supported PHP Versions](https://img.shields.io/packagist/dependency-v/aspose/barcode-cloud-php/php)](https://packagist.org/packages/aspose/barcode-cloud-php)
 
 - API version: 4.0
-- Package version: 25.7.0
+- Package version: 25.8.0
 - Supported PHP versions: ">=8.0"
 
 ## SDK and API Version Compatibility:
