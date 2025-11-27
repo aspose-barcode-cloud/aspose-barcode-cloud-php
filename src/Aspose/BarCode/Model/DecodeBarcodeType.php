@@ -9,7 +9,7 @@ use Aspose\BarCode\ObjectSerializer;
 /**
  * DecodeBarcodeType
  *
- * @description See Aspose.BarCode.Aspose.BarCode.BarCodeRecognition.DecodeType
+ * @description See Aspose.BarCode.BarCodeRecognition.DecodeType
  */
 class DecodeBarcodeType
 {
